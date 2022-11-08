@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>portafolio</title>
-        <!-- Implementacion de CSS BULMA -->
-        <link rel="stylesheet" href="css/bulma.min.css">
-    </head>
-    <body>
-        <!-- portafolio web -->
-        <!-- Hero -->
-        <section class="hero is-fullheight is-danger">
-            <!-- Navbar -->
-            <nav class="navbar">
-                <div class="container">
-                    <!-- Logo de la pagina -->
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="">
-                            <img src="images/logo.png" alt="Logo">
-                        </a>
-                        <span class="navbar-burger burger"
-                            data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <!-- Elementos del navbar -->
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                Inicio
-                            </a>
-                            <a class="navbar-item">
-                                Informacion
-                            </a>
-                            <a class="navbar-item">
-                                conocimientos
-                            </a>
-                            <a class="navbar-item">
-                                Acerca
-                            </a>
-                        </div>
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo y datos de la pagina -->
+    <link rel="shortcut icon" href="images/conocimientos/junior.png">
+    <title>portafolio</title>
+    <!-- Implementacion de CSS BULMA -->
+    <link rel="stylesheet" href="css/bulma.min.css">
+</head>
+
+<body>
+    <!-- portafolio web -->
+    <!-- Hero -->
+    <section class="hero is-fullheight is-danger">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo de la pagina -->
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.html">
+                        <img src="images/logo.png" alt="Logo">
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
                 </div>
-            </nav>
-            <!-- Cuerpo del hero -->
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <!-- Logo hero -->
-                    <img src="images/logo hero.png" alt="" height="200"
-                        width="200">
-                    <!-- Titulo principal -->
-                    <p class="title">
-                        Nicolás García Pinilla
-                    </p>
-                    <!-- Subtitutlo -->
-                    <p class="subtitle">
-                        "Cumple tus sueños! "
-                    </p>
+                <!-- Elementos del navbar -->
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item is-active" href="index.html">
+                            Inicio
+                        </a>
+                        <a class="navbar-item" href="#informacion">
+                            Informacion
+                        </a>
+                        <a class="navbar-item" href="#conocimientos">
+                            Conocimientos
+                        </a>
+                        <a class="navbar-item " href="#titulos">
+                            Titulos
+                        </a>
+                        <a class="navbar-item " href="#experiencia">
+                            Experiencia
+                        </a>
+                        <a class="navbar-item " href="#acerca">
+                            Acerca
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </nav>
+        <!-- Cuerpo del hero -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <!-- Logo hero -->
+                <img src="images/logo hero.png" alt="" height="200" width="200">
+                <!-- Titulo principal -->
+                <p class="title">
+                    Nicolás García Pinilla
+                </p>
+                <!-- Subtitutlo -->
+                <p class="subtitle">
+                    "Cumple tus sueños! "
+                </p>
+            </div>
+        </div>
+    </section>
 
+    <main>
         <!-- Informacion personal -->
         <section class="section" id="informacion">
             <div class="container">
@@ -92,14 +101,13 @@
                                 E-MAIL
                             </h3>
                             <h4 class="has-text-right">
-                                Rakultur@hotmail.com
+                                rkt.nicolasg@gmail.com
                             </h4>
                         </div>
                         <!-- Contenido columna 2  -->
                         <div class="column" style="align-self: center;">
-                            <img src="images/foto_perfil.png"
-                                height="150dp" width="150dp" alt="Imagen de
-                                perfil">
+                            <img class="zoom" src="images/foto_perfil.png" alt="Imagen de
+                                perfil" height="200" width="150">
                         </div>
                     </div>
                 </div>
@@ -107,15 +115,14 @@
         </section>
 
         <!-- Conocimiento  -->
-        <section class="section">
+        <section class="section" id="conocimientos">
             <div class="container">
                 <div class="content has-text-centered">
                     <!-- Conocimientos -->
                     <h2 class="title has-text-danger is-size-1">
                         CONOCIMIENTOS
                     </h2>
-                    <img src="images/conocimientos/junior.png" alt="Junior"
-                        height="60dp" width="60dp">
+                    <img src="images/conocimientos/junior.png" alt="Junior" height="60px" width="60px">
                     <p>
                         Técnico en programación de software
                     </p>
@@ -125,8 +132,11 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 Java
                             </h4>
-                            <img src="images/conocimientos/java.png" alt="Java"
-                                height="60dp" width="60dp">
+                            <a href="java.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/java.png" alt="Java" height="60px" width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Basico
                             </h4>
@@ -134,8 +144,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 CSS 3
                             </h4>
-                            <img src="images/conocimientos/css-3.png" alt="CSS
-                                3" height="60dp" width="60dp">
+                            <a href="css.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/css-3.png" alt="CSS
+                                        3" height="60px" width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Basico
                             </h4>
@@ -143,8 +157,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 SQL
                             </h4>
-                            <img src="images/conocimientos/servidor-sql.png"
-                                alt="SQL" height="60dp" width="60dp">
+                            <a href="sql.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/servidor-sql.png" alt="SQL" hheight="60px"
+                                        width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Basico
                             </h4>
@@ -152,8 +170,11 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 Word
                             </h4>
-                            <img src="images/conocimientos/palabra.png"
-                                alt="Word" height="60dp" width="60dp">
+                            <a href="word.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/palabra.png" alt="Word" height="60px" width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Intermedio
                             </h4>
@@ -163,8 +184,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 HTML 5
                             </h4>
-                            <img src="images/conocimientos/html-5.png" alt="HMTL
-                                5" height="60dp" width="60dp">
+                            <a href="html.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/html-5.png" alt="HMTL
+                                        5" height="60px" width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Intermedio
                             </h4>
@@ -172,9 +197,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 Android Studio / APP
                             </h4>
-                            <img
-                                src="images/conocimientos/simbolo-de-caracter-de-android.png"
-                                alt="Android" height="60dp" width="60dp">
+                            <a href="android.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/simbolo-de-caracter-de-android.png" alt="Android"
+                                        height="60px" width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Basico (JAVA - XML)
                             </h4>
@@ -182,8 +210,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 Excel
                             </h4>
-                            <img src="images/conocimientos/sobresalir.png"
-                                alt="Excel" height="60dp" width="60dp">
+                            <a href="excel.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/sobresalir.png" alt="Excel" height="60px"
+                                        width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Intermedio
                             </h4>
@@ -191,8 +223,12 @@
                             <h4 class="subtitle has-text-black is-size-3">
                                 Power point
                             </h4>
-                            <img src="images/conocimientos/powerpoint.png"
-                                alt="Power point" height="60dp" width="60dp">
+                            <a href="power point.html">
+                                <button class="has-background-white-ter" style="border-radius: 50px;">
+                                    <img src="images/conocimientos/powerpoint.png" alt="Power point" height="60px"
+                                        width="60px">
+                                </button>
+                            </a>
                             <h4 class="subtitle has-text-black is-size-6">
                                 Intermedio
                             </h4>
@@ -201,7 +237,7 @@
                     <br>
                     <!-- Titulos obtenidos -->
                     <h2 class="title has-text-danger
-                        is-size-1">
+                        is-size-1" id="titulos">
                         TITULOS
                     </h2>
                     <h4 class="has-text-left has-text-black is-size-3">
@@ -228,7 +264,7 @@
                     </p>
                     <!-- Experiencia laboral -->
                     <h2 class="title has-text-danger
-                        is-size-1">
+                        is-size-1" id="experiencia">
                         EXPERIENCIA LABORAL
                     </h2>
                     <br>
@@ -252,38 +288,58 @@
                 </div>
             </div>
         </section>
-        <!-- Footer -->
-        <section class="container">
-            <footer class="footer">
-                <div class="columns">
-                    <!-- Nombre y propiedad -->
-                    <div class="column">
-                        <div class="content has-text-centered">
-                            <h6 class="title has-text-danger-dark">
-                                NICOLAS GARCIA PINILLA
-                            </h6>
-                            <h6 class="title has-text-danger-dark">
-                                BOGOTA D.C. 2022
-                            </h6>
-                        </div>
-                    </div>
-                    <!-- Redes sociales -->
-                    <div class="column">
-                        <div class="content has-text-centered">
-                            <!-- Lista redes sociales -->
-                            <img src="images/logos redes/whatsapp.png"
-                                alt="whatsapp" height="30" width="30">
-                            <img src="images/logos redes/gmail.PNG"
-                                alt="gmail" height="30" width="30">
-                            <img src="images/logos redes/instagram.png"
-                                alt="instagram" height="30" width="30">
-                        </div>
+    </main>
+
+    <!-- Footer -->
+    <section class="container" id="acerca">
+        <footer class="footer">
+            <div class="columns is-ga">
+                <!-- Nombre y propiedad -->
+                <div class="column" style="align-self: center;">
+                    <div class="content has-text-centered">
+                        <h6 class="title has-text-danger-dark">
+                            NICOLAS GARCIA PINILLA
+                        </h6>
+                        <h6 class="title has-text-danger-dark">
+                            BOGOTA D.C. 2022
+                        </h6>
                     </div>
                 </div>
-            </footer>
-        </section>
-        <!-- JS Complementos -->
-        <script src="js/general.js">
-        </script>
-    </body>
+                <!-- Redes sociales -->
+                <div class="column">
+                    <div class="content has-text-centered">
+                        <!-- Lista redes sociales -->
+                        <ul style="list-style:none ;">
+                            <li>
+                                <a href="mailto:rkt.nicolasg@gmail.com" target="_blank">
+                                    <img src="images/logos redes/gmail.png" alt="gmail" height="30px" width="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/rakultur/" target="_blank">
+                                    <img src="images/logos redes/instagram.png" alt="instagram" height="30px"
+                                        width="30px">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=+573228830621&text=Hola, Nececito mas informacion!"
+                                    target="_blank">
+                                    <img src="images/logos redes/whatsapp.png" alt="whatsapp" height="30px"
+                                        width="30px">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- JS Complementos -->
+    <script src="js/general.js">
+    </script>
+    <!-- Libreria para zoom -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</body>
+
 </html>
