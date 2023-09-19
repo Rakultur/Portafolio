@@ -62,9 +62,8 @@ nav ul li:hover {
 }
 
 .container div {
-    flex: 1;
-    margin: 0.2%;
-    padding: 0.2%;
+    margin: 0.5%;
+    padding: 0.5%;
 }
 
 .presentacion {
@@ -86,11 +85,8 @@ nav ul li:hover {
 /* Cards */
 
 .card {
-    height: 300px;
-    padding:16px;
-    margin: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.450);
-    transition: 0.3s;
+   width: 500px;
+   height: 200px;
 }
 
 .card img {
