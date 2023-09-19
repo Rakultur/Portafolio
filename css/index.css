@@ -52,7 +52,6 @@ nav ul li:hover {
 
 /* Contenedores */
 .container {
-    height: 500px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -68,7 +67,10 @@ nav ul li:hover {
     padding: 0.2%;
 }
 
-.presentacion {}
+.presentacion {
+    background-color: #e43535;
+    height: 600px;
+}
 
 .banner {
     width: 500px;
@@ -84,8 +86,8 @@ nav ul li:hover {
 /* Cards */
 
 .card {
-    /* Add shadows to create the "card" effect */
-    padding: 2px 16px;
+    height: 300px;
+    padding:16px;
     margin: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.450);
     transition: 0.3s;
