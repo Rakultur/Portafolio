@@ -1,6 +1,5 @@
 /* Body */
 body {
-    background-color: #1c1c1c;
     font-family: fantasy;
     color: black;
 }
@@ -23,6 +22,7 @@ header {
     width: 100px;
     height: 50px;
     margin-left: 50px;
+    padding: 2%;
 }
 
 nav ul {
@@ -38,7 +38,6 @@ nav ul li {
     margin: 15px;
     text-decoration: none;
     border-radius: 5px;
-    color:  #f5f5f5 ;
 }
 
 nav ul li:hover {
@@ -51,30 +50,43 @@ nav ul li:hover {
 }
 
 /* Contenedores */
-.container {
+
+/* Column */
+.container-column {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-color:  #f5f5f5 ;
     margin: 1%;
 }
 
-.container div {
+.container-column div {
+    margin: 0.5%;
+    padding: 0.5%;
+}
+
+/* Row */
+
+.container-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+.container-row div {
     margin: 0.5%;
     padding: 0.5%;
 }
 
 .presentacion {
-    background-color: #e43535;
     height: 600px;
 }
 
 .banner {
     width: 500px;
     height: 300px;
-
 }
 
 .banner-p {
@@ -82,11 +94,16 @@ nav ul li:hover {
     height: 300px;
 }
 
+.titulos {
+    font-size: 150%;
+    color: #f4511e;
+}
+
 /* Cards */
 
 .card {
-   width: 500px;
-   height: 200px;
+    width: 500px;
+    height: 200px;
 }
 
 .card img {
@@ -109,12 +126,12 @@ nav ul li:hover {
 @media(max-width: 500px) {
     .banner {
         width: 100%;
-        height: 30%;
+        height: 60%;    
     }
 
     .banner-p {
         width: 100%;
-        height: 30%;
+        height: 50%;
     }
 }
 
@@ -155,6 +172,12 @@ footer ul li {
     color: black;
 }
 
+.bg-black {
+    background-color: #3a3a3a;
+    color: black;
+}
+
+
 .bg-green {
     background-color: #1abc9c;
     color: black;
@@ -171,7 +194,7 @@ footer ul li {
 }
 
 .bg-orange {
-    background-color:  #f4511e ;
+    background-color: #f4511e;
     color: black;
 }
 
