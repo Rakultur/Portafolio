@@ -20,31 +20,28 @@
 
 <body class="bg-white">
     <!-- Header -->
-    <header class="header bg-green">
-        <!-- Logo -->
-        <div>
-            <a href="index.html">
-                <img src="asset/logos/logo navbar.png" alt="logo.png" class="logo">
-            </a>
+    <header class="header">
+        <!-- Boton tema -->
+        <div class="switch-button">
+            <!-- Checkbox -->
+            <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+            <!-- Botón -->
+            <label for="switch-label" class="switch-button__label"></label>
         </div>
         <!-- Menu -->
         <nav class="nav">
-            <!-- Logo navbar -->
-            <!-- <ul class="">
-                <li class="menu-item">Informacion</li>
-                <li class="menu-item">Conocimientos</li>
-                <li class="menu-item">Titulos</li>
-                <li class="menu-item">Experiencia</li>
-                <li class="menu-item">Acerca</li>
-            </ul> -->
         </nav>
     </header>
     <!-- Main -->
-    <main>
+    <main class="flex-row">
         <!-- presentacion -->
-        <div class="container-column r-flex-center presentacion">
+        <div class="flex-row">
+            <!-- Imagen presentacion -->
             <div>
                 <img src="asset/logos/logo hero.png" alt="banner" class="banner">
+            </div>
+            <!-- Informacion -->
+            <div class="flex-column">
                 <h1>
                     Nicolás García
                 </h1>
@@ -53,84 +50,75 @@
                 </h2>
             </div>
         </div>
-        <!-- Informacion -->
-        <h2 class="titulos r-flex-center">
-            Informacion
-        </h2>
-        <div class="container-row">
-            <h3>
-                <strong>Nombre : </strong> Nicolas G.
-            </h3>
-            <hr>
-            <h3>
-                <strong>Residencia : </strong> Bogota, Colombia.
-            </h3>
-            <hr>
-            <img src="asset/presentacion.gif" alt="" class="banner-p">
-        </div>
-        </div>
         <!-- Conocimientos -->
-        <h2 class="titulos r-flex-center">
-            Conocimientos
-        </h2>
-        <div class="container-row r-flex-center">
-            <!-- css -->
-            <div class="card bg-blue">
-                <h3>CSS</h3>
-                <img src="asset/conocimientos/css-3.png" alt="css" class="logos">
-                <ul>
-                    <li>Diseño pagina web css3</li>
-                    <li>bootstrap 5.3</li>
-                    <li>Bulma.io</li>
-                </ul>
+        <div class="flex-column">
+            <!-- Titulo -->
+            <div>
+                <h2 class="titulos r-flex-center">
+                    Conocimientos
+                </h2>
             </div>
-            <!-- Ofitmatica -->
-            <div class="card bg-green">
-                <h3>Ofitmatica</h3>
-                <img src="asset/conocimientos/palabra.png" alt="Ofitmatica" class="logos">
-                <ul>
-                    <li>Word</li>
-                    <li>Excel</li>
-                    <li>Power point</li>
-                </ul>
-            </div>
-            <!--  Sketchup  -->
-            <div class="card bg-white">
-                <h3>Sketchup</h3>
-                <img src="asset/conocimientos/sketchup.png" alt="Sketchup" class="logos">
-                <ul>
-                    <li>Modelado 2D y 3D</li>
-                    <li>Elaboración de planos</li>
-                    <li>Layout</li>
-                </ul>
-            </div>
-            <!-- Python -->
-            <div class="card bg-yellow">
-                <h3>Python</h3>
-                <img src="asset/conocimientos/Python.ico" alt="Python" class="logos">
-                <ul>
-                    <li>Programación basica</li>
-                    <li>Tkinter</li>
-                    <li>Poo</li>
-                </ul>
-            </div>
-            <!-- Html -->
-            <div class="card bg-orange">
-                <h3>Html</h3>
-                <img src="asset/conocimientos/html-5.png" alt="Html" class="logos">
-                <ul>
-                    <li>Etiquetas</li>
-                    <li>Estructura</li>
-                    <li>Documentación</li>
-                </ul>
+            <div class="flex-row">
+                <!-- css -->
+                <div class="card bg-blue">
+                    <h3>CSS</h3>
+                    <img src="asset/conocimientos/css-3.png" alt="css" class="logos">
+                    <ul>
+                        <li>Diseño pagina web css3</li>
+                        <li>bootstrap 5.3</li>
+                        <li>Bulma.io</li>
+                    </ul>
+                </div>
+                <!-- Ofitmatica -->
+                <div class="card bg-green">
+                    <h3>Ofitmatica</h3>
+                    <img src="asset/conocimientos/palabra.png" alt="Ofitmatica" class="logos">
+                    <ul>
+                        <li>Word</li>
+                        <li>Excel</li>
+                        <li>Power point</li>
+                    </ul>
+                </div>
+                <!--  Sketchup  -->
+                <div class="card bg-white">
+                    <h3>Sketchup</h3>
+                    <img src="asset/conocimientos/sketchup.png" alt="Sketchup" class="logos">
+                    <ul>
+                        <li>Modelado 2D y 3D</li>
+                        <li>Elaboración de planos</li>
+                        <li>Layout</li>
+                    </ul>
+                </div>
+                <!-- Python -->
+                <div class="card bg-yellow">
+                    <h3>Python</h3>
+                    <img src="asset/conocimientos/Python.ico" alt="Python" class="logos">
+                    <ul>
+                        <li>Programación basica</li>
+                        <li>Tkinter</li>
+                        <li>Poo</li>
+                    </ul>
+                </div>
+                <!-- Html -->
+                <div class="card bg-orange">
+                    <h3>Html</h3>
+                    <img src="asset/conocimientos/html-5.png" alt="Html" class="logos">
+                    <ul>
+                        <li>Etiquetas</li>
+                        <li>Estructura</li>
+                        <li>Documentación</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Titulos -->
-        <h2 class="titulos r-flex-center">
-            Titulos
-        </h2>
-        <div class="container-column r-flex-center">
+        <div class="flex-column">
             <div>
+                <h2 class="titulos r-flex-center">
+                    Titulos
+                </h2>
+            </div>
+            <div class="r-flex-center">
                 <h3>
                     PRIMARIA ACADÉMICA
                 </h3>
@@ -146,10 +134,12 @@
             </div>
         </div>
         <!-- Experiencia -->
-        <h2 class="titulos r-flex-center">
-            Experiencia
-        </h2>
-        <div class="container-column r-flex-center">
+        <div class="flex-column  r-flex-center">
+            <div>
+                <h2 class="titulos">
+                    Experiencia
+                </h2>
+            </div>
             <div>
                 <h3>
                     INDUAGAR S.A.S | 2021 - Actualidad

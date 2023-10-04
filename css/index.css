@@ -1,3 +1,10 @@
+:root {
+    --color-green: #00f7b18a;
+    --color-red: #818181;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+
 /* Body */
 body {
     font-family: fantasy;
@@ -12,8 +19,6 @@ ul {
 header {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
     padding: 5px;
     margin: 5px;
 }
@@ -49,33 +54,71 @@ nav ul li:hover {
     background-color: rgba(255, 255, 255, 0.89);
 }
 
+/* Interruptor */
+
+.switch-button {
+    display: inline-block;
+}
+
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 5rem;
+    height: 3rem;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+
+.switch-button .switch-button__label:before {
+    transition: .50s;
+    display: block;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+
+.switch-button .switch-button__checkbox:checked+.switch-button__label {
+    background-color: var(--color-green);
+}
+
+.switch-button .switch-button__checkbox:checked+.switch-button__label:before {
+    transform: translateX(2rem);
+}
+
 /* Contenedores */
 
 /* Column */
-.container-column {
+
+.flex-column {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    margin: 1%;
 }
 
-.container-column div {
+.flex-column div {
     margin: 0.5%;
     padding: 0.5%;
 }
 
 /* Row */
 
-.container-row {
+.flex-row {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 1%;
 }
 
-.container-row div {
+.flex-row div {
     margin: 0.5%;
     padding: 0.5%;
 }
@@ -102,8 +145,9 @@ nav ul li:hover {
 /* Cards */
 
 .card {
-    width: 500px;
+    width: 400px;
     height: 200px;
+    text-align: center;
 }
 
 .card img {
@@ -126,7 +170,7 @@ nav ul li:hover {
 @media(max-width: 500px) {
     .banner {
         width: 100%;
-        height: 60%;    
+        height: 60%;
     }
 
     .banner-p {
@@ -134,8 +178,6 @@ nav ul li:hover {
         height: 50%;
     }
 }
-
-
 
 /* Footer */
 
@@ -196,9 +238,7 @@ footer ul li {
 .bg-orange {
     background-color: #f4511e;
     color: black;
-}
-
-
+}   
 
 .r-flex-star {
     text-align: start;
