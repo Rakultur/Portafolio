@@ -147,6 +147,7 @@ nav ul li:hover {
 .card {
     width: 350px;
     height: 200px;
+    border-radius: 10px;
     text-align: center;
 }
 
