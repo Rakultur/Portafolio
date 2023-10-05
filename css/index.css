@@ -117,16 +117,30 @@ nav ul li:hover {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    height: 600px;
 }
 
 .flex-row div {
+    margin: 5%;
+    padding: 5%;
+}
+
+/* Rorc cards */
+
+.flex-row-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-cards div {
     margin: 0.5%;
     padding: 0.5%;
 }
 
-.presentacion {
-    height: 600px;
-}
+/* Banner */
 
 .banner {
     width: 500px;
@@ -240,7 +254,7 @@ footer ul li {
 .bg-orange {
     background-color: #f4511e;
     color: black;
-}   
+}
 
 .r-flex-star {
     text-align: start;
