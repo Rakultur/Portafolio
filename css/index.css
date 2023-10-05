@@ -9,7 +9,7 @@
 body {
     font-family: fantasy;
     color: black;
-    background-color: #cad6da;
+    background-color: #ffffff86;
 }
 
 ul {
@@ -117,13 +117,13 @@ nav ul li:hover {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 600px;
 }
 
 .flex-row div {
-    margin: 5%;
-    padding: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: start;
 }
 
 /* Rorc cards */
@@ -152,9 +152,11 @@ nav ul li:hover {
     height: 300px;
 }
 
+/* Titulos */
+
 .titulos {
-    font-size: 150%;
-    color: #f4511e;
+    font-size: 60px;
+    color: #ff5252;
 }
 
 /* Cards */
@@ -183,18 +185,6 @@ nav ul li:hover {
     padding: 5px;
 }
 
-@media(max-width: 500px) {
-    .banner {
-        width: 100%;
-        height: 60%;
-    }
-
-    .banner-p {
-        width: 100%;
-        height: 50%;
-    }
-}
-
 /* Footer */
 
 footer {
@@ -202,7 +192,8 @@ footer {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
+    background-color: #82e9d4;
 }
 
 footer ul {
@@ -266,4 +257,21 @@ footer ul li {
 
 .r-flex-center {
     text-align: center;
+}
+
+@media(max-width: 500px) {
+    .banner {
+        width: 100%;
+        height: 60%;
+    }
+
+    .banner-p {
+        width: 100%;
+        height: 50%;
+    }
+
+    .titulos {
+        font-size: 30px;
+        color: #ff5252;
+    }
 }
