@@ -1,15 +1,12 @@
-:root {
-    --color-green: #00f7b18a;
-    --color-red: #818181;
-    --color-button: #fdffff;
-    --color-black: #000;
-}
-
 /* Body */
 body {
     font-family: fantasy;
     color: black;
     background-color: #ffffff86;
+}
+
+h1{
+    text-overflow:ellipsis;
 }
 
 ul {
@@ -55,55 +52,11 @@ nav ul li:hover {
     background-color: rgba(255, 255, 255, 0.89);
 }
 
-/* Interruptor */
-
-.switch-button {
-    display: inline-block;
-}
-
-.switch-button .switch-button__checkbox {
-    display: none;
-}
-
-.switch-button .switch-button__label {
-    background-color: var(--color-red);
-    width: 5rem;
-    height: 3rem;
-    border-radius: 3rem;
-    display: inline-block;
-    position: relative;
-}
-
-.switch-button .switch-button__label:before {
-    transition: .50s;
-    display: block;
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--color-button);
-    content: '';
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-
-.switch-button .switch-button__checkbox:checked+.switch-button__label {
-    background-color: var(--color-green);
-}
-
-.switch-button .switch-button__checkbox:checked+.switch-button__label:before {
-    transform: translateX(2rem);
-}
-
 /* Banner */
 
 .banner {
-    width: 500px;
-    height: 300px;
-}
-
-.banner-p {
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    height: 200px;
 }
 
 /* Titulos */
@@ -113,9 +66,14 @@ nav ul li:hover {
     color: rgb(236, 70, 48);
 }
 
-.titulos {
-    font-size: 60px;
-    color: #ff5252;
+.title-2 {
+    font-size: 40px;
+    color: rgba(236, 70, 48, 0.759);
+}
+
+.title-3 {
+    font-size: 30px;
+    color: rgba(25, 207, 156, 0.759);
 }
 
 /* Column */
@@ -126,11 +84,8 @@ nav ul li:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.flex-column div {
-    margin: 5%;
-    padding: 5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* Row */
@@ -141,12 +96,8 @@ nav ul li:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 100px;
-}
-
-.flex-row div {
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* Rorc cards */
@@ -197,7 +148,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     color: rgb(255, 255, 255);
-    background-color: #82e9d4;
+    background-color: #3189a1ca;
 }
 
 footer ul {
@@ -258,6 +209,11 @@ footer ul li {
         color: rgb(236, 70, 48);
     }
 
+    .title-2 {
+        font-size: 30px;
+        color: rgb(236, 70, 48);
+    }
+
     .flex-row {
         display: flex;
         flex-flow: row wrap;
@@ -270,15 +226,5 @@ footer ul li {
     .banner {
         width: 100%;
         height: 90%;
-    }
-
-    .banner-p {
-        width: 100%;
-        height: 50%;
-    }
-
-    .titulos {
-        font-size: 30px;
-        color: #ff5252;
     }
 }
