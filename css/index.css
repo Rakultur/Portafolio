@@ -146,9 +146,9 @@ footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center;
     color: rgb(255, 255, 255);
     background-color: #3189a1ca;
+    text-align: center;
 }
 
 footer ul {
