@@ -1,108 +1,55 @@
 /* Body */
 body {
     font-family: fantasy;
-    color: black;
-    background-color: #ffffff86;
-}
-
-h1{
-    text-overflow:ellipsis;
-}
-
-ul {
-    list-style: symbols();
-}
-
-/* Header */
-header {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 5px;
-    margin: 5px;
-}
-
-.logo {
-    width: 100px;
-    height: 50px;
-    margin-left: 50px;
-    padding: 2%;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     list-style: none;
-    margin-right: 50px;
+    /* honeydew */
+    color: #f0fff0 ;    
+    /* Azul negruzco */
+    background-color: #18171c;
 }
 
-nav ul li {
-    padding: 10px;
-    margin: 15px;
-    text-decoration: none;
-    border-radius: 5px;
+ul{
+    list-style: none;
+    text-align: start;
 }
 
-nav ul li:hover {
-    padding: 10px;
-    margin: 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.89);
-}
+/* Hero */
 
-/* Banner */
-
-.banner {
-    max-width: 100%;
-    height: 200px;
-}
-
-/* Titulos */
-
-.title-1 {
-    font-size: 130px;
-    color: rgb(236, 70, 48);
-}
-
-.title-2 {
-    font-size: 40px;
-    color: rgba(236, 70, 48, 0.759);
-}
-
-.title-3 {
-    font-size: 30px;
-    color: rgba(25, 207, 156, 0.759);
-}
-
-.title-4 {
-    font-size: 150%;
-    color: rgba(0, 0, 0, 0.759);
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    /* Fondo */
+    background-image: url(/asset/images/presentacion.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Column */
 
 .flex-column {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 /* Row */
 
 .flex-row {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 /* Cards */
@@ -113,58 +60,82 @@ nav ul li:hover {
     border-radius: 10px;
     padding: 10px;
     margin: 60px;
+    background-color: #e3e562;
 }
 
 .card img {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.555);
 }
 
 .logos {
-    width: 15px;
-    height: 15px;
-    background-color: #00000017;
-    border-radius: 2px;
-    padding: 5px;
+    background-color: #000000;
+    border-radius: 20%;
+    padding: 10px;
 }
 
 /* Footer */
 
 footer {
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    color: rgb(255, 255, 255);
-    background-color: #3189a1ca;
+    flex-direction: row;
     text-align: center;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: #fff8dc;
 }
 
 footer ul {
     display: flex;
     flex-flow: row wrap;
-    list-style: none;
-}
-
-footer ul li {
-    margin: 15px;
-}
-
-.c-footer {
-    font-size: 15px;
+    justify-content: space-around;
 }
 
 .f-logo {
-    height: 50px;
+    height: 5vh;
+    background-color: #000000;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 5vw;
+}
+
+/* Titulos y textos */
+
+.title-1 {
+    font-size: 7vh;
+}
+
+.title-2 {
+    font-size: 6vh;
+}
+
+.title-3 {
+    font-size: 5vh;
+    text-decoration: solid;
+}
+
+.title-4 {
+    font-size: 4vh;
+}
+
+p{
+    font-size: 3vh;
+}
+
+text{
+    font-size: 3vh;
 }
 
 /* Estilos */
 
 .bg-blue {
-    background-color: #3498db;
+    background-color: rgb(58, 107, 253);
     color: black;
 }
 
@@ -172,7 +143,6 @@ footer ul li {
     background-color: #3a3a3a;
     color: black;
 }
-
 
 .bg-green {
     background-color: #1abc9c;
@@ -185,7 +155,7 @@ footer ul li {
 }
 
 .bg-yellow {
-    background-color: #f4d03f;
+    background-color: rgb(255, 255, 0);
     color: black;
 }
 
@@ -194,28 +164,27 @@ footer ul li {
     color: black;
 }
 
-@media(max-width: 500px) {
+.bg-brown {
+    background-color:rgb(185, 113, 41);
+    color: black;
+}
 
-    .title-1 {
-        font-size: 70px;
-        color: rgb(236, 70, 48);
-    }
+.bg-purple {
+    background-color:rgb(128, 0, 128);
+    color: black;
+}
 
-    .title-2 {
-        font-size: 20px;
-        color: rgb(236, 70, 48);
-    }
+.text-white {
+    /* ivory */
+    color: #fffff0;
+}
 
-    .card {
-        min-width: 250px;
-        min-height: 200px;
-        border-radius: 10px;
-        padding: 5px;
-        margin: 30px;
-    }
-    
-    .banner {
-        max-width: 100%;
-        height: 100px;
-    }
+.text-black {
+    /* black */
+    color: #000000;
+}
+
+.text-red {
+    /* crimson */
+    color: #dc143c;
 }
