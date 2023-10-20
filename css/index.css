@@ -88,7 +88,7 @@ footer {
     text-align: center;
     align-content: center;
     justify-content: space-evenly;
-    background-color: #fff8dc;
+    background-color: #ffffff;
 }
 
 footer ul {
@@ -117,7 +117,7 @@ footer ul {
 
 .title-3 {
     font-size: 5vh;
-    text-decoration: solid;
+    text-decoration: double;
 }
 
 .title-4 {
@@ -165,12 +165,12 @@ text{
 }
 
 .bg-brown {
-    background-color:rgb(185, 113, 41);
+    background-color:rgb(243, 148, 53);
     color: black;
 }
 
 .bg-purple {
-    background-color:rgb(128, 0, 128);
+    background-color:rgb(228, 0, 228);
     color: black;
 }
 
