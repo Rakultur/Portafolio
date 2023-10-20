@@ -23,7 +23,7 @@ ul{
     justify-content: center;
     align-content: center;
     /* Fondo */
-    background-image: url(/asset/images/presentacion.gif);
+    background-image: url(../asset/images/presentacion.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
