@@ -1,16 +1,132 @@
+:root {
+    /* Frase */
+    --frase: "¡El cielo es el limite!";
+    /* Principales */
+    --color-fuente: #ffffff;
+    --color-fondo: #03001C;
+    /* Paleta de colores */
+    --color-red: #D21312;
+    --color-blue: #4F709C;
+    --color-green: #03C988;
+    --color-yellow: #EAC100;
+    --color-white: #FAF8F1;
+    --color-black: #0F0F0F;
+    --color-purple: #810CA8;
+    --color-orange: #FF4C29;
+    --color-brown: #E5BA73;
+}
+
+[tema="light"] {
+    /* Frase */
+    --frase: "¡Jamas dejes de soñar, ¡Cumple tus sueños!";
+    /* Paleta de colores */
+    --color-fuente: #000;
+    --color-fondo: #FFFFDD;
+
+    /* Colores */
+    --color-red: #D21312;
+    --color-blue: #4F709C;
+    --color-green: #03C988;
+    --color-yellow: #EAC100;
+    --color-white: #0F0F0F;
+    --color-black: #FAF8F1;
+    --color-purple: #810CA8;
+    --color-orange: #FF4C29;
+    --color-brown: #E5BA73;
+
+    /* Fondo hero*/
+    .hero {
+        background-image: url(../asset/images/claro.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
 /* Body */
+
 body {
     font-family: fantasy;
     list-style: none;
     /* honeydew */
-    color: #f0fff0 ;    
+    color: var(--color-fuente);
     /* Azul negruzco */
-    background-color: #18171c;
+    background-color: var(--color-fondo);
 }
 
-ul{
+ul {
     list-style: none;
     text-align: start;
+}
+
+/* Header */
+
+header{
+    position: fixed;
+    top: 1em; right: 1em;
+}
+
+/* Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-purple);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-white);
+    background-image: url(/asset/images/noche.png);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-yellow);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-yellow);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* Hero */
@@ -23,7 +139,7 @@ ul{
     justify-content: center;
     align-content: center;
     /* Fondo */
-    background-image: url(../asset/images/presentacion.gif);
+    background-image: url(../asset/images/oscuro.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -60,8 +176,8 @@ ul{
     border-radius: 10px;
     padding: 10px;
     margin: 60px;
-    background-color: #6bb8be;
-    color:#000000;
+    background-color: var(--color-blue);
+    color: var(--color-white);
 }
 
 .card img {
@@ -70,11 +186,11 @@ ul{
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.555);
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.225);
 }
 
 .logos {
-    background-color: #000000;
+    background-color: var(--color-black);
     border-radius: 20%;
     padding: 10px;
 }
@@ -89,7 +205,7 @@ footer {
     text-align: center;
     align-content: center;
     justify-content: space-evenly;
-    background-color: #ffffff;
+    background-color: var(--color-white);
 }
 
 footer ul {
@@ -100,7 +216,7 @@ footer ul {
 
 .f-logo {
     height: 5vh;
-    background-color: #000000;
+    background-color: var(--color-black);
     border-radius: 50%;
     padding: 2px;
     margin: 5vw;
@@ -125,67 +241,56 @@ footer ul {
     font-size: 4vh;
 }
 
-p{
+p {
     font-size: 3vh;
 }
 
-text{
+text {
     font-size: 3vh;
 }
 
 /* Estilos */
 
 .bg-blue {
-    background-color: rgb(58, 107, 253);
-    color: black;
+    background-color: var(--color-blue);
 }
 
 .bg-black {
-    background-color: #3a3a3a;
-    color: black;
+    background-color: var(--color-black);
 }
 
 .bg-green {
-    background-color: #1abc9c;
-    color: black;
+    background-color: var(--color-green);
 }
 
 .bg-white {
-    background-color: #ecf0f1;
-    color: black;
+    background-color: var(--color-white);
 }
 
 .bg-yellow {
-    background-color: rgb(255, 255, 0);
-    color: black;
+    background-color: var(--color-yellow);
 }
 
 .bg-orange {
-    background-color: #f4511e;
-    color: black;
+    background-color: var(--color-orange);
 }
 
 .bg-brown {
-    background-color:rgb(243, 148, 53);
-    color: black;
+    background-color: var(--color-brown);
 }
 
 .bg-purple {
-    background-color:rgb(228, 0, 228);
-    color: black;
+    background-color: var(--color-purple);
 }
 
 .text-white {
-    /* ivory */
-    color: #fffff0;
+    color: var(--color-white);
 }
 
 .text-black {
-    /* black */
-    color: #000000;
+    color: var(--color-black);
 }
 
 .text-red {
-    /* crimson */
-    color: #dc143c;
+    color: var(--color-red);
 }
