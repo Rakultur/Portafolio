@@ -1,6 +1,7 @@
-:root {
-    /* Frase */
-    --frase: "¡El cielo es el limite!";
+:root {}
+
+/* Tema oscuro */
+[tema="dark"] {
     /* Principales */
     --color-fuente: #ffffff;
     --color-fondo: #03001C;
@@ -14,11 +15,17 @@
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
+
+    /* Fondo hero*/
+    .hero {
+        background-image: url(../asset/images/oscuro.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
+/* Tema claro */
 [tema="light"] {
-    /* Frase */
-    --frase: "¡Jamas dejes de soñar, ¡Cumple tus sueños!";
     /* Paleta de colores */
     --color-fuente: #000;
     --color-fondo: #FFFFDD;
@@ -60,9 +67,10 @@ ul {
 
 /* Header */
 
-header{
+header {
     position: fixed;
-    top: 1em; right: 1em;
+    top: 1em;
+    right: 1em;
 }
 
 /* Switch */
@@ -138,10 +146,6 @@ input:checked+.slider:before {
     width: 100%;
     justify-content: center;
     align-content: center;
-    /* Fondo */
-    background-image: url(../asset/images/oscuro.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 /* Column */
