@@ -6,7 +6,8 @@ const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
                 if(ev.target.checked){
                     document.documentElement.setAttribute('tema', 'light');
                 } else {
-                    document.documentElement.setAttribute('tema', '');
+                    document.documentElement.setAttribute('tema', 'dark');
                 }
             }
             colorSwitch.addEventListener('change', cambiaTema);
+
