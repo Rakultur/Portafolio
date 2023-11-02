@@ -1,4 +1,25 @@
-:root {}
+:root {
+    /* Principales */
+    --color-fuente: #ffffff;
+    --color-fondo: #03001C;
+    /* Paleta de colores */
+    --color-red: #D21312;
+    --color-blue: #4F709C;
+    --color-green: #03C988;
+    --color-yellow: #EAC100;
+    --color-white: #FAF8F1;
+    --color-black: #0F0F0F;
+    --color-purple: #810CA8;
+    --color-orange: #FF4C29;
+    --color-brown: #E5BA73;
+
+    /* Fondo hero*/
+    .hero {
+        background-image: url(../asset/images/oscuro.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
 
 /* Tema oscuro */
 [tema="dark"] {
