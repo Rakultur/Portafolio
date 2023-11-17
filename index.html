@@ -14,7 +14,7 @@
     <!-- Icono de pagina -->
     <link rel="shortcut icon" href="asset\images\logo junior.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="css\index.css">
+    <link rel="stylesheet" href="css\general.css">
     <link rel="stylesheet" href="css\media queries.css">
     <link rel="stylesheet" href="css\reset.css">
 </head>
@@ -22,15 +22,12 @@
 <body>
     <!-- header -->
     <header>
-        <label class="switch" id="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
+
     </header>
     <!-- Main -->
     <main class="flex-column">
         <!-- Presentacion -->
-        <div class="hero">
+        <div class="hero bg_principal">
             <h1 class="title-1 text-white">
                 <strong> Nicolás García</strong>
             </h1>
@@ -39,7 +36,7 @@
             </h3>
         </div>
         <!-- Conocimientos -->
-        <div class="flex-column">
+        <div class="flex-column ">
             <!-- Titulo -->
             <h3 class="title-3 text-red">
                 CONOCIMIENTOS
@@ -148,12 +145,22 @@
                 <li> Administracion </li>
             </ul>
         </div>
+        <!-- API -->
+        <div class="flex-column">
+            <h3 class="title-3 text-purple">
+                API
+            </h3>
+            <div class="flex-row">
+                <!-- Btn 1 -->
+                <a href="api.html"><button class="btn">api</button></a>
+            </div>
+        </div>
     </main>
     <!-- Footer -->
     <footer>
         <div>
             <h3 class="title-2 text-black">
-                NICOLAS GARCIA
+
             </h3>
             <h4 class="title-4 text-black">
                 BOGOTA D.C. 2023
@@ -173,6 +180,13 @@
                 <li><a href="https://github.com/Rakultur" target="_blank">
                         <img src="asset/images/logo github 2.png" alt="logo" class="f-logo">
                     </a></li>
+                <!--  -->
+                <li>
+                    <label class="switch f-logo" id="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
             </ul>
         </div>
     </footer>

@@ -14,11 +14,8 @@
     --color-brown: #E5BA73;
 
     /* Fondo hero*/
-    .hero {
-        background-image: url(../asset/images/oscuro.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+    --fondo: url(../asset/images/oscuro.jpg);
+
 }
 
 /* Tema oscuro */
@@ -38,11 +35,7 @@
     --color-brown: #E5BA73;
 
     /* Fondo hero*/
-    .hero {
-        background-image: url(../asset/images/oscuro.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+    --fondo: url(../asset/images/oscuro.jpg);
 }
 
 /* Tema claro */
@@ -54,7 +47,7 @@
     /* Colores */
     --color-red: #D21312;
     --color-blue: #4F709C;
-    --color-green: #03C988;
+    --color-green: #44f0b7;
     --color-yellow: #EAC100;
     --color-white: #0F0F0F;
     --color-black: #FAF8F1;
@@ -63,22 +56,24 @@
     --color-brown: #E5BA73;
 
     /* Fondo hero*/
-    .hero {
-        background-image: url(../asset/images/claro.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+    --fondo: url(../asset/images/claro.jpg);
+
 }
 
 /* Body */
 
 body {
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     list-style: none;
     /* honeydew */
     color: var(--color-fuente);
     /* Azul negruzco */
     background-color: var(--color-fondo);
+    text-decoration: none;
+}
+
+button a {
+    text-decoration: none;
 }
 
 ul {
@@ -169,6 +164,12 @@ input:checked+.slider:before {
     align-content: center;
 }
 
+.bg_principal {
+    background-image: var(--fondo);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* Column */
 
 .flex-column {
@@ -218,6 +219,27 @@ input:checked+.slider:before {
     background-color: var(--color-black);
     border-radius: 20%;
     padding: 10px;
+}
+
+/* Botones */
+
+.btn {
+    background-color: var(--color-green);
+    border: none;
+    color: var(--color-fuente);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 16px;
+    margin: 5%;
+}
+
+
+.btn:hover {
+    background-color: var(--color-fuente);
+    color: var(--color-black);
 }
 
 /* Footer */
@@ -318,4 +340,8 @@ text {
 
 .text-red {
     color: var(--color-red);
+}
+
+.text-purple {
+    color: var(--color-purple);
 }
