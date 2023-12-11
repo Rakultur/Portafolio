@@ -1,17 +1,18 @@
 :root {
     /* Principales */
-    --color-fuente: #ffffff;
-    --color-fondo: #03001C;
+    --color-fuente: #F0F0F0;
+    --color-fondo: #3C486B;
     /* Paleta de colores */
-    --color-red: #D21312;
+    --color-red: #F45050;
     --color-blue: #4F709C;
     --color-green: #03C988;
-    --color-yellow: #EAC100;
+    --color-yellow: #F9D949;
     --color-white: #FAF8F1;
     --color-black: #0F0F0F;
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
+    --color-card: #F9D949;
 
     /* Fondo hero*/
     --fondo: url(../asset/images/oscuro.jpg);
@@ -33,6 +34,7 @@
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
+    --color-card: #F9D949;
 
     /* Fondo hero*/
     --fondo: url(../asset/images/oscuro.jpg);
@@ -54,6 +56,7 @@
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
+    --color-card: #4F709C;
 
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
@@ -202,8 +205,8 @@ input:checked+.slider:before {
     border-radius: 10px;
     padding: 10px;
     margin: 60px;
-    background-color: var(--color-blue);
-    color: var(--color-white);
+    background-color: var(--color-card);
+    color: var(--color-black);
 }
 
 .card img {
@@ -212,7 +215,7 @@ input:checked+.slider:before {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.225);
+    box-shadow: 0 8px 16px 0 rgba(14, 14, 14, 0.566);
 }
 
 .logos {
@@ -224,14 +227,10 @@ input:checked+.slider:before {
 /* Botones */
 
 .btn {
-    background-color: var(--color-green);
-    border: none;
-    color: var(--color-fuente);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-radius: 15%;
     padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    list-style: none;
     font-size: 16px;
     margin: 5%;
 }
