@@ -1,7 +1,7 @@
 :root {
     /* Principales */
     --color-fuente: #F0F0F0;
-    --color-fondo: #3C486B;
+    --color-fondo: #2C3639;
     /* Paleta de colores */
     --color-red: #F45050;
     --color-blue: #4F709C;
@@ -12,32 +12,32 @@
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
-    --color-card: #F9D949;
+    --color-card: #DCD7C9;
 
     /* Fondo hero*/
-    --fondo: url(../asset/images/oscuro.jpg);
+    --fondo: url(../asset/images/presentacion.gif);
 
 }
 
 /* Tema oscuro */
 [tema="dark"] {
     /* Principales */
-    --color-fuente: #ffffff;
-    --color-fondo: #03001C;
+    --color-fuente: #F0F0F0;
+    --color-fondo: #2C3639;
     /* Paleta de colores */
-    --color-red: #D21312;
+    --color-red: #F45050;
     --color-blue: #4F709C;
     --color-green: #03C988;
-    --color-yellow: #EAC100;
+    --color-yellow: #F9D949;
     --color-white: #FAF8F1;
     --color-black: #0F0F0F;
     --color-purple: #810CA8;
     --color-orange: #FF4C29;
     --color-brown: #E5BA73;
-    --color-card: #F9D949;
+    --color-card: #DCD7C9;
 
     /* Fondo hero*/
-    --fondo: url(../asset/images/oscuro.jpg);
+    --fondo: url(../asset/images/presentacion.gif);
 }
 
 /* Tema claro */
