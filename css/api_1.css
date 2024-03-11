@@ -1,5 +1,13 @@
 /* Css Rick and morty */
-/* API # 1 */
+/* API */
+
+.btn_api_1 {
+    background-image: url(../asset/images/api_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
 
 /* Cards */
 
@@ -9,15 +17,17 @@
     background-repeat: no-repeat;
 }
 
-.card_chartacters {
+.chartacters {
     display: flex;
-    flex-direction: row;
-    min-width: 20vw;
-    min-height: 300px;
-    text-align: start;
+    flex-flow: row wrap;
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 400px;
 }
-.card_chartacters div {
-    margin: 2%;
+
+.chartacters div {
+    text-align: justify;
+    margin: 10px;
 }
 
 .card_image {

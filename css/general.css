@@ -96,15 +96,14 @@ header {
 
 .switch {
     position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+    display: block;
+    width: 58px;
+    align-items: center;
+    justify-content: center;
 }
 
 .switch input {
     opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 /* The slider */
@@ -123,10 +122,10 @@ header {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 28px;
+    width: 28px;
+    left: 5px;
+    bottom: 5px;
     background-color: var(--color-white);
     background-image: url(/asset/images/noche.png);
     -webkit-transition: .4s;
@@ -149,7 +148,7 @@ input:checked+.slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+    border-radius: 50px;
 }
 
 .slider.round:before {
@@ -161,10 +160,11 @@ input:checked+.slider:before {
 .hero {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     height: 100vh;
     width: 100%;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 .bg_principal {
@@ -226,19 +226,11 @@ input:checked+.slider:before {
 
 /* Botones */
 
-.btn {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    border-radius: 15%;
-    padding: 15px 32px;
-    font-size: 16px;
-    margin: 5%;
-}
-
-
-.btn:hover {
-    background-color: var(--color-fuente);
-    color: var(--color-black);
+.btn_img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
 }
 
 /* Footer */
