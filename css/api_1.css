@@ -20,6 +20,8 @@
 .chartacters {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: start  ;
     min-width: 200px;
     max-width: 300px;
     min-height: 400px;
