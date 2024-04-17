@@ -7,15 +7,15 @@
     --color-fuente: #F0F0F0;
     --color-fondo: #2C3639;
     /* Paleta de colores */
-    --color-red: #F45050;
-    --color-blue: #4F709C;
-    --color-green: #03C988;
-    --color-yellow: #F9D949;
-    --color-white: #FAF8F1;
-    --color-black: #0F0F0F;
-    --color-purple: #810CA8;
-    --color-orange: #FF4C29;
-    --color-brown: #E5BA73;
+    --color-rojo: #F45050;
+    --color-azul: #4F709C;
+    --color-verde: #03C988;
+    --color-amarillo: #F9D949;
+    --color-blanco: #FAF8F1;
+    --color-negro: #0F0F0F;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
     --color-card: #DCD7C9;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
@@ -27,15 +27,15 @@
     --color-fuente: #F0F0F0;
     --color-fondo: #2C3639;
     /* Paleta de colores */
-    --color-red: #F45050;
-    --color-blue: #4F709C;
-    --color-green: #03C988;
-    --color-yellow: #F9D949;
-    --color-white: #FAF8F1;
-    --color-black: #0F0F0F;
-    --color-purple: #810CA8;
-    --color-orange: #FF4C29;
-    --color-brown: #E5BA73;
+    --color-rojo: #F45050;
+    --color-azul: #4F709C;
+    --color-verde: #03C988;
+    --color-amarillo: #F9D949;
+    --color-blanco: #FAF8F1;
+    --color-negro: #0F0F0F;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
     --color-card: #DCD7C9;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
@@ -47,24 +47,18 @@
     --color-fuente: #000;
     --color-fondo: #FFFFDD;
     /* Colores */
-    --color-red: #D21312;
-    --color-blue: #4F709C;
-    --color-green: #44f0b7;
-    --color-yellow: #EAC100;
-    --color-white: #0F0F0F;
-    --color-black: #FAF8F1;
-    --color-purple: #810CA8;
-    --color-orange: #FF4C29;
-    --color-brown: #E5BA73;
+    --color-rojo: #D21312;
+    --color-azul: #4F709C;
+    --color-verde: #44f0b7;
+    --color-amarillo: #EAC100;
+    --color-blanco: #0F0F0F;
+    --color-negro: #FAF8F1;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
     --color-card: #4F709C;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
-}
-
-header {
-    position: fixed;
-    top: 1em;
-    right: 1em;
 }
 
 body {
@@ -73,15 +67,6 @@ body {
     color: var(--color-fuente);
     background-color: var(--color-fondo);
     text-decoration: none;
-}
-
-button a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-    text-align: start;
 }
 
 /* Header */
