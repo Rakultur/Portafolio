@@ -21,23 +21,23 @@ getCharacters(data => {
                         </div>
                         <div>
                             <!-- Nombre -->
-                            <h2>
+                            <h2 class="titulo-2 text-amarillo">
                                 ${personaje.name}
                             </h2>
                             <!-- Estado -->
-                            <strong>Estado :</strong><span> ${personaje.status} </span>
+                            <strong class="text-rojo">Estado :</strong><span> ${personaje.status} </span>
                             <br>
                             <!-- Especie -->
-                            <strong>Especie : </strong><span> ${personaje.species} </span>
+                            <strong class="text-rojo">Especie : </strong><span> ${personaje.species} </span>
                             <br>
                             <!-- Genero -->
-                            <strong>Genero : </strong> <span> ${personaje.gender} </span> 
+                            <strong class="text-rojo">Genero : </strong> <span> ${personaje.gender} </span> 
                             <br>
                             <!-- Origen -->
-                            <strong>Origen : </strong> <span> ${personaje.origin.name} </span> 
+                            <strong class="text-rojo">Origen : </strong> <span> ${personaje.origin.name} </span> 
                             <br>
                             <!-- Locacion -->
-                            <strong>Locacion : </strong> <span> ${personaje.location.name} </span> 
+                            <strong class="text-rojo">Locacion : </strong> <span> ${personaje.location.name} </span> 
                         </div>
                     </div>
          `);
