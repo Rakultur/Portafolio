@@ -26,23 +26,49 @@
 <body>
     <!-- header -->
     <header>
+        <nav class="nav">
+            <div class="nav_container">
+                <a href="index.html">
+                    <img src="asset/images/logo nav.png" alt="" class="nav_logo">
+                </a>
+                <!-- boton abrir -->
+                <a href="#menu" class="nav_menu">
+                    <img src="asset/images/abrir.png" class="nav_icon">
+                </a>
+                <!-- Boton cerrar -->
+                <a href="#" class="nav_menu nav_menu--second">
+                    <img src="asset/images/cerrar.png" class="nav_icon ">
+                </a>
+                <!-- Menu -->
+                <ul class="dropdown" id="menu">
+                    <!-- Inicio -->
+                    <li class="dropdown_list">
+                        <a href="index.html" class="dropdown_link">
+                            <span class="dropdown_span">Inicio</span>
+                        </a>
+                    </li>
+                    <!-- Web -->
+                    <li class="dropdown_list">
+                        <a href="Web.html" class="dropdown_link">
+                            <span class="dropdown_span">Web</span>
+                        </a>
+                    </li>
+                    <!-- Proyectos -->
+                    <li class="dropdown_list">
+                        <a href="proyectos.html" class="dropdown_link">
+                            <span class="dropdown_span">Proyectos</span>
+                        </a>
+                    </li>
+                    <!-- Contacto -->
+                    <li class="dropdown_list">
+                        <a href="contacto.html" class="dropdown_link">
+                            <span class="dropdown_span">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav class="nav">
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="web.html">Web</a>
-            </li>
-            <li>
-                <a href="proyectos.html">Proyectos</a>
-            </li>
-            <li>
-                <a href="contacto.html">Contacto</a>
-            </li>
-        </ul>
-    </nav>
     <!-- Main -->
     <main class="flex-column">
         <!-- Presentacion -->
