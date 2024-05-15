@@ -18,7 +18,7 @@
     --color-cafe: #E5BA73;
     --color-card: #ffffff;
     /* Header */
-    --color-header: #ffffff;
+    --color-header: #ffffff40;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
 }
@@ -40,7 +40,7 @@
     --color-cafe: #E5BA73;
     --color-card: #ffffff;
     /* Header */
-    --color-header: #ffffff;
+    --color-header: #ffffff40;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
 }
@@ -62,7 +62,7 @@
     --color-cafe: #E5BA73;
     --color-card: #4F709C;
     /* Header */
-    --color-header: #ffd000;
+    --color-header: #ffd00040;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
 }
@@ -79,35 +79,42 @@ body {
 
 .nav {
     display: flex;
-    flex-flow: row wrap;
-    padding: 5px;
-    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-header);
-}
-
-.nav img {
-    width: 50px;
-    height: 50px;
 }
 
 .nav ul {
     display: flex;
     flex-flow: row wrap;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav ul li a {
-    padding: 10px;
+.nav ul li {
+    height: 40px;
+    width: 70px;
     margin: 5px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--color-negro);
+    border-radius: 10px;
     background-color: var(--color-amarillo);
 }
 
-.nav ul li a:hover {
+.nav ul li:hover {
     background-color: var(--color-rojo);
-    color: var(--color-negro);
+}
+
+.nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
 }
 
 /* Switch */
@@ -364,11 +371,4 @@ footer ul {
 
 .text-morado {
     color: var(--color-morado);
-}
-
-/* Mantenimiento */
-
-.img_mantenimiento{
-    width: 300px;
-    height: 300px;
 }
