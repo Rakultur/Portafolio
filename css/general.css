@@ -166,14 +166,13 @@ body {
     color: var(--color-blanco);
 }
 
-
-
 /* Switch */
 
 .switch {
     position: relative;
     display: block;
-    width: 58px;
+    width: 62px;
+    height: 38px;
     align-items: center;
     justify-content: center;
 }
@@ -232,8 +231,8 @@ input:checked+.slider:before {
 /* Column */
 
 .flex-column {
-    height: 100%;
     width: 100%;
+    overflow: hidden;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -241,16 +240,24 @@ input:checked+.slider:before {
     text-align: center;
 }
 
+.flex-column div {
+    padding: 10px;
+}
+
 /* Row */
 
 .flex-row {
-    height: 100%;
     width: 100%;
+    overflow: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.flex-row div {
+    padding: 10px;
 }
 
 /* Hero */
@@ -273,6 +280,7 @@ input:checked+.slider:before {
 /* Cards */
 
 .card {
+    height: 300px;
     min-width: 250px;
     min-height: 200px;
     border-radius: 10px;
@@ -280,7 +288,7 @@ input:checked+.slider:before {
     margin: 60px;
     background-color: var(--color-card);
     color: var(--color-black);
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .card img {
@@ -289,8 +297,8 @@ input:checked+.slider:before {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 #000;
-    scale: 1.3;
+    box-shadow: 0 8px 10px 0 #000;
+    scale: 1.2;
 }
 
 .card ul li {
@@ -324,10 +332,10 @@ input:checked+.slider:before {
 /* Footer */
 
 footer {
-    height: 100%;
-    width: 100%;
+    height: 400px;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     text-align: center;
     align-content: center;
     justify-content: space-evenly;
@@ -342,16 +350,24 @@ footer address {
 footer ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    align-items: center;
     list-style: none;
 }
 
-.f-logo {
-    height: 5vh;
+footer ul li{
+    margin: 15px;
+}
+
+.btn-footer {
+    width: 80px;
+    height: 80px;
+}
+
+.btn-footer img {
     background-color: var(--color-negro);
     border-radius: 50%;
-    padding: 2px;
-    margin: 5vw;
+    width: 80px;
+    height: 80px;
 }
 
 /* Estilos */
