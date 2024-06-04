@@ -26,61 +26,105 @@
 <body>
     <!-- header -->
     <header>
-        <nav class="nav">
-            <div class="nav_container">
-                <a href="index.html">
-                    <img src="asset/images/logo nav.png" alt="" class="nav_logo">
-                </a>
-                <!-- boton abrir -->
-                <a href="#menu" class="nav_menu">
-                    <img src="asset/images/abrir.png" class="nav_icon">
-                </a>
-                <!-- Boton cerrar -->
-                <a href="#" class="nav_menu nav_menu--second">
-                    <img src="asset/images/cerrar.png" class="nav_icon ">
-                </a>
-                <!-- Menu -->
-                <ul class="dropdown" id="menu">
-                    <!-- Inicio -->
-                    <li class="dropdown_list">
-                        <a href="index.html" class="dropdown_link">
-                            <span class="dropdown_span">Inicio</span>
-                        </a>
-                    </li>
-                    <!-- Web -->
-                    <li class="dropdown_list">
-                        <a href="web.html" class="dropdown_link">
-                            <span class="dropdown_span">Web</span>
-                        </a>
-                    </li>
-                    <!-- Proyectos -->
-                    <li class="dropdown_list">
-                        <a href="proyectos.html" class="dropdown_link">
-                            <span class="dropdown_span">Proyectos</span>
-                        </a>
-                    </li>
-                    <!-- Contacto -->
-                    <li class="dropdown_list">
-                        <a href="contacto.html" class="dropdown_link">
-                            <span class="dropdown_span">Contacto</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
     </header>
+    <nav class="nav">
+        <div class="nav_container">
+            <a href="index.html">
+                <img src="asset/images/logo nav.png" alt="" class="nav_logo">
+            </a>
+            <!-- boton abrir -->
+            <a href="#menu" class="nav_menu">
+                <img src="asset/images/abrir.png" class="nav_icon">
+            </a>
+            <!-- Boton cerrar -->
+            <a href="#" class="nav_menu nav_menu--second">
+                <img src="asset/images/cerrar.png" class="nav_icon ">
+            </a>
+            <!-- Menu -->
+            <ul class="dropdown" id="menu">
+                <!-- Inicio -->
+                <li class="dropdown_list">
+                    <a href="index.html" class="dropdown_link">
+                        <span class="dropdown_span">Inicio</span>
+                    </a>
+                </li>
+                <!-- Web -->
+                <li class="dropdown_list">
+                    <a href="web.html" class="dropdown_link">
+                        <span class="dropdown_span">Web</span>
+                    </a>
+                </li>
+                <!-- Proyectos -->
+                <li class="dropdown_list">
+                    <a href="proyectos.html" class="dropdown_link">
+                        <span class="dropdown_span">Proyectos</span>
+                    </a>
+                </li>
+                <!-- Contacto -->
+                <li class="dropdown_list">
+                    <a href="contacto.html" class="dropdown_link">
+                        <span class="dropdown_span">Contacto</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!-- Main -->
     <main class="flex-column">
         <!-- Presentacion -->
         <div class="hero bg_principal">
-            <h2 class="titulo-2">
-                <strong> Mentenimiento en proceso</strong>
-            </h2>
-            <h2 class="titulo-2">
-                Agradecemos su espera, pronto nueva actualización.
-            </h2>
+            <div>
+                <h2 class="titulo-2">
+                    <strong> Mentenimiento en proceso</strong>
+                </h2>
+                <h2 class="titulo-2">
+                    Agradecemos su espera, pronto nueva actualización.
+                </h2>
+            </div>
         </div>
     </main>
+    <!-- Footer -->
+    <footer>
+        <div>
+            <address>
+                BOGOTÁ D.C <br>
+                2024
+            </address>
+        </div>
+        <div>
+            <ul>
+                <!-- Gmail -->
+                <li>
+                    <a href="mailto:rkt.nicolasg@gmail.com" class="btn-footer" target="_blank">
+                        <img src="asset/images/logo gmail.png" alt="logo" title="Gmail">
+                    </a>
+                </li>
+                <!-- Linkedin -->
+                <li>
+                    <a href="https://www.linkedin.com/in/nicolas-garcia-pinilla-b68a75229/" class="btn-footer"
+                        target="_blank">
+                        <img src="asset/images/logo linkedin.png" alt="logo" title="Linkedin">
+                    </a>
+
+                </li>
+                <!-- Github -->
+                <li>
+                    <a href="https://github.com/Rakultur" class="btn-footer" target="_blank">
+                        <img src="asset/images/logo github 2.png" alt="logo" title="Github">
+                    </a>
+                </li>
+                <!-- Tema -->
+                <li>
+                    <label class="switch" id="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!-- script -->
+    <script src="js\main.js"></script>
 </body>
 
 </html>
