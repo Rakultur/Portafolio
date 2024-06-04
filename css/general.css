@@ -333,7 +333,6 @@ input:checked+.slider:before {
 
 footer {
     height: 400px;
-    width: 100vw;
     display: flex;
     flex-flow: row wrap;
     text-align: center;
