@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Propuesta pagina web corporativa">
+  <meta name="keywords" content="Propuesta, Modelo, Css, Html, Js, Framework, Tic, software, Frontend, Desarrollo">
+  <meta name="author" content="Nicolas Garcia">
+  <meta name="copyright" content="Nicolas Garcia">
+  <meta name="robots" content="index">
+  <meta http-equiv="cache-control" content="no-cache">
+  <title>Safe | Inicio</title>
+  <link rel="icon" href="assets/icons/logo page.png">
+  <!-- css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/propuesta.css">
+</head>
+
+<body id="body">
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="index.html">
+          <img src="assets/icons/logo.png" alt="" class="nav__logo">
+        </a>
+        <!-- boton abrir -->
+        <a href="#menu" class="nav__menu">
+          <img src="assets/icons/abrir.png" class="nav__icon">
+        </a>
+        <!-- Boton cerrar -->
+        <a href="#" class="nav__menu nav__menu--second">
+          <img src="assets/icons/cerrar.png" class="nav__icon ">
+        </a>
+        <!-- Menu -->
+        <ul class="dropdown" id="menu">
+          <!-- Inicio -->
+          <li class="dropdown__list">
+            <a href="index.html" class="dropdown__link">
+              <span class="dropdown__span">Inicio</span>
+            </a>
+          </li>
+          <!-- Nosotros -->
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img src="assets/icons/logo page.png" class="dropdown_logo">
+              <span class="dropdown__span">Nosotros</span>
+              <input type="checkbox" class="dropdown__check">
+            </a>
+            <div class="dropdown__content">
+              <ul class="dropdown__sub">
+                <li class="dropdown__li">
+                  <a href="nosotros/nosotros.html" class="dropdown__anchor">Nosotros</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="nosotros/empresas.html" class="dropdown__anchor">Empresas afiliadas</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="nosotros/politicas.html" class="dropdown__anchor">Politicas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Servicios -->
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img src="assets/icons/servicios.png" class="dropdown_logo">
+              <span class="dropdown__span">Servicios</span>
+              <input type="checkbox" class="dropdown__check">
+            </a>
+            <div class="dropdown__content">
+              <ul class="dropdown__sub">
+                <li class="dropdown__li">
+                  <a href="servicios/seguros_personas.html" class="dropdown__anchor">Seguros a la persona</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="servicios/seguros_vehiculares.html" class="dropdown__anchor">Seguros vehiculares</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="servicios/seguros_creditos.html" class="dropdown__anchor">Seguros de creditos</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="servicios/seguros_inmuebles.html" class="dropdown__anchor">Seguros de inmuebles</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Prensa -->
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img src="assets/icons/Prensa.png" class="dropdown_logo">
+              <span class="dropdown__span">Prensa</span>
+              <input type="checkbox" class="dropdown__check">
+            </a>
+            <div class="dropdown__content">
+              <ul class="dropdown__sub">
+                <li class="dropdown__li">
+                  <a href="prensa/archivo.html" class="dropdown__anchor">Notas de prensa</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="prensa/multimedia.html" class="dropdown__anchor">Archivo fotográfico</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="prensa/contacto.html" class="dropdown__anchor">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- Eventos -->
+          <li class="dropdown__list">
+            <a href="eventos/eventos.html" class="dropdown__link">
+              <span class="dropdown__span">Eventos</span>
+            </a>
+          </li>
+          <!-- Mapa del sitio -->
+          <li class="dropdown__list">
+            <a href="mapa_sitio.html" class="dropdown__link">
+              <span class="dropdown__span">Mapa del sitio</span>
+            </a>
+          </li>
+          <!-- Soporte -->
+          <li class="dropdown__list">
+            <a href="soporte.html" class="dropdown__link">
+              <span class="dropdown__span">Soporte</span>
+            </a>
+          </li>
+          <!-- Contacto -->
+          <li class="dropdown__list">
+            <a href="contacto.html" class="dropdown__link">
+              <span class="dropdown__span">Contacto</span>
+            </a>
+          </li>
+          <!-- Buscador -->
+          <li class="dropdown__list">
+            <input type="search" name="" id="" placeholder="¿Que desea buscar?">
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Main -->
+  <main>
+    <!-- Presentacion -->
+    <section class="container-column">
+      <div>
+        <h1 class="titulo">
+          SAFE COMPANY
+        </h1>
+      </div>
+      <div class="slider">
+        <ul>
+          <li>
+            <img src="assets/slider/slider 1.jpg" alt="Propuesta">
+          </li>
+          <li>
+            <img src="assets/slider/slider 2.jpg" alt="Propuesta">
+          </li>
+          <li>
+            <img src="assets/slider/slider 3.jpg" alt="Propuesta">
+          </li>
+          <li>
+            <img src="assets/slider/slider 4.jpg" alt="Propuesta">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Section #1 -->
+    <section class="container-column">
+      <h2 class="subtitulos">
+        Noticias
+      </h2>
+      <!-- Noticias -->
+      <div class="container-row">
+        <!-- #1 -->
+        <div class="card">
+          <img src="assets/noticias/1.jpg" alt="Noticia" title="Noticias">
+          <h3 class="subtitulos-h3">
+            <strong>Tendencias de seguros cibernéticos en aumento</strong>
+          </h3>
+          <p>
+            Con el aumento de los ataques cibernéticos a empresas y organizaciones, se observa un aumento en la demanda
+            de seguros cibernéticos. Las compañías de seguros están desarrollando productos específicos para cubrir
+            riesgos relacionados con la seguridad informática y la protección de datos.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #2 -->
+        <div class="card">
+          <img src="assets/noticias/2.jpg" alt="Noticia" title="Noticias">
+          <h3 class="subtitulos-h3">
+            <strong>Impacto del cambio climático en seguros de propiedad</strong>
+          </h3>
+          <p>
+            El aumento de fenómenos climáticos extremos, como huracanes, incendios forestales e inundaciones, está
+            generando desafíos para la industria de seguros de propiedad. Las aseguradoras están revisando sus modelos
+            de riesgo y ajustando las tarifas para adaptarse a estos cambios.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #3 -->
+        <div class="card">
+          <img src="assets/noticias/3.jpg" alt="Noticia" title="Noticias">
+          <h3 class="subtitulos-h3">
+            <strong>Seguros de salud durante la pandemia</strong>
+          </h3>
+          <p>
+            La pandemia de COVID-19 ha generado un aumento en la demanda de seguros de salud en muchos países. Las
+            aseguradoras están adaptando sus políticas para cubrir tratamientos relacionados con COVID-19 y están
+            ofreciendo servicios adicionales, como telemedicina, para satisfacer las necesidades de los asegurados.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #4 -->
+        <div class="card">
+          <img src="assets/noticias/4.jpg" alt="Noticia" title="Noticias">
+          <h3 class="subtitulos-h3">
+            <strong>Crecimiento del mercado de seguros en países emergentes</strong>
+          </h3>
+          <p>
+            Los mercados de seguros están experimentando un crecimiento significativo en países emergentes, impulsado
+            por el aumento de la clase media y la mayor conciencia sobre la importancia de protegerse contra riesgos
+            financieros. Las aseguradoras están expandiendo su presencia en estos mercados y desarrollando productos
+            adaptados a las necesidades locales.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #5 -->
+        <div class="card">
+          <img src="assets/noticias/5.jpg" alt="Noticia" title="Noticias">
+          <h3 class="subtitulos-h3">
+            <strong>Regulaciones y cumplimiento en la industria de seguros</strong>
+          </h3>
+          <p>
+            Los reguladores están intensificando sus esfuerzos para garantizar la solidez y la transparencia en la
+            industria de seguros. Se están implementando nuevas regulaciones relacionadas con la protección del
+            consumidor, la gestión de riesgos y la solvencia de las aseguradoras para promover la estabilidad del
+            mercado y proteger a los asegurados.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+      </div>
+      <h2 class="subtitulos">
+        Novedades
+      </h2>
+      <!-- Novedades -->
+      <div class="container-row">
+        <!-- #1 -->
+        <div class="card">
+          <img src="assets/novedades/1.jpg" alt="novedades" title="novedades">
+          <h3 class="subtitulos-h3">
+            <strong>Innovación tecnológica en seguros</strong>
+          </h3>
+          <p>
+            Las compañías de seguros están adoptando nuevas tecnologías como inteligencia artificial, aprendizaje
+            automático y análisis de datos para mejorar la precisión en la evaluación de riesgos, agilizar los procesos
+            de reclamaciones y ofrecer servicios personalizados a los clientes.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #2 -->
+        <div class="card">
+          <img src="assets/novedades/2.jpg" alt="novedades" title="novedades">
+          <h3 class="subtitulos-h3">
+            <strong>Seguros basados en uso (UBI)</strong>
+          </h3>
+          <p>
+            Se están desarrollando más productos de seguros basados en el uso, especialmente en seguros de automóviles.
+            Estos programas utilizan tecnología telemática para recopilar datos sobre el comportamiento de conducción de
+            los asegurados y ajustar las tarifas en función de factores como la distancia recorrida, la velocidad y los
+            hábitos de conducción.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #3 -->
+        <div class="card">
+          <img src="assets/novedades/3.jpg" alt="novedades" title="novedades">
+          <h3 class="subtitulos-h3">
+            <strong>Seguros de salud digitales</strong>
+          </h3>
+          <p>
+            Con la creciente popularidad de la telemedicina y las aplicaciones de salud, las compañías de seguros están
+            ampliando su oferta de seguros de salud digitales que incluyen acceso a servicios virtuales como consultas
+            médicas en línea, monitoreo de la salud y gestión de medicamentos.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #4 -->
+        <div class="card">
+          <img src="assets/novedades/4.jpg" alt="novedades" title="novedades">
+          <h3 class="subtitulos-h3">
+            <strong>Seguros para riesgos emergentes</strong>
+          </h3>
+          <p>
+            Las compañías de seguros están desarrollando productos para cubrir riesgos emergentes como la
+            ciberseguridad, el cambio climático, la salud mental y la pandemia de COVID-19. Estos seguros ofrecen
+            protección contra amenazas que tradicionalmente no estaban cubiertas o que han ganado importancia en los
+            últimos años.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+        <!-- #5 -->
+        <div class="card">
+          <img src="assets/novedades/5.jpg" alt="novedades" title="novedades">
+          <h3 class="subtitulos-h3">
+            <strong>Énfasis en la sostenibilidad y la responsabilidad social</strong>
+          </h3>
+          <p>
+            Las aseguradoras están adoptando prácticas más sostenibles y socialmente responsables en sus operaciones y
+            productos. Esto incluye el desarrollo de seguros para energías renovables, la promoción de prácticas
+            comerciales éticas y la inversión en iniciativas de responsabilidad social corporativa para abordar
+            problemas como el cambio climático y la desigualdad social.
+          </p>
+          <a href="#">Conocer mas ...</a>
+        </div>
+      </div>
+      <!-- Eventos -->
+      <div class="container-column bg-negro">
+        <h2 class="subtitulos">
+          Eventos
+        </h2>
+        <!-- #1 -->
+        <div class="card">
+          <img src="assets/Eventos/1.jpg" alt="Eventos" title="Eventos">
+          <h3 class="subtitulos-h3">
+            <strong>Foro de Seguros y Reaseguros de América Latina (FIDES)</strong>
+          </h3>
+          <p>
+            FIDES es uno de los eventos más importantes en el campo de los seguros y reaseguros en América Latina. Se
+            lleva a cabo cada dos años y reúne a profesionales del sector, reguladores, expertos en riesgos y líderes de
+            opinión para discutir temas clave, compartir conocimientos y explorar oportunidades de colaboración en la
+            región.
+          </p>
+        </div>
+        <!-- #2 -->
+        <div class="card">
+          <img src="assets/Eventos/2.jpg" alt="Eventos" title="Eventos">
+          <h3 class="subtitulos-h3">
+            <strong>Conferencia Anual de la Asociación de Seguros de América (AIA)</strong>
+          </h3>
+          <p>
+            La AIA organiza una conferencia anual que es uno de los principales eventos de la industria de seguros en
+            los Estados Unidos. Esta conferencia reúne a ejecutivos de compañías de seguros, reguladores, legisladores y
+            otros actores clave para discutir tendencias, desafíos y oportunidades en el mercado de seguros
+            estadounidense. La conferencia también ofrece sesiones educativas, oportunidades de networking y
+            exposiciones de proveedores de la industria.
+          </p>
+        </div>
+        <!-- boton -->
+        <button class="btn">
+          <a href="eventos/eventos.html">
+            Todos nuestros eventos
+          </a>
+        </button>
+      </div>
+    </section>
+    <!-- Section #2 -->
+    <section class="container-column">
+      <h2 class="subtitulos">
+        Servicios
+      </h2>
+      <!-- #1 -->
+      <div>
+        <h3>
+          Seguros sobre creditos
+        </h3>
+        <a href="servicios/seguros_creditos.html">
+          Conocer mas....
+        </a>
+      </div>
+      <!-- #2 -->
+      <div>
+        <h3>
+          Seguros sobre inmuebles
+        </h3>
+        <a href="servicios/seguros_inmuebles.html">
+          Conocer mas....
+        </a>
+      </div>
+      <!-- #3 -->
+      <div>
+        <h3>
+          Seguros sobre personas
+        </h3>
+        <a href="servicios/seguros_personas.html">
+          Conocer mas....
+        </a>
+      </div>
+      <!-- #4 -->
+      <div>
+        <h3>
+          Seguros vehiculares
+        </h3>
+        <a href="servicios/seguros_vehiculares.html">
+          Conocer mas....
+        </a>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div>
+      <ul>
+        <li><img src="assets/icons/logo blanco.png" alt="logo" title="Logo" class="footer-logo"></li>
+        <li><strong>Todos los derechos reservados 2024 ©</strong></li>
+        <li> (+57) 300 000 00 00</li>
+        <li>Calle 0 # 00 - 00</li>
+        <li> Bogotá, Colombia</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subtitulos-h3">
+        Nosotros
+      </h3>
+      <ul>
+        <li><a href="nosotros/nosotros.html">Nosotros</a></li>
+        <li><a href="nosotros/empresas.html">Convenios</a></li>
+        <li><a href="mapa_sitio.html">Mapa web</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subtitulos-h3">
+        Redes sociales
+      </h3>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="assets/redes sociales/facebook.png" alt="facebook" title="facebook" class="footer-redes">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/" target="_blank">
+            <img src="assets/redes sociales/linkedin.png" alt="linkedin" title="linkedin" class="footer-redes">
+          </a>
+        </li>
+        <li>
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <img src="assets/redes sociales/whatsapp.png" alt="whatsapp" title="whatsapp" class="footer-redes">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <a href="nosotros/politicas.html">Politicas de privacidad</a>
+    </div>
+  </footer>
+  <!-- js -->
+  <script src="js/propusta.js">
+  </script>
+</body>
+
+</html>
