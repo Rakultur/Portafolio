@@ -17,8 +17,6 @@
     --color-naranja: #FF4C29;
     --color-cafe: #E5BA73;
     --color-card: #4F709C;
-    /* Header */
-    --color-header: #ffffff63;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
 }
@@ -39,8 +37,6 @@
     --color-naranja: #FF4C29;
     --color-cafe: #E5BA73;
     --color-card: #ffffff;
-    /* Header */
-    --color-header: #ffffff63;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
 }
@@ -48,7 +44,7 @@
 /* Tema claro */
 [tema="claro"] {
     /* Paleta de colores */
-    --color-fuente: #000;
+    --color-fuente: #000000;
     --color-fondo: #FFFFDD;
     /* Colores */
     --color-rojo: #D21312;
@@ -61,16 +57,8 @@
     --color-naranja: #FF4C29;
     --color-cafe: #E5BA73;
     --color-card: #4F709C;
-    /* Header */
-    --color-header: #ffffff63;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 /* Body */
@@ -83,94 +71,6 @@ body {
 
 /* Header */
 
-.nav {
-    background-color: var(--azul);
-    --img1: scale(1);
-    --img2: scale(0);
-}
-
-.nav:has(.dropdown:target) {
-    --img1: scale(0);
-    --img2: scale(1);
-    --clip: inset(0 0 0 0);
-}
-
-.nav_container {
-    margin: auto;
-    display: grid;
-    grid-template-columns: max-content max-content;
-    grid-template-areas: "title img";
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-}
-
-.nav_menu {
-    grid-area: img;
-    position: relative;
-    z-index: 10;
-    transform: var(--img1);
-    margin-right: 20px;
-}
-
-.nav_menu--second {
-    transform: var(--img2);
-}
-
-.nav_icon {
-    width: 30px;
-    display: block;
-    background-color: var(--color-header);
-    padding: 3px;
-    border-radius: 5px;
-}
-
-.nav_logo {
-    width: 50px;
-    margin: 5px;
-}
-
-.dropdown {
-    position: absolute;
-    background-color: var(--color-header);
-    width: 300px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    clip-path: var(--clip, inset(0 0 100% 100%));
-    transition: clip-path .5s;
-}
-
-.dropdown_list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.dropdown_link {
-    color: var(--color-fuente);
-    padding: 1em .7em;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .6rem;
-    width: 250px;
-    position: relative;
-    background-color: var(--color-verde);
-    border-radius: 6px;
-    margin-top: 40px;
-}
-
-.dropdown_link:hover {
-    background-color: var(--color-naranja);
-    color: var(--color-fuente);
-}
 
 /* Switch */
 
@@ -242,12 +142,11 @@ input:checked+.slider:before {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
 .flex-column div {
-    padding: 10px;
+    padding: 5px;
 }
 
 /* Row */
@@ -272,13 +171,12 @@ input:checked+.slider:before {
     display: flex;
     flex-flow: column wrap;
     height: 100vh;
-    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
 .hero div {
-    background-color: #fbff0071;
+    background-color: var(--color-rojo);
     border-radius: 10px;
     color: var(--color-fuente);
 }
@@ -299,8 +197,8 @@ input:checked+.slider:before {
     height: 300px;
     width: 250px;
     border-radius: 15px;
-    padding: 15px;
-    margin: 60px;
+    padding: 20px;
+    margin: 30px;
     background-color: var(--color-card);
     color: var(--color-black);
     transition: 0.8s;
@@ -313,7 +211,7 @@ input:checked+.slider:before {
 
 .card:hover {
     box-shadow: 0 8px 10px 0 #000;
-    scale: 1.2;
+    scale: 1.1;
 }
 
 .card ul {
@@ -322,15 +220,17 @@ input:checked+.slider:before {
     padding: 10px;
 }
 
-.card ul li {
-    text-align: start;
-    color: var(--color-negro);
-}
-
 .logos {
     background-color: var(--color-negro);
     border-radius: 20%;
     padding: 10px;
+}
+
+/* Logo clientes */
+
+.logo-cliente {
+    width: 350px;
+    height: 100px;
 }
 
 /* Botones */
