@@ -19,6 +19,7 @@
     --color-card: #4F709C;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
+    --color-hero-div: #000000a1;
 }
 
 /* Tema oscuro */
@@ -39,6 +40,7 @@
     --color-card: #ffffff;
     /* Fondo hero*/
     --fondo: url(../asset/images/presentacion.gif);
+    --color-hero-div: #000000a1;
 }
 
 /* Tema claro */
@@ -59,6 +61,7 @@
     --color-card: #4F709C;
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
+    --color-hero-div: #000000a1;
 }
 
 /* Body */
@@ -67,6 +70,8 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var(--color-fuente);
     background-color: var(--color-fondo);
+    padding: 0;
+    margin: 0;
 }
 
 /* Header */
@@ -176,9 +181,9 @@ input:checked+.slider:before {
 }
 
 .hero div {
-    background-color: var(--color-rojo);
+    background-color: var(--color-hero-div);
     border-radius: 10px;
-    color: var(--color-fuente);
+    color: var(--color-fondo);
 }
 
 .bg_principal {
