@@ -4,8 +4,17 @@
 
 :root {
     /* Paleta de colores */
-    --color-fuente: #000000;
-    --color-fondo: #FFFFDD;
+
+    /* Fondos */
+    --fondo-body: #EEEEEE;
+
+    /* Titulos */
+    --titulos: #855555;
+    --subtitulos: #686D76;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
     /* Colores */
     --color-rojo: #D21312;
     --color-azul: #4F709C;
@@ -16,38 +25,30 @@
     --color-morado: #810CA8;
     --color-naranja: #FF4C29;
     --color-cafe: #E5BA73;
-    --color-card: #4F709C;
+
+    /* Card */
+    --color-card: #181C14;
+
     /* Fondo hero*/
     --fondo: url(../asset/images/claro.jpg);
-    --color-hero-div: #000000a1;
+    --color-hero-div: #EEEEEE;
+
 }
 
 /* Tema oscuro */
 [tema="oscuro"] {
-    /* Principales */
-    --color-fuente: #F0F0F0;
-    --color-fondo: #2C3639;
     /* Paleta de colores */
-    --color-rojo: #F45050;
-    --color-azul: #4F709C;
-    --color-verde: #03C988;
-    --color-amarillo: #F9D949;
-    --color-blanco: #FAF8F1;
-    --color-negro: #0F0F0F;
-    --color-morado: #810CA8;
-    --color-naranja: #FF4C29;
-    --color-cafe: #E5BA73;
-    --color-card: #ffffff;
-    /* Fondo hero*/
-    --fondo: url(../asset/images/presentacion.gif);
-    --color-hero-div: #000000a1;
-}
 
-/* Tema claro */
-[tema="claro"] {
-    /* Paleta de colores */
-    --color-fuente: #000000;
-    --color-fondo: #FFFFDD;
+    /* Fondos */
+    --fondo-body: #3C3D37;
+
+    /* Titulos */
+    --titulos: #855555;
+    --subtitulos: #BE3144;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
     /* Colores */
     --color-rojo: #D21312;
     --color-azul: #4F709C;
@@ -58,85 +59,24 @@
     --color-morado: #810CA8;
     --color-naranja: #FF4C29;
     --color-cafe: #E5BA73;
-    --color-card: #4F709C;
+
+    /* Card */
+    --color-card: #181C14;
+
     /* Fondo hero*/
-    --fondo: url(../asset/images/claro.jpg);
-    --color-hero-div: #000000a1;
+    --fondo: url(../asset/images/oscuro.gif);
+    --color-hero-div: #EEEEEE;
+
 }
 
 /* Body */
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--color-fuente);
-    background-color: var(--color-fondo);
+    color: var(--Parrafosbody);
+    background-color: var(--fondo-body);
     padding: 0;
     margin: 0;
-}
-
-/* Header */
-
-
-/* Switch */
-
-.switch {
-    position: relative;
-    display: block;
-    width: 62px;
-    height: 38px;
-    align-items: center;
-    justify-content: center;
-}
-
-.switch input {
-    opacity: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-morado);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 28px;
-    width: 28px;
-    left: 5px;
-    bottom: 5px;
-    background-color: var(--color-blanco);
-    background-image: url(/asset/images/noche.png);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: var(--color-amarillo);
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px var(--color-amarillo);
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 50px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
 
 /* Column */
@@ -183,7 +123,6 @@ input:checked+.slider:before {
 .hero div {
     background-color: var(--color-hero-div);
     border-radius: 10px;
-    color: var(--color-fondo);
 }
 
 .bg_principal {
@@ -209,14 +148,19 @@ input:checked+.slider:before {
     transition: 0.8s;
 }
 
+.card:hover {
+    box-shadow: 0 8px 10px 0 #000000cb;
+    scale: 1.1;
+}
+
 .card img {
     height: 80px;
     width: 80px;
 }
 
-.card:hover {
-    box-shadow: 0 8px 10px 0 #000;
-    scale: 1.1;
+.titulo-card {
+    font-size: 35px;
+    color: var(--color-negro);
 }
 
 .card ul {
@@ -231,7 +175,7 @@ input:checked+.slider:before {
     padding: 10px;
 }
 
-/* Logo clientes */
+/* Logo */
 
 .logo-cliente {
     width: 350px;
@@ -262,8 +206,13 @@ footer {
     flex-flow: row wrap;
     text-align: center;
     align-content: center;
+    align-items: center;
     justify-content: space-evenly;
     background-color: var(--color-blanco);
+}
+
+footer div {
+    padding: 15px;
 }
 
 footer address {
@@ -294,49 +243,94 @@ footer ul li {
     height: 80px;
 }
 
-/* Web */
+/* Switch */
 
-.card-web {
-    overflow: hidden;
-    display: flex;
-    flex-flow: column wrap;
+.switch {
+    position: relative;
+    display: block;
+    width: 62px;
+    height: 38px;
     align-items: center;
-    text-align: center;
-    justify-content: space-evenly;
-    background-color: #ffffff;
-    width: 50%;
-    height: 600px;
-    padding: 50px;
-    margin: 15px;
+    justify-content: center;
 }
 
-.card-web img {
-    width: 110px;
-    height: 100px;
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
+.switch input {
+    opacity: 0;
 }
 
-.card-web h2 {
-    font-size: 6vw;
-    color: #000;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-rojo);
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-.card-web a {
-    text-decoration: none;
-    color: #000;
-    background-color: #eabf00a9;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 5px;
+    bottom: 5px;
+    background-color: var(--color-blanco);
+    background-image: url(/asset/images/noche.png);
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-.card-web a:hover {
-    color: #ffffff;
-    background-color: #272727;
+input:checked+.slider {
+    background-color: var(--color-amarillo);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-amarillo);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* Estilos */
+
+.titulo-1 {
+    font-size: 10vh;
+    color: var(--titulos);
+}
+
+.titulo-2 {
+    font-size: 5vh;
+    color: var(--subtitulos);
+}
+
+.titulo-3 {
+    font-size: 4vh;
+    color: var(--subtitulos);
+}
+
+.titulo-4 {
+    font-size: 3vh;
+    color: var(--subtitulos);
+}
+
+.titulo-5 {
+    font-size: 2vh;
+    color: var(--subtitulos);
+}
 
 .p-5 {
     padding: 50px;
@@ -354,27 +348,6 @@ footer ul li {
 .m-10 {
     margin-top: 100px;
     margin-bottom: 100px;
-}
-
-.titulo-1 {
-    font-size: 10vh;
-}
-
-.titulo-2 {
-    font-size: 5vh;
-}
-
-.titulo-3 {
-    font-size: 4vh;
-}
-
-.titulo-4 {
-    font-size: 3vh;
-}
-
-.titulo-card {
-    font-size: 30px;
-    color: var(--color-negro);
 }
 
 .bg-azul {
