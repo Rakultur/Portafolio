@@ -286,7 +286,6 @@ footer ul li {
     left: 5px;
     bottom: 5px;
     background-color: var(--color-blanco);
-    background-image: url(/asset/images/noche.png);
     -webkit-transition: .4s;
     transition: .4s;
 }
