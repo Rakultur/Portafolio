@@ -42,8 +42,20 @@ const persona = {
 
 }
 
-for (const key in persona) {
-    console.log(key)
+function cicloForIn(){
+    for (const key in persona) {
+        console.log(key)
+    }
+    
+}
+
+// For of
+
+function cicloForOf(){
+    for (const key of persona) {
+        console.log(key)
+    }
+    
 }
 
 
@@ -64,3 +76,18 @@ function cicloDoWhile (index){
         index++;
     } while (index<=10);
 }
+
+// Exepciones
+
+function Exepciones(){
+    try {
+        console.log("Ejecucion con normalidad del programa")
+        let a = 5, b = 0, r;
+        
+        console.log(r)
+    } catch (error) {
+        console.log("Error en la ejecución del programa")
+    }
+}
+
+Exepciones()
