@@ -3,40 +3,7 @@
 /* General */
 
 :root {
-    /* Paleta de colores */
 
-    /* Fondos */
-    --fondo-body: #EEEEEE;
-
-    /* Titulos */
-    --titulos: #855555;
-    --subtitulos: #686D76;
-
-    /* Textos */
-    --Parrafos: #181C14;
-
-    /* Colores */
-    --color-rojo: #D21312;
-    --color-azul: #4F709C;
-    --color-verde: #44f0b7;
-    --color-amarillo: #EAC100;
-    --color-blanco: #0F0F0F;
-    --color-negro: #FAF8F1;
-    --color-morado: #810CA8;
-    --color-naranja: #FF4C29;
-    --color-cafe: #E5BA73;
-
-    /* Card */
-    --color-card: #181C14;
-
-    /* Fondo hero*/
-    --fondo: url(../asset/images/claro.jpg);
-    --color-hero-div: #EEEEEE;
-
-}
-
-/* Tema oscuro */
-[tema="oscuro"] {
     /* Paleta de colores */
 
     /* Fondos */
@@ -64,7 +31,42 @@
     --color-card: #181C14;
 
     /* Fondo hero*/
-    --fondo: url(../asset/images/oscuro.gif);
+    --fondo: url(../recursos/images/oscuro.gif);
+    --color-hero-div: #EEEEEE;
+
+
+}
+
+/* Tema oscuro */
+[tema="oscuro"] {
+    /* Paleta de colores */
+
+    /* Fondos */
+    --fondo-body: #EEEEEE;
+
+    /* Titulos */
+    --titulos: #855555;
+    --subtitulos: #686D76;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
+    /* Colores */
+    --color-rojo: #D21312;
+    --color-azul: #4F709C;
+    --color-verde: #44f0b7;
+    --color-amarillo: #EAC100;
+    --color-blanco: #0F0F0F;
+    --color-negro: #FAF8F1;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
+
+    /* Card */
+    --color-card: #181C14;
+
+    /* Fondo hero*/
+    --fondo: url(../recursos/images/claro.jpg);
     --color-hero-div: #EEEEEE;
 
 }
