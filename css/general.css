@@ -155,6 +155,10 @@ body {
     scale: 1.1;
 }
 
+.card:hover h4 {
+    color: var(--color-verde);
+}
+
 .card img {
     height: 80px;
     width: 80px;
@@ -182,6 +186,12 @@ body {
 .logo-cliente {
     width: 350px;
     height: 100px;
+    border-radius: 15px;
+}
+
+.logo-cliente:hover {
+    scale: 1.1;
+    transition: 2s;
 }
 
 .logo-hero {
@@ -275,7 +285,7 @@ footer ul li {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-rojo);
+    background-color: var(--color-naranja);
     -webkit-transition: .4s;
     transition: .4s;
 }
