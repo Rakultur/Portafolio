@@ -7,11 +7,11 @@
     /* Paleta de colores */
 
     /* Fondos */
-    --fondo-body: #3C3D37;
+    --fondo-body: #222831;
 
     /* Titulos */
-    --titulos: #855555;
-    --subtitulos: #BE3144;
+    --titulos: #76ABAE;
+    --subtitulos: #ECDFCC;
 
     /* Textos */
     --Parrafos: #181C14;
@@ -32,9 +32,7 @@
 
     /* Fondo hero*/
     --fondo: url(../recursos/images/oscuro.gif);
-    --color-hero-div: #EEEEEE;
-
-
+    --color-hero-div: #ffffff;
 }
 
 /* Tema oscuro */
@@ -42,11 +40,11 @@
     /* Paleta de colores */
 
     /* Fondos */
-    --fondo-body: #EEEEEE;
+    --fondo-body: #FFFAEC;
 
     /* Titulos */
-    --titulos: #855555;
-    --subtitulos: #686D76;
+    --titulos: #578E7E;
+    --subtitulos: #3D3D3D;
 
     /* Textos */
     --Parrafos: #181C14;
@@ -67,8 +65,7 @@
 
     /* Fondo hero*/
     --fondo: url(../recursos/images/claro.jpg);
-    --color-hero-div: #EEEEEE;
-
+    --color-hero-div: #F5ECD5;
 }
 
 /* Body */
@@ -77,8 +74,6 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var(--Parrafosbody);
     background-color: var(--fondo-body);
-    padding: 0;
-    margin: 0;
 }
 
 /* Column */
@@ -195,8 +190,8 @@ body {
 }
 
 .logo-hero {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     filter: brightness(1.1);
     mix-blend-mode: multiply;
 }

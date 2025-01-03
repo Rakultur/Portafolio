@@ -10,4 +10,3 @@ function cambiaTema(ev) {
     }
 }
 colorSwitch.addEventListener('change', cambiaTema);
-
