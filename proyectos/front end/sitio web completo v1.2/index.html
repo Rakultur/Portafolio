@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Propuesta pagina web corporativa (Empresa TIC)">
+        <meta name="keywords"
+            content="Propuesta, Modelo, Css, Html, Js, Framework, Tic, software, Frontend, Desarrollo">
+        <meta name="author" content="Nicolas Garcia" />
+        <meta name="copyright" content="Nicolas Garcia" />
+        <meta name="robots" content="index" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <title>inicio | Propuesta</title>
+        <link rel="icon" href="assets/icons/dev.png">
+        <!-- css -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/propuesta.css">
+        <!-- Funciones de google analytics  -->
+        <!-- .... -->
+    </head>
+    <body id="body">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html">
+                <img src="assets/icons/dev.png" alt="Propuesta" class="logo">
+            </a>
+            <p>DEV COMPANY</p>
+            <button class="abrir" id="abrir"><img src="assets/icons/abrir.png"
+                    alt="Propuesta"></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar" id="cerrar"><img
+                        src="assets/icons/abrir.png" alt="Propuesta"></button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="soporte.html">Soporte</a></li>
+                </ul>
+                <a href="contacto.html" class="btn-header">Contacto</a>
+            </nav>
+        </header>
+        <!-- Main -->
+        <main>
+            <!-- Presentacion -->
+            <section class="container-column">
+                <div>
+                    <h1 class="titulo">
+                        DEV COMPANY
+                    </h1>
+                </div>
+                <div class="slider">
+                    <ul>
+                        <li>
+                            <img src="assets/slider/slider 1.jpg"
+                                alt="Propuesta">
+                        </li>
+                        <li>
+                            <img src="assets/slider/slider 2.jpg"
+                                alt="Propuesta">
+                        </li>
+                        <li>
+                            <img src="assets/slider/slider 3.jpg"
+                                alt="Propuesta">
+                        </li>
+                        <li>
+                            <img src="assets/slider/slider 2.jpg"
+                                alt="Propuesta">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Section #1 -->
+            <section class="container-column">
+                <!-- Que hacemos -->
+                <div>
+                    <div>
+                        <h2 class="subtitulos">
+                            ¿Que hacemos?
+                        </h2>
+                        <p>
+                            Estamos dedicados al diseño y desarrollo de
+                            programas
+                            informáticos.
+                        </p>
+                    </div>
+                    <div class="container-row">
+                        <div class="card_dev bg-rojo">
+                            <img
+                                src="assets/icons/dev_aplicaciones.png"
+                                alt="Propuesta">
+                            <h2>Desarrollo aplicaciones</h2>
+                        </div>
+                        <div class="card_dev bg-rojo">
+                            <img
+                                src="assets/icons/dev_web.png"
+                                alt="Propuesta">
+                            <h2>Desarrollo web</h2>
+                        </div>
+                        <div class="card_dev bg-rojo">
+                            <img
+                                src="assets/icons/dev_medida.png"
+                                alt="Propuesta">
+                            <h2>Desarrollo a
+                                medida</h2></div>
+                        <div class="card_dev bg-rojo">
+                            <img
+                                src="assets/icons/dev_calidad.png"
+                                alt="Propuesta">
+                            <h2>Alta calidad</h2></div>
+                    </div>
+                </div>
+                <!-- Clientes -->
+                <div>
+                    <div>
+                        <h2 class="subtitulos">
+                            Nuestros clientes
+                        </h2>
+                    </div>
+                    <div>
+                        <img src="assets/clientes/cliente_1.png" alt="Propuesta"
+                            title="AMD"
+                            class="logos">
+                        <img src="assets/clientes/cliente_2.png" alt="Propuesta"
+                            title="J&L"
+                            class="logos">
+                        <img src="assets/clientes/cliente_3.png" alt="Propuesta"
+                            title="AMAZON"
+                            class="logos">
+                        <img src="assets/clientes/cliente_4.png" alt="Propuesta"
+                            title="BAYER"
+                            class="logos">
+                        <img src="assets/clientes/cliente_5.png" alt="Propuesta"
+                            title="X"
+                            class="logos">
+                        <img src="assets/clientes/cliente_6.png" alt="Propuesta"
+                            title="GHS"
+                            class="logos">
+                    </div>
+                </div>
+            </section>
+            <!-- Section #2 -->
+            <section class="container-column">
+                <div class="container-row">
+                    <div class="contacto">
+                        <div><h2 class="subtitulos">Mandanos un mensaje</h2>
+                            <h3>Nombres y apellidos</h3>
+                            <input type="text" class="input-datos">
+                            <h3>Correo electronico</h3>
+                            <input type="text" class="input-datos">
+                            <h3>Numero celular</h3>
+                            <input type="text"
+                                pattern="[0-9]"
+                                maxlength="10" class="input-datos">
+                            <h3>Mensaje</h3>
+                            <textarea name="texto" id cols="30"
+                                rows="10"></textarea>
+                            <div>
+                                <a href class="btn">Enviar</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="subtitulos">
+                                ¿Como encontrarnos?
+                            </h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202844.46260695797!2d-122.20590511644829!3d37.40296192903705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon%20Valley%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1711143861870!5m2!1ses-419!2sco"
+                                width="80%" height="300" style="border:0;"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                    </div>
+                </section>
+            </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <div><p>
+                        <strong>Todos los derechos reservados 2024 ©</strong>
+                    </p></div>
+                <div><a href="privacidad.html">Politicas de privacidad</a></div>
+            </footer>
+            <!-- js -->
+            <script src="js/propusta.js"> 
+</script>
+        </body>
+    </html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Propuesta pagina web corporativa">
+    <meta name="keywords" content="Propuesta, Modelo, Css, Html, Js, Framework, Tic, software, Frontend, Desarrollo">
+    <meta name="author" content="Nicolas Garcia">
+    <meta name="copyright" content="Nicolas Garcia">
+    <meta name="robots" content="index">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>Safe | Archivo</title>
+    <link rel="icon" href="../assets/icons/logo page.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/propuesta.css">
+</head>
+
+<body id="body">
+    <!-- Header -->
+    <header>
+        <nav class="nav">
+            <div class="nav__container">
+                <a href="../index.html">
+                    <img src="../assets/icons/logo.png" alt="" class="nav__logo">
+                </a>
+                <!-- boton abrir -->
+                <a href="#menu" class="nav__menu">
+                    <img src="../assets/icons/abrir.png" class="nav__icon">
+                </a>
+                <!-- Boton cerrar -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="../assets/icons/cerrar.png" class="nav__icon ">
+                </a>
+                <!-- Menu -->
+                <ul class="dropdown" id="menu">
+                    <!-- Inicio -->
+                    <li class="dropdown__list">
+                        <a href="../index.html" class="dropdown__link">
+                            <span class="dropdown__span">Inicio</span>
+                        </a>
+                    </li>
+                    <!-- Nosotros -->
+                    <li class="dropdown__list">
+                        <a href="#" class="dropdown__link">
+                            <img src="../assets/icons/logo page.png" class="dropdown_logo">
+                            <span class="dropdown__span">Nosotros</span>
+                            <input type="checkbox" class="dropdown__check">
+                        </a>
+                        <div class="dropdown__content">
+                            <ul class="dropdown__sub">
+                                <li class="dropdown__li">
+                                    <a href="../nosotros/nosotros.html" class="dropdown__anchor">Nosotros</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../nosotros/empresas.html" class="dropdown__anchor">Empresas afiliadas</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../nosotros/politicas.html" class="dropdown__anchor">Politicas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Servicios -->
+                    <li class="dropdown__list">
+                        <a href="#" class="dropdown__link">
+                            <img src="../assets/icons/servicios.png" class="dropdown_logo">
+                            <span class="dropdown__span">Servicios</span>
+                            <input type="checkbox" class="dropdown__check">
+                        </a>
+                        <div class="dropdown__content">
+                            <ul class="dropdown__sub">
+                                <li class="dropdown__li">
+                                    <a href="../servicios/seguros_personas.html" class="dropdown__anchor">Seguros a la
+                                        persona</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../servicios/seguros_vehiculares.html" class="dropdown__anchor">Seguros
+                                        vehiculares</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../servicios/seguros_creditos.html" class="dropdown__anchor">Seguros de
+                                        creditos</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../servicios/seguros_inmuebles.html" class="dropdown__anchor">Seguros de
+                                        inmuebles</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Prensa -->
+                    <li class="dropdown__list">
+                        <a href="#" class="dropdown__link">
+                            <img src="../assets/icons/Prensa.png" class="dropdown_logo">
+                            <span class="dropdown__span">Prensa</span>
+                            <input type="checkbox" class="dropdown__check">
+                        </a>
+                        <div class="dropdown__content">
+                            <ul class="dropdown__sub">
+                                <li class="dropdown__li">
+                                    <a href="../prensa/archivo.html" class="dropdown__anchor">Notas de prensa</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../prensa/multimedia.html" class="dropdown__anchor">Archivo fotográfico</a>
+                                </li>
+                                <li class="dropdown__li">
+                                    <a href="../prensa/contacto.html" class="dropdown__anchor">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Eventos -->
+                    <li class="dropdown__list">
+                        <a href="../eventos/eventos.html" class="dropdown__link">
+                            <span class="dropdown__span">Eventos</span>
+                        </a>
+                    </li>
+                    <!-- Mapa del sitio -->
+                    <li class="dropdown__list">
+                        <a href="../mapa_sitio.html" class="dropdown__link">
+                            <span class="dropdown__span">Mapa del sitio</span>
+                        </a>
+                    </li>
+                    <!-- Soporte -->
+                    <li class="dropdown__list">
+                        <a href="../soporte.html" class="dropdown__link">
+                            <span class="dropdown__span">Soporte</span>
+                        </a>
+                    </li>
+                    <!-- Contacto -->
+                    <li class="dropdown__list">
+                        <a href="../contacto.html" class="dropdown__link">
+                            <span class="dropdown__span">Contacto</span>
+                        </a>
+                    </li>
+                    <!-- Buscador -->
+                    <li class="dropdown__list">
+                        <input type="search" name="" id="" placeholder="¿Que desea buscar?">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- Section #1 -->
+        <section class="container-column">
+            <div>
+                <!-- #1 -->
+                <h2 class="subtitulos">
+                    Lanzamiento de un Nuevo Producto Innovador
+                </h2>
+                <img src="../assets/prensa/1.jpg" alt="prensa" title="prensa" class="contenido-logo-prensa">
+                <p class="text-justify">
+                    "SAFE COMPANY Insurance Revoluciona el Mercado con el Lanzamiento de su Nuevo Seguro de Salud
+                    Digital"
+                    <br>
+                    <br>
+                    Insurance ha anunciado el lanzamiento de su último producto innovador, el Seguro de Salud
+                    Digital. Este nuevo seguro aprovecha las últimas tecnologías digitales para ofrecer a los asegurados
+                    un acceso rápido y conveniente a servicios de salud de alta calidad. Entre las características
+                    destacadas se encuentran consultas médicas virtuales, seguimiento de salud personalizado a través de
+                    aplicaciones móviles y herramientas de bienestar digital. Este lanzamiento reafirma el compromiso de
+                    SAFE COMPANY Insurance con la innovación y el bienestar de sus clientes, al tiempo que marca un
+                    hito significativo en la evolución de la industria de seguros de salud.
+                </p>
+                <!-- #2 -->
+                <h2 class="subtitulos">
+                    Alianza Estratégica con Institución Médica Reconocida
+                </h2>
+                <img src="../assets/prensa/2.jpg" alt="prensa" title="prensa" class="contenido-logo-prensa">
+                <p class="text-justify">
+                    "SAFE COMPANY Insurance Anuncia Alianza Estratégica con el Hospital de Prestigio Regional para
+                    Mejorar el
+                    Acceso a la Atención Médica"
+                    <br>
+                    <br>
+                    SAFE COMPANY Insurance se complace en anunciar una nueva alianza estratégica con el Hospital
+                    Regional de
+                    renombre. Esta asociación permitirá a los asegurados de SAFE COMPANY Insurance acceder a servicios
+                    médicos de
+                    alta calidad con tarifas preferenciales y tiempos de espera reducidos. Los asegurados también se
+                    beneficiarán de programas de salud preventiva y servicios especializados en el hospital. Esta
+                    alianza demuestra el compromiso de SAFE COMPANY Insurance de proporcionar a sus clientes acceso
+                    conveniente y
+                    asequible a la atención médica de primera clase.
+                </p>
+                <!-- #3 -->
+                <h2 class="subtitulos">
+                    Reconocimiento por Excelencia en Servicio al Cliente
+                </h2>
+                <img src="../assets/prensa/3.jpg" alt="prensa" title="prensa" class="contenido-logo-prensa">
+                <p class="text-justify">
+                    "SAFE COMPANY Insurance Recibe el Premio al Mejor Servicio al Cliente en la Industria de Seguros"
+                    <br>
+                    <br>
+                    SAFE COMPANY Insurance se enorgullece en anunciar que ha sido galardonada con el prestigioso Premio
+                    al Mejor
+                    Servicio al Cliente en la Industria de Seguros. Este reconocimiento destaca el compromiso de SAFE
+                    COMPANY
+                    Insurance de brindar un servicio excepcional y una experiencia satisfactoria a sus clientes en todas
+                    las etapas de su viaje con la compañía. Desde la atención al cliente hasta la resolución de
+                    reclamaciones, SAFE COMPANY Insurance se esfuerza continuamente por superar las expectativas y
+                    establecer
+                    nuevos estándares de excelencia en el servicio al cliente en la industria de seguros.
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <ul>
+                <li><img src="../assets/icons/logo blanco.png" alt="logo" title="Logo" class="footer-logo"></li>
+                <li><strong>Todos los derechos reservados 2024 ©</strong></li>
+                <li> (+57) 300 000 00 00</li>
+                <li>Calle 0 # 00 - 00</li>
+                <li> Bogotá, Colombia</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="subtitulos-h3">
+                Nosotros
+            </h3>
+            <ul>
+                <li><a href="../nosotros/nosotros.html">Nosotros</a></li>
+                <li><a href="../nosotros/empresas.html">Convenios</a></li>
+                <li><a href="../mapa_sitio.html">Mapa web</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="subtitulos-h3">
+                Redes sociales
+            </h3>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="../assets/redes sociales/facebook.png" alt="facebook" title="facebook"
+                            class="footer-redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                        <img src="../assets/redes sociales/linkedin.png" alt="linkedin" title="linkedin"
+                            class="footer-redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://web.whatsapp.com/" target="_blank">
+                        <img src="../assets/redes sociales/whatsapp.png" alt="whatsapp" title="whatsapp"
+                            class="footer-redes">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a href="../nosotros/politicas.html">Politicas de privacidad</a>
+        </div>
+    </footer>
+    <!-- js -->
+    <script src="../js/propusta.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+:root {
+    /* Paleta de colores */
+
+    /* Fondos */
+    --fondo-body: #222831;
+
+    /* Titulos */
+    --titulos: #76ABAE;
+    --subtitulos: #dea855;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
+    /* Colores */
+    --color-rojo: #D21312;
+    --color-azul: #4F709C;
+    --color-verde: #44f0b7;
+    --color-amarillo: #EAC100;
+    --color-blanco: #0F0F0F;
+    --color-negro: #FAF8F1;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
+
+    /* Card */
+    --color-card: #181C14;
+    --color-card-proyectos: #131610;
+
+    /* Proyectos */
+    --color-proyecto-1: #80f9ff;
+    --color-proyecto-2: #EEEEEE;
+
+    /* Switch */
+    --color-switch-1: #00548b;
+    --color-switch-2: #272727;
+    --color-switch-3: #fffc45;
+
+    /* Fondo hero*/
+    --fondo: url(../assets/images/oscuro.gif);
+    --color-hero-div: #ffffff;
+}
+
+/* Tema oscuro */
+[tema="oscuro"] {
+    /* Paleta de colores */
+
+    /* Fondos */
+    --fondo-body: #FFFAEC;
+
+    /* Titulos */
+    --titulos: #578E7E;
+    --subtitulos: #578E7E;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
+    /* Colores */
+    --color-rojo: #D21312;
+    --color-azul: #4F709C;
+    --color-verde: #44f0b7;
+    --color-amarillo: #EAC100;
+    --color-blanco: #0F0F0F;
+    --color-negro: #FAF8F1;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
+
+    /* Card */
+    --color-card: #181C14;
+
+    /* Fondo hero*/
+    --fondo: url(../assets/images/claro.jpg);
+    --color-hero-div: #F5ECD5;
+}
