@@ -1,4 +1,4 @@
-// Archivo js index
+// rkt - JavaScript
 
 // Interruptor
 const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
