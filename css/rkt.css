@@ -29,8 +29,8 @@
     --color-card-proyectos: #131610;
 
     /* Proyectos */
-    --color-proyecto-1: #80f9ff;
-    --color-proyecto-2: #EEEEEE;
+    --color-proyecto-1: #ffffff;
+    --color-proyecto-2: #a9a9a9;
 
     /* Switch */
     --color-switch-1: #00548b;
@@ -79,9 +79,14 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--Parrafosbody);
     background-color: var(--fondo-body);
 }
+
+/**
+
+Creacion de los contenedores flex
+
+*/
 
 /* Column */
 
@@ -133,7 +138,7 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .logo-hero {
@@ -185,48 +190,10 @@ body {
     color: var(--color-negro);
 }
 
-.card ul {
-    height: 80px;
-    margin: 10px;
-    padding: 10px;
-}
-
 .logos {
     background-color: var(--color-negro);
     border-radius: 20%;
     padding: 10px;
-}
-
-/* Cards-proyectos */
-
-.card-proyectos {
-    overflow: hidden;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    width: 350px;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 30px;
-    background-color: var(--color-card-proyectos);
-    color: var(--color-black);
-    transition: 0.8s;
-}
-
-.card-proyectos:hover {
-    box-shadow: 0 8px 10px 0 #000000cb;
-    scale: 1.1;
-}
-
-.card-proyectos:hover h2 {
-    color: var(--color-verde);
-}
-
-.card-proyectos img {
-    height: 80px;
-    width: 80px;
 }
 
 /* Logo */
@@ -245,8 +212,8 @@ body {
 /* Proyectos */
 
 .proyectos {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     border-radius: 50px;
     background-color: var(--color-proyecto-1);
 }
@@ -257,8 +224,8 @@ body {
 }
 
 .proyectos img {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
 }
 
 /* Listas */
