@@ -28,6 +28,12 @@
     --color-card: #181C14;
     --color-card-proyectos: #131610;
 
+    /* Botones */
+
+    --btn: #F2EFE7;
+    --btn-hover: #9ACBD0;
+    --btn-font: #161A30;
+
     /* Proyectos */
     --color-proyecto-1: #ffffff;
     --color-proyecto-2: #a9a9a9;
@@ -208,7 +214,7 @@ Creacion de los contenedores flex
 /* Logo */
 
 .logo-cliente {
-    width: 350px;
+    width: 250px;
     height: 100px;
     border-radius: 15px;
 }
@@ -246,38 +252,38 @@ Creacion de los contenedores flex
 
 /* Botones */
 
-.btn_img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-}
-
 .btn {
-    display: flex;
     width: 150px;
     height: 50px;
     margin: 5px;
     border-radius: 20px;
-    background-color: var(--color-card);
+    background-color: var(--btn);
     text-decoration: none;
     font-family: fantasy;
-    color: var(--subtitulos);
+    color: var(--btn-font);
     justify-content: center;
     align-items: center;
 }
 
 .btn:hover {
-    background-color: var(--color-amarillo);
-    color: var(--color-blanco);
+    background-color: var(--btn-hover);
     transition: 0.8s;
+}
+
+/* Text-area */
+
+.textarea-full {
+    width: 80vw;
+    height: 350px;
+    resize: none;
+    font-size: 25px;
+    color: var(--color-blanco);
 }
 
 /* Footer */
 
 footer {
-    height: 40vh;
-    overflow: scroll;
+    height: 350px;
     display: flex;
     flex-flow: row wrap;
     text-align: center;
@@ -285,10 +291,6 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--color-blanco);
-}
-
-footer address {
-    font-family: fantasy;
 }
 
 footer div {
@@ -301,6 +303,7 @@ footer div img {
 }
 
 footer address {
+    font-family: fantasy;
     font-size: 4vh;
     color: var(--color-negro);
 }
@@ -328,7 +331,6 @@ footer ul li {
     height: 50px;
     transition: 0.8s;
 }
-
 
 /* Switch */
 
