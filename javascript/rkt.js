@@ -10,3 +10,10 @@ function cambiaTema(ev) {
     }
 }
 colorSwitch.addEventListener('change', cambiaTema);
+
+
+// Decodificador
+
+function MensajeMantenimiento() {
+    alert("¡Actualmente se encuentra esta app en mantenimiento!");
+}
