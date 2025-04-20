@@ -1,6 +1,46 @@
 /* rkt-css - CSS personal */
 
 :root {
+
+    /* Paleta de colores */
+
+    /* Fondos */
+    --fondo-body: #FFFAEC;
+
+    /* Titulos */
+    --titulos: #578E7E;
+    --subtitulos: #4a4333;
+
+    /* Textos */
+    --Parrafos: #181C14;
+
+    /* Colores */
+    --color-rojo: #D21312;
+    --color-azul: #4F709C;
+    --color-verde: #44f0b7;
+    --color-amarillo: #EAC100;
+    --color-blanco: #0F0F0F;
+    --color-negro: #FAF8F1;
+    --color-morado: #810CA8;
+    --color-naranja: #FF4C29;
+    --color-cafe: #E5BA73;
+
+    /* Card */
+    --color-card: #181C14;
+
+    /* Switch */
+    --color-switch-1: #00548b;
+    --color-switch-2: #272727;
+    --color-switch-3: #fffc45;
+
+    /* Fondo hero*/
+    --fondo: url(../assets/images/claro.jpg);
+    --color-hero-div: #F5ECD5;
+}
+
+/* Tema oscuro */
+[tema="oscuro"] {
+
     /* Paleta de colores */
 
     /* Fondos */
@@ -11,7 +51,7 @@
     --subtitulos: #dea855;
 
     /* Textos */
-    --Parrafos: #181C14;
+    --Parrafos: #cdcdcd;
 
     /* Colores */
     --color-rojo: #D21312;
@@ -46,39 +86,6 @@
     /* Fondo hero*/
     --fondo: url(../assets/images/oscuro.gif);
     --color-hero-div: #ffffff;
-}
-
-/* Tema oscuro */
-[tema="oscuro"] {
-    /* Paleta de colores */
-
-    /* Fondos */
-    --fondo-body: #FFFAEC;
-
-    /* Titulos */
-    --titulos: #578E7E;
-    --subtitulos: #4a4333;
-
-    /* Textos */
-    --Parrafos: #181C14;
-
-    /* Colores */
-    --color-rojo: #D21312;
-    --color-azul: #4F709C;
-    --color-verde: #44f0b7;
-    --color-amarillo: #EAC100;
-    --color-blanco: #0F0F0F;
-    --color-negro: #FAF8F1;
-    --color-morado: #810CA8;
-    --color-naranja: #FF4C29;
-    --color-cafe: #E5BA73;
-
-    /* Card */
-    --color-card: #181C14;
-
-    /* Fondo hero*/
-    --fondo: url(../assets/images/claro.jpg);
-    --color-hero-div: #F5ECD5;
 }
 
 /* Body */
@@ -118,7 +125,7 @@ Creacion de los contenedores flex
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
 }
@@ -205,10 +212,84 @@ Creacion de los contenedores flex
     color: var(--color-negro);
 }
 
+.card button {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #222831;
+    color: var(--color-negro);
+}
+
 .logos {
     background-color: var(--color-negro);
     border-radius: 20%;
     padding: 10px;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contenido-modal {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.contenido-modal a {
+    text-decoration: none;
+    color: var(--color-azul);
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* Botones modal */
+.modal-btn-cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-btn-cerrar:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Logo */
@@ -420,6 +501,45 @@ input:checked+.slider:before {
     color: var(--subtitulos);
 }
 
+.parrafos-pequeño {
+    color: var();
+    max-width: 40vw;
+    font-size: 20px;
+    text-align: justify;
+    align-content: center;
+}
+
+.parrafos-mediano {
+    color: var();
+    max-width: 60vw;
+    font-size: 20px;
+    text-align: justify;
+    align-content: center;
+}
+
+.parrafos-completo {
+    color: var();
+    max-width: 80vw;
+    font-size: 20px;
+    text-align: justify;
+    align-content: center;
+}
+
+.img-pequeña {
+    width: 50px;
+    height: 50px;
+}
+
+.img-mediana {
+    width: 180px;
+    height: 180px;
+}
+
+.img-grandes {
+    width: 250px;
+    height: 250px;
+}
+
 .full-width {
     width: 100vw;
 }
@@ -503,6 +623,10 @@ input:checked+.slider:before {
 
 /*Tablet*/
 @media (min-width: 0px) and (max-width: 991.98px) {
+    .parrafos-pequeño {
+        max-width: 500px;
+    }
+
     .full-height {
         height: auto;
     }
@@ -510,6 +634,10 @@ input:checked+.slider:before {
 
 /*movil*/
 @media (max-width: 575.98px) {
+    .parrafos-pequeño {
+        max-width: 300px;
+    }
+
     .full-height {
         height: auto;
     }
