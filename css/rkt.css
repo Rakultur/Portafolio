@@ -510,7 +510,7 @@ input:checked+.slider:before {
 }
 
 .parrafos-mediano {
-    color: var();
+    color: var(--Parrafos);
     max-width: 60vw;
     font-size: 20px;
     text-align: justify;
@@ -518,7 +518,7 @@ input:checked+.slider:before {
 }
 
 .parrafos-completo {
-    color: var();
+    color: var(--Parrafos);
     max-width: 80vw;
     font-size: 20px;
     text-align: justify;

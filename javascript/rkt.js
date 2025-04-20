@@ -116,16 +116,16 @@ span_modal_sketchup.onclick = function () {
 
 // Modal Ofitmatica
 
-let modal_ofitmatica = document.querySelector("#modal-ofitmatica")
-let btn_modal_ofitmatica = document.querySelector("#btn-modal-ofitmatica")
-let span_modal_ofitmatica = document.querySelector("#cerrar-ofitmatica")
+let modal_ofimatica = document.querySelector("#modal-ofimatica")
+let btn_modal_ofimatica = document.querySelector("#btn-modal-ofimatica")
+let span_modal_ofimatica = document.querySelector("#cerrar-ofimatica")
 
-btn_modal_ofitmatica.onclick = function () {
-    modal_ofitmatica.style.display = "block"
+btn_modal_ofimatica.onclick = function () {
+    modal_ofimatica.style.display = "block"
 }
 
-span_modal_ofitmatica.onclick = function () {
-    modal_ofitmatica.style.display = "none"
+span_modal_ofimatica.onclick = function () {
+    modal_ofimatica.style.display = "none"
 }
 
 // Modal Gimp
@@ -183,8 +183,8 @@ window.onclick = function (event) {
         case modal_sketchup:
             modal_sketchup.style.display = "none";
             break;
-        case modal_ofitmatica:
-            modal_ofitmatica.style.display = "none";
+        case modal_ofimatica:
+            modal_ofimatica.style.display = "none";
             break;
         case modal_gimp:
             modal_gimp.style.display = "none";
