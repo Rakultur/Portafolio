@@ -28,6 +28,12 @@
     /* Card */
     --color-card: #181C14;
 
+    /* Botones */
+    --btn: #F2EFE7;
+    --btn-color: #161A30;
+    --btn-hover: #9ACBD0;
+    --btn-font: #161A30;
+
     /* Switch */
     --color-switch-1: #00548b;
     --color-switch-2: #272727;
@@ -344,6 +350,11 @@ Creacion de los contenedores flex
     color: var(--btn-font);
     justify-content: center;
     align-items: center;
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--btn-color);
 }
 
 .btn:hover {
