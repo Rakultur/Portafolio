@@ -3,22 +3,23 @@
 try {
     // Declaración de variables
     let salida = document.querySelector("#salida-datos");
-
     let entrada = "";
     let resultado = "";
     let lista_entrante = "";
     let lista_saliente = [];
     let indicador = 0;
+    let dato_1 = "";
+    let dato_2 = "";
 
     const btn_codificar = document.querySelector("#codificar");
     const btn_decodificar = document.querySelector("#decodificar");
+    const btn_cambiar = document.querySelector("#cambiar");
 
     // Codificar
     btn_codificar.addEventListener('click', () => {
 
         entrada = document.querySelector("#entrada-datos").value;
         lista_entrante = entrada.split("");
-        console.log(lista_entrante);
 
         while (indicador < lista_entrante.length) {
             switch (lista_entrante[indicador]) {
@@ -789,7 +790,6 @@ try {
             indicador = indicador + 1;
         }
 
-        console.log(lista_saliente);
         resultado = lista_saliente.join("");
         document.querySelector("#salida-datos").value = resultado;
 
@@ -805,7 +805,6 @@ try {
 
         entrada = document.querySelector("#entrada-datos").value;
         lista_entrante = entrada.split("");
-        console.log(lista_entrante);
 
         while (indicador < lista_entrante.length) {
             switch (lista_entrante[indicador]) {
@@ -1576,7 +1575,6 @@ try {
             indicador = indicador + 1;
         }
 
-        console.log(lista_saliente);
         resultado = lista_saliente.join("");
         document.querySelector("#salida-datos").value = resultado;
 
@@ -1587,10 +1585,21 @@ try {
         lista_saliente = [];
     });
 
+    // Cambiar datos textarea
+    btn_cambiar.addEventListener('click', () => {
+
+        dato_1 = document.querySelector("#entrada-datos").value;
+        dato_2 = document.querySelector("#salida-datos").value;
+
+        document.querySelector("#entrada-datos").value = dato_2;
+        document.querySelector("#salida-datos").value = dato_1;
+
+        dato_1 = "";
+        dato_2 = "";
+    });
 
     // Proceso con codigo de caracteres 
-
-    // Variables
+    //  Variables
     let codigo_ascii = [
         '´',
         '¹',
@@ -2102,15 +2111,13 @@ try {
 
     ];
 
+    // Proceso para ahorrar tiempo y permitir modificar las listas de ascii
     let ascii_Salida = "";
-
     for (let i = 0; i < 253; i++) {
         ascii_Salida += "case lista_entrante[indicador] = " + "\"" + codigo_ascii_mod[i] + "\"" + " : " + " \n "
             + "lista_saliente[indicador] = " + "\"" + codigo_ascii[i] + "\"" + " ; " + " \n "
             + " break; " + " \n ";
     }
-
-    console.log(ascii_Salida);
 
 } catch (error) {
     alert("Lo lamentamos, ah ocurrido un error!")
