@@ -421,15 +421,13 @@ Creacion de los contenedores Grid
 /* Text-area */
 
 .textarea-full {
-    width: 80vw;
+    width: 60vw;
     height: 350px;
     margin: 10px;
     resize: none;
     background-color: var(--color-textarea);
     border-radius: 5px;
     border-color: var(--color-textarea-border);
-    border-style: solid;
-    font-size: 25px;
     color: var(--color-negro);
 }
 
