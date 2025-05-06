@@ -2,41 +2,78 @@
 
 try {
     // Declaración de variables
-    const entrada = document.querySelector("#entrada-datos");
-    const salida = document.querySelector("#salida-datos");
+    let salida = document.querySelector("#salida-datos");
 
-
-
-    let lista_ordenada = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let lista_desordenada = [4, 7, 1, 9, 0, 6, 3, 8, 2, 5];
-
-    let indicador = entrada.value;
-    let solucion = [];
-    solucion.length = indicador.length;
+    let entrada = "";
+    let resultado = "";
+    let lista_entrante = "";
+    let lista_saliente = [];
+    let indicador = 0;
 
     const btn_codificar = document.querySelector("#codificar");
     const btn_decodificar = document.querySelector("#decodificar");
 
-
+    // Codificar
     btn_codificar.addEventListener('click', () => {
 
-        salida.value = "";
+        entrada = document.querySelector("#entrada-datos").value;
+        lista_entrante = entrada.split("");
+        console.log(lista_entrante);
 
-        for (let index = 0; index < indicador.length; index++) {
-            solucion.push(index);
+        while (indicador < lista_entrante.length) {
+            switch (lista_entrante[indicador]) {
+                case lista_entrante[indicador] = "1":
+                    lista_saliente[indicador] = "5";
+                    break;
+                case lista_entrante[indicador] = "2":
+                    lista_saliente[indicador] = "8";
+                    break;
+                case lista_entrante[indicador] = "3":
+                    lista_saliente[indicador] = "7";
+                    break;
+                case lista_entrante[indicador] = "4":
+                    lista_saliente[indicador] = "2";
+                    break;
+                case lista_entrante[indicador] = "5":
+                    lista_saliente[indicador] = "1";
+                    break;
+                case lista_entrante[indicador] = "6":
+                    lista_saliente[indicador] = "3";
+                    break;
+                case lista_entrante[indicador] = "7":
+                    lista_saliente[indicador] = "4";
+                    break;
+                case lista_entrante[indicador] = "8":
+                    lista_saliente[indicador] = "9";
+                    break;
+                case lista_entrante[indicador] = "9":
+                    lista_saliente[indicador] = "0";
+                    break;
+                case lista_entrante[indicador] = "0":
+                    lista_saliente[indicador] = "6";
+                    break;
+                default:
+                    alert("Entrada incorrecta, solo datos numericos enteros!");
+                    indicador = 10000000000000000000000000;
+                    break;
+            }
+            indicador = indicador + 1;
         }
 
-        alert("codificar");
+        console.log(lista_saliente);
+        resultado = lista_saliente.join("");
+        document.querySelector("#salida-datos").value = resultado;
 
-        salida.value = solucion;
-
-        solucion.length = 0;
-        let = "";
+        // Reseteando indicadores
+        resultado = "";
+        entrada = "";
+        indicador = 0;
+        lista_saliente = [];
     });
 
+    // Decodificar
     btn_decodificar.addEventListener('click', () => {
-        salida.value = "";
-        alert("decodificar");
+        alert("¡App en mantenimiento!")
     });
 
 } catch (error) {

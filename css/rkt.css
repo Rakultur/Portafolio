@@ -32,6 +32,11 @@
     /* Card */
     --color-card: #181C14;
 
+    /* Textarea */
+
+    --color-textarea: rgba(202, 202, 202, 0.488);
+    --color-textarea-border: #0000008f;
+
     /* Botones */
     --btn: #F2EFE7;
     --btn-color: #161A30;
@@ -418,7 +423,12 @@ Creacion de los contenedores Grid
 .textarea-full {
     width: 80vw;
     height: 350px;
+    margin: 10px;
     resize: none;
+    background-color: var(--color-textarea);
+    border-radius: 5px;
+    border-color: var(--color-textarea-border);
+    border-style: solid;
     font-size: 25px;
     color: var(--color-negro);
 }
@@ -554,7 +564,7 @@ input:checked+.slider:before {
 }
 
 .titulo-1 {
-    font-size: 60px;
+    font-size: 50px;
     color: var(--titulos);
 }
 
