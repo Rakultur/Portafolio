@@ -1,9 +1,12 @@
-// Importar variables
-@import '../../styles/variables.scss';
+$color_principal : #FE7743;
+$color_botones : #FE7743;
+$color_texto : #000000;
+$color_texto_hover : #ffffff;
+
 
 .header {
-    background-color: #3498db;
-    color: white;
+    background-color: $color_principal;
+    color: $color_texto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,14 +27,14 @@
 }
 
 .nav a {
-    color: white;
+    color: $color_texto;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav a:hover {
-    color: #2ecc71;
+    color: $color_texto_hover;
 }
 
 /* Botón hamburguesa */
@@ -52,7 +55,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: $color_texto_hover;
     border-radius: 2px;
     position: relative;
     transition: all 0.3s ease;
@@ -78,7 +81,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #2980b9;
+    background-color: $color_principal;
     width: 200px;
     border-radius: 0 0 8px 8px;
     padding: 1rem;
