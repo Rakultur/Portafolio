@@ -1,7 +1,6 @@
 /* rkt-css - CSS personal */
 
 :root {
-
     /* Paleta de colores */
 
     /* Fondos */
@@ -54,8 +53,8 @@
 }
 
 /* Tema oscuro */
-[tema="oscuro"] {
 
+[tema="oscuro"] {
     /* Paleta de colores */
 
     /* Fondos */
@@ -165,8 +164,6 @@ Creacion de los contenedores flex
 Creacion de los contenedores Grid
 
 */
-
-/* Column */
 
 .grid {
     display: grid;
