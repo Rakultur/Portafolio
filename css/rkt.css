@@ -601,10 +601,12 @@ input:checked+.slider:before {
 
 .texto-justificado {
     text-align: justify;
+    padding: 15px;
 }
 
 .texto-centrado {
     text-align: center;
+    padding: 15px;
 }
 
 .img-pequeña {
