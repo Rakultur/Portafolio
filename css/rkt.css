@@ -33,7 +33,7 @@
 
   /* Textarea */
 
-  --color-textarea: rgba(202, 202, 202, 0.488);
+  --color-textarea: rgb(255, 255, 255);
   --color-textarea-border: #0000008f;
 
   /* Botones */
@@ -438,10 +438,10 @@ Creacion de los contenedores Grid
   width: 60vw;
   height: 350px;
   margin: 10px;
+  padding: 25px;
   resize: none;
   background-color: var(--color-textarea);
-  border-radius: 5px;
-  border-color: var(--color-textarea-border);
+  border-radius: 10px;
   color: var(--color-negro);
 }
 
@@ -577,7 +577,7 @@ input:checked + .slider:before {
 }
 
 .titulo-1 {
-  font-size: 50px;
+  font-size: 45px;
   color: var(--titulos);
 }
 
