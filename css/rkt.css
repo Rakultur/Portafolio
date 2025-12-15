@@ -487,7 +487,7 @@ footer div ul li {
 
 .btn-footer {
   width: 50px;
-  height: 5s0px;
+  height: 50px;
 }
 
 .btn-footer img {
@@ -501,6 +501,34 @@ footer div ul li {
 .btn-footer img:hover {
   border-radius: 5px;
   padding: 5px;
+}
+
+@media (max-width: 600px) {
+  /* Footer */
+
+  footer {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-azul);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  footer div img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer div ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
 }
 
 /* Switch */
