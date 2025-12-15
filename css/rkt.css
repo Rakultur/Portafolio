@@ -464,13 +464,12 @@ footer div {
 }
 
 footer div img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 footer address {
-  font-family: fantasy;
-  font-size: 4vh;
+  font-size: 3vh;
   color: var(--color-blanco);
 }
 
@@ -487,16 +486,21 @@ footer div ul li {
 }
 
 .btn-footer {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 5s0px;
 }
 
 .btn-footer img {
   background-color: var(--color-blanco);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   transition: 0.8s;
+}
+
+.btn-footer img:hover {
+  border-radius: 5px;
+  padding: 5px;
 }
 
 /* Switch */
