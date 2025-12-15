@@ -221,13 +221,15 @@ Creacion de los contenedores Grid
 .hero {
   display: flex;
   flex-flow: column wrap;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   align-items: center;
   /* Fondo hero */
   background-image: var(--fondo);
   background-size: cover;
   background-repeat: no-repeat;
+  /* Border */
+  border-radius: 0 0 80px 80px;
 }
 
 .hero div {
