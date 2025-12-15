@@ -37,9 +37,9 @@
   --color-textarea-border: #0000008f;
 
   /* Botones */
-  --btn: #f2efe7;
-  --btn-color: #161a30;
-  --btn-hover: #9acbd0;
+  --btn: #578e7e;
+  --btn-color: #faf8f1;
+  --btn-hover: #eac100;
   --btn-font: #161a30;
 
   /* Switch */
@@ -104,6 +104,7 @@ Creacion de los contenedores flex
 /* Column */
 
 .flex-column {
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-flow: column wrap;
@@ -115,6 +116,7 @@ Creacion de los contenedores flex
 /* Row */
 
 .flex-row {
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-flow: row wrap;
@@ -370,22 +372,12 @@ Creacion de los contenedores Grid
 /* Botones */
 
 .btn {
-  width: 150px;
-  height: 50px;
-  margin: 5px;
-  border-radius: 20px;
-  border-style: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px 5px 5px 5px;
   background-color: var(--btn);
   text-decoration: none;
-  font-family: fantasy;
-  color: var(--btn-font);
-  justify-content: center;
-  align-items: center;
-}
-
-.btn a {
-  text-decoration: none;
-  color: var(--btn-color);
+  list-style: none;
 }
 
 .btn:hover {
