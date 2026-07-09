@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga El Dorado | La Revolución del Fútbol</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="El fútbol vuelve a sus raíces. Únete a la Liga El Dorado, la nueva era del fútbol profesional con pura pasión y sin excusas.">
+    
+    <!-- Fonts: Anton (Brutalismo Deportivo) & Inter (Lectura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pitch: {
+                            black: '#030303',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f'
+                        },
+                        neon: {
+                            volt: '#ccff00', /* Nike Volt style */
+                            crimson: '#ff2a2a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Anton', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* BASE & RESET */
+        body { background-color: #030303; color: #ffffff; overflow-x: hidden; }
+        
+        /* TEXTURE OVERLAY */
+        .bg-texture {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');
+            opacity: 0.03; pointer-events: none; z-index: 9999;
+        }
+
+        /* CUSTOM UTILITIES */
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent;
+        }
+        .text-stroke-neon {
+            -webkit-text-stroke: 1.5px #ccff00;
+            color: transparent;
+        }
+        
+        /* MARQUEE ANIMATION */
+        .marquee-container { overflow: hidden; white-space: nowrap; display: flex; width: 100vw; }
+        .marquee-content { display: flex; animation: marquee 20s linear infinite; }
+        .marquee-reverse { animation: marquee-rev 25s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes marquee-rev { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+        /* SCROLL REVEALS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.9); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-scale.active { opacity: 1; transform: scale(1); }
+
+        /* GLITCH HOVER ON BUTTONS */
+        .btn-neon {
+            position: relative; overflow: hidden; transition: all 0.3s ease;
+            box-shadow: 0 0 0px #ccff00;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.5);
+            background-color: #e6ff66; color: #000;
+        }
+
+        /* IMAGE MASKS (BRUTALIST CUTS) */
+        .clip-slant { clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%); }
+        .clip-slant-reverse { clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: #1f1f1f; }
+        ::-webkit-scrollbar-thumb:hover { background: #ccff00; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-neon-volt selection:text-black">
+
+    <div class="bg-texture"></div>
+
+    <!-- NAVBAR (Minimalista & Agresivo) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center mix-blend-difference">
+        <a href="#" class="font-display text-3xl tracking-wide text-white uppercase flex items-center gap-2">
+            I.F.A. <span class="w-3 h-3 bg-neon-volt inline-block rounded-full animate-pulse"></span>
+        </a>
+        <div class="hidden md:flex gap-8 font-sans font-bold text-sm uppercase tracking-widest text-white">
+            <a href="#manifiesto" class="hover:text-neon-volt transition-colors">El Movimiento</a>
+            <a href="#liga" class="hover:text-neon-volt transition-colors">Liga El Dorado</a>
+            <a href="#barrio" class="hover:text-neon-volt transition-colors">El Barrio</a>
+        </div>
+        <a href="#unete" class="bg-white text-black font-sans font-extrabold text-xs uppercase tracking-[0.2em] px-6 py-3 hover:bg-neon-volt transition-colors">
+            Hazte Socio
+        </a>
+    </nav>
+
+    <!-- HERO SECTION (Impacto Visceral) -->
+    <header class="relative w-full h-screen min-h-[600px] flex flex-col justify-end pb-24 px-6 md:px-12 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Using a dramatic, moody stadium/fan picture -->
+            <img src="https://images.unsplash.com/photo-1508344928928-7137b29de216?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Hinchada en el estadio" class="w-full h-full object-cover object-center scale-105" />
+            <!-- Deep gradient to make text pop -->
+            <div class="absolute inset-0 bg-gradient-to-t from-pitch-black via-pitch-black/80 to-transparent"></div>
+            <!-- Dynamic radial highlight -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(204,255,0,0.05)_0%,transparent_60%)]"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start">
+            <span class="inline-block py-1 px-3 border border-neon-volt text-neon-volt font-bold text-xs uppercase tracking-widest mb-6 reveal">Revolución Oficial 2026</span>
+            <h1 class="font-display text-7xl md:text-[8rem] lg:text-[10rem] leading-[0.85] text-white uppercase m-0 reveal" style="transition-delay: 0.1s;">
+                DEVOLVAMOS<br>
+                EL <span class="text-neon-volt">FÚTBOL</span><br>
+                A LA <span class="text-stroke">CALLE.</span>
+            </h1>
+            <p class="font-sans font-medium text-gray-400 max-w-xl mt-8 text-lg md:text-xl reveal" style="transition-delay: 0.2s;">
+                Cansados del fútbol de corbata. La <strong class="text-white">Institución del Fútbol Asociado (I.F.A.)</strong> nace para devolverle el juego a los que sangran, lloran y viven por la camiseta.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 0.3s;">
+                <a href="#unete" class="btn-neon bg-neon-volt text-black font-sans font-black text-sm uppercase tracking-widest px-10 py-5 text-center flex items-center justify-center gap-3">
+                    Súmate a la grada 
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- TICKER (Marquee Text) -->
+    <div class="py-6 bg-neon-volt text-black border-y border-pitch-black transform -rotate-1 relative z-20 scale-105">
+        <div class="marquee-container">
+            <div class="marquee-content font-display text-4xl uppercase tracking-wider">
+                <span class="mx-8">PURA PASIÓN</span> • 
+                <span class="mx-8">CERO EXCUSAS</span> • 
+                <span class="mx-8">90 MINUTOS A MUERTE</span> • 
+                <span class="mx-8">LA LIGA EL DORADO ESTÁ AQUÍ</span> • 
+                <span class="mx-8">SANGRE Y SUDOR</span> • 
+                <span class="mx-8">FÚTBOL REAL</span> •
+                <!-- Repeat for infinite scroll illusion -->
+                <span class="mx-8">PURA PASIÓN</span> • 
+                <span class="mx-8">CERO EXCUSAS</span> • 
+                <span class="mx-8">90 MINUTOS A MUERTE</span> • 
+                <span class="mx-8">LA LIGA EL DORADO ESTÁ AQUÍ</span> • 
+                <span class="mx-8">SANGRE Y SUDOR</span> • 
+                <span class="mx-8">FÚTBOL REAL</span> •
+            </div>
+        </div>
+    </div>
+
+    <!-- MANIFIESTO (The Fan's Voice) -->
+    <section id="manifiesto" class="py-32 px-6 md:px-12 bg-pitch-black relative">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="font-display text-6xl md:text-8xl text-stroke opacity-30 absolute top-10 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none">EL AGUANTE</h2>
+            
+            <h3 class="font-display text-4xl md:text-6xl uppercase leading-tight reveal relative z-10">
+                NO SOMOS UNA LIGA MÁS.<br>
+                SOMOS EL <span class="text-neon-volt">GRITO DE GOL</span> QUE ESTABA AHOGADO.
+            </h3>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div class="reveal">
+                    <p class="text-gray-400 text-lg font-light leading-relaxed">
+                        El fútbol se había vuelto un negocio frío. Estadios en silencio, abonos impagables, jugadores que no sienten la camiseta y dirigentes que nunca pisaron un potrero. 
+                        <strong class="text-white font-bold">Nosotros venimos a romper esa mesa.</strong>
+                    </p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <p class="text-gray-400 text-lg font-light leading-relaxed">
+                        La <strong class="text-neon-volt">Liga El Dorado</strong> es meritocracia pura. Un sistema donde el club de tu barrio puede llegar a la cima si tiene el coraje, la estructura y, sobre todo, <strong class="text-white font-bold">el respaldo de su gente</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMÁGENES BRUTALISTAS (El Barrio / La Grada) -->
+    <section id="barrio" class="py-20 px-6 md:px-12 bg-pitch-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-16 reveal">
+                <h2 class="font-display text-5xl md:text-7xl uppercase leading-none">Del potrero<br>a la <span class="text-stroke">Gimnasia.</span></h2>
+                <p class="text-gray-500 font-sans font-bold uppercase tracking-widest max-w-xs text-right mt-6 md:mt-0">La cuna de nuestros próximos ídolos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+                <!-- Panel 1 -->
+                <div class="md:col-span-5 h-[400px] md:h-full relative overflow-hidden group reveal-scale clip-slant">
+                    <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Fútbol Callejero">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <span class="bg-black text-white font-bold px-3 py-1 text-xs uppercase tracking-wider mb-2 block w-max">Origen</span>
+                        <h3 class="font-display text-3xl text-white">EL BARRIO</h3>
+                    </div>
+                </div>
+                <!-- Panel 2 -->
+                <div class="md:col-span-7 h-[400px] md:h-full relative overflow-hidden group reveal-scale clip-slant-reverse" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbb6b04c86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Hinchada">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors"></div>
+                    <div class="absolute bottom-8 right-8 text-right">
+                        <span class="bg-neon-volt text-black font-bold px-3 py-1 text-xs uppercase tracking-wider mb-2 inline-block">Destino</span>
+                        <h3 class="font-display text-4xl text-white">LA GLORIA</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL FORMATO (Stats & Structure) -->
+    <section id="liga" class="py-32 px-6 md:px-12 bg-pitch-black relative border-y border-pitch-gray">
+        <!-- Big Number Background -->
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden z-0 opacity-5 pointer-events-none">
+            <span class="font-display text-[30rem] leading-none text-white">2026</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-24 reveal">
+                <span class="text-neon-volt font-sans font-bold uppercase tracking-[0.3em] text-sm">Sistema de Franquicias</span>
+                <h2 class="font-display text-6xl md:text-8xl mt-4">CÓMO SE JUEGA</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Stat 1 -->
+                <div class="reveal border-t border-neon-volt pt-6">
+                    <h4 class="font-display text-5xl text-white mb-2">20</h4>
+                    <p class="font-sans font-extrabold text-xl uppercase mb-3">Franquicias Base</p>
+                    <p class="text-gray-400 font-light text-sm">Ciudades de todo el país compitiendo bajo el mismo techo. Inversión descentralizada, pasión nacional.</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="reveal border-t border-neon-volt pt-6" style="transition-delay: 0.2s;">
+                    <h4 class="font-display text-5xl text-white mb-2">6</h4>
+                    <p class="font-sans font-extrabold text-xl uppercase mb-3">Niveles Competitivos</p>
+                    <p class="text-gray-400 font-light text-sm">Desde la élite (El Dorado) hasta las divisiones regionales. Ascensos y descensos ganados en la cancha, no en los despachos.</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="reveal border-t border-neon-volt pt-6" style="transition-delay: 0.4s;">
+                    <h4 class="font-display text-5xl text-neon-volt mb-2">100%</h4>
+                    <p class="font-sans font-extrabold text-xl uppercase mb-3">Fair Play Financiero</p>
+                    <p class="text-gray-400 font-light text-sm">Reglas claras. Topes salariales justos. Aquí ganan los proyectos deportivos sostenibles, no el club que más derrocha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER INVERTIDO -->
+    <div class="py-4 bg-white text-black transform rotate-1 relative z-20 scale-105 mt-20">
+        <div class="marquee-container">
+            <div class="marquee-content marquee-reverse font-display text-3xl uppercase tracking-widest">
+                <span class="mx-6">SIN CORBATAS</span> • 
+                <span class="mx-6">SOLO BANDERAS</span> • 
+                <span class="mx-6">HAZTE FUNDADOR</span> • 
+                <span class="mx-6">EL FÚTBOL ES NUESTRO</span> • 
+                <span class="mx-6">TU CIUDAD</span> • 
+                <span class="mx-6">TU EQUIPO</span> •
+                 <span class="mx-6">SIN CORBATAS</span> • 
+                <span class="mx-6">SOLO BANDERAS</span> • 
+                <span class="mx-6">HAZTE FUNDADOR</span> • 
+                <span class="mx-6">EL FÚTBOL ES NUESTRO</span> • 
+                <span class="mx-6">TU CIUDAD</span> • 
+                <span class="mx-6">TU EQUIPO</span> •
+            </div>
+        </div>
+    </div>
+
+    <!-- CALL TO ACTION / FORM (Únete a la Revolución) -->
+    <section id="unete" class="py-32 px-6 md:px-12 bg-pitch-dark relative overflow-hidden">
+        <div class="max-w-5xl mx-auto flex flex-col lg:flex-row gap-16 relative z-10">
+            <!-- Texto -->
+            <div class="lg:w-1/2 reveal">
+                <h2 class="font-display text-6xl md:text-7xl leading-none mb-6 uppercase">
+                    ESTE ES <br><span class="text-stroke-neon">TU MOMENTO.</span>
+                </h2>
+                <p class="text-gray-400 text-lg mb-8">
+                    Ya sea que representes a un grupo inversor buscando una franquicia o seas un hincha enfermo que quiere ser socio fundador del ecosistema. Deja tus datos. Te llamaremos a la cancha.
+                </p>
+                <ul class="space-y-4 font-sans font-bold text-sm uppercase tracking-wider text-white">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-neon-volt rounded-full"></span> Información Privilegiada</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-neon-volt rounded-full"></span> Acceso a Preventa de Abonos</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-neon-volt rounded-full"></span> Dossier para Inversionistas</li>
+                </ul>
+            </div>
+
+            <!-- Formulario Agresivo -->
+            <div class="lg:w-1/2 reveal" style="transition-delay: 0.2s;">
+                <form class="bg-pitch-black p-8 md:p-10 border border-pitch-gray shadow-[20px_20px_0px_0px_rgba(204,255,0,0.1)]" onsubmit="event.preventDefault(); alert('¡Estás en la lista! Nos vemos en la cancha.');">
+                    <h3 class="font-display text-3xl mb-8 uppercase text-white border-b border-pitch-gray pb-4">Alistate</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block font-sans font-bold text-xs uppercase text-gray-500 mb-2">Nombre Completo</label>
+                            <input type="text" required class="w-full bg-transparent border-b border-gray-700 text-white py-3 px-2 focus:outline-none focus:border-neon-volt transition-colors font-sans text-lg">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block font-sans font-bold text-xs uppercase text-gray-500 mb-2">Ciudad</label>
+                                <input type="text" required class="w-full bg-transparent border-b border-gray-700 text-white py-3 px-2 focus:outline-none focus:border-neon-volt transition-colors font-sans text-lg">
+                            </div>
+                            <div>
+                                <label class="block font-sans font-bold text-xs uppercase text-gray-500 mb-2">Rol</label>
+                                <select required class="w-full bg-pitch-black border-b border-gray-700 text-white py-3 px-2 focus:outline-none focus:border-neon-volt transition-colors font-sans text-lg appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Elige...</option>
+                                    <option value="hincha">Hincha a Muerte</option>
+                                    <option value="inversor">Inversor / Franquicia</option>
+                                    <option value="prensa">Prensa / Medio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-sans font-bold text-xs uppercase text-gray-500 mb-2">Email</label>
+                            <input type="email" required class="w-full bg-transparent border-b border-gray-700 text-white py-3 px-2 focus:outline-none focus:border-neon-volt transition-colors font-sans text-lg">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full mt-10 btn-neon bg-neon-volt text-black font-display text-2xl uppercase py-4 hover:tracking-widest transition-all duration-300">
+                        Enviar Datos
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#010101] border-t border-pitch-gray py-16 px-6 md:px-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <a href="#" class="font-display text-5xl tracking-wide text-white uppercase block mb-2">
+                    I.F.A. <span class="text-neon-volt">.</span>
+                </a>
+                <p class="font-sans text-gray-500 text-xs font-bold uppercase tracking-widest">Institución del Fútbol Asociado</p>
+            </div>
+            
+            <div class="flex gap-6 font-display text-xl">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">X(TW)</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">IG</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">YT</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-pitch-gray text-center font-sans text-xs text-gray-600 font-bold uppercase tracking-wider">
+            &copy; 2026 Liga El Dorado. Fútbol para los que sienten. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPTS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // Scroll Reveal Logic using Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal, .reveal-scale');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: unobserve after revealing for a one-time animation
+                        // observer.unobserve(entry.target); 
+                    } else {
+                        // Remove if you want them to animate again when scrolling up
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Navbar background logic
+            const navbar = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.remove("py-4", "mix-blend-difference");
+                    navbar.classList.add("py-3", "bg-pitch-black/95", "backdrop-blur-md", "border-b", "border-pitch-gray");
+                } else {
+                    navbar.classList.add("py-4", "mix-blend-difference");
+                    navbar.classList.remove("py-3", "bg-pitch-black/95", "backdrop-blur-md", "border-b", "border-pitch-gray");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
