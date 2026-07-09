@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institución del Fútbol Asociado (I.F.A.) | El Futuro del Fútbol</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="La Institución del Fútbol Asociado (I.F.A.) lidera la construcción de una nueva estructura para el fútbol profesional en Colombia. Transparencia, desarrollo y franquicias.">
+    <meta name="keywords" content="Fútbol colombiano, IFA, Liga El Dorado, Franquicias de fútbol, Inversión deportiva">
+    <meta property="og:title" content="I.F.A. | Institución del Fútbol Asociado">
+    <meta property="og:description" content="Construyendo el futuro del fútbol profesional mediante un modelo sostenible basado en franquicias y expansión regional.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts: Simulating Helvetica LT Std (Inter/Helvetica Neue fallback) and Hanson Bold (Oswald/Impact fallback for heavy sport headlines) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS for rapid UI development matching the 8px grid and styling rules -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ifa: {
+                            black: '#0a0a0a',
+                            white: '#ffffff',
+                            orange: '#F15A24',
+                            gray: '#f5f5f5',
+                            darkgray: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        helvetica: ['"Helvetica LT Std"', '"Helvetica Neue"', 'Inter', 'Helvetica', 'Arial', 'sans-serif'],
+                        hanson: ['"Hanson"', 'Oswald', 'Impact', 'sans-serif'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema.org Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "Institución del Fútbol Asociado (I.F.A.)",
+      "url": "https://ifasociado.com",
+      "logo": "https://ifasociado.com/logo.png",
+      "description": "Entidad jurídica responsable de regular, estructurar y desarrollar el fútbol independiente profesional."
+    }
+    </script>
+
+    <style>
+        /* Custom Styles & Microinteractions */
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background-color: #0a0a0a; color: #ffffff; }
+        .font-hanson { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
+        
+        /* Scroll Reveal Utility Classes */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Premium minimal scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #F15A24; }
+
+        /* Form Inputs Editorial Style */
+        .input-editorial {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #444;
+            color: #fff;
+            padding: 12px 0;
+            width: 100%;
+            transition: border-color 0.3s ease;
+            border-radius: 0;
+        }
+        .input-editorial:focus { outline: none; border-bottom-color: #F15A24; }
+        .input-editorial::placeholder { color: #888; font-weight: 300; }
+
+        /* Dropdown hover */
+        .dropdown-menu { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .has-dropdown:hover .dropdown-menu { display: block; opacity: 1; }
+
+        /* Shield Hover Grayscale */
+        .shield-img { filter: grayscale(100%); transition: all 0.5s ease; opacity: 0.6; }
+        .shield-img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+        /* Pyramid Visual Lines */
+        .pyramid-level { position: relative; }
+        .pyramid-level:not(:last-child)::after {
+            content: ''; position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+            width: 2px; height: 24px; background-color: #F15A24;
+        }
+        
+        /* Nav transition */
+        #navbar.scrolled { background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; padding-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-ifa-black text-ifa-white font-helvetica overflow-x-hidden">
+
+    <!-- HEADER / MENÚ PRINCIPAL -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center bg-transparent" role="banner">
+        <a href="#" class="text-2xl font-hanson tracking-wider text-white" aria-label="I.F.A. Inicio">
+            I.F.A<span class="text-ifa-orange">.</span>
+        </a>
+        
+        <nav class="hidden lg:flex items-center space-x-10 text-sm font-semibold tracking-wide uppercase" role="navigation" aria-label="Navegación principal">
+            <a href="#" class="hover:text-ifa-orange transition-colors">Inicio</a>
+            <a href="#institucion" class="hover:text-ifa-orange transition-colors">La Institución</a>
+            
+            <div class="relative has-dropdown py-4 cursor-pointer">
+                <span class="hover:text-ifa-orange transition-colors flex items-center">Ligas <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                <div class="dropdown-menu absolute top-full left-0 mt-0 w-56 bg-ifa-darkgray border border-gray-800 shadow-2xl rounded-sm py-2">
+                    <a href="#liga-el-dorado" class="block px-6 py-3 text-xs hover:bg-ifa-orange hover:text-white transition-colors">Liga El Dorado</a>
+                </div>
+            </div>
+            
+            <a href="#franquicias" class="hover:text-ifa-orange transition-colors">Franquicias</a>
+            <a href="#gobierno" class="hover:text-ifa-orange transition-colors">Gobierno Corporativo</a>
+            <a href="#noticias" class="hover:text-ifa-orange transition-colors">Noticias</a>
+            <a href="#contacto" class="hover:text-ifa-orange transition-colors">Contacto</a>
+        </nav>
+
+        <a href="#franquicias" class="hidden md:inline-block bg-ifa-orange text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-white hover:text-ifa-black transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_14px_0_rgba(241,90,36,0.39)]">
+            Aplicar por una Franquicia
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-white focus:outline-none" aria-label="Abrir menú">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: HERO -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <!-- Background Video/Image Placeholder -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Estadio de fútbol lleno" class="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]" />
+                <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0a0a0a]"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+                <p class="text-ifa-orange font-bold tracking-[0.3em] uppercase text-sm mb-6 reveal">Institución del Fútbol Asociado</p>
+                <h1 class="font-hanson text-6xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 reveal" style="transition-delay: 0.1s;">
+                    El futuro del<br>fútbol profesional<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">comienza aquí.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 font-light max-w-3xl mx-auto mb-12 reveal" style="transition-delay: 0.2s;">
+                    La Institución del Fútbol Asociado lidera la construcción de una nueva estructura para el fútbol profesional colombiano basada en sostenibilidad, transparencia y desarrollo regional.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 reveal" style="transition-delay: 0.3s;">
+                    <a href="#liga-el-dorado" class="w-full sm:w-auto bg-ifa-orange text-white font-bold text-sm uppercase tracking-widest px-10 py-5 rounded-sm hover:bg-white hover:text-ifa-black transition-colors duration-300 text-center">
+                        Explorar la Liga
+                    </a>
+                    <a href="#franquicias" class="w-full sm:w-auto bg-transparent border border-white/30 text-white font-bold text-sm uppercase tracking-widest px-10 py-5 rounded-sm hover:border-white hover:bg-white hover:text-ifa-black transition-colors duration-300 text-center">
+                        Adquirir Franquicia
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-50 animate-bounce">
+                <span class="text-xs uppercase tracking-widest mb-2 font-light">Descubrir</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: DESTACADOS -->
+        <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto -mt-20 relative z-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <a href="#liga-el-dorado" class="group relative block h-80 overflow-hidden rounded-sm reveal bg-ifa-darkgray">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Liga" class="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-60" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <span class="text-ifa-orange text-xs font-bold uppercase tracking-widest mb-2 block">Competición</span>
+                        <h3 class="font-hanson text-2xl text-white group-hover:-translate-y-2 transition-transform duration-300">Liga El Dorado</h3>
+                    </div>
+                </a>
+                <!-- Card 2 -->
+                <a href="#gobierno" class="group relative block h-80 overflow-hidden rounded-sm reveal bg-ifa-darkgray" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gobierno" class="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-60" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <span class="text-ifa-orange text-xs font-bold uppercase tracking-widest mb-2 block">Institucional</span>
+                        <h3 class="font-hanson text-2xl text-white group-hover:-translate-y-2 transition-transform duration-300">Gobierno Corporativo</h3>
+                    </div>
+                </a>
+                <!-- Card 3 -->
+                <a href="#clubes" class="group relative block h-80 overflow-hidden rounded-sm reveal bg-ifa-darkgray" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clubes" class="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-60" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <span class="text-ifa-orange text-xs font-bold uppercase tracking-widest mb-2 block">Ecosistema</span>
+                        <h3 class="font-hanson text-2xl text-white group-hover:-translate-y-2 transition-transform duration-300">Clubes Afiliados</h3>
+                    </div>
+                </a>
+                <!-- Card 4 -->
+                <a href="#franquicias" class="group relative block h-80 overflow-hidden rounded-sm reveal bg-ifa-darkgray" style="transition-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Franquicias" class="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-60" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <span class="text-ifa-orange text-xs font-bold uppercase tracking-widest mb-2 block">Inversión</span>
+                        <h3 class="font-hanson text-2xl text-white group-hover:-translate-y-2 transition-transform duration-300">Franquicias Oficiales</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ¿QUÉ ES LA IFA? -->
+        <section id="institucion" class="py-24 px-6 md:px-12 bg-white text-ifa-black overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <!-- Background graphic (IFA letters abstract) -->
+                    <div class="absolute -top-20 -left-20 text-[20rem] font-hanson text-gray-100 opacity-50 select-none z-0">IFA</div>
+                    <div class="relative z-10">
+                        <h2 class="font-hanson text-5xl md:text-6xl leading-tight mb-6">Redefiniendo<br>la estructura<br>del juego.</h2>
+                        <div class="w-16 h-1 bg-ifa-orange mb-8"></div>
+                    </div>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <p class="text-xl text-gray-600 font-light leading-relaxed mb-8">
+                        La <strong class="font-bold text-ifa-black">IFA</strong> es la entidad jurídica responsable de regular, estructurar y desarrollar el fútbol independiente profesional en Colombia mediante un modelo sostenible basado en franquicias, mérito deportivo y expansión regional.
+                    </p>
+                    <p class="text-md text-gray-500 leading-relaxed mb-10">
+                        Nuestra misión es descentralizar el deporte rey, garantizando transparencia operativa, viabilidad financiera para los clubes y un producto de entretenimiento de clase mundial para la afición.
+                    </p>
+                    <a href="#gobierno" class="inline-flex items-center text-ifa-black font-bold uppercase tracking-widest text-sm group">
+                        Conocer la Institución
+                        <span class="ml-3 w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-ifa-orange group-hover:border-ifa-orange group-hover:text-white transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MANIFIESTO -->
+        <section class="min-h-[80vh] bg-white text-ifa-black flex items-center justify-center py-24 px-6 md:px-12 text-center">
+            <div class="max-w-5xl mx-auto reveal">
+                <h2 class="font-hanson text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight uppercase">
+                    No solo organizamos torneos. <span class="text-gray-400">Construimos el ecosistema</span> que el fútbol colombiano merece. <span class="text-ifa-orange">Transparencia, equidad y ambición de clase mundial.</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: GOBIERNO CORPORATIVO -->
+        <section id="gobierno" class="py-24 px-6 md:px-12 bg-[#050505]">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20 reveal">
+                    <span class="text-ifa-orange font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Liderazgo Institucional</span>
+                    <h2 class="font-hanson text-4xl md:text-5xl">Gobierno Corporativo</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-24">
+                    <!-- Exec 1 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6 reveal bg-[#111] p-6 rounded-sm border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Presidente IFA" class="w-32 h-32 object-cover grayscale rounded-sm">
+                        <div class="text-center md:text-left">
+                            <h3 class="font-bold text-xl mb-1">Nombre Apellido</h3>
+                            <p class="text-ifa-orange text-sm font-semibold uppercase tracking-wider mb-4">Presidente</p>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed">Encargado de la visión estratégica y representación internacional de la institución.</p>
+                        </div>
+                    </div>
+                    <!-- Exec 2 -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6 reveal bg-[#111] p-6 rounded-sm border border-white/5" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Secretaria General IFA" class="w-32 h-32 object-cover grayscale rounded-sm">
+                        <div class="text-center md:text-left">
+                            <h3 class="font-bold text-xl mb-1">Nombre Apellido</h3>
+                            <p class="text-ifa-orange text-sm font-semibold uppercase tracking-wider mb-4">Secretaria General</p>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed">Supervisa las operaciones legales, regulatorias y administrativas del ecosistema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: CIFRAS -->
+        <section class="py-24 px-6 bg-black border-y border-white/10" id="cifras">
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+                <div class="reveal p-4">
+                    <p class="text-5xl lg:text-7xl font-hanson text-white mb-2"><span class="counter" data-target="20">0</span></p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Franquicias<br>Disponibles</p>
+                </div>
+                <div class="reveal p-4" style="transition-delay: 0.1s;">
+                    <p class="text-5xl lg:text-7xl font-hanson text-white mb-2"><span class="counter" data-target="6">0</span></p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Niveles<br>Competitivos</p>
+                </div>
+                <div class="reveal p-4" style="transition-delay: 0.2s;">
+                    <p class="text-5xl lg:text-7xl font-hanson text-white mb-2"><span class="counter" data-target="8">0</span></p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Franquicias<br>Fundadoras</p>
+                </div>
+                <div class="reveal p-4" style="transition-delay: 0.3s;">
+                    <p class="text-5xl lg:text-7xl font-hanson text-ifa-orange mb-2"><span class="counter" data-target="280">0</span><span class="text-4xl">M</span></p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Millones COP<br>en Premios</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: PIRÁMIDE DEL SISTEMA -->
+        <section class="py-32 px-6 md:px-12 bg-ifa-black relative overflow-hidden">
+            <!-- Background element -->
+            <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#111] to-transparent z-0"></div>
+            
+            <div class="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-ifa-orange font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Estructura Competitiva</span>
+                    <h2 class="font-hanson text-4xl md:text-5xl mb-6">El Nuevo<br>Ecosistema.</h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-8">
+                        Un sistema piramidal sólido, diseñado para premiar el mérito deportivo y garantizar la sostenibilidad financiera en todos los niveles. Desde la élite nacional hasta las bases provinciales.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-center space-y-6 reveal" style="transition-delay: 0.2s;">
+                    <!-- Nivel 1 -->
+                    <div class="w-full max-w-[280px] bg-gradient-to-r from-yellow-600 to-yellow-400 text-black text-center py-4 rounded-sm shadow-lg font-hanson text-xl uppercase tracking-wider pyramid-level transform hover:scale-105 transition-transform cursor-default">
+                        Liga El Dorado
+                    </div>
+                    <!-- Nivel 2 -->
+                    <div class="w-full max-w-[320px] bg-gradient-to-r from-gray-400 to-gray-300 text-black text-center py-4 rounded-sm shadow-lg font-hanson text-xl uppercase tracking-wider pyramid-level transform hover:scale-105 transition-transform cursor-default">
+                        División Plata
+                    </div>
+                    <!-- Nivel 3 -->
+                    <div class="w-full max-w-[360px] bg-gradient-to-r from-amber-800 to-amber-600 text-white text-center py-4 rounded-sm shadow-lg font-hanson text-xl uppercase tracking-wider pyramid-level transform hover:scale-105 transition-transform cursor-default">
+                        División Bronce
+                    </div>
+                    <!-- Nivel 4 -->
+                    <div class="w-full max-w-[400px] bg-[#1a1a1a] border border-gray-700 text-white text-center py-4 rounded-sm font-bold text-sm uppercase tracking-wider pyramid-level hover:border-ifa-orange transition-colors cursor-default">
+                        División Nacional
+                    </div>
+                    <!-- Nivel 5 -->
+                    <div class="w-full max-w-[440px] bg-[#111] border border-gray-800 text-gray-300 text-center py-4 rounded-sm font-bold text-sm uppercase tracking-wider pyramid-level hover:border-ifa-orange transition-colors cursor-default">
+                        División Regional
+                    </div>
+                    <!-- Nivel 6 -->
+                    <div class="w-full max-w-[480px] bg-black border border-gray-900 text-gray-500 text-center py-4 rounded-sm font-bold text-sm uppercase tracking-wider hover:border-ifa-orange transition-colors cursor-default">
+                        División Provincial
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: LÍNEA DE TIEMPO -->
+        <section class="py-24 px-6 md:px-12 bg-white text-black">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-20 reveal">
+                    <h2 class="font-hanson text-4xl md:text-5xl">Cronograma Institucional</h2>
+                </div>
+
+                <div class="relative border-l border-gray-200 ml-4 md:ml-0 md:left-1/2 md:-translate-x-1/2">
+                    <!-- Item 1 -->
+                    <div class="mb-16 relative md:w-1/2 md:pr-12 md:text-right reveal flex md:block items-center">
+                        <div class="absolute w-4 h-4 rounded-full bg-ifa-orange -left-[9px] md:-right-[9px] md:left-auto top-1 border-4 border-white"></div>
+                        <div class="pl-8 md:pl-0">
+                            <span class="font-hanson text-3xl text-gray-300 block mb-2">2026</span>
+                            <h3 class="font-bold text-xl mb-2">Fundación y Estructuración</h3>
+                            <p class="text-gray-500 font-light text-sm">Creación oficial de la I.F.A., constitución legal, apertura de venta de franquicias fundadoras y presentación de la marca institucional.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="mb-16 relative md:w-1/2 md:ml-auto md:pl-12 reveal flex md:block items-center" style="transition-delay: 0.1s;">
+                        <div class="absolute w-4 h-4 rounded-full bg-black -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="pl-8 md:pl-0">
+                            <span class="font-hanson text-3xl text-gray-300 block mb-2">2027</span>
+                            <h3 class="font-bold text-xl mb-2">Sorteo y Pretemporada</h3>
+                            <p class="text-gray-500 font-light text-sm">Asignación de territorios, draft oficial de jugadores, firmas de patrocinios televisivos y giras de pretemporada.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="mb-16 relative md:w-1/2 md:pr-12 md:text-right reveal flex md:block items-center" style="transition-delay: 0.2s;">
+                        <div class="absolute w-4 h-4 rounded-full bg-black -left-[9px] md:-right-[9px] md:left-auto top-1 border-4 border-white"></div>
+                        <div class="pl-8 md:pl-0">
+                            <span class="font-hanson text-3xl text-gray-300 block mb-2">2028</span>
+                            <h3 class="font-bold text-xl mb-2">Kick-Off Liga El Dorado</h3>
+                            <p class="text-gray-500 font-light text-sm">Partido inaugural de la primera temporada oficial. Lanzamiento de la División Plata.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="relative md:w-1/2 md:ml-auto md:pl-12 reveal flex md:block items-center" style="transition-delay: 0.3s;">
+                        <div class="absolute w-4 h-4 rounded-full bg-black -left-[9px] top-1 border-4 border-white"></div>
+                        <div class="pl-8 md:pl-0">
+                            <span class="font-hanson text-3xl text-gray-300 block mb-2">2031</span>
+                            <h3 class="font-bold text-xl mb-2">Ecosistema Completo</h3>
+                            <p class="text-gray-500 font-light text-sm">Integración de las 6 divisiones, con ascensos y descensos funcionando bajo el modelo de fair play financiero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: CLUBES FUNDADORES -->
+        <section id="clubes" class="py-24 px-6 md:px-12 bg-ifa-black">
+            <div class="max-w-7xl mx-auto text-center">
+                <span class="text-ifa-orange font-bold tracking-[0.2em] uppercase text-xs mb-4 block reveal">Organizaciones Aprobadas</span>
+                <h2 class="font-hanson text-4xl md:text-5xl mb-16 reveal">Clubes Fundadores</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mb-16 items-center justify-items-center">
+                    <!-- Placeholder escudos -->
+                    <div class="reveal w-24 h-24 md:w-32 md:h-32 flex items-center justify-center shield-img cursor-pointer"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/F%C3%BAtbol_Club_Barcelona_%28escudo%29.svg" alt="Club 1" class="max-w-full max-h-full opacity-50"></div>
+                    <div class="reveal w-24 h-24 md:w-32 md:h-32 flex items-center justify-center shield-img cursor-pointer" style="transition-delay: 0.1s;"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" alt="Club 2" class="max-w-full max-h-full opacity-50"></div>
+                    <div class="reveal w-24 h-24 md:w-32 md:h-32 flex items-center justify-center shield-img cursor-pointer" style="transition-delay: 0.2s;"><img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" alt="Club 3" class="max-w-full max-h-full opacity-50"></div>
+                    <div class="reveal w-24 h-24 md:w-32 md:h-32 flex items-center justify-center shield-img cursor-pointer" style="transition-delay: 0.3s;"><img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" alt="Club 4" class="max-w-full max-h-full opacity-50"></div>
+                </div>
+
+                <div class="reveal">
+                    <button class="bg-transparent border border-white/30 text-white font-bold text-xs uppercase tracking-widest px-8 py-3 rounded-sm hover:border-white hover:bg-white hover:text-ifa-black transition-colors duration-300">
+                        Ver Directorio de Clubes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: LIGA EL DORADO -->
+        <section id="liga-el-dorado" class="relative py-32 px-6 md:px-12 bg-[#111] overflow-hidden">
+            <!-- Background element -->
+            <div class="absolute inset-0 z-0 opacity-20">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbb6b04c86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Trofeo" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span class="inline-block py-1 px-3 bg-gradient-to-r from-yellow-600 to-yellow-400 text-black text-xs font-bold uppercase tracking-widest rounded-sm mb-6">Competición Élite</span>
+                    <h2 class="font-hanson text-5xl md:text-6xl text-white mb-6">Liga El Dorado</h2>
+                    <p class="text-gray-300 font-light leading-relaxed mb-8 text-lg">
+                        La cúspide del fútbol profesional independiente en Colombia. Veinte franquicias exclusivas compitiendo al más alto nivel, con estadios de primer nivel, transmisiones globales y una experiencia inigualable para el fan.
+                    </p>
+                    <ul class="space-y-4 mb-10 text-sm font-semibold tracking-wide text-gray-400">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 20 Franquicias Élite</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Formato Apertura y Clausura</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Clasificación a Copas Internacionales Propias</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-white text-black font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                        Ir al sitio oficial de la Liga
+                    </a>
+                </div>
+                <!-- Video Placeholder -->
+                <div class="relative group cursor-pointer reveal rounded-sm overflow-hidden" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1551280857-2b9bbe52ccf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Video cover" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                        <div class="w-20 h-20 bg-ifa-orange rounded-full flex items-center justify-center pl-2 shadow-[0_0_30px_rgba(241,90,36,0.6)] group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 11: FRANQUICIAS (INVERSIÓN) -->
+        <section id="franquicias" class="relative py-32 px-6 md:px-12 bg-black border-t border-white/5">
+            <!-- Background Stadium Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Estadio Nocturno" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 class="font-hanson text-5xl md:text-6xl text-white mb-6 reveal">Conviértase en propietario de una franquicia oficial.</h2>
+                <p class="text-xl text-gray-300 font-light leading-relaxed mb-12 reveal" style="transition-delay: 0.1s;">
+                    Una oportunidad de inversión única. Adquiera derechos de exclusividad territorial, respaldo institucional total y participación directa en los ingresos comerciales y de transmisión.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left reveal" style="transition-delay: 0.2s;">
+                    <div class="bg-black/60 backdrop-blur-md p-6 border border-white/10 rounded-sm">
+                        <svg class="w-8 h-8 text-ifa-orange mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h4 class="font-bold text-white mb-2">Exclusividad Territorial</h4>
+                        <p class="text-xs text-gray-400">Protección de mercado en su ciudad o región asignada.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-md p-6 border border-white/10 rounded-sm">
+                        <svg class="w-8 h-8 text-ifa-orange mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h4 class="font-bold text-white mb-2">Modelo Sostenible</h4>
+                        <p class="text-xs text-gray-400">Topes salariales y fair play financiero auditado por I.F.A.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-md p-6 border border-white/10 rounded-sm">
+                        <svg class="w-8 h-8 text-ifa-orange mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <h4 class="font-bold text-white mb-2">Derechos Comerciales</h4>
+                        <p class="text-xs text-gray-400">Repartición equitativa de ingresos por TV y sponsors globales.</p>
+                    </div>
+                </div>
+
+                <a href="#contacto" class="inline-block bg-ifa-orange text-white font-bold text-sm uppercase tracking-widest px-12 py-5 rounded-sm hover:bg-white hover:text-ifa-black transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(241,90,36,0.3)] reveal" style="transition-delay: 0.3s;">
+                    Aplicar Ahora
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 12: PROCESO PARA ADQUIRIR UNA FRANQUICIA -->
+        <section class="py-24 px-6 md:px-12 bg-white text-black overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-hanson text-3xl md:text-4xl text-center mb-20 reveal">Proceso de Adquisición</h2>
+                
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 relative">
+                    <!-- Line connector (desktop) -->
+                    <div class="hidden md:block absolute top-10 left-0 w-full h-[2px] bg-gray-200 z-0"></div>
+                    
+                    <!-- Steps -->
+                    <div class="relative z-10 flex flex-row md:flex-col items-center md:text-center group reveal w-full md:w-auto">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center font-hanson text-2xl text-gray-300 group-hover:border-ifa-orange group-hover:text-ifa-orange transition-colors mr-6 md:mr-0 md:mb-4 bg-white z-10">1</div>
+                        <div><h4 class="font-bold text-sm uppercase">Solicitud</h4><p class="text-xs text-gray-500 mt-1 max-w-[120px]">Envío de carta de intención.</p></div>
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-row md:flex-col items-center md:text-center group reveal w-full md:w-auto" style="transition-delay: 0.1s;">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center font-hanson text-2xl text-gray-300 group-hover:border-ifa-orange group-hover:text-ifa-orange transition-colors mr-6 md:mr-0 md:mb-4 bg-white z-10">2</div>
+                        <div><h4 class="font-bold text-sm uppercase">Evaluación</h4><p class="text-xs text-gray-500 mt-1 max-w-[120px]">Due diligence financiero.</p></div>
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-row md:flex-col items-center md:text-center group reveal w-full md:w-auto" style="transition-delay: 0.2s;">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center font-hanson text-2xl text-gray-300 group-hover:border-ifa-orange group-hover:text-ifa-orange transition-colors mr-6 md:mr-0 md:mb-4 bg-white z-10">3</div>
+                        <div><h4 class="font-bold text-sm uppercase">Proyecto</h4><p class="text-xs text-gray-500 mt-1 max-w-[120px]">Presentación deportiva.</p></div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-row md:flex-col items-center md:text-center group reveal w-full md:w-auto" style="transition-delay: 0.3s;">
+                        <div class="w-20 h-20 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center font-hanson text-2xl text-gray-300 group-hover:border-ifa-orange group-hover:text-ifa-orange transition-colors mr-6 md:mr-0 md:mb-4 bg-white z-10">4</div>
+                        <div><h4 class="font-bold text-sm uppercase">Revisión</h4><p class="text-xs text-gray-500 mt-1 max-w-[120px]">Aprobación jurídica final.</p></div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-row md:flex-col items-center md:text-center group reveal w-full md:w-auto" style="transition-delay: 0.4s;">
+                        <div class="w-20 h-20 rounded-full bg-black flex items-center justify-center font-hanson text-2xl text-white shadow-lg mr-6 md:mr-0 md:mb-4 z-10">F</div>
+                        <div><h4 class="font-bold text-sm uppercase">Firma</h4><p class="text-xs text-gray-500 mt-1 max-w-[120px]">Inicio de operaciones.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 13: NOTICIAS -->
+        <section id="noticias" class="py-24 px-6 md:px-12 bg-ifa-gray text-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-12 reveal">
+                    <h2 class="font-hanson text-4xl md:text-5xl">Noticias Institucionales</h2>
+                    <a href="#" class="hidden md:block font-bold text-sm uppercase tracking-widest text-ifa-orange hover:text-black transition-colors">Ver todas</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Articulo 1 -->
+                    <article class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 reveal group cursor-pointer">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Noticia 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-ifa-orange uppercase tracking-widest mb-2 block">Comunicado Oficial</span>
+                            <h3 class="font-hanson text-xl mb-3 leading-tight group-hover:text-ifa-orange transition-colors">La I.F.A. anuncia la apertura oficial del proceso de franquicias.</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">El consejo directivo ha aprobado el reglamento oficial para la adquisición de las primeras 8 franquicias fundadoras de la Liga El Dorado.</p>
+                            <span class="text-xs text-gray-400 font-semibold uppercase">12 Oct 2025</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Articulo 2 -->
+                    <article class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 reveal group cursor-pointer" style="transition-delay: 0.1s;">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Noticia 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-ifa-orange uppercase tracking-widest mb-2 block">Liga El Dorado</span>
+                            <h3 class="font-hanson text-xl mb-3 leading-tight group-hover:text-ifa-orange transition-colors">Nuevo acuerdo de transmisión global firmado para 2026.</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Se garantiza la visibilidad internacional del torneo mediante una alianza estratégica con los principales networks deportivos.</p>
+                            <span class="text-xs text-gray-400 font-semibold uppercase">08 Oct 2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Articulo 3 -->
+                    <article class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 reveal group cursor-pointer" style="transition-delay: 0.2s;">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1526628479527-3aeb0b457b0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Noticia 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-ifa-orange uppercase tracking-widest mb-2 block">Institucional</span>
+                            <h3 class="font-hanson text-xl mb-3 leading-tight group-hover:text-ifa-orange transition-colors">Presentación del comité de ética y fair play financiero.</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">La transparencia es el pilar de nuestra institución. Conoce a los miembros del nuevo comité auditor independiente.</p>
+                            <span class="text-xs text-gray-400 font-semibold uppercase">01 Oct 2025</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 14: ALIADOS -->
+        <section class="py-16 px-6 bg-white border-t border-gray-200 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center mb-8 reveal">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Partners y Aliados Estratégicos</span>
+            </div>
+            <!-- Simple Marquee Simulation -->
+            <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+                <ul class="flex items-center justify-center md:justify-start space-x-12 animate-[infinite-scroll_25s_linear_infinite] opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- Placeholder Logos (Text for demo purposes, would be SVGs) -->
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">NIKE</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">APPLE TV</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">ROLEX</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">EMIRATES</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">HEINEKEN</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">EA SPORTS</h2></li>
+                </ul>
+                <ul class="flex items-center justify-center md:justify-start space-x-12 animate-[infinite-scroll_25s_linear_infinite] opacity-50 grayscale hover:grayscale-0 transition-all duration-500" aria-hidden="true">
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">NIKE</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">APPLE TV</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">ROLEX</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">EMIRATES</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">HEINEKEN</h2></li>
+                    <li><h2 class="font-hanson text-2xl text-black m-0 mx-8">EA SPORTS</h2></li>
+                </ul>
+            </div>
+            <style>
+                @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+            </style>
+        </section>
+
+        <!-- SECCIÓN 15: CONTACTO -->
+        <section id="contacto" class="py-32 px-6 md:px-12 bg-[#050505] relative">
+            <div class="max-w-4xl mx-auto bg-[#111] p-10 md:p-16 rounded-sm border border-white/5 shadow-2xl reveal">
+                <div class="text-center mb-12">
+                    <h2 class="font-hanson text-4xl mb-4">Contacto Institucional</h2>
+                    <p class="text-gray-400 font-light text-sm">Dirija sus consultas comerciales o solicitudes de franquicia a nuestro equipo ejecutivo.</p>
+                </div>
+
+                <form class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label for="nombre" class="sr-only">Nombre Completo</label>
+                            <input type="text" id="nombre" placeholder="Nombre Completo" class="input-editorial" required>
+                        </div>
+                        <div>
+                            <label for="correo" class="sr-only">Correo Electrónico Corporativo</label>
+                            <input type="email" id="correo" placeholder="Correo Electrónico Corporativo" class="input-editorial" required>
+                        </div>
+                        <div>
+                            <label for="empresa" class="sr-only">Organización / Empresa</label>
+                            <input type="text" id="empresa" placeholder="Organización / Empresa" class="input-editorial">
+                        </div>
+                        <div>
+                            <label for="ciudad" class="sr-only">Ciudad / Departamento</label>
+                            <input type="text" id="ciudad" placeholder="Ciudad / Departamento" class="input-editorial" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="tipo" class="sr-only">Motivo de Contacto</label>
+                        <select id="tipo" class="input-editorial bg-[#111] text-gray-300">
+                            <option value="" disabled selected>Seleccione el motivo de su contacto...</option>
+                            <option value="franquicia">Solicitud de Franquicia</option>
+                            <option value="patrocinio">Patrocinios Comerciales</option>
+                            <option value="prensa">Prensa y Medios</option>
+                            <option value="otro">Asuntos Institucionales</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensaje" class="sr-only">Mensaje</label>
+                        <textarea id="mensaje" rows="4" placeholder="Detalle su solicitud o propuesta..." class="input-editorial resize-none" required></textarea>
+                    </div>
+
+                    <div class="text-center pt-6">
+                        <button type="submit" class="bg-white text-black font-bold text-sm uppercase tracking-widest px-12 py-5 rounded-sm hover:bg-ifa-orange hover:text-white transition-all duration-300 w-full md:w-auto">
+                            Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-24 pb-12 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <a href="#" class="text-4xl font-hanson tracking-wider text-white mb-4 block">
+                        I.F.A<span class="text-ifa-orange">.</span>
+                    </a>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
+                        Institución del Fútbol Asociado.<br>
+                        Regulando y estructurando el ecosistema profesional del mañana.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social Icons placeholders (X, LinkedIn, IG) -->
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-white mb-6">Institución</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#institucion" class="hover:text-ifa-orange transition-colors">Sobre la I.F.A.</a></li>
+                        <li><a href="#gobierno" class="hover:text-ifa-orange transition-colors">Gobierno Corporativo</a></li>
+                        <li><a href="#" class="hover:text-ifa-orange transition-colors">Transparencia Financiera</a></li>
+                        <li><a href="#" class="hover:text-ifa-orange transition-colors">Carreras</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-white mb-6">Competiciones</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#liga-el-dorado" class="hover:text-ifa-orange transition-colors">Liga El Dorado</a></li>
+                        <li><a href="#" class="hover:text-ifa-orange transition-colors">División Plata</a></li>
+                        <li><a href="#clubes" class="hover:text-ifa-orange transition-colors">Directorio de Clubes</a></li>
+                        <li><a href="#franquicias" class="hover:text-ifa-orange transition-colors">Adquirir Franquicia</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 3 -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-white mb-6">Media</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#noticias" class="hover:text-ifa-orange transition-colors">Noticias Oficiales</a></li>
+                        <li><a href="#" class="hover:text-ifa-orange transition-colors">Comunicados de Prensa</a></li>
+                        <li><a href="#" class="hover:text-ifa-orange transition-colors">Brand Guidelines</a></li>
+                        <li><a href="#contacto" class="hover:text-ifa-orange transition-colors">Contacto de Prensa</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Legal -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2026 Institución del Fútbol Asociado (I.F.A.). Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Políticas de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Términos Legales</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Microinteractions -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Navbar Scroll Effect
+            const navbar = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+
+            // Scroll Reveal via Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Animated Counters for Cifras Section
+            const counters = document.querySelectorAll('.counter');
+            let hasCounted = false;
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasCounted) {
+                        counters.forEach(counter => {
+                            const updateCount = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const count = +counter.innerText;
+                                // Increment speed based on target size
+                                const inc = target / 40; 
+                                
+                                if (count < target) {
+                                    counter.innerText = Math.ceil(count + inc);
+                                    setTimeout(updateCount, 40);
+                                } else {
+                                    counter.innerText = target;
+                                }
+                            };
+                            updateCount();
+                        });
+                        hasCounted = true;
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const cifrasSection = document.getElementById('cifras');
+            if(cifrasSection) {
+                counterObserver.observe(cifrasSection);
+            }
+        });
+    </script>
+</body>
+</html>
