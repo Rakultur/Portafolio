@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Noticias - I.F.A.</title>
+    
+    <!-- Fuentes de Google: Montserrat (Titulares) e Inter (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta de Colores Institucionales */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-dark-soft: #1a1a1a;
+            --c-white: #ffffff;
+            --c-orange: #FF5A00;
+            --c-gold: #D4AF37;
+            --c-gray-text: #aaaaaa;
+            --c-gray-light: #dddddd;
+            --c-border: rgba(255, 255, 255, 0.1);
+            
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Escala de Espaciados en REM (Reemplazo estricto de px) */
+            --s-0-25: 0.25rem;
+            --s-0-5: 0.5rem;
+            --s-0-75: 0.75rem;
+            --s-1: 1rem;
+            --s-1-5: 1.5rem;
+            --s-2: 2rem;
+            --s-3: 3rem;
+            --s-4: 4rem;
+            --s-6: 6rem;
+            --s-8: 8rem;
+
+            /* Escala Tipográfica en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2.25rem;
+            --fs-4xl: 3rem;
+
+            /* Dimensiones Estructurales en REM */
+            --max-w-container: 75rem;
+            --radius-sm: 0.25rem;
+            --border-thin: 0.0625rem;
+            
+            /* Transiciones */
+            --t-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modulo-noticias {
+            
+            & .container {
+                width: 100%;
+                max-width: var(--max-w-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            & .seccion-noticias {
+                padding: var(--s-6) 0;
+                background-color: var(--c-black);
+
+                & .header-noticias {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-bottom: var(--s-3);
+                    gap: var(--s-1);
+
+                    @media (min-width: 48rem) {
+                        flex-direction: row;
+                        align-items: flex-end;
+                    }
+
+                    & h2 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-3xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        line-height: 1.1;
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-4xl);
+                        }
+                    }
+
+                    & .btn-link {
+                        display: inline-flex;
+                        align-items: center;
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-sm);
+                        font-weight: 700;
+                        color: var(--c-orange);
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-25);
+                        text-decoration: none;
+                        transition: var(--t-base);
+
+                        &::after {
+                            content: '→';
+                            margin-left: var(--s-0-5);
+                            transition: transform 0.3s ease;
+                        }
+
+                        &:hover {
+                            color: var(--c-white);
+                            
+                            &::after {
+                                transform: translateX(var(--s-0-5));
+                            }
+                        }
+                    }
+                }
+
+                & .grid-noticias {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-2);
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: var(--s-3);
+                    }
+
+                    @media (min-width: 64rem) {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                & .card-noticia {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: var(--c-dark);
+                    border: var(--border-thin) solid var(--c-border);
+                    border-radius: var(--radius-sm);
+                    overflow: hidden;
+                    text-decoration: none;
+                    transition: var(--t-base);
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: translateY(calc(var(--s-0-5) * -1));
+                        border-color: rgba(255, 90, 0, 0.5); /* Borde naranja sutil */
+                        box-shadow: 0 var(--s-1) var(--s-2) rgba(0, 0, 0, 0.5);
+
+                        & .img-wrapper img {
+                            filter: grayscale(0%);
+                            transform: scale(1.05);
+                        }
+
+                        & .contenido h3 {
+                            color: var(--c-orange);
+                        }
+                    }
+
+                    & .img-wrapper {
+                        width: 100%;
+                        aspect-ratio: 16 / 9;
+                        overflow: hidden;
+                        background-color: var(--c-dark-soft);
+
+                        & img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            filter: grayscale(100%);
+                            transition: var(--t-base);
+                        }
+                    }
+
+                    & .contenido {
+                        padding: var(--s-2);
+                        display: flex;
+                        flex-direction: column;
+                        flex-grow: 1;
+
+                        & .categoria {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-xs);
+                            font-weight: 800;
+                            color: var(--c-orange);
+                            text-transform: uppercase;
+                            letter-spacing: var(--s-0-25);
+                            margin-bottom: var(--s-1);
+                        }
+
+                        & h3 {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-xl);
+                            font-weight: 800;
+                            color: var(--c-white);
+                            line-height: 1.3;
+                            margin-bottom: var(--s-1);
+                            transition: color 0.3s ease;
+                            
+                            /* Truncar texto a 3 líneas */
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+
+                        & p {
+                            font-size: var(--fs-sm);
+                            color: var(--c-gray-text);
+                            margin-bottom: var(--s-1-5);
+                            flex-grow: 1;
+
+                            /* Truncar texto a 3 líneas */
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+
+                        & .footer-card {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding-top: var(--s-1);
+                            border-top: var(--border-thin) solid var(--c-border);
+
+                            & .fecha {
+                                font-size: var(--fs-xs);
+                                color: var(--c-gray-light);
+                                font-weight: 600;
+                                text-transform: uppercase;
+                            }
+
+                            & .leer-mas {
+                                font-size: var(--fs-xs);
+                                font-weight: 700;
+                                color: var(--c-white);
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .seccion-newsletter {
+                padding: var(--s-4) 0;
+                background-color: var(--c-dark-soft);
+                border-top: var(--border-thin) solid var(--c-border);
+                border-bottom: var(--border-thin) solid var(--c-border);
+
+                & .newsletter-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    max-width: 40rem;
+                    margin: 0 auto;
+
+                    & .icon-mail {
+                        width: var(--s-3);
+                        height: var(--s-3);
+                        color: var(--c-orange);
+                        margin-bottom: var(--s-1-5);
+                    }
+
+                    & h3 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-2xl);
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        margin-bottom: var(--s-0-5);
+                    }
+
+                    & p {
+                        font-size: var(--fs-sm);
+                        color: var(--c-gray-text);
+                        margin-bottom: var(--s-2);
+                    }
+
+                    & .form-newsletter {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: var(--s-1);
+
+                        @media (min-width: 48rem) {
+                            flex-direction: row;
+                            gap: 0;
+                        }
+
+                        & input {
+                            flex-grow: 1;
+                            padding: var(--s-1) var(--s-1-5);
+                            background-color: var(--c-black);
+                            border: var(--border-thin) solid var(--c-border);
+                            color: var(--c-white);
+                            font-family: var(--f-body);
+                            font-size: var(--fs-base);
+                            border-radius: var(--radius-sm);
+                            outline: none;
+                            transition: border-color 0.3s ease;
+
+                            @media (min-width: 48rem) {
+                                border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+                                border-right: none;
+                            }
+
+                            &:focus {
+                                border-color: var(--c-orange);
+                            }
+
+                            &::placeholder {
+                                color: #666666;
+                            }
+                        }
+
+                        & button {
+                            padding: var(--s-1) var(--s-2);
+                            background-color: var(--c-orange);
+                            color: var(--c-white);
+                            border: none;
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-sm);
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: var(--s-0-25);
+                            cursor: pointer;
+                            border-radius: var(--radius-sm);
+                            transition: var(--t-base);
+
+                            @media (min-width: 48rem) {
+                                border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+                            }
+
+                            &:hover {
+                                background-color: var(--c-white);
+                                color: var(--c-black);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="modulo-noticias">
+        
+        <section class="seccion-noticias">
+            <div class="container">
+                
+                <div class="header-noticias">
+                    <h2>Noticias<br>Institucionales</h2>
+                    <a href="#" class="btn-link">Ver todas las noticias</a>
+                </div>
+
+                <div class="grid-noticias">
+                    
+                    <!-- Tarjeta de Noticia 1 -->
+                    <a href="#" class="card-noticia">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estadio">
+                        </div>
+                        <div class="contenido">
+                            <span class="categoria">Comunicado Oficial</span>
+                            <h3>La I.F.A. anuncia la apertura oficial del proceso de franquicias.</h3>
+                            <p>El consejo directivo ha aprobado el reglamento oficial para la adquisición de las primeras ocho franquicias fundadoras de la Liga El Dorado, estableciendo los criterios de evaluación institucional.</p>
+                            
+                            <div class="footer-card">
+                                <span class="fecha">12 Oct 2025</span>
+                                <span class="leer-mas">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta de Noticia 2 -->
+                    <a href="#" class="card-noticia">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cámara de TV en el estadio">
+                        </div>
+                        <div class="contenido">
+                            <span class="categoria">Liga El Dorado</span>
+                            <h3>Nuevo acuerdo de transmisión global firmado para la temporada 2026.</h3>
+                            <p>Se garantiza la visibilidad internacional del torneo mediante una alianza estratégica con los principales networks deportivos. El acuerdo asegura que el 100% de los partidos serán transmitidos en alta definición.</p>
+                            
+                            <div class="footer-card">
+                                <span class="fecha">08 Oct 2025</span>
+                                <span class="leer-mas">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta de Noticia 3 -->
+                    <a href="#" class="card-noticia">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526628479527-3aeb0b457b0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reunión ejecutiva">
+                        </div>
+                        <div class="contenido">
+                            <span class="categoria">Institucional</span>
+                            <h3>Presentación del comité de ética y fair play financiero de la I.F.A.</h3>
+                            <p>La transparencia es el pilar de nuestra institución. Conoce a los miembros del nuevo comité auditor independiente que se encargará de velar por el cumplimiento estricto de los topes salariales.</p>
+                            
+                            <div class="footer-card">
+                                <span class="fecha">01 Oct 2025</span>
+                                <span class="leer-mas">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-newsletter">
+            <div class="container">
+                <div class="newsletter-wrapper">
+                    <!-- Icono SVG Mail -->
+                    <svg class="icon-mail" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    
+                    <h3>Mantente Informado</h3>
+                    <p>Regístrate para recibir los últimos comunicados oficiales, resoluciones deportivas y noticias sobre la expansión de la Liga El Dorado directamente en tu correo electrónico.</p>
+                    
+                    <form class="form-newsletter" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Ingresa tu correo corporativo o personal" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Contacto - I.F.A.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta de Colores Institucionales */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-dark-soft: #1a1a1a;
+            --c-white: #ffffff;
+            --c-gold: #D4AF37;
+            --c-orange: #FF5A00;
+            --c-gray-text: #aaaaaa;
+            --c-gray-light: #dddddd;
+            --c-gray-border: #333333;
+            --c-border: rgba(255, 255, 255, 0.1);
+            
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Escala estricta de Espaciados en REM (Reemplazo total de px) */
+            --s-0-125: 0.125rem;
+            --s-0-25: 0.25rem;
+            --s-0-5: 0.5rem;
+            --s-0-75: 0.75rem;
+            --s-1: 1rem;
+            --s-1-5: 1.5rem;
+            --s-2: 2rem;
+            --s-2-5: 2.5rem;
+            --s-3: 3rem;
+            --s-4: 4rem;
+            --s-6: 6rem;
+            --s-8: 8rem;
+
+            /* Escala Tipográfica en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2.25rem;
+            --fs-4xl: 3rem;
+
+            /* Estructura y UI en REM */
+            --max-w-container: 75rem;
+            --max-w-form: 50rem;
+            --radius-sm: 0.25rem;
+            --border-thin: 0.0625rem; /* 1px */
+            --border-thick: 0.125rem; /* 2px */
+            
+            /* Transiciones */
+            --t-base: all 0.3s ease;
+        }
+
+        .modulo-contacto {
+            padding: var(--s-6) 0 var(--s-8) 0;
+            background-color: var(--c-black);
+            position: relative;
+            
+            & .container {
+                width: 100%;
+                max-width: var(--max-w-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            & .header-contacto {
+                text-align: center;
+                margin-bottom: var(--s-4);
+
+                & .eyebrow {
+                    display: inline-block;
+                    font-family: var(--f-heading);
+                    font-size: var(--fs-xs);
+                    font-weight: 800;
+                    color: var(--c-orange);
+                    text-transform: uppercase;
+                    letter-spacing: var(--s-0-25);
+                    margin-bottom: var(--s-1);
+                    padding: var(--s-0-5) var(--s-1);
+                    border: var(--border-thin) solid var(--c-orange);
+                    border-radius: 50rem;
+                }
+
+                & h2 {
+                    font-family: var(--f-heading);
+                    font-size: var(--fs-3xl);
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    line-height: 1.1;
+                    margin-bottom: var(--s-1-5);
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-4xl);
+                    }
+                }
+
+                & p {
+                    font-size: var(--fs-base);
+                    color: var(--c-gray-text);
+                    max-width: 40rem;
+                    margin: 0 auto;
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-lg);
+                    }
+                }
+            }
+
+            & .form-wrapper {
+                background-color: var(--c-dark);
+                border: var(--border-thin) solid var(--c-border);
+                border-radius: var(--radius-sm);
+                padding: var(--s-2);
+                max-width: var(--max-w-form);
+                margin: 0 auto;
+                box-shadow: 0 var(--s-2) var(--s-4) rgba(0,0,0,0.5);
+
+                @media (min-width: 48rem) {
+                    padding: var(--s-4);
+                }
+
+                & .grid-inputs {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-2);
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: var(--s-2) var(--s-3);
+                    }
+                }
+
+                & .input-group {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: var(--s-2);
+
+                    &.full-width {
+                        @media (min-width: 48rem) {
+                            grid-column: span 2;
+                        }
+                    }
+
+                    & label {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-xs);
+                        font-weight: 700;
+                        color: var(--c-gray-text);
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-125);
+                        margin-bottom: var(--s-0-5);
+                    }
+
+                    & .input-editorial {
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: var(--border-thin) solid var(--c-gray-border);
+                        color: var(--c-white);
+                        font-family: var(--f-body);
+                        font-size: var(--fs-base);
+                        padding: var(--s-0-75) 0;
+                        border-radius: 0;
+                        transition: var(--t-base);
+                        outline: none;
+
+                        &::placeholder {
+                            color: var(--c-gray-border);
+                        }
+
+                        &:focus {
+                            border-bottom-color: var(--c-orange);
+                        }
+                    }
+
+                    /* Estilo específico para el elemento select */
+                    & select.input-editorial {
+                        appearance: none;
+                        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23aaaaaa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+                        background-repeat: no-repeat;
+                        background-position: right var(--s-0-5) top 50%;
+                        background-size: var(--s-0-75) auto;
+                        color: var(--c-gray-text);
+                        cursor: pointer;
+
+                        & option {
+                            background-color: var(--c-dark);
+                            color: var(--c-white);
+                        }
+
+                        &:focus {
+                            color: var(--c-white);
+                        }
+                    }
+
+                    /* Ajuste para textarea */
+                    & textarea.input-editorial {
+                        resize: vertical;
+                        min-height: var(--s-6);
+                    }
+                }
+
+                & .form-footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: var(--s-3);
+                    gap: var(--s-1-5);
+
+                    & p {
+                        font-size: var(--fs-xs);
+                        color: var(--c-gray-text);
+                        text-align: center;
+                    }
+
+                    & .btn-submit {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        padding: var(--s-1-5) var(--s-2);
+                        background-color: var(--c-orange);
+                        color: var(--c-white);
+                        border: var(--border-thin) solid var(--c-orange);
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-sm);
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-125);
+                        cursor: pointer;
+                        border-radius: var(--radius-sm);
+                        transition: var(--t-base);
+
+                        @media (min-width: 48rem) {
+                            width: auto;
+                            padding: var(--s-1) var(--s-4);
+                        }
+
+                        &:hover {
+                            background-color: var(--c-white);
+                            color: var(--c-black);
+                            border-color: var(--c-white);
+                        }
+                    }
+                }
+            }
+
+            /* Datos de contacto directos debajo del formulario */
+            & .contacto-directo {
+                margin-top: var(--s-4);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--s-2);
+                border-top: var(--border-thin) solid var(--c-border);
+                padding-top: var(--s-4);
+
+                @media (min-width: 48rem) {
+                    flex-direction: row;
+                    gap: var(--s-4);
+                }
+
+                & .info-item {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--s-0-75);
+                    color: var(--c-gray-text);
+
+                    & svg {
+                        width: var(--s-1-5);
+                        height: var(--s-1-5);
+                        color: var(--c-orange);
+                    }
+
+                    & span {
+                        font-size: var(--fs-sm);
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="modulo-contacto">
+        <div class="container">
+            
+            <div class="header-contacto">
+                <span class="eyebrow">Hablemos de negocios</span>
+                <h2>Contacto Institucional</h2>
+                <p>Dirija sus consultas comerciales, postulaciones para franquicias o solicitudes de prensa directamente a nuestro equipo ejecutivo.</p>
+            </div>
+
+            <div class="form-wrapper">
+                <form action="#" method="POST" onsubmit="event.preventDefault();">
+                    
+                    <div class="grid-inputs">
+                        <!-- Campo: Nombre -->
+                        <div class="input-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" class="input-editorial" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <!-- Campo: Correo -->
+                        <div class="input-group">
+                            <label for="correo">Correo Electrónico Corporativo</label>
+                            <input type="email" id="correo" class="input-editorial" placeholder="juan@empresa.com" required>
+                        </div>
+
+                        <!-- Campo: Empresa -->
+                        <div class="input-group">
+                            <label for="empresa">Organización / Empresa / Club</label>
+                            <input type="text" id="empresa" class="input-editorial" placeholder="Nombre de su entidad">
+                        </div>
+
+                        <!-- Campo: Ciudad -->
+                        <div class="input-group">
+                            <label for="ciudad">Ciudad / Departamento</label>
+                            <input type="text" id="ciudad" class="input-editorial" placeholder="Ej. Florencia, Caquetá" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Motivo -->
+                    <div class="input-group full-width">
+                        <label for="motivo">Motivo de Contacto</label>
+                        <select id="motivo" class="input-editorial" required>
+                            <option value="" disabled selected>Seleccione el asunto de su solicitud...</option>
+                            <option value="franquicia">Postulación para adquirir Franquicia</option>
+                            <option value="patrocinio">Patrocinios y Alianzas Comerciales</option>
+                            <option value="prensa">Acreditaciones de Prensa / Medios</option>
+                            <option value="institucional">Asuntos Legales o Institucionales</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo: Mensaje -->
+                    <div class="input-group full-width">
+                        <label for="mensaje">Mensaje o Propuesta</label>
+                        <textarea id="mensaje" class="input-editorial" placeholder="Detalle aquí su solicitud, experiencia en el sector o infraestructura disponible..." required></textarea>
+                    </div>
+
+                    <!-- Footer Formulario -->
+                    <div class="form-footer">
+                        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                        <p>Al enviar este formulario, usted acepta nuestras políticas de tratamiento de datos e información corporativa.</p>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="contacto-directo">
+                <div class="info-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span>presidencia@ifasociado.com.co</span>
+                </div>
+                <div class="info-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Bogotá D.C., Colombia</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

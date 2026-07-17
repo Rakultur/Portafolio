@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Ecosistema I.F.A.</title>
+
+    <!-- Fuentes de Google: Montserrat para títulos, Inter para cuerpo de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de Colores Institucionales */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-dark-soft: #1a1a1a;
+            --c-white: #ffffff;
+            --c-orange: #FF5A00;
+            --c-gray-text: #aaaaaa;
+            --c-gray-light: #dddddd;
+            --c-border: rgba(255, 255, 255, 0.1);
+
+            /* Colores de la Pirámide */
+            --c-gold: #D4AF37;
+            --c-silver: #E0E0E0;
+            --c-bronze: #CD7F32;
+
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Escala estricta en REM (Base 16px en el navegador) */
+            --s-0-125: 0.125rem;
+            /* 2px */
+            --s-0-25: 0.25rem;
+            /* 4px */
+            --s-0-5: 0.5rem;
+            /* 8px */
+            --s-1: 1rem;
+            /* 16px */
+            --s-1-5: 1.5rem;
+            /* 24px */
+            --s-2: 2rem;
+            /* 32px */
+            --s-3: 3rem;
+            /* 48px */
+            --s-4: 4rem;
+            /* 64px */
+            --s-5: 5rem;
+            /* 80px */
+            --s-6: 6rem;
+            /* 96px */
+            --s-8: 8rem;
+            /* 128px */
+
+            /* Tamaños de Fuente en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2rem;
+            --fs-4xl: 2.5rem;
+            --fs-5xl: 3.5rem;
+
+            /* Utilidades en REM */
+            --radius-sm: 0.25rem;
+            --radius-full: 50rem;
+            --border-thin: 0.0625rem;
+            --border-thick: 0.125rem;
+            --max-w-container: 75rem;
+            --max-w-text: 55rem;
+        }
+        .module-ecosistema {
+
+            & .container {
+                width: 100%;
+                max-width: var(--max-w-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            & .text-container {
+                width: 100%;
+                max-width: var(--max-w-text);
+                margin: 0 auto;
+            }
+
+            /* Tipografía Editorial General */
+            & h2 {
+                font-family: var(--f-heading);
+                font-size: var(--fs-3xl);
+                font-weight: 900;
+                text-transform: uppercase;
+                line-height: 1.1;
+                margin-bottom: var(--s-1-5);
+                letter-spacing: -0.05rem;
+
+                @media (min-width: 48rem) {
+                    font-size: var(--fs-4xl);
+                }
+            }
+
+            & h3 {
+                font-family: var(--f-heading);
+                font-size: var(--fs-xl);
+                font-weight: 800;
+                text-transform: uppercase;
+                margin-top: var(--s-4);
+                margin-bottom: var(--s-1-5);
+                color: var(--c-white);
+                letter-spacing: var(--s-0-125);
+            }
+
+            & p {
+                font-size: var(--fs-base);
+                color: var(--c-gray-text);
+                margin-bottom: var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    font-size: var(--fs-lg);
+                }
+            }
+
+            & .eyebrow {
+                display: block;
+                color: var(--c-orange);
+                font-family: var(--f-heading);
+                font-size: var(--fs-xs);
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: var(--s-0-125);
+                margin-bottom: var(--s-0-5);
+            }
+
+            & ul {
+                margin-bottom: var(--s-2);
+                padding-left: var(--s-1-5);
+                list-style-type: none;
+
+                & li {
+                    position: relative;
+                    font-size: var(--fs-base);
+                    color: var(--c-gray-text);
+                    margin-bottom: var(--s-0-5);
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-lg);
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: calc(var(--s-1-5) * -1);
+                        top: var(--s-0-5);
+                        width: var(--s-0-5);
+                        height: var(--s-0-5);
+                        background-color: var(--c-orange);
+                        border-radius: var(--radius-full);
+                    }
+                }
+            }
+
+            & .section-pyramid {
+                padding: var(--s-6) 0;
+                background-color: var(--c-dark);
+                border-bottom: var(--border-thin) solid var(--c-border);
+
+                & .pyramid-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-4);
+                    align-items: center;
+
+                    @media (min-width: 64rem) {
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--s-6);
+                    }
+                }
+
+                & .pyramid-visual {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: var(--s-0-5);
+                    position: relative;
+                    padding: var(--s-2) 0;
+
+                    /* Línea central conectora de la pirámide */
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: var(--border-thin);
+                        height: 100%;
+                        background-color: var(--c-border);
+                        z-index: 0;
+                    }
+
+                    & .level {
+                        position: relative;
+                        z-index: 1;
+                        padding: var(--s-1) var(--s-1-5);
+                        text-align: center;
+                        font-family: var(--f-heading);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-125);
+                        border-radius: var(--radius-sm);
+                        font-size: var(--fs-sm);
+                        width: 100%;
+                        box-shadow: 0 var(--s-0-5) var(--s-1) rgba(0, 0, 0, 0.5);
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-base);
+                        }
+
+                        &.l-dorado {
+                            max-width: 16rem;
+                            background-color: var(--c-gold);
+                            color: var(--c-black);
+                            box-shadow: 0 0 var(--s-1-5) rgba(212, 175, 55, 0.4);
+                        }
+
+                        &.l-plata {
+                            max-width: 20rem;
+                            background-color: var(--c-silver);
+                            color: var(--c-black);
+                        }
+
+                        &.l-bronce {
+                            max-width: 24rem;
+                            background-color: var(--c-bronze);
+                            color: var(--c-white);
+                        }
+
+                        &.l-nacional {
+                            max-width: 28rem;
+                            background-color: #222222;
+                            color: var(--c-white);
+                            border: var(--border-thin) solid #444444;
+                        }
+
+                        &.l-regional {
+                            max-width: 32rem;
+                            background-color: #151515;
+                            color: var(--c-gray-text);
+                            border: var(--border-thin) solid #333333;
+                        }
+
+                        &.l-provincial {
+                            max-width: 36rem;
+                            background-color: #000000;
+                            color: #666666;
+                            border: var(--border-thin) solid #222222;
+                        }
+                    }
+                }
+            }
+
+            & .section-editorial {
+                padding: var(--s-6) 0;
+                background-color: var(--c-black);
+
+                & .highlight-box {
+                    background-color: var(--c-dark-soft);
+                    border-left: var(--s-0-25) solid var(--c-orange);
+                    padding: var(--s-2);
+                    margin: var(--s-3) 0;
+                    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+
+                    & p {
+                        margin-bottom: 0;
+                        color: var(--c-white);
+                        font-style: italic;
+                    }
+                }
+            }
+
+            & .section-timeline {
+                padding: var(--s-6) 0;
+                background-color: var(--c-dark);
+                border-top: var(--border-thin) solid var(--c-border);
+                border-bottom: var(--border-thin) solid var(--c-border);
+
+                & .timeline-wrapper {
+                    position: relative;
+                    margin-top: var(--s-4);
+                    padding-left: var(--s-2);
+
+                    @media (min-width: 48rem) {
+                        padding-left: var(--s-4);
+                    }
+
+                    /* Línea vertical del timeline */
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: var(--border-thick);
+                        height: 100%;
+                        background-color: var(--c-border);
+
+                        @media (min-width: 48rem) {
+                            left: var(--s-1);
+                        }
+                    }
+
+                    & .timeline-item {
+                        position: relative;
+                        margin-bottom: var(--s-4);
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        /* Punto indicador del timeline */
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: calc(var(--s-2) * -1 - var(--s-0-5) + (var(--border-thick) / 2));
+                            top: var(--s-0-5);
+                            width: var(--s-1);
+                            height: var(--s-1);
+                            background-color: var(--c-black);
+                            border: var(--border-thick) solid var(--c-orange);
+                            border-radius: var(--radius-full);
+                            z-index: 2;
+
+                            @media (min-width: 48rem) {
+                                left: calc(var(--s-3) * -1 - var(--s-0-5) + (var(--border-thick) / 2));
+                            }
+                        }
+
+                        & .year {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-2xl);
+                            font-weight: 900;
+                            color: var(--c-white);
+                            margin-bottom: var(--s-0-5);
+                            line-height: 1;
+
+                            &.text-orange {
+                                color: var(--c-orange);
+                            }
+                        }
+
+                        & h4 {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-lg);
+                            font-weight: 700;
+                            color: var(--c-white);
+                            margin-bottom: var(--s-1);
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            & .section-conclusion {
+                padding: var(--s-8) 0;
+                background-color: var(--c-black);
+                text-align: center;
+
+                & .conclusion-text {
+                    font-size: var(--fs-xl);
+                    color: var(--c-white);
+                    font-weight: 300;
+                    line-height: 1.5;
+                    margin-top: var(--s-4);
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-3xl);
+                    }
+
+                    & strong {
+                        font-weight: 700;
+                        color: var(--c-orange);
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="module-ecosistema">
+
+        <!-- SECCIÓN 1: El Nuevo Ecosistema (Pirámide) -->
+        <section class="section-pyramid">
+            <div class="container">
+                <div class="pyramid-grid">
+                    <div class="text-content">
+                        <span class="eyebrow">Estructura Competitiva</span>
+                        <h2>El Nuevo<br>Ecosistema.</h2>
+                        <p>Un sistema piramidal sólido, diseñado para premiar el mérito deportivo y garantizar la
+                            sostenibilidad financiera en todos los niveles. Desde la élite nacional hasta las bases
+                            provinciales.</p>
+                    </div>
+
+                    <div class="pyramid-visual">
+                        <div class="level l-dorado">Liga El Dorado</div>
+                        <div class="level l-plata">División Plata</div>
+                        <div class="level l-bronce">División Bronce</div>
+                        <div class="level l-nacional">División Nacional</div>
+                        <div class="level l-regional">División Regional</div>
+                        <div class="level l-provincial">División Provincial</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Visión y Desarrollo Institucional -->
+        <section class="section-editorial">
+            <div class="text-container container">
+
+                <h3>La visión de la Liga El Dorado</h3>
+                <p>La Liga El Dorado nace con un propósito claro: construir la primera estructura moderna, sostenible y
+                    verdaderamente piramidal del fútbol colombiano, donde el mérito deportivo sea el principio que
+                    determine el crecimiento de los clubes y el futuro de las regiones.</p>
+                <p>Más que una nueva competencia, la Liga El Dorado es un proyecto de transformación del ecosistema del
+                    fútbol nacional, diseñado para generar oportunidades, fortalecer a los clubes, impulsar la inversión
+                    y devolver el protagonismo a las regiones.</p>
+                <p>Nuestro objetivo no es únicamente organizar torneos. Es construir una estructura capaz de crecer
+                    durante las próximas décadas, ampliando el fútbol profesional colombiano y creando un camino claro
+                    para que cualquier club pueda alcanzar la máxima categoría a través de su desempeño deportivo.</p>
+
+                <h3>Una estructura diseñada para crecer</h3>
+                <p>La Liga El Dorado ha sido concebida como un proyecto de largo plazo, cuya implementación será
+                    progresiva para garantizar que cada etapa cuente con bases deportivas, institucionales y financieras
+                    sólidas.</p>
+                <p>La visión contempla una pirámide nacional integrada por seis niveles competitivos:</p>
+
+                <ul>
+                    <li>Liga El Dorado</li>
+                    <li>División Plata</li>
+                    <li>División Bronce</li>
+                    <li>División Nacional</li>
+                    <li>División Regional</li>
+                    <li>División Provincial</li>
+                </ul>
+
+                <p>Cada categoría tendrá identidad propia, estructura administrativa, desarrollo institucional y un
+                    camino claramente definido dentro del sistema nacional.</p>
+                <p>Más que una serie de torneos independientes, la Liga El Dorado construye un ecosistema conectado
+                    donde el crecimiento de los clubes estará determinado por su organización y su rendimiento
+                    deportivo.</p>
+
+                <h3>El mérito deportivo como principio</h3>
+                <p>La Liga El Dorado adopta una visión inspirada en los modelos de competencia que han impulsado el
+                    desarrollo de las principales ligas del mundo: un sistema donde los clubes progresan por sus
+                    resultados deportivos.</p>
+                <p>Sin embargo, creemos que un sistema de ascensos y descensos debe construirse sobre bases sólidas.</p>
+                <p>Por ello, durante los primeros años, el proyecto estará enfocado en consolidar las franquicias
+                    fundadoras, desarrollar la estructura institucional de los clubes, fortalecer la sostenibilidad
+                    financiera y completar la expansión de todas las categorías nacionales.</p>
+
+                <div class="highlight-box">
+                    <p>Solo cuando la pirámide esté completamente consolidada se implementará el sistema de ascensos y
+                        descensos. Porque antes de competir por subir o bajar de categoría, es necesario construir una
+                        estructura fuerte, estable y sostenible para todo el fútbol colombiano.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Hoja de Ruta (Timeline) -->
+        <section class="section-timeline">
+            <div class="text-container container">
+                <span class="eyebrow">Proyección</span>
+                <h2>Hoja de Ruta</h2>
+
+                <div class="timeline-wrapper">
+
+                    <div class="timeline-item">
+                        <div class="year text-orange">2026</div>
+                        <h4>Nace la Liga El Dorado</h4>
+                        <p>La Liga El Dorado inicia oficialmente con ocho franquicias fundadoras, marcando el nacimiento
+                            de una nueva estructura para el fútbol profesional colombiano.</p>
+                        <p>De manera paralela, comenzará la planeación y organización de los torneos locales y
+                            regionales, los cuales servirán como la principal puerta de entrada al sistema y permitirán
+                            iniciar la construcción deportiva de la futura División Plata, identificando los primeros
+                            clubes que competirán por mérito deportivo dentro de la nueva pirámide.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2027</div>
+                        <h4>Consolidación de la estructura regional</h4>
+                        <p>Durante 2027 se consolidará la estructura regional de la Liga El Dorado mediante procesos de
+                            clasificación deportiva organizados por la IFA para conformar la División Plata.</p>
+                        <p>Los clubes podrán acceder a esta categoría a través de dos mecanismos:</p>
+                        <ul>
+                            <li>Clasificación por mérito deportivo, obtenida mediante los torneos oficiales organizados
+                                por la IFA.</li>
+                            <li>Adquisición de franquicias, fortaleciendo el desarrollo institucional y la expansión del
+                                sistema.</li>
+                        </ul>
+                        <p>Este proceso permitirá conformar una segunda categoría competitiva, sólida y representativa
+                            de las diferentes regiones del país.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2028</div>
+                        <h4>Nace la División Plata</h4>
+                        <p>En 2028 entrará en funcionamiento oficialmente la División Plata, consolidándose como el
+                            segundo nivel del sistema Liga El Dorado.</p>
+                        <p>La categoría estará integrada por 20 clubes, distribuidos de la siguiente manera:</p>
+                        <ul>
+                            <li>12 clubes clasificados por mérito deportivo.</li>
+                            <li>8 franquicias adquiridas.</li>
+                        </ul>
+                        <p>Una vez la División Plata se encuentre completamente conformada, dará inicio la
+                            estructuración de la División Bronce, continuando así el crecimiento ordenado de la pirámide
+                            del fútbol colombiano.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">Proyección Futura</div>
+                        <h4>Expansión del Sistema</h4>
+                        <p>Consolidada la División Plata, la Liga El Dorado continuará la expansión de su estructura
+                            nacional mediante la creación progresiva de nuevas categorías.</p>
+                        <p>La siguiente etapa será la conformación de la División Bronce, integrada bajo el mismo modelo
+                            institucional (12 clubes clasificados, 8 franquicias).</p>
+                        <p>Posteriormente se desarrollarán la División Nacional, la División Regional y la División
+                            Provincial, completando una pirámide nacional donde cualquier club colombiano podrá iniciar
+                            su camino y avanzar progresivamente hacia la máxima categoría.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year text-orange">2031</div>
+                        <h4>El Inicio de una Nueva Era</h4>
+                        <p>Con toda la estructura nacional consolidada y las diferentes categorías plenamente
+                            operativas, la Liga El Dorado implementará oficialmente el sistema de ascensos y descensos
+                            entre divisiones.</p>
+                        <p>A partir de ese momento, el rendimiento deportivo será el mecanismo que permitirá a los
+                            clubes ascender progresivamente desde las categorías de base hasta alcanzar la Liga El
+                            Dorado, la máxima categoría del sistema.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Por qué Ascensos/Descensos y Futuro -->
+        <section class="section-conclusion">
+            <div class="text-container container text-left">
+
+                <h3>¿Por qué implementar el Ascenso y Descenso?</h3>
+                <p>El sistema de ascensos y descensos representa mucho más que un cambio en el formato de competencia.
+                </p>
+                <p>Es el mecanismo que permitirá construir un fútbol más competitivo, sostenible y conectado con las
+                    regiones.</p>
+                <p>Su implementación incentivará la inversión en infraestructura, fortalecerá el desarrollo
+                    institucional de los clubes, impulsará la formación de nuevos jugadores y convertirá cada temporada
+                    en una competencia donde todos los partidos tendrán un impacto real sobre el futuro de los equipos.
+                </p>
+                <p>Este modelo también abrirá nuevas oportunidades para ciudades que históricamente han estado fuera del
+                    fútbol profesional, permitiendo que cualquier proyecto serio pueda crecer hasta alcanzar la máxima
+                    categoría mediante resultados deportivos.</p>
+                <p>No se trata únicamente de subir o bajar de división. Se trata de construir un ecosistema donde el
+                    talento, la planificación y el trabajo sean los factores que determinen el crecimiento de los
+                    clubes.</p>
+
+                <h3>El Futuro del Fútbol Colombiano</h3>
+                <p>Imaginamos una Colombia donde cualquier club pueda comenzar su historia en una competencia
+                    provincial, avanzar hacia las divisiones regionales y nacionales, llegar a la División Bronce,
+                    consolidarse en la División Plata y, finalmente, competir en la Liga El Dorado.</p>
+                <p>Un país donde las oportunidades no dependan del lugar de origen, sino de la capacidad de construir un
+                    proyecto deportivo sólido. Donde las regiones vuelvan a ser protagonistas. Donde el talento tenga un
+                    camino real para crecer. Y donde el éxito deportivo se gane dentro del terreno de juego.</p>
+
+                <p class="conclusion-text">
+                    Porque cuando existe un camino para ascender, <strong>cada partido importa</strong>. Cuando el
+                    mérito deportivo define el futuro de los clubes, <strong>todo un país puede soñar</strong>.<br><br>
+                    Ese es el futuro que la Liga El Dorado está construyendo para el fútbol colombiano.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

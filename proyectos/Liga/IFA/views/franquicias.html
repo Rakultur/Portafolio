@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Franquicias I.F.A.</title>
+
+    <!-- Fuentes de Google: Montserrat para títulos y corporativo, Inter para lectura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de Colores Corporativos */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-white: #ffffff;
+            --c-orange: #FF5A00;
+            --c-gray-light: #f9f9f9;
+            --c-gray-text: #555555;
+            --c-gray-muted: #888888;
+            --c-border: rgba(255, 255, 255, 0.1);
+            --c-border-dark: rgba(0, 0, 0, 0.1);
+
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Escala de Espaciados estricta en REM (Base 16px por defecto en navegador) */
+            --s-0-125: 0.125rem;
+            /* 2px */
+            --s-0-25: 0.25rem;
+            /* 4px */
+            --s-0-5: 0.5rem;
+            /* 8px */
+            --s-1: 1rem;
+            /* 16px */
+            --s-1-5: 1.5rem;
+            /* 24px */
+            --s-2: 2rem;
+            /* 32px */
+            --s-3: 3rem;
+            /* 48px */
+            --s-4: 4rem;
+            /* 64px */
+            --s-6: 6rem;
+            /* 96px */
+            --s-8: 8rem;
+            /* 128px */
+
+            /* Tamaños de Fuente fluidos pero controlados en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2rem;
+            --fs-4xl: 2.5rem;
+            --fs-5xl: 3.5rem;
+
+            /* Utilidades */
+            --radius-sm: 0.25rem;
+            --radius-full: 50rem;
+            --border-thin: 0.0625rem;
+            /* 1px */
+            --border-thick: 0.125rem;
+            /* 2px */
+            --max-w-container: 75rem;
+            --transition-base: all 0.3s ease;
+        }
+
+        .ifa-franquicias {
+
+            & .container {
+                width: 100%;
+                max-width: var(--max-w-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            /* Botones Globales del Módulo */
+            & .btn {
+                display: inline-block;
+                font-family: var(--f-heading);
+                font-weight: 700;
+                font-size: var(--fs-xs);
+                text-transform: uppercase;
+                letter-spacing: var(--s-0-125);
+                padding: var(--s-1) var(--s-2);
+                border-radius: var(--radius-sm);
+                cursor: pointer;
+                text-align: center;
+                transition: var(--transition-base);
+                border: var(--border-thin) solid transparent;
+
+                &.btn-orange {
+                    background-color: var(--c-orange);
+                    color: var(--c-white);
+                    box-shadow: 0 var(--s-0-5) var(--s-1-5) rgba(255, 90, 0, 0.3);
+
+                    &:hover {
+                        background-color: var(--c-white);
+                        color: var(--c-black);
+                        box-shadow: none;
+                    }
+                }
+
+                &.btn-dark {
+                    background-color: var(--c-black);
+                    color: var(--c-white);
+
+                    &:hover {
+                        background-color: var(--c-orange);
+                    }
+                }
+            }
+
+            & .hero-franquicias {
+                position: relative;
+                padding: var(--s-8) 0;
+                background-color: var(--c-black);
+                color: var(--c-white);
+                text-align: center;
+                overflow: hidden;
+
+                /* Fondo con imagen y overlay oscuro */
+                & .bg-image {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0.2;
+                    mix-blend-mode: luminosity;
+                    z-index: 0;
+                }
+
+                & .bg-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to bottom, var(--c-black), rgba(5, 5, 5, 0.8), var(--c-black));
+                    z-index: 1;
+                }
+
+                & .content {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 60rem;
+                    margin: 0 auto;
+
+                    & h1 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-4xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        line-height: 1.1;
+                        margin-bottom: var(--s-1-5);
+                        letter-spacing: -0.05rem;
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-5xl);
+                        }
+                    }
+
+                    &>p {
+                        font-size: var(--fs-lg);
+                        color: var(--c-gray-light);
+                        font-weight: 300;
+                        margin-bottom: var(--s-4);
+                        line-height: 1.6;
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-xl);
+                        }
+                    }
+                }
+
+                /* Grid de Beneficios en el Hero */
+                & .beneficios-hero {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-2);
+                    margin-bottom: var(--s-4);
+                    text-align: left;
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--s-1-5);
+                    }
+
+                    & .bene-card {
+                        background-color: rgba(255, 255, 255, 0.03);
+                        border: var(--border-thin) solid var(--c-border);
+                        padding: var(--s-2);
+                        border-radius: var(--radius-sm);
+                        backdrop-filter: blur(0.5rem);
+
+                        & svg {
+                            width: var(--s-2);
+                            height: var(--s-2);
+                            color: var(--c-orange);
+                            margin-bottom: var(--s-1);
+                        }
+
+                        & h3 {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-base);
+                            font-weight: 700;
+                            margin-bottom: var(--s-0-5);
+                            color: var(--c-white);
+                        }
+
+                        & p {
+                            font-size: var(--fs-xs);
+                            color: var(--c-gray-muted);
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+
+            & .inversion-opciones {
+                padding: var(--s-8) 0;
+                background-color: var(--c-gray-light);
+
+                & .header-inversion {
+                    text-align: center;
+                    margin-bottom: var(--s-4);
+
+                    & .eyebrow {
+                        display: block;
+                        color: var(--c-orange);
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-xs);
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-125);
+                        margin-bottom: var(--s-0-5);
+                    }
+
+                    & h2 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-3xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        line-height: 1.1;
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-4xl);
+                        }
+                    }
+                }
+
+                & .grid-inversion {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-3);
+
+                    @media (min-width: 64rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                & .card-inversion {
+                    background-color: var(--c-white);
+                    border: var(--border-thin) solid var(--c-border-dark);
+                    border-radius: var(--radius-sm);
+                    padding: var(--s-3) var(--s-2);
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 0 var(--s-1) var(--s-3) rgba(0, 0, 0, 0.03);
+
+                    @media (min-width: 48rem) {
+                        padding: var(--s-4) var(--s-3);
+                    }
+
+                    & .badge {
+                        display: inline-block;
+                        align-self: flex-start;
+                        padding: var(--s-0-25) var(--s-1);
+                        font-size: var(--fs-xs);
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-125);
+                        margin-bottom: var(--s-1-5);
+                        border-radius: var(--radius-sm);
+
+                        &.badge-dorado {
+                            background-color: #D4AF37;
+                            /* Dorado */
+                            color: var(--c-black);
+                        }
+
+                        &.badge-plata {
+                            background-color: #E0E0E0;
+                            /* Plata */
+                            color: var(--c-black);
+                        }
+                    }
+
+                    & h3 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-2xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        margin-bottom: var(--s-1);
+                    }
+
+                    & .intro {
+                        font-weight: 700;
+                        font-size: var(--fs-base);
+                        color: var(--c-black);
+                        margin-bottom: var(--s-1);
+                    }
+
+                    & p {
+                        font-size: var(--fs-sm);
+                        color: var(--c-gray-text);
+                        margin-bottom: var(--s-1-5);
+                    }
+
+                    & .beneficios-list {
+                        margin-top: auto;
+                        /* Empuja el contenido hacia arriba, dejando la lista y botón al fondo */
+                        margin-bottom: var(--s-2);
+                        padding-top: var(--s-2);
+                        border-top: var(--border-thin) solid var(--c-border-dark);
+
+                        & h4 {
+                            font-size: var(--fs-xs);
+                            text-transform: uppercase;
+                            color: var(--c-gray-muted);
+                            margin-bottom: var(--s-1);
+                            letter-spacing: var(--s-0-125);
+                        }
+
+                        & li {
+                            display: flex;
+                            align-items: flex-start;
+                            font-size: var(--fs-sm);
+                            color: var(--c-gray-text);
+                            margin-bottom: var(--s-0-5);
+
+                            &::before {
+                                content: '';
+                                display: inline-block;
+                                width: var(--s-0-5);
+                                height: var(--s-0-5);
+                                background-color: var(--c-orange);
+                                border-radius: var(--radius-full);
+                                margin-top: var(--s-0-25);
+                                margin-right: var(--s-0-5);
+                                flex-shrink: 0;
+                            }
+
+                            & strong {
+                                color: var(--c-black);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .proceso-adquisicion {
+                padding: var(--s-8) 0;
+                background-color: var(--c-white);
+
+                & .header-proceso {
+                    text-align: center;
+                    margin-bottom: var(--s-6);
+
+                    & h2 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-3xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        letter-spacing: -0.05rem;
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-4xl);
+                        }
+                    }
+                }
+
+                & .steps-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--s-2);
+                    position: relative;
+                    max-width: 60rem;
+                    margin: 0 auto;
+
+                    /* Línea conectora base (móvil) vertical */
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: var(--s-2);
+                        left: var(--s-2);
+                        width: var(--border-thick);
+                        height: calc(100% - var(--s-4));
+                        background-color: var(--c-gray-light);
+                        z-index: 0;
+                        transform: translateX(-50%);
+                    }
+
+                    @media (min-width: 48rem) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        gap: 0;
+
+                        /* Línea conectora (desktop) horizontal */
+                        &::before {
+                            top: var(--s-2);
+                            left: var(--s-2);
+                            width: calc(100% - var(--s-4));
+                            height: var(--border-thick);
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    & .step {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        position: relative;
+                        z-index: 1;
+                        text-align: left;
+                        gap: var(--s-1-5);
+
+                        @media (min-width: 48rem) {
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                            gap: var(--s-1);
+                            width: 100%;
+                            padding: 0 var(--s-0-5);
+                        }
+
+                        & .circle {
+                            width: var(--s-4);
+                            height: var(--s-4);
+                            border-radius: var(--radius-full);
+                            background-color: var(--c-white);
+                            border: var(--border-thick) solid #e0e0e0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-xl);
+                            font-weight: 800;
+                            color: #cccccc;
+                            flex-shrink: 0;
+                            transition: var(--transition-base);
+                        }
+
+                        & h4 {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-sm);
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            color: var(--c-black);
+                            margin-bottom: var(--s-0-125);
+                        }
+
+                        & p {
+                            font-size: var(--fs-xs);
+                            color: var(--c-gray-text);
+                        }
+
+                        /* Hover sobre el step */
+                        &:hover .circle {
+                            border-color: var(--c-orange);
+                            color: var(--c-orange);
+                        }
+
+                        /* Estilo para el paso final (Firma) */
+                        &.final {
+                            & .circle {
+                                background-color: var(--c-black);
+                                border-color: var(--c-black);
+                                color: var(--c-white);
+                                box-shadow: 0 var(--s-0-5) var(--s-1-5) rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="ifa-franquicias">
+
+        <!-- Sección 1: Hero / Introducción a Franquicias -->
+        <section class="hero-franquicias">
+            <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Estadio de fútbol oscuro" class="bg-image">
+            <div class="bg-overlay"></div>
+
+            <div class="container content">
+                <h1>Conviértase en propietario de una franquicia oficial.</h1>
+                <p>Una oportunidad de inversión única. Adquiera derechos de exclusividad territorial, respaldo
+                    institucional total y participación directa en los ingresos comerciales y de transmisión.</p>
+
+                <div class="beneficios-hero">
+                    <!-- Beneficio 1 -->
+                    <div class="bene-card">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                        <h3>Exclusividad Territorial</h3>
+                        <p>Protección de mercado en su ciudad o región asignada.</p>
+                    </div>
+                    <!-- Beneficio 2 -->
+                    <div class="bene-card">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                        <h3>Modelo Sostenible</h3>
+                        <p>Topes salariales y fair play financiero auditado por I.F.A.</p>
+                    </div>
+                    <!-- Beneficio 3 -->
+                    <div class="bene-card">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <h3>Derechos Comerciales</h3>
+                        <p>Repartición equitativa de ingresos por TV y sponsors globales.</p>
+                    </div>
+                </div>
+
+                <a href="#contacto" class="btn btn-orange">Aplicar Ahora</a>
+            </div>
+        </section>
+
+        <!-- Sección 2: Opciones de Inversión (Dorado / Plata) -->
+        <section class="inversion-opciones">
+            <div class="container">
+                <div class="header-inversion">
+                    <span class="eyebrow">Invierta en el futuro del fútbol colombiano</span>
+                    <h2>Adquiera una Franquicia</h2>
+                </div>
+
+                <div class="grid-inversion">
+                    <!-- Tarjeta Liga El Dorado -->
+                    <div class="card-inversion">
+                        <span class="badge badge-dorado">Liga El Dorado</span>
+                        <h3>Liga El Dorado</h3>
+                        <p class="intro">Invierta en la máxima categoría del nuevo fútbol colombiano.</p>
+                        <p>Conviértase en propietario de una de las franquicias de la máxima división de la Liga El
+                            Dorado y haga parte de un proyecto construido para garantizar estabilidad deportiva,
+                            financiera e institucional.</p>
+                        <p>Con el fin de consolidar clubes sólidos y sostenibles, la Liga El Dorado no tendrá ascensos
+                            ni descensos hasta la temporada 2031, permitiendo que los propietarios desarrollen su
+                            estructura deportiva, fortalezcan sus marcas y consoliden sus operaciones con visión de
+                            largo plazo.</p>
+
+                        <div class="beneficios-list">
+                            <h4>Beneficios</h4>
+                            <ul>
+                                <li>Estructura Legal independiente.</li>
+                                <li>Exclusividad territorial.</li>
+                                <li>Estabilidad deportiva.</li>
+                                <li>Participación en ingresos comerciales y audiovisuales.</li>
+                                <li>Respaldo institucional de la IFA.</li>
+                                <li><strong>Cupos limitados: Disponibles 12 de 20 Cupos.</strong></li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="btn btn-dark">Solicitar Información</a>
+                    </div>
+
+                    <!-- Tarjeta División Plata -->
+                    <div class="card-inversion">
+                        <span class="badge badge-plata">División Plata</span>
+                        <h3>División Plata</h3>
+                        <p class="intro">El punto de partida para construir el próximo gran club de Colombia.</p>
+                        <p>La División Plata iniciará en 2028 y representa una oportunidad para empresarios e
+                            inversionistas que desean ingresar al ecosistema profesional del fútbol con una inversión
+                            más accesible y un alto potencial de crecimiento.</p>
+                        <p>Cada franquicia contará con el respaldo organizacional de la IFA, una estructura deportiva
+                            profesional y un camino claro hacia la máxima categoría mediante el sistema de ascensos y
+                            descensos que comenzará a operar en 2031.</p>
+
+                        <div class="beneficios-list">
+                            <h4>Beneficios</h4>
+                            <ul>
+                                <li>Estructura Legal independiente.</li>
+                                <li>Inicio oficial en 2028.</li>
+                                <li>Inversión de acceso más competitiva.</li>
+                                <li>Modelo de gestión profesional.</li>
+                                <li>Proyección hacia la Liga El Dorado.</li>
+                                <li><strong>Solo 8 franquicias disponibles.</strong></li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="btn btn-dark">Solicitar Información</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Proceso de Adquisición -->
+        <section class="proceso-adquisicion">
+            <div class="container">
+                <div class="header-proceso">
+                    <h2>Proceso de Adquisición</h2>
+                </div>
+
+                <div class="steps-container">
+                    <!-- Paso 1 -->
+                    <div class="step">
+                        <div class="circle">1</div>
+                        <div class="text">
+                            <h4>Solicitud</h4>
+                            <p>Envío de carta de intención.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="step">
+                        <div class="circle">2</div>
+                        <div class="text">
+                            <h4>Evaluación</h4>
+                            <p>Due diligence financiero.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="step">
+                        <div class="circle">3</div>
+                        <div class="text">
+                            <h4>Proyecto</h4>
+                            <p>Presentación deportiva.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 4 -->
+                    <div class="step">
+                        <div class="circle">4</div>
+                        <div class="text">
+                            <h4>Revisión</h4>
+                            <p>Aprobación jurídica final.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 5 (Final) -->
+                    <div class="step final">
+                        <div class="circle">F</div>
+                        <div class="text">
+                            <h4>Firma</h4>
+                            <p>Inicio de operaciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

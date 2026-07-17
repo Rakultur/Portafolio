@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Territorios y Prensa - I.F.A.</title>
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colores Institucionales */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-dark-soft: #1a1a1a;
+            --c-white: #ffffff;
+            --c-gold: #D4AF37;
+            --c-orange: #FF5A00;
+            --c-gray-text: #aaaaaa;
+            --c-gray-light: #dddddd;
+            --c-border: rgba(255, 255, 255, 0.1);
+
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Tamaños de Fuente en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2.25rem;
+            --fs-4xl: 3rem;
+
+            /* Espaciados en REM (Reemplazo total de px/%) */
+            --s-0-25: 0.25rem;
+            --s-0-5: 0.5rem;
+            --s-1: 1rem;
+            --s-1-5: 1.5rem;
+            --s-2: 2rem;
+            --s-3: 3rem;
+            --s-4: 4rem;
+            --s-6: 6rem;
+            --s-8: 8rem;
+
+            /* Dimensiones estructurales en REM */
+            --max-width-container: 75rem;
+            --max-width-text: 50rem;
+            --radius-sm: 0.5rem;
+            --border-thin: 0.0625rem;
+        }
+
+        .modulo-territorios {
+
+            & .container {
+                width: 100%;
+                max-width: var(--max-width-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            & .eyebrow {
+                display: block;
+                color: var(--c-gold);
+                font-family: var(--f-heading);
+                font-size: var(--fs-xs);
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: var(--s-0-25);
+                margin-bottom: var(--s-1);
+            }
+
+            & .btn {
+                display: inline-block;
+                font-family: var(--f-heading);
+                font-weight: 700;
+                font-size: var(--fs-xs);
+                text-transform: uppercase;
+                letter-spacing: var(--s-0-25);
+                padding: var(--s-1) var(--s-2);
+                border-radius: var(--radius-sm);
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.3s ease;
+                border: var(--border-thin) solid transparent;
+                text-decoration: none;
+
+                &.btn-outline {
+                    background-color: transparent;
+                    border-color: var(--c-white);
+                    color: var(--c-white);
+
+                    &:hover {
+                        background-color: var(--c-white);
+                        color: var(--c-black);
+                    }
+                }
+            }
+
+            & .seccion-territorios {
+                padding: var(--s-6) 0;
+                background-color: var(--c-black);
+
+                & .header-territorios {
+                    text-align: center;
+                    margin-bottom: var(--s-4);
+
+                    & h2 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-3xl);
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        margin-bottom: var(--s-1-5);
+
+                        @media (min-width: 48rem) {
+                            font-size: var(--fs-4xl);
+                        }
+                    }
+                }
+
+                /* Placeholder del Mapa */
+                & .mapa-placeholder {
+                    width: 100%;
+                    height: 25rem;
+                    background-color: var(--c-dark-soft);
+                    border: var(--border-thin) dashed var(--c-gray-text);
+                    border-radius: var(--radius-sm);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: var(--s-4);
+
+                    & span {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-xl);
+                        color: var(--c-gray-text);
+                        text-transform: uppercase;
+                        letter-spacing: var(--s-0-25);
+                    }
+                }
+
+                /* Grilla de Territorios */
+                & .grid-territorios {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-2);
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    @media (min-width: 64rem) {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                & .card-territorio {
+                    background-color: var(--c-dark);
+                    border: var(--border-thin) solid var(--c-border);
+                    border-radius: var(--radius-sm);
+                    padding: var(--s-2);
+                    display: flex;
+                    flex-direction: column;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(calc(var(--s-0-5) * -1));
+                        border-color: var(--c-gold);
+                    }
+
+                    & h3 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-2xl);
+                        font-weight: 800;
+                        color: var(--c-white);
+                        margin-bottom: var(--s-0-25);
+                    }
+
+                    & .ciudad-pob {
+                        font-family: var(--f-body);
+                        font-size: var(--fs-sm);
+                        color: var(--c-gold);
+                        font-weight: 600;
+                        margin-bottom: var(--s-1-5);
+                        padding-bottom: var(--s-1);
+                        border-bottom: var(--border-thin) solid var(--c-border);
+                    }
+
+                    & .bloque-info {
+                        margin-bottom: var(--s-1-5);
+
+                        & h4 {
+                            font-family: var(--f-heading);
+                            font-size: var(--fs-xs);
+                            text-transform: uppercase;
+                            color: var(--c-gray-text);
+                            margin-bottom: var(--s-0-5);
+                            letter-spacing: var(--s-0-25);
+                        }
+
+                        & p {
+                            font-size: var(--fs-sm);
+                            color: var(--c-gray-light);
+                        }
+
+                        & ul {
+                            list-style: none;
+                            padding-left: 0;
+
+                            & li {
+                                font-size: var(--fs-sm);
+                                color: var(--c-gray-light);
+                                position: relative;
+                                padding-left: var(--s-1);
+                                margin-bottom: var(--s-0-25);
+
+                                &::before {
+                                    content: '•';
+                                    position: absolute;
+                                    left: 0;
+                                    color: var(--c-orange);
+                                }
+                            }
+                        }
+                    }
+
+                    &.card-destacada {
+                        background: linear-gradient(to bottom right, var(--c-dark-soft), var(--c-black));
+                        border-color: var(--c-gold);
+
+                        @media (min-width: 64rem) {
+                            grid-column: span 2;
+                        }
+
+                        & .ciudad-pob {
+                            color: var(--c-orange);
+                        }
+                    }
+                }
+
+                & .resumen-impacto {
+                    margin-top: var(--s-6);
+                    padding: var(--s-3);
+                    background-color: var(--c-dark-soft);
+                    border-radius: var(--radius-sm);
+                    text-align: center;
+
+                    & h3 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-xl);
+                        color: var(--c-white);
+                        margin-bottom: var(--s-2);
+                    }
+
+                    & .grid-impacto {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: var(--s-2);
+
+                        @media (min-width: 48rem) {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+
+                        @media (min-width: 64rem) {
+                            grid-template-columns: repeat(4, 1fr);
+                        }
+
+                        & .item-impacto {
+                            & .numero {
+                                display: block;
+                                font-family: var(--f-heading);
+                                font-size: var(--fs-3xl);
+                                font-weight: 900;
+                                color: var(--c-gold);
+                                margin-bottom: var(--s-0-5);
+                            }
+
+                            & .texto {
+                                font-size: var(--fs-sm);
+                                color: var(--c-gray-text);
+                                text-transform: uppercase;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    & .conclusion {
+                        margin-top: var(--s-3);
+                        font-size: var(--fs-lg);
+                        color: var(--c-white);
+                        font-weight: 300;
+                        font-style: italic;
+                    }
+                }
+            }
+
+            & .seccion-prensa {
+                position: relative;
+                padding: var(--s-8) 0;
+                background-color: #030816;
+                /* Tono azul oscuro deportivo */
+                border-top: var(--border-thin) solid var(--c-border);
+                overflow: hidden;
+
+                /* Fondo con imagen de estadio */
+                & .bg-estadio {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0.3;
+                    mix-blend-mode: luminosity;
+                    z-index: 0;
+                }
+
+                & .bg-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to right, rgba(3, 8, 22, 0.95), rgba(3, 8, 22, 0.8));
+                    z-index: 1;
+                }
+
+                & .container {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                & .prensa-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: var(--s-4);
+                    text-align: center;
+
+                    & .logo-dimayor-placeholder {
+                        width: var(--s-6);
+                        height: var(--s-6);
+                        background-color: var(--c-white);
+                        border-radius: var(--radius-sm);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: var(--s-1-5);
+                        font-family: var(--f-heading);
+                        font-weight: 900;
+                        color: var(--c-black);
+                    }
+
+                    & h2 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-3xl);
+                        font-weight: 900;
+                        color: var(--c-white);
+                    }
+                }
+
+                & .prensa-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-4);
+                    align-items: center;
+
+                    @media (min-width: 64rem) {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+
+                & .video-box {
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    background-color: var(--c-black);
+                    border: var(--border-thin) solid var(--c-border);
+                    border-radius: var(--radius-sm);
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: var(--s-2);
+                    text-align: center;
+                    box-shadow: 0 var(--s-1) var(--s-3) rgba(0, 0, 0, 0.5);
+
+                    & h4 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-lg);
+                        color: var(--c-gold);
+                        margin-bottom: var(--s-1);
+                    }
+
+                    & p {
+                        font-size: var(--fs-sm);
+                        color: var(--c-white);
+                    }
+
+                    & .play-btn {
+                        margin-top: var(--s-2);
+                        width: var(--s-4);
+                        height: var(--s-4);
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &::after {
+                            content: '▶';
+                            color: var(--c-white);
+                            font-size: var(--fs-xl);
+                            margin-left: var(--s-0-25);
+                        }
+                    }
+                }
+
+                & .info-box {
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(0.5rem);
+                    border: var(--border-thin) solid rgba(255, 255, 255, 0.1);
+                    padding: var(--s-3);
+                    border-radius: var(--radius-sm);
+                    text-align: center;
+
+                    & p {
+                        font-size: var(--fs-base);
+                        color: var(--c-gray-light);
+                        margin-bottom: var(--s-3);
+                        line-height: 1.8;
+                    }
+
+                    & .botones-prensa {
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--s-1);
+                        justify-content: center;
+
+                        @media (min-width: 48rem) {
+                            flex-direction: row;
+                        }
+
+                        & .btn-prensa {
+                            padding: var(--s-1) var(--s-3);
+                            font-family: var(--f-heading);
+                            font-weight: 700;
+                            font-size: var(--fs-sm);
+                            text-transform: uppercase;
+                            color: var(--c-white);
+                            background-color: transparent;
+                            border: 0.125rem solid #0056b3;
+                            /* Azul corporativo */
+                            border-radius: var(--radius-sm);
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            text-decoration: none;
+
+                            &:hover {
+                                background-color: #0056b3;
+                            }
+
+                            &.solid {
+                                background-color: #0056b3;
+
+                                &:hover {
+                                    background-color: #004494;
+                                    border-color: #004494;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="modulo-territorios">
+
+        <!-- SECCIÓN 1: TERRITORIOS Y CLUBES -->
+        <section class="seccion-territorios">
+            <div class="container">
+
+                <div class="header-territorios">
+                    <span class="eyebrow">Expansión Nacional</span>
+                    <h2>Territorios y Clubes</h2>
+                </div>
+
+                <div class="mapa-placeholder">
+                    <span>IMAGEN.- MAPA--</span>
+                </div>
+
+                <div class="grid-territorios">
+
+                    <!-- Tarjeta: La Guajira -->
+                    <div class="card-territorio">
+                        <h3>La Guajira</h3>
+                        <span class="ciudad-pob">Riohacha | Más de 210.000 hab.</span>
+
+                        <div class="bloque-info">
+                            <h4>El Territorio</h4>
+                            <p>Mayor identidad cultural de Colombia. Riqueza indígena, ubicación estratégica sobre el
+                                Caribe y arraigo del pueblo Wayúu.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Historia Futbolística</h4>
+                            <p>Ha producido talento de gran nivel, pero nunca ha logrado consolidar un proyecto
+                                profesional estable.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Convertir a Riohacha en la puerta de entrada del fútbol profesional al extremo norte de
+                                Colombia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Caquetá -->
+                    <div class="card-territorio">
+                        <h3>Caquetá</h3>
+                        <span class="ciudad-pob">Florencia | Más de 180.000 hab.</span>
+
+                        <div class="bloque-info">
+                            <h4>El Territorio & Historia</h4>
+                            <p>Frontera del desarrollo deportivo. Región joven con fuerte arraigo aficionado.
+                                Históricamente, el talento ha migrado a otras regiones por falta de estructura.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Problemática</h4>
+                            <ul>
+                                <li>Escasas oportunidades de competencia profesional.</li>
+                                <li>Fuga permanente de talento.</li>
+                                <li>Baja inversión en procesos deportivos.</li>
+                            </ul>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Construir el primer proyecto sostenible que represente al departamento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Huila -->
+                    <div class="card-territorio">
+                        <h3>Huila</h3>
+                        <span class="ciudad-pob">Garzón | Conecta el centro-sur</span>
+
+                        <div class="bloque-info">
+                            <h4>Historia Futbolística</h4>
+                            <p>Tradición futbolística en la capital, pero el centro del departamento nunca ha tenido
+                                representación directa.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Problemática</h4>
+                            <ul>
+                                <li>Concentración del fútbol únicamente en la capital.</li>
+                                <li>Escasas oportunidades para el centro y sur.</li>
+                            </ul>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Convertir a Garzón en un nuevo polo deportivo y descentralizar el desarrollo
+                                futbolístico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Cundinamarca (Fusagasugá) -->
+                    <div class="card-territorio">
+                        <h3>Cundinamarca</h3>
+                        <span class="ciudad-pob">Fusagasugá | Más de 150.000 hab.</span>
+
+                        <div class="bloque-info">
+                            <h4>El Territorio & Historia</h4>
+                            <p>Ubicación estratégica cerca de Bogotá, economía dinámica. Ha contado con procesos de
+                                formación, pero sin institución profesional permanente.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Convertirse en uno de los principales mercados futbolísticos del centro del país.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Cundinamarca (Zipaquirá) -->
+                    <div class="card-territorio">
+                        <h3>Cundinamarca</h3>
+                        <span class="ciudad-pob">Zipaquirá | Sabana Norte</span>
+
+                        <div class="bloque-info">
+                            <h4>El Territorio & Historia</h4>
+                            <p>Alto crecimiento económico y turístico. Procesos en fútbol base sin continuidad hacia el
+                                profesionalismo.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Problemática</h4>
+                            <ul>
+                                <li>Ausencia histórica de clubes profesionales.</li>
+                                <li>Talento que termina migrando hacia Bogotá.</li>
+                            </ul>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Consolidar un proyecto deportivo para toda la Sabana Norte.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Quindío -->
+                    <div class="card-territorio">
+                        <h3>Quindío</h3>
+                        <span class="ciudad-pob">Armenia | Más de 300.000 hab.</span>
+
+                        <div class="bloque-info">
+                            <h4>Historia Futbolística</h4>
+                            <p>Una de las tradiciones futbolísticas más importantes, pero marcada recientemente por
+                                dificultades deportivas e institucionales.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Problemática</h4>
+                            <ul>
+                                <li>Pérdida de protagonismo nacional.</li>
+                                <li>Menor inversión deportiva.</li>
+                            </ul>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Recuperar la importancia del Quindío como una de las regiones históricas del fútbol
+                                colombiano.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Santander -->
+                    <div class="card-territorio">
+                        <h3>Santander</h3>
+                        <span class="ciudad-pob">Nuevas Regiones | Fuerte afición</span>
+
+                        <div class="bloque-info">
+                            <h4>El Territorio & Historia</h4>
+                            <p>Mayor desarrollo económico del país. Protagonista histórico con importante cantera de
+                                jugadores.</p>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Problemática</h4>
+                            <ul>
+                                <li>Gran concentración del fútbol en Bucaramanga.</li>
+                                <li>Escasas oportunidades para otras ciudades.</li>
+                            </ul>
+                        </div>
+                        <div class="bloque-info">
+                            <h4>Oportunidad</h4>
+                            <p>Expandir el desarrollo futbolístico hacia nuevas regiones del departamento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Club Omar Pérez (Destacada) -->
+                    <div class="card-territorio card-destacada">
+                        <h3>Club Omar Sebastián Pérez</h3>
+                        <span class="ciudad-pob">Una franquicia con identidad nacional</span>
+
+                        <div class="bloque-info">
+                            <h4>Visión y Liderazgo</h4>
+                            <p>La octava franquicia estará liderada por Omar Sebastián Pérez, uno de los futbolistas más
+                                importantes en la historia reciente del fútbol colombiano.</p>
+                            <p style="margin-top: var(--s-0-5);">Más que representar únicamente un territorio, este
+                                proyecto nace con la visión de convertirse en un referente nacional para la formación de
+                                talento, la innovación deportiva y el desarrollo institucional.</p>
+                            <p style="margin-top: var(--s-0-5);">Su experiencia aporta liderazgo, credibilidad y una
+                                visión de largo plazo al crecimiento de la Liga El Dorado.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="resumen-impacto">
+                    <h3>Los ocho proyectos fundadores transformarán el mapa del fútbol colombiano.</h3>
+
+                    <div class="grid-impacto">
+                        <div class="item-impacto">
+                            <span class="numero">11M+</span>
+                            <span class="texto">Personas Impactadas</span>
+                        </div>
+                        <div class="item-impacto">
+                            <span class="numero">8</span>
+                            <span class="texto">Mercados Regionales</span>
+                        </div>
+                        <div class="item-impacto">
+                            <span class="numero">Miles</span>
+                            <span class="texto">Jóvenes con Oportunidades</span>
+                        </div>
+                        <div class="item-impacto">
+                            <span class="numero">100%</span>
+                            <span class="texto">Inversión Privada</span>
+                        </div>
+                    </div>
+
+                    <p class="conclusion">Un ecosistema que conecta deporte, territorio y desarrollo económico.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="seccion-prensa">
+            <!-- Imagen de fondo tipo estadio -->
+            <img src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Fondo Estadio" class="bg-estadio">
+            <div class="bg-overlay"></div>
+
+            <div class="container">
+
+                <div class="prensa-header">
+                    <!-- Placeholder Logo Dimayor / IFA -->
+                    <div class="logo-dimayor-placeholder">IFA</div>
+                    <h2>Acreditaciones Institucionales 2026</h2>
+                </div>
+
+                <div class="prensa-grid">
+
+                    <!-- Simulación de Video Embebido -->
+                    <div class="video-box">
+                        <h4>Guía de Registro</h3>
+                            <p>Para poder acceder y registrarse debes entrar al sitio oficial.</p>
+                            <div class="play-btn"></div>
+                    </div>
+
+                    <!-- Cuadro de Información y Botones -->
+                    <div class="info-box">
+                        <p>Las acreditaciones otorgadas en 2025, no serán válidas para 2026. Por eso, si usted está
+                            interesado(a) en cubrir las competencias este año deberá actualizar sus datos, o si es un
+                            usuario nuevo, deberá realizar el registro.</p>
+
+                        <div class="botones-prensa">
+                            <a href="#" class="btn-prensa">Acceso</a>
+                            <a href="#" class="btn-prensa solid">Registrarse</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

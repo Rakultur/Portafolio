@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Documentos - I.F.A.</title>
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colores Institucionales */
+            --c-black: #050505;
+            --c-dark: #111111;
+            --c-dark-soft: #1a1a1a;
+            --c-white: #ffffff;
+            --c-gold: #D4AF37;
+            --c-orange: #FF5A00;
+            --c-gray-text: #aaaaaa;
+            --c-gray-light: #dddddd;
+            --c-gray-border: #333333;
+            --c-border: rgba(255, 255, 255, 0.1);
+
+            /* Tipografías */
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body: 'Inter', sans-serif;
+
+            /* Escala estricta de Espaciados en REM (Reemplazo total de px) */
+            --s-0-125: 0.125rem;
+            --s-0-25: 0.25rem;
+            --s-0-5: 0.5rem;
+            --s-0-75: 0.75rem;
+            --s-1: 1rem;
+            --s-1-5: 1.5rem;
+            --s-2: 2rem;
+            --s-2-5: 2.5rem;
+            --s-3: 3rem;
+            --s-4: 4rem;
+            --s-6: 6rem;
+            --s-8: 8rem;
+
+            /* Escala Tipográfica en REM */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2.25rem;
+            --fs-4xl: 3rem;
+
+            /* Estructura y UI en REM */
+            --max-w-container: 75rem;
+            --radius-sm: 0.25rem;
+            --radius-full: 50rem;
+            --border-thin: 0.0625rem;
+            /* 1px */
+            --border-thick: 0.125rem;
+            /* 2px */
+
+            /* Transiciones */
+            --t-base: all 0.3s ease;
+        }
+        .modulo-documentos {
+
+            & .container {
+                width: 100%;
+                max-width: var(--max-w-container);
+                margin: 0 auto;
+                padding: 0 var(--s-1-5);
+
+                @media (min-width: 48rem) {
+                    padding: 0 var(--s-3);
+                }
+            }
+
+            /* Sección Hero / Encabezado del Módulo */
+            & .hero-documentos {
+                padding: var(--s-6) 0 var(--s-4) 0;
+                background-color: var(--c-black);
+                border-bottom: var(--border-thin) solid var(--c-border);
+                text-align: center;
+
+                & .eyebrow {
+                    display: inline-block;
+                    font-family: var(--f-heading);
+                    font-size: var(--fs-xs);
+                    font-weight: 800;
+                    color: var(--c-orange);
+                    text-transform: uppercase;
+                    letter-spacing: var(--s-0-25);
+                    margin-bottom: var(--s-1);
+                    padding: var(--s-0-5) var(--s-1);
+                    border: var(--border-thin) solid var(--c-orange);
+                    border-radius: var(--radius-full);
+                }
+
+                & h2 {
+                    font-family: var(--f-heading);
+                    font-size: var(--fs-3xl);
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    line-height: 1.1;
+                    margin-bottom: var(--s-1-5);
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-4xl);
+                    }
+                }
+
+                & p {
+                    font-size: var(--fs-base);
+                    color: var(--c-gray-text);
+                    max-width: 45rem;
+                    margin: 0 auto;
+
+                    @media (min-width: 48rem) {
+                        font-size: var(--fs-lg);
+                    }
+                }
+            }
+
+            & .centro-documental {
+                padding: var(--s-4) 0 var(--s-8) 0;
+                background-color: var(--c-dark);
+
+                & .layout-docs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--s-3);
+
+                    @media (min-width: 64rem) {
+                        flex-direction: row;
+                        align-items: flex-start;
+                    }
+                }
+
+                /* Menú Lateral de Categorías */
+                & .sidebar-filtros {
+                    width: 100%;
+
+                    @media (min-width: 64rem) {
+                        width: 20rem;
+                        flex-shrink: 0;
+                        position: sticky;
+                        top: var(--s-4);
+                    }
+
+                    & h3 {
+                        font-family: var(--f-heading);
+                        font-size: var(--fs-lg);
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        margin-bottom: var(--s-1-5);
+                        padding-bottom: var(--s-0-75);
+                        border-bottom: var(--border-thin) solid var(--c-gray-border);
+                    }
+
+                    & .lista-categorias {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--s-0-5);
+
+                        & li {
+                            & button {
+                                width: 100%;
+                                text-align: left;
+                                padding: var(--s-1) var(--s-1-5);
+                                background-color: transparent;
+                                border: none;
+                                color: var(--c-gray-text);
+                                font-family: var(--f-body);
+                                font-size: var(--fs-sm);
+                                font-weight: 600;
+                                cursor: pointer;
+                                border-radius: var(--radius-sm);
+                                transition: var(--t-base);
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                &:hover {
+                                    background-color: var(--c-dark-soft);
+                                    color: var(--c-white);
+                                }
+
+                                &.activo {
+                                    background-color: var(--c-black);
+                                    color: var(--c-gold);
+                                    border: var(--border-thin) solid var(--c-gray-border);
+                                    box-shadow: 0 var(--s-0-25) var(--s-1) rgba(0, 0, 0, 0.5);
+                                }
+
+                                & .badge-count {
+                                    font-size: var(--fs-xs);
+                                    background-color: var(--c-gray-border);
+                                    color: var(--c-white);
+                                    padding: var(--s-0-125) var(--s-0-5);
+                                    border-radius: var(--radius-full);
+                                }
+
+                                &.activo .badge-count {
+                                    background-color: var(--c-gold);
+                                    color: var(--c-black);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /* Área Principal de Documentos */
+                & .grid-documentos {
+                    flex-grow: 1;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--s-1-5);
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                & .card-doc {
+                    background-color: var(--c-black);
+                    border: var(--border-thin) solid var(--c-border);
+                    border-radius: var(--radius-sm);
+                    padding: var(--s-2);
+                    display: flex;
+                    flex-direction: column;
+                    transition: var(--t-base);
+
+                    &:hover {
+                        border-color: var(--c-orange);
+                        transform: translateY(calc(var(--s-0-25) * -1));
+                        box-shadow: 0 var(--s-1) var(--s-2) rgba(0, 0, 0, 0.5);
+
+                        & .btn-descarga {
+                            background-color: var(--c-orange);
+                            color: var(--c-white);
+                            border-color: var(--c-orange);
+                        }
+
+                        & .icon-doc {
+                            color: var(--c-orange);
+                        }
+                    }
+
+                    & .doc-header {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: var(--s-1);
+                        margin-bottom: var(--s-1-5);
+
+                        & .icon-doc {
+                            width: var(--s-2-5);
+                            height: var(--s-2-5);
+                            color: var(--c-gray-text);
+                            flex-shrink: 0;
+                            transition: var(--t-base);
+                        }
+
+                        & .info {
+                            & .categoria-tag {
+                                display: block;
+                                font-size: var(--fs-xs);
+                                color: var(--c-gold);
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                margin-bottom: var(--s-0-25);
+                            }
+
+                            & h4 {
+                                font-family: var(--f-heading);
+                                font-size: var(--fs-base);
+                                font-weight: 700;
+                                color: var(--c-white);
+                                line-height: 1.3;
+                            }
+                        }
+                    }
+
+                    & .doc-meta {
+                        margin-top: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-top: var(--s-1-5);
+                        border-top: var(--border-thin) dashed var(--c-gray-border);
+
+                        & .detalles {
+                            display: flex;
+                            flex-direction: column;
+                            gap: var(--s-0-125);
+
+                            & span {
+                                font-size: var(--fs-xs);
+                                color: var(--c-gray-text);
+
+                                & strong {
+                                    color: var(--c-gray-light);
+                                }
+                            }
+                        }
+
+                        & .btn-descarga {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: var(--s-2-5);
+                            height: var(--s-2-5);
+                            border: var(--border-thin) solid var(--c-gray-border);
+                            border-radius: var(--radius-sm);
+                            color: var(--c-white);
+                            background-color: transparent;
+                            cursor: pointer;
+                            transition: var(--t-base);
+                            text-decoration: none;
+
+                            & svg {
+                                width: var(--s-1-25);
+                                height: var(--s-1-25);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="modulo-documentos">
+
+        <!-- Header del Módulo -->
+        <section class="hero-documentos">
+            <div class="container">
+                <span class="eyebrow">Transparencia y Normatividad</span>
+                <h2>Centro Documental</h2>
+                <p>Acceda a los estatutos, reglamentos de competición, protocolos de ética y manuales financieros
+                    oficiales que rigen el ecosistema de la Institución del Fútbol Asociado.</p>
+            </div>
+        </section>
+
+        <!-- Área de Búsqueda y Grid -->
+        <section class="centro-documental">
+            <div class="container">
+
+                <div class="layout-docs">
+
+                    <!-- Sidebar de Categorías -->
+                    <aside class="sidebar-filtros">
+                        <h3>Categorías</h3>
+                        <ul class="lista-categorias">
+                            <li>
+                                <button class="activo">
+                                    Todos los Documentos
+                                    <span class="badge-count">12</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Estatutos I.F.A.
+                                    <span class="badge-count">2</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Reglamentos de Competición
+                                    <span class="badge-count">4</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Ética y Fair Play
+                                    <span class="badge-count">3</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Gestión de Franquicias
+                                    <span class="badge-count">3</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </aside>
+
+                    <!-- Grid de Documentos Oficiales -->
+                    <div class="grid-documentos">
+
+                        <!-- Documento 1 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Estatutos I.F.A.</span>
+                                    <h4>Estatuto General de la Institución del Fútbol Asociado 2026</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>1.0 (Ene 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (2.4 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documento 2 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Reglamentos de Competición</span>
+                                    <h4>Reglamento Oficial - Liga El Dorado (Temporada 2026)</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>1.2 (Feb 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (3.1 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documento 3 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Ética y Fair Play</span>
+                                    <h4>Código de Ética Disciplinaria y Sanciones</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>1.0 (Ene 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (1.8 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documento 4 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Gestión de Franquicias</span>
+                                    <h4>Manual de Requisitos de Infraestructura y Estadios</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>2.1 (Feb 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (5.4 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documento 5 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Ética y Fair Play</span>
+                                    <h4>Reglamento de Fair Play Financiero y Topes Salariales</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>1.0 (Ene 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (1.2 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documento 6 -->
+                        <div class="card-doc">
+                            <div class="doc-header">
+                                <svg class="icon-doc" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 9h1.5m-1.5 3h6m-6 3h6"></path>
+                                </svg>
+                                <div class="info">
+                                    <span class="categoria-tag">Gestión de Franquicias</span>
+                                    <h4>Formulario Base para Adquisición de Franquicias</h4>
+                                </div>
+                            </div>
+                            <div class="doc-meta">
+                                <div class="detalles">
+                                    <span>Versión: <strong>1.1 (Feb 2026)</strong></span>
+                                    <span>Formato: <strong>PDF (0.8 MB)</strong></span>
+                                </div>
+                                <a href="#" class="btn-descarga" aria-label="Descargar Documento">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

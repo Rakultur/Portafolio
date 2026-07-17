@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Institucional I.F.A.</title>
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colores Corporativos */
+            --ifa-black: #050505;
+            --ifa-dark: #111111;
+            --ifa-white: #ffffff;
+            --ifa-orange: #FF5A00;
+            --ifa-gray-light: #f9f9f9;
+            --ifa-gray-text: #444444;
+            --ifa-gray-muted: #888888;
+            --ifa-border: rgba(255, 255, 255, 0.1);
+
+            /* Tipografías */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Base de espaciado en REM */
+            --space-1: 0.5rem;
+            --space-2: 1rem;
+            --space-3: 1.5rem;
+            --space-4: 2rem;
+            --space-6: 3rem;
+            --space-8: 4rem;
+            --space-12: 6rem;
+            --space-16: 8rem;
+        }
+        
+        .ifa-module {
+            /* Contenedores globales */
+            & .container {
+                width: 100%;
+                max-width: 75rem;
+                margin: 0 auto;
+                padding: 0 var(--space-4);
+            }
+
+            & .container-narrow {
+                max-width: 55rem;
+            }
+
+            /* Sección: Sobre la I.F.A / Misión / Visión */
+            & .section-editorial {
+                padding: var(--space-12) 0;
+                background-color: var(--ifa-white);
+
+                & h2 {
+                    font-family: var(--font-heading);
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    margin-bottom: var(--space-6);
+                    letter-spacing: -0.05rem;
+                    
+                    @media (min-width: 48rem) {
+                        font-size: 3rem;
+                    }
+                }
+
+                & h3 {
+                    font-family: var(--font-heading);
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin: var(--space-8) 0 var(--space-3) 0;
+                    letter-spacing: 0.05rem;
+                }
+
+                & h4 {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin-bottom: var(--space-3);
+                }
+
+                & p {
+                    font-size: 1.125rem;
+                    color: var(--ifa-gray-text);
+                    margin-bottom: var(--space-4);
+                    line-height: 1.8;
+                }
+
+                & .highlight-text {
+                    font-weight: 700;
+                    color: var(--ifa-black);
+                }
+            }
+
+            & .section-gobierno {
+                padding: var(--space-12) 0;
+                background-color: var(--ifa-black);
+                color: var(--ifa-white);
+
+                & .header-gobierno {
+                    text-align: center;
+                    margin-bottom: var(--space-8);
+
+                    & .eyebrow {
+                        display: block;
+                        color: var(--ifa-orange);
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2rem;
+                        margin-bottom: var(--space-2);
+                    }
+
+                    & h2 {
+                        font-family: var(--font-heading);
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                        
+                        @media (min-width: 48rem) {
+                            font-size: 3.5rem;
+                        }
+                    }
+                }
+
+                & .grid-gobierno {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-4);
+                    max-width: 65rem;
+                    margin: 0 auto;
+
+                    @media (min-width: 48rem) {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: var(--space-6);
+                    }
+                }
+
+                & .card-director {
+                    background-color: var(--ifa-dark);
+                    border: 0.0625rem solid var(--ifa-border);
+                    padding: var(--space-4);
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-4);
+                    border-radius: 0.25rem;
+
+                    @media (min-width: 40rem) {
+                        flex-direction: row;
+                        align-items: flex-start;
+                    }
+
+                    & img {
+                        width: 7.5rem;
+                        height: 7.5rem;
+                        object-fit: cover;
+                        border-radius: 0.25rem;
+                        filter: grayscale(100%);
+                    }
+
+                    & .info {
+                        & h3 {
+                            font-family: var(--font-body);
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            margin-bottom: 0.25rem;
+                        }
+
+                        & .cargo {
+                            display: block;
+                            color: var(--ifa-orange);
+                            font-size: 0.75rem;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1rem;
+                            margin-bottom: var(--space-2);
+                        }
+
+                        & p {
+                            font-size: 0.875rem;
+                            color: var(--ifa-gray-muted);
+                            line-height: 1.6;
+                        }
+                    }
+                }
+            }
+
+            & .section-cronograma {
+                padding: var(--space-12) 0;
+                background-color: var(--ifa-white);
+
+                & .header-cronograma {
+                    text-align: center;
+                    margin-bottom: var(--space-12);
+
+                    & .eyebrow {
+                        display: block;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: var(--space-1);
+                    }
+
+                    & h2 {
+                        font-family: var(--font-heading);
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        line-height: 1.1;
+                        
+                        @media (min-width: 48rem) {
+                            font-size: 3.5rem;
+                        }
+                    }
+                }
+
+                & .timeline {
+                    position: relative;
+                    max-width: 50rem;
+                    margin: 0 auto;
+
+                    /* Línea central vertical */
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 1.5rem;
+                        width: 0.125rem;
+                        height: 100%;
+                        background-color: #eeeeee;
+
+                        @media (min-width: 48rem) {
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+
+                    & .item {
+                        position: relative;
+                        margin-bottom: var(--space-8);
+                        padding-left: 4rem;
+                        width: 100%;
+
+                        @media (min-width: 48rem) {
+                            width: 50%;
+                            padding-left: 0;
+                            padding-right: 3rem;
+                            text-align: right;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        /* Elementos a la derecha en Desktop */
+                        &.right {
+                            @media (min-width: 48rem) {
+                                margin-left: 50%;
+                                padding-left: 3rem;
+                                padding-right: 0;
+                                text-align: left;
+                            }
+                        }
+
+                        /* Punto del timeline */
+                        & .dot {
+                            position: absolute;
+                            top: 0.25rem;
+                            left: 1rem;
+                            width: 1rem;
+                            height: 1rem;
+                            background-color: var(--ifa-orange);
+                            border-radius: 50%;
+                            box-shadow: 0 0 0 0.25rem rgba(255, 90, 0, 0.2);
+
+                            @media (min-width: 48rem) {
+                                left: auto;
+                                right: -0.5rem;
+                            }
+                        }
+
+                        /* Ajuste del punto para elementos derechos en Desktop */
+                        &.right .dot {
+                            @media (min-width: 48rem) {
+                                left: -0.5rem;
+                                right: auto;
+                            }
+                        }
+
+                        & .content {
+                            & h4 {
+                                font-size: 1.125rem;
+                                font-weight: 700;
+                                margin-bottom: var(--space-1);
+                            }
+                            & p {
+                                font-size: 0.875rem;
+                                color: var(--ifa-gray-muted);
+                                line-height: 1.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="ifa-module">
+        
+        <!-- Sección Textos Editoriales -->
+        <section class="section-editorial">
+            <div class="container container-narrow">
+                <h2>Sobre la I.F.A.</h2>
+                
+                <p>La Institución del Fútbol Asociado (I.F.A.) nace con el propósito de fortalecer, desarrollar y transformar el fútbol profesional a través de un modelo innovador, sostenible e incluyente. Creemos que el deporte es una herramienta capaz de generar oportunidades, impulsar el talento y construir un impacto positivo en las comunidades.</p>
+                
+                <p>Desde la organización de competencias de alto nivel hasta la creación de proyectos de desarrollo deportivo, la IFA trabaja para ofrecer escenarios profesionales a clubes, jugadores, entrenadores, árbitros y demás actores del ecosistema del fútbol.</p>
+
+                <h3>MISIÓN</h3>
+                <p>Nuestra misión es impulsar el crecimiento del fútbol mediante competiciones organizadas con altos estándares, promoviendo la transparencia, la innovación y el desarrollo territorial. A través de iniciativas como la Liga El Dorado y otros torneos oficiales, buscamos crear una estructura competitiva que fortalezca el fútbol en todas sus categorías.</p>
+
+                <h3>VISIÓN</h3>
+                <p>Nuestra visión es consolidarnos como una de las instituciones referentes del fútbol en América Latina, construyendo un modelo deportivo que combine excelencia competitiva, sostenibilidad, impacto social y oportunidades para las nuevas generaciones.</p>
+                
+                <p class="highlight-text">En la IFA trabajamos para que el fútbol vuelva a pertenecer a los territorios, a los clubes y a su gente, generando un ecosistema donde el talento pueda crecer y donde cada competencia represente una oportunidad para transformar vidas.</p>
+
+                <h3>CÓMO APORTAMOS AL DESARROLLO DEL FÚTBOL</h3>
+                <h4>Cómo aportamos al desarrollo del fútbol</h4>
+                <p>En Colombia, miles de jóvenes ven en el fútbol una oportunidad para transformar sus vidas, pero la falta de acceso a competencias, la limitada presencia del fútbol profesional en muchos territorios y la ausencia de un sistema de ascenso y desarrollo reducen esas oportunidades.</p>
+                <p>En la IFA trabajamos para cambiar esa realidad. Llevamos el fútbol a regiones históricamente olvidadas, fortalecemos a los clubes locales, generamos espacios de competencia para nuevos talentos y damos visibilidad a territorios con un enorme potencial deportivo. Creemos que cada partido impulsa el desarrollo económico, social y turístico de las regiones, mientras devuelve la esperanza a miles de jóvenes que sueñan con construir un futuro a través del deporte.</p>
+            </div>
+        </section>
+
+        <section class="section-gobierno">
+            <div class="container">
+                <div class="header-gobierno">
+                    <span class="eyebrow">LIDERAZGO INSTITUCIONAL</span>
+                    <h2>Gobierno Corporativo</h2>
+                </div>
+
+                <div class="grid-gobierno">
+                    <!-- Tarjeta Presidente -->
+                    <div class="card-director">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Foto del Presidente">
+                        <div class="info">
+                            <h3>Nombre Apellido</h3>
+                            <span class="cargo">PRESIDENTE</span>
+                            <p>Encargado de la visión estratégica y representación internacional de la institución.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Secretaria -->
+                    <div class="card-director">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Foto Secretaria General">
+                        <div class="info">
+                            <h3>Nombre Apellido</h3>
+                            <span class="cargo">SECRETARIA GENERAL</span>
+                            <p>Supervisa las operaciones legales, regulatorias y administrativas del ecosistema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-cronograma">
+            <div class="container">
+                <div class="header-cronograma">
+                    <span class="eyebrow">CONSTRUYENDO EL FUTURO DEL FUTBOL:</span>
+                    <h2>CRONOGRAMA<br>INSTITUCIONAL</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Fase 1 -->
+                    <div class="item left">
+                        <div class="dot"></div>
+                        <div class="content">
+                            <h4>Fundación y Estructuración</h4>
+                            <p>Creación oficial de la I.F.A., constitución legal, apertura de venta de franquicias fundadoras y presentación de la marca institucional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 2 -->
+                    <div class="item right">
+                        <div class="dot"></div>
+                        <div class="content">
+                            <h4>Sorteo y Pretemporada</h4>
+                            <p>Asignación de territorios, draft oficial de jugadores, firmas de patrocinios televisivos y giras de pretemporada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 3 -->
+                    <div class="item left">
+                        <div class="dot"></div>
+                        <div class="content">
+                            <h4>Kick-Off Liga El Dorado</h4>
+                            <p>Partido inaugural de la primera temporada oficial. Lanzamiento de la División Plata.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 4 -->
+                    <div class="item right">
+                        <div class="dot"></div>
+                        <div class="content">
+                            <h4>Ecosistema Completo</h4>
+                            <p>Integración de las 6 divisiones, con ascensos y descensos funcionando bajo el modelo de fair play financiero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
