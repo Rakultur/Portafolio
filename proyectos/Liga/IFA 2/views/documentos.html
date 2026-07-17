@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Documentos - I.F.A.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           Contenedor Principal (Grid Layout)
+        ========================================= */
+        .modulo-documentos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xxl);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-documentos {
+                grid-template-columns: repeat(2, 1fr);
+                padding-top: var(--space-xxl);
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .modulo-documentos {
+                grid-template-columns: 20rem 1fr 1fr;
+                align-items: start;
+            }
+        }
+
+        /* =========================================
+           Cabecera Hero
+        ========================================= */
+        .modulo-documentos__hero {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            text-align: center;
+            padding-bottom: var(--space-xl);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modulo-documentos__hero-eyebrow {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            margin-bottom: var(--space-md);
+            padding: var(--space-xs) var(--space-md);
+            border: var(--border-base) solid var(--color-accent);
+            border-radius: var(--radius-pill);
+        }
+
+        .modulo-documentos__hero-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            color: var(--text-inverse);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-documentos__hero-title {
+                font-size: var(--text-xxl);
+            }
+        }
+
+        .modulo-documentos__hero-desc {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            max-width: 45rem;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-documentos__hero-desc {
+                font-size: var(--text-md);
+            }
+        }
+
+        /* =========================================
+           Menú Lateral (Sidebar de Categorías)
+        ========================================= */
+        .modulo-documentos__sidebar {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        @media (min-width: 64rem) {
+            .modulo-documentos__sidebar {
+                grid-column: 1 / 2;
+                grid-row: 2 / 100;
+                position: sticky;
+                top: var(--space-xl);
+                align-self: start;
+            }
+        }
+
+        .modulo-documentos__sidebar-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-md);
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-inverse);
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            /* rgba fallback permitido según las instrucciones para colores inexistentes */
+            border-bottom: var(--border-base) solid rgba(255, 255, 255, 0.2); 
+            /* Debería convertirse posteriormente en una variable global --border-light-inverse */
+        }
+
+        .modulo-documentos__sidebar-btn {
+            width: 100%;
+            text-align: left;
+            padding: var(--space-sm) var(--space-md);
+            background-color: transparent;
+            border: var(--border-base) solid transparent;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--radius-base);
+            transition: var(--transition-base);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modulo-documentos__sidebar-btn:hover {
+            /* Hex fallback permitido según las instrucciones */
+            background-color: #1a1a1a; 
+            /* Debería convertirse posteriormente en una variable global --bg-hover-dark */
+            color: var(--text-inverse);
+        }
+
+        .modulo-documentos__sidebar-btn--activo {
+            background-color: var(--bg-inverse);
+            color: var(--color-brand);
+            /* Hex fallback permitido según las instrucciones */
+            border-color: #333333; 
+            /* Debería convertirse posteriormente en una variable global --border-dark */
+            box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5); 
+            /* Debería convertirse posteriormente en una variable global --shadow-base */
+        }
+
+        .modulo-documentos__sidebar-badge {
+            font-size: 0.75rem;
+            /* Hex fallback permitido */
+            background-color: #333333; 
+            /* Debería convertirse posteriormente en una variable global --bg-badge */
+            color: var(--text-inverse);
+            padding: 0.125rem var(--space-sm);
+            border-radius: var(--radius-pill);
+            transition: var(--transition-base);
+        }
+
+        .modulo-documentos__sidebar-btn--activo .modulo-documentos__sidebar-badge {
+            background-color: var(--color-brand);
+            color: var(--bg-inverse);
+        }
+
+        /* =========================================
+           Tarjetas de Documentos
+        ========================================= */
+        .modulo-documentos__card {
+            /* Hex fallback permitido para fondo de tarjetas oscuras */
+            background-color: #111111; 
+            /* Debería convertirse posteriormente en una variable global --bg-card-dark */
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-base);
+            grid-column: 1 / -1;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-documentos__card {
+                grid-column: span 1;
+            }
+        }
+
+        .modulo-documentos__card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-0.25rem);
+            box-shadow: 0 var(--space-md) var(--space-lg) rgba(0, 0, 0, 0.5); 
+            /* Debería convertirse posteriormente en una variable global --shadow-hover */
+        }
+
+        .modulo-documentos__card-tag {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-brand);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.0625rem;
+        }
+
+        .modulo-documentos__card-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--text-inverse);
+            line-height: 1.4;
+            margin-bottom: var(--space-md);
+        }
+
+        .modulo-documentos__card-meta {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: auto;
+            padding-top: var(--space-md);
+            /* rgba fallback permitido para borde punteado tenue */
+            border-top: var(--border-base) dashed rgba(255, 255, 255, 0.2); 
+            /* Debería convertirse posteriormente en una variable global --border-dashed-inverse */
+            margin-bottom: var(--space-md);
+            line-height: 1.5;
+        }
+
+        .modulo-documentos__card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            /* rgba fallback permitido */
+            border: var(--border-base) solid rgba(255, 255, 255, 0.2); 
+            /* Debería convertirse posteriormente en una variable global --border-btn */
+            border-radius: var(--radius-base);
+            color: var(--text-inverse);
+            background-color: transparent;
+            cursor: pointer;
+            transition: var(--transition-base);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .modulo-documentos__card:hover .modulo-documentos__card-btn {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        /* Icono Lucide (Download) incrustado en CSS Mask para evitar anidamiento profundo de SVGs */
+        .modulo-documentos__card-btn::before {
+            content: "";
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: currentColor;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' x2='12' y1='15' y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' x2='12' y1='15' y2='3'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="modulo-documentos">
+
+        <!-- Nivel 2: Hero (Ocupa todas las columnas) -->
+        <div class="modulo-documentos__hero">
+            <div class="modulo-documentos__hero-eyebrow">Transparencia y Normatividad</div>
+            <h2 class="modulo-documentos__hero-title">Centro Documental</h2>
+            <p class="modulo-documentos__hero-desc">Acceda a los estatutos, reglamentos de competición, protocolos de ética y manuales financieros oficiales que rigen el ecosistema de la Institución del Fútbol Asociado.</p>
+        </div>
+
+        <!-- Nivel 2: Sidebar (Ocupa la columna 1, fluyendo automáticamente) -->
+        <div class="modulo-documentos__sidebar">
+            <h3 class="modulo-documentos__sidebar-title">Categorías</h3>
+            
+            <button class="modulo-documentos__sidebar-btn modulo-documentos__sidebar-btn--activo">
+                Todos los Documentos
+                <div class="modulo-documentos__sidebar-badge">6</div>
+            </button>
+            <button class="modulo-documentos__sidebar-btn">
+                Estatutos I.F.A.
+                <div class="modulo-documentos__sidebar-badge">1</div>
+            </button>
+            <button class="modulo-documentos__sidebar-btn">
+                Reglamentos de Competición
+                <div class="modulo-documentos__sidebar-badge">1</div>
+            </button>
+            <button class="modulo-documentos__sidebar-btn">
+                Ética y Fair Play
+                <div class="modulo-documentos__sidebar-badge">2</div>
+            </button>
+            <button class="modulo-documentos__sidebar-btn">
+                Gestión de Franquicias
+                <div class="modulo-documentos__sidebar-badge">2</div>
+            </button>
+        </div>
+
+        <!-- Nivel 2: Tarjetas (Fluyen automáticamente a las columnas 2 y 3 gracias al Grid Layout) -->
+        
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Estatutos I.F.A.</div>
+            <h4 class="modulo-documentos__card-title">Estatuto General de la Institución del Fútbol Asociado 2026</h4>
+            <div class="modulo-documentos__card-meta">Versión: 1.0 (Ene 2026) • Formato: PDF (2.4 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Reglamentos de Competición</div>
+            <h4 class="modulo-documentos__card-title">Reglamento Oficial - Liga El Dorado (Temporada 2026)</h4>
+            <div class="modulo-documentos__card-meta">Versión: 1.2 (Feb 2026) • Formato: PDF (3.1 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Ética y Fair Play</div>
+            <h4 class="modulo-documentos__card-title">Código de Ética Disciplinaria y Sanciones</h4>
+            <div class="modulo-documentos__card-meta">Versión: 1.0 (Ene 2026) • Formato: PDF (1.8 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Gestión de Franquicias</div>
+            <h4 class="modulo-documentos__card-title">Manual de Requisitos de Infraestructura y Estadios</h4>
+            <div class="modulo-documentos__card-meta">Versión: 2.1 (Feb 2026) • Formato: PDF (5.4 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Ética y Fair Play</div>
+            <h4 class="modulo-documentos__card-title">Reglamento de Fair Play Financiero y Topes Salariales</h4>
+            <div class="modulo-documentos__card-meta">Versión: 1.0 (Ene 2026) • Formato: PDF (1.2 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+        <div class="modulo-documentos__card">
+            <div class="modulo-documentos__card-tag">Gestión de Franquicias</div>
+            <h4 class="modulo-documentos__card-title">Formulario Base para Adquisición de Franquicias</h4>
+            <div class="modulo-documentos__card-meta">Versión: 1.1 (Feb 2026) • Formato: PDF (0.8 MB)</div>
+            <a href="#" class="modulo-documentos__card-btn">Descargar</a>
+        </div>
+
+    </section>
+
+    <!-- jQuery si se requiere para interacciones futuras del sidebar -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Lógica simple para cambiar el estado activo visualmente (Ejemplo)
+            $('.modulo-documentos__sidebar-btn').on('click', function() {
+                $('.modulo-documentos__sidebar-btn').removeClass('modulo-documentos__sidebar-btn--activo');
+                $(this).addClass('modulo-documentos__sidebar-btn--activo');
+            });
+        });
+    </script>
+</body>
+
+</html>

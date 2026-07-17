@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruciones</title>
+
+  <style>
+    :root {
+      /* =========================================
+     1. COLORES (Nombres semánticos)
+  ========================================= */
+      /* Fondos y Superficies */
+      --bg-primary: #ffffff;
+      /* Fondo principal */
+      --bg-secondary: #f5f5f5;
+      /* Fondo secundario / tarjetas */
+      --bg-inverse: #050505;
+      /* Fondo oscuro (ej. Footer) */
+
+      /* Textos */
+      --text-primary: #111111;
+      /* Texto principal (Cuerpo) */
+      --text-secondary: #888888;
+      /* Texto secundario / muted */
+      --text-inverse: #ffffff;
+      /* Texto sobre fondos oscuros */
+
+      /* Acentos / Marca */
+      --color-accent: #ff5a00;
+      /* Naranja institucional */
+      --color-brand: #d4af37;
+      /* Dorado institucional */
+
+      /* UI */
+      --border-color: rgba(0, 0, 0, 0.1);
+      --border-color-inverse: rgba(255, 255, 255, 0.1);
+
+      /* =========================================
+     2. TIPOGRAFÍAS
+  ========================================= */
+      --font-heading: "Montserrat", sans-serif;
+      --font-body: "Inter", sans-serif;
+
+      /* =========================================
+     3. TAMAÑOS DE TEXTO (Escala T-Shirt)
+  ========================================= */
+      /* Simplificado para adaptarse a cualquier pantalla */
+      --text-sm: 0.875rem;
+      /* Notas, etiquetas */
+      --text-base: 1rem;
+      /* Texto de párrafo estándar */
+      --text-md: 1.125rem;
+      /* Subtítulos pequeños */
+      --text-lg: 1.5rem;
+      /* Títulos de sección (H3) */
+      --text-xl: 2.25rem;
+      /* Títulos principales (H2) */
+      --text-xxl: 3rem;
+      /* Títulos hero (H1) */
+
+      /* =========================================
+     4. ESPACIADOS RESPONSIVES (Sistema 8px)
+  ========================================= */
+      --space-xs: 0.25rem;
+      /* 4px - Separación mínima */
+      --space-sm: 0.5rem;
+      /* 8px - Elementos internos */
+      --space-md: 1rem;
+      /* 16px - Padding estándar */
+      --space-lg: 2rem;
+      /* 32px - Separación de secciones pequeñas */
+      --space-xl: 4rem;
+      /* 64px - Separación de bloques */
+      --space-xxl: 6rem;
+      /* 96px - Espaciado de grandes secciones */
+
+      /* =========================================
+     5. ESTRUCTURA Y UI
+  ========================================= */
+      --container-width: 90%;
+      /* Margen de seguridad en móviles */
+      --container-max: 75rem;
+      /* 1200px - Tope en PC */
+
+      --radius-base: 0.5rem;
+      /* Bordes redondeados estándar */
+      --radius-pill: 50rem;
+      /* Botones tipo píldora */
+      --border-base: 0.0625rem;
+      /* Borde de 1px */
+
+      --transition-base: all 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  1.ROL:
+
+  Actúa como un Frontend master especializado en HTML5 y CSS y JS.
+
+  Genera código para un proyecto existente respetando estrictamente todas las reglas definidas a continuación.
+
+  2.OBJETIVO:
+
+  Genera una interfaz moderna, profesional, limpia y completamente responsive basándote en la descripción o imagen que
+  proporcionaré.
+
+  El resultado debe quedar listo para integrarse directamente al proyecto.
+
+  3.TECNOLOGÍAS:
+
+  3.1 Utiliza únicamente:
+
+  HTML5
+  CSS
+  JQUERY
+
+  3.2 No utilices:
+
+  TypeScript
+  Bootstrap
+  Tailwind CSS
+  Material UI
+  Frameworks CSS
+  CSS ANIDADO
+  SOLO USAR VARIABLES DEL PROYECTO
+
+  3.3 Es obligatorio utilizar esas variables:
+
+  Colores
+  No generar colores nuevos.
+  No duplicar variables.
+
+  Si realmente hace falta un color que no exista, utilizar únicamente un valor hexadecimal dentro del CSS no los generes
+  dentro del root y dejar un comentario corto indicando que debería convertirse posteriormente en una variable global.
+
+  Medidas
+  Priorizar siempre las variables existentes.
+
+  Si una medida no existe, utilizar únicamente:
+  rem
+
+  Nunca utilizar:
+  px para márgenes
+  px para paddings
+  px para gaps
+
+  Todos los espacios deben construirse utilizando medidas responsive.
+
+  HTML
+
+  Toda la interfaz debe comenzar con:
+
+  <section class="nombreDelModulo">
+
+    Todo el contenido debe permanecer dentro de ese <section>.
+
+      Dentro del <section> únicamente utilizar elementos:
+
+        <div>
+
+          No utilizar:
+
+          main
+          article
+          header
+          footer
+          nav
+          aside
+          span
+          meta
+          ids para estilos
+          estilos inline
+
+          No generar:
+
+          Sidebar
+          Navbar
+          Footer
+
+          Generar únicamente el contenido del módulo solicitado.
+
+          CSS
+
+          Generar un único archivo CSS.
+
+          No dividir los estilos.
+
+          No generar múltiples bloques style
+          . Organizar el CSS mediante comentarios cortos. Ejemplo:
+          /* Contenedor */
+
+          /* Cabecera */
+
+          /* Tarjetas */
+
+          /* Formularios */
+
+          /* Responsive */
+
+          No escribir comentarios largos.
+          RESPONSIVE Toda la interfaz debe adaptarse correctamente a: Desktop Laptop Tablet Mobile Utilizar únicamente:
+          Flexbox CSS Grid Priorizar: rem em % Evitar medidas fijas siempre que sea posible.
+          DISEÑO El diseño debe verse: Moderno Profesional Minimalista Limpio Bien organizado Mantener: Espaciados
+          consistentes Bordes suaves Sombras sutiles Excelente jerarquía visual Componentes reutilizables No sobrecargar
+          la interfaz.
+          ICONOS Si la interfaz requiere iconos: Utilizar únicamente Lucide Icons.
+          No utilizar: Font Awesome Heroicons Bootstrap Icons Material Icons Remix Icons No importar librerías
+          adicionales.
+          Preparar el CSS para que la imagen funcione correctamente cuando posteriormente se agregue la ruta.
+          CÓDIGO El código debe ser limpio y profesional.
+          Evitar: Código repetido Selectores largos !important IDs para estilos CSS Inline Mantener una nomenclatura
+          consistente.
+          Ejemplo: .module .module__header .module__content .module__card .module__actions ORGANIZACIÓN Construir la
+          interfaz mediante bloques reutilizables.
+          Ejemplo: Cabecera Contenido Tarjetas Formularios Estado vacío Evitar estructuras HTML innecesariamente
+          profundas.
+          Máximo 3 niveles de anidación. IDIOMA Todo el contenido generado debe estar en español.
+          SALIDA Entregar únicamente: CSS En ese orden. No escribir: Explicaciones Observaciones Introducciones Ejemplos
+          Descripcion
+
+
+</body>
+
+</html>

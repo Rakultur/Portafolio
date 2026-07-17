@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Home - I.F.A.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .modulo-home__btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.125rem;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: var(--transition-base);
+            border: var(--border-base) solid transparent;
+            text-align: center;
+        }
+
+        .modulo-home__btn--accent {
+            background-color: var(--color-accent);
+            color: var(--text-inverse);
+            border-color: var(--color-accent);
+        }
+
+        .modulo-home__btn--accent:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+        }
+
+        .modulo-home__btn--outline {
+            background-color: transparent;
+            color: var(--text-inverse);
+            border-color: var(--text-inverse);
+        }
+
+        .modulo-home__btn--outline:hover {
+            background-color: var(--text-inverse);
+            color: var(--bg-inverse);
+        }
+        
+        .modulo-home__btn--outline-dark {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
+        .modulo-home__btn--outline-dark:hover {
+            background-color: var(--text-primary);
+            color: var(--text-inverse);
+        }
+
+        .modulo-home__eyebrow {
+            display: block;
+            color: var(--color-accent);
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.125rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .modulo-home__text-accent {
+            display: inline-block;
+            color: var(--color-accent);
+        }
+
+        .modulo-home__hero {
+            position: relative;
+            min-height: 45rem;
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            text-align: center;
+            padding: var(--space-xxl) var(--space-md);
+            overflow: hidden;
+        }
+
+        .modulo-home__hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .modulo-home__hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Futura variable global: --overlay-dark */
+            background: linear-gradient(to bottom, #0505054d, #050505);
+            z-index: 1;
+        }
+
+        .modulo-home__hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 50rem;
+            width: 100%;
+        }
+
+        .modulo-home__hero-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__hero-title {
+                font-size: 4rem; 
+            }
+        }
+
+        .modulo-home__hero-desc {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xl);
+        }
+
+        .modulo-home__hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__hero-actions {
+                flex-direction: row;
+                gap: var(--space-lg);
+            }
+        }
+
+        .modulo-home__features-grid {
+            position: relative;
+            z-index: 20;
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            margin-top: -4rem; /* Superposición negativa en rem */
+            margin-bottom: var(--space-xxl);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .modulo-home__feature-card {
+            position: relative;
+            /* Futura variable global: --bg-card-dark */
+            background-color: #1a1a1a;
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--space-lg);
+            transition: var(--transition-base);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__feature-card {
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+        .modulo-home__feature-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            filter: grayscale(100%);
+            transition: var(--transition-base);
+            z-index: 0;
+        }
+
+        .modulo-home__feature-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Futura variable global: --overlay-gradient-up */
+            background: linear-gradient(to top, #050505 10%, transparent);
+            z-index: 1;
+        }
+
+        .modulo-home__feature-content {
+            position: relative;
+            z-index: 2;
+            transform: translateY(var(--space-sm));
+            transition: var(--transition-base);
+        }
+
+        .modulo-home__feature-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 900;
+            color: var(--text-inverse);
+            text-transform: uppercase;
+        }
+
+        .modulo-home__feature-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-0.25rem);
+        }
+
+        .modulo-home__feature-card:hover .modulo-home__feature-img {
+            opacity: 0.6;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .modulo-home__feature-card:hover .modulo-home__feature-content {
+            transform: translateY(0);
+        }
+
+        .modulo-home__institucion {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--space-xxl) 0;
+        }
+
+        .modulo-home__institucion-grid {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__institucion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .modulo-home__institucion-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.05rem;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__institucion-title {
+                font-size: var(--text-xxl);
+            }
+        }
+
+        .modulo-home__institucion-line {
+            width: var(--space-xl);
+            height: 0.25rem;
+            background-color: var(--color-accent);
+            margin-bottom: var(--space-lg);
+        }
+
+        .modulo-home__institucion-text {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__institucion-text {
+                font-size: var(--text-md);
+            }
+        }
+
+        .modulo-home__mision {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: var(--space-xxl) 0; 
+        }
+
+        .modulo-home__mision-grid {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__mision-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .modulo-home__mision-box {
+            background-color: var(--bg-primary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-base);
+            /* Futura variable global: --shadow-base */
+            box-shadow: 0 var(--space-md) var(--space-lg) #0000000d;
+            border: var(--border-base) solid var(--border-color);
+        }
+
+        .modulo-home__mision-box--dark {
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+            border-color: var(--bg-inverse);
+        }
+
+        .modulo-home__mision-box-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .modulo-home__mision-box-text {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+
+        .modulo-home__mision-box--dark .modulo-home__mision-box-text {
+            /* Futura variable global: --text-muted-dark */
+            color: #aaaaaa;
+        }
+
+        .modulo-home__ecosistema {
+            background-color: var(--bg-inverse);
+            border-top: var(--border-base) solid var(--border-color-inverse);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+            padding: var(--space-xxl) 0;
+        }
+
+        .modulo-home__ecosistema-grid {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__ecosistema-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .modulo-home__ecosistema-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__ecosistema-title {
+                font-size: var(--text-xxl);
+            }
+        }
+
+        .modulo-home__ecosistema-desc {
+            color: var(--text-secondary);
+            font-size: var(--text-md);
+            margin-top: var(--space-md);
+        }
+
+        .modulo-home__pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-sm);
+            position: relative;
+            padding: var(--space-lg) 0;
+        }
+
+        .modulo-home__pyramid-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--border-base);
+            height: 100%;
+            background-color: var(--border-color-inverse);
+            z-index: 0;
+        }
+
+        .modulo-home__level {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: var(--radius-base);
+            font-size: var(--text-sm);
+        }
+
+        /* Colores de jerarquía deportiva (Hexadecimales documentados para futuras variables) */
+        .modulo-home__level--1 { max-width: 16rem; background-color: var(--color-brand); color: var(--text-primary); box-shadow: 0 0 var(--space-md) #d4af3766; }
+        .modulo-home__level--2 { max-width: 20rem; background-color: #e0e0e0; color: var(--text-primary); } /* Futura variable: --color-silver */
+        .modulo-home__level--3 { max-width: 24rem; background-color: #cd7f32; color: var(--text-inverse); } /* Futura variable: --color-bronze */
+        .modulo-home__level--4 { max-width: 28rem; background-color: #1a1a1a; color: #dddddd; border: var(--border-base) solid #333333; } /* Futura variable: --color-level-4 */
+        .modulo-home__level--5 { max-width: 32rem; background-color: #111111; color: #aaaaaa; border: var(--border-base) solid #222222; } /* Futura variable: --color-level-5 */
+        .modulo-home__level--6 { max-width: 36rem; background-color: #000000; color: #777777; border: var(--border-base) solid #111111; } /* Futura variable: --color-level-6 */
+
+        .modulo-home__contacto {
+            /* Futura variable global: --bg-dark-gray */
+            background-color: #111111;
+            padding: var(--space-xxl) 0;
+        }
+        
+        .modulo-home__contacto-header {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .modulo-home__contacto-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .modulo-home__contacto-desc {
+            color: var(--text-secondary);
+        }
+
+        .modulo-home__form-wrapper {
+            background-color: var(--bg-inverse);
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            padding: var(--space-lg);
+            max-width: 50rem;
+            margin: 0 auto;
+            width: var(--container-width);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__form-wrapper {
+                padding: var(--space-xl);
+            }
+        }
+
+        .modulo-home__form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-home__form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .modulo-home__input-group {
+            margin-bottom: var(--space-md);
+            width: 100%;
+        }
+
+        .modulo-home__input,
+        .modulo-home__select,
+        .modulo-home__textarea {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            /* Futura variable global: --border-input-dark */
+            border-bottom: var(--border-base) solid #444444;
+            color: var(--text-inverse);
+            padding: var(--space-md) 0;
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            border-radius: 0;
+            outline: none;
+            transition: var(--transition-base);
+        }
+
+        .modulo-home__input:focus,
+        .modulo-home__select:focus,
+        .modulo-home__textarea:focus {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .modulo-home__input::placeholder,
+        .modulo-home__textarea::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .modulo-home__select {
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .modulo-home__option {
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+        }
+
+        .modulo-home__textarea {
+            resize: vertical;
+            min-height: var(--space-xxl);
+        }
+
+        .modulo-home__submit-wrapper {
+            text-align: center;
+            margin-top: var(--space-lg);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="modulo-home">
+        
+        <!-- Bloque Hero (Nivel 2) -->
+        <div class="modulo-home__hero">
+            <img class="modulo-home__hero-bg" src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Estadio de fútbol lleno">
+            <div class="modulo-home__hero-overlay"></div>
+            
+            <!-- Contenido del Hero (Nivel 3) -->
+            <div class="modulo-home__hero-content">
+                <div class="modulo-home__eyebrow">Institución del Fútbol Asociado</div>
+                <h1 class="modulo-home__hero-title">Bienvenido a la Institución del Fútbol Asociado I.F.A.<div class="modulo-home__text-accent">.</div></h1>
+                <p class="modulo-home__hero-desc">El futuro del fútbol profesional comienza aquí.</p>
+                <div class="modulo-home__hero-actions">
+                    <a href="#liga-el-dorado" class="modulo-home__btn modulo-home__btn--accent">Conoce la Liga</a>
+                    <a href="#franquicias" class="modulo-home__btn modulo-home__btn--outline">Adquiere una Franquicia</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloque Tarjetas Destacadas (Nivel 2) -->
+        <div class="modulo-home__features-grid">
+            
+            <a href="#" class="modulo-home__feature-card">
+                <img class="modulo-home__feature-img" src="https://images.unsplash.com/photo-1551280857-2b9bbe52ccf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Competición">
+                <div class="modulo-home__feature-overlay"></div>
+                <div class="modulo-home__feature-content">
+                    <div class="modulo-home__eyebrow">¿Eres aficionado?</div>
+                    <h3 class="modulo-home__feature-title">Conoce la Liga El Dorado</h3>
+                </div>
+            </a>
+            
+            <a href="#" class="modulo-home__feature-card">
+                <img class="modulo-home__feature-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Institucional">
+                <div class="modulo-home__feature-overlay"></div>
+                <div class="modulo-home__feature-content">
+                    <div class="modulo-home__eyebrow">¿Eres inversionista?</div>
+                    <h3 class="modulo-home__feature-title">Adquiere una Franquicia</h3>
+                </div>
+            </a>
+            
+            <a href="#" class="modulo-home__feature-card">
+                <img class="modulo-home__feature-img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ecosistema">
+                <div class="modulo-home__feature-overlay"></div>
+                <div class="modulo-home__feature-content">
+                    <div class="modulo-home__eyebrow">¿Quiénes somos?</div>
+                    <h3 class="modulo-home__feature-title">Gobierno Corporativo</h3>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Bloque Institucional (Nivel 2) -->
+        <div class="modulo-home__institucion">
+            <div class="modulo-home__institucion-grid">
+                <div>
+                    <h2 class="modulo-home__institucion-title">Redefiniendo la estructura del juego.</h2>
+                    <div class="modulo-home__institucion-line"></div>
+                </div>
+                <div>
+                    <p class="modulo-home__institucion-text">La Institución del Fútbol Asociado I.F.A. es la entidad jurídica responsable de regular, estructurar y desarrollar el fútbol independiente de estructura profesional en Colombia mediante un modelo sostenible basado en franquicias, mérito deportivo y expansión regional.</p>
+                    <p class="modulo-home__institucion-text">Nuestra misión es aportar alternativas para llevar el fútbol a todo el país, garantizando transparencia operativa, viabilidad financiera para los clubes y un producto de entretenimiento de clase mundial para la afición.</p>
+                    <a href="#gobierno" class="modulo-home__btn modulo-home__btn--outline-dark">Conocer la Institución</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloque Misión / Visión (Nivel 2) -->
+        <div class="modulo-home__mision">
+            <div class="modulo-home__mision-grid">
+                
+                <div class="modulo-home__mision-box">
+                    <div class="modulo-home__eyebrow">Propósito</div>
+                    <h3 class="modulo-home__mision-box-title">Misión</h3>
+                    <p class="modulo-home__mision-box-text">Impulsar el crecimiento del fútbol mediante competiciones organizadas con altos estándares, promoviendo la transparencia, la innovación y el desarrollo territorial. Buscamos crear una estructura que fortalezca el fútbol en todas sus categorías.</p>
+                </div>
+                
+                <div class="modulo-home__mision-box">
+                    <div class="modulo-home__eyebrow">Futuro</div>
+                    <h3 class="modulo-home__mision-box-title">Visión</h3>
+                    <p class="modulo-home__mision-box-text">Consolidarnos como una de las instituciones referentes del fútbol en América Latina, construyendo un modelo deportivo que combine excelencia competitiva, sostenibilidad, impacto social y oportunidades para las nuevas generaciones.</p>
+                </div>
+                
+                <div class="modulo-home__mision-box modulo-home__mision-box--dark">
+                    <div class="modulo-home__eyebrow">Impacto</div>
+                    <h3 class="modulo-home__mision-box-title">Desarrollo</h3>
+                    <p class="modulo-home__mision-box-text">Llevamos el fútbol a regiones olvidadas, fortalecemos a los clubes locales y generamos espacios. Creemos que cada partido impulsa el desarrollo económico, social y turístico de las regiones.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bloque Ecosistema Competitivo (Nivel 2) -->
+        <div class="modulo-home__ecosistema">
+            <div class="modulo-home__ecosistema-grid">
+                
+                <div>
+                    <div class="modulo-home__eyebrow">Estructura Competitiva</div>
+                    <h2 class="modulo-home__ecosistema-title">Nuestra visión del fútbol en Colombia</h2>
+                    <p class="modulo-home__ecosistema-desc">Un sistema piramidal sólido, diseñado para premiar el mérito deportivo y garantizar la sostenibilidad financiera en todos los niveles. Desde la élite nacional hasta las bases provinciales.</p>
+                </div>
+                
+                <div class="modulo-home__pyramid">
+                    <div class="modulo-home__pyramid-line"></div>
+                    <div class="modulo-home__level modulo-home__level--1">Liga El Dorado</div>
+                    <div class="modulo-home__level modulo-home__level--2">División Plata</div>
+                    <div class="modulo-home__level modulo-home__level--3">División Bronce</div>
+                    <div class="modulo-home__level modulo-home__level--4">División Nacional</div>
+                    <div class="modulo-home__level modulo-home__level--5">División Regional</div>
+                    <div class="modulo-home__level modulo-home__level--6">División Provincial</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bloque Contacto Institucional (Nivel 2) -->
+        <div class="modulo-home__contacto">
+            
+            <div class="modulo-home__contacto-header">
+                <h2 class="modulo-home__contacto-title">Contacto Institucional</h2>
+                <p class="modulo-home__contacto-desc">Dirija sus consultas comerciales o solicitudes de franquicia a nuestro equipo ejecutivo.</p>
+            </div>
+
+            <div class="modulo-home__form-wrapper">
+                <form onsubmit="event.preventDefault();">
+                    
+                    <div class="modulo-home__form-grid">
+                        <div class="modulo-home__input-group">
+                            <input type="text" class="modulo-home__input" placeholder="Nombre Completo" required>
+                        </div>
+                        <div class="modulo-home__input-group">
+                            <input type="email" class="modulo-home__input" placeholder="Correo Electrónico Corporativo" required>
+                        </div>
+                        <div class="modulo-home__input-group">
+                            <input type="text" class="modulo-home__input" placeholder="Organización / Empresa">
+                        </div>
+                        <div class="modulo-home__input-group">
+                            <input type="text" class="modulo-home__input" placeholder="Ciudad / Departamento" required>
+                        </div>
+                    </div>
+                    
+                    <div class="modulo-home__input-group">
+                        <select class="modulo-home__select" required>
+                            <option value="" disabled selected class="modulo-home__option">Seleccione el motivo de su contacto...</option>
+                            <option value="franquicia" class="modulo-home__option">Solicitud de Franquicia</option>
+                            <option value="patrocinio" class="modulo-home__option">Patrocinios Comerciales</option>
+                            <option value="prensa" class="modulo-home__option">Prensa y Medios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="modulo-home__input-group">
+                        <textarea class="modulo-home__textarea" placeholder="Detalle su solicitud o propuesta..." required></textarea>
+                    </div>
+                    
+                    <div class="modulo-home__submit-wrapper">
+                        <button type="submit" class="modulo-home__btn modulo-home__btn--accent">Enviar Solicitud</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+
+    </section>
+
+</body>
+</html>

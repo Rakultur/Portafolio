@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institución del Fútbol Asociado (I.F.A.) | Arbitraje</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* 1. COLORES */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-inverse: #050505;
+            --text-primary: #111111;
+            --text-secondary: #888888;
+            --text-inverse: #ffffff;
+            --color-accent: #ff5a00;
+            --color-brand: #d4af37;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --border-color-inverse: rgba(255, 255, 255, 0.1);
+
+            /* 2. TIPOGRAFÍAS */
+            --font-heading: "Montserrat", sans-serif;
+            --font-body: "Inter", sans-serif;
+
+            /* 3. TAMAÑOS DE TEXTO */
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.5rem;
+            --text-xl: 2.25rem;
+            --text-xxl: 3rem;
+
+            /* 4. ESPACIADOS RESPONSIVES */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+
+            /* 5. ESTRUCTURA Y UI */
+            --container-width: 90%;
+            --container-max: 75rem;
+            --radius-base: 0.5rem;
+            --radius-pill: 50rem;
+            --border-base: 0.0625rem;
+            --transition-base: all 0.3s ease;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+            line-height: 1.5;
+        }
+
+        /* Contenedor */
+        .modulo-arbitraje {
+            width: 100%;
+        }
+
+        /* Cabecera (Hero) */
+        .arbitraje__hero {
+            position: relative;
+            padding-top: var(--space-xxl);
+            padding-bottom: var(--space-xxl);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arbitraje__hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .arbitraje__hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* #050505b3 debería convertirse posteriormente en una variable global --bg-inverse-alpha */
+            background: linear-gradient(to right, #050505 0%, #050505b3 100%); 
+            z-index: 1;
+        }
+
+        .arbitraje__hero-content {
+            position: relative;
+            z-index: 2;
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .arbitraje__hero-eyebrow {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            color: var(--color-brand);
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .arbitraje__hero-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xxl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+        }
+
+        .arbitraje__hero-desc {
+            font-size: var(--text-md);
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 45rem;
+        }
+
+        /* Tarjetas (Pilares) */
+        .arbitraje__pilares {
+            display: grid;
+            gap: var(--space-lg);
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .arbitraje__card {
+            /* #111111 debería convertirse posteriormente en una variable global --bg-card-dark */
+            background-color: #111111; 
+            border: var(--border-base) solid var(--border-color-inverse);
+            padding: var(--space-lg);
+            border-radius: var(--radius-base);
+            transition: var(--transition-base);
+        }
+
+        .arbitraje__card:hover {
+            border-color: var(--color-brand);
+            transform: translateY(-0.25rem);
+        }
+
+        .arbitraje__card-icon {
+            color: var(--color-brand);
+            margin-bottom: var(--space-md);
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .arbitraje__card-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+            color: var(--text-inverse);
+        }
+
+        .arbitraje__card-desc {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+
+        /* Contenido (Designaciones) */
+        .arbitraje__designaciones {
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            border-top: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .arbitraje__header-row {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .arbitraje__section-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* Formularios (Selectores) */
+        .arbitraje__select {
+            /* #111111 debería convertirse posteriormente en una variable global --bg-input-dark */
+            background-color: #111111;
+            color: var(--text-inverse);
+            border: var(--border-base) solid var(--border-color-inverse);
+            padding: var(--space-sm) var(--space-md);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            border-radius: var(--radius-base);
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .arbitraje__select:focus {
+            border-color: var(--color-accent);
+        }
+
+        /* Tarjetas de Partidos */
+        .arbitraje__lista {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .arbitraje__partido {
+            /* #111111 debería convertirse posteriormente en una variable global --bg-card-dark */
+            background-color: #111111;
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+        }
+
+        .arbitraje__partido-info {
+            /* #0a0a0a debería convertirse posteriormente en una variable global --bg-card-header */
+            background-color: #0a0a0a;
+            padding: var(--space-md);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arbitraje__partido-fecha {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--space-xs);
+        }
+
+        .arbitraje__partido-equipos {
+            font-family: var(--font-heading);
+            font-size: var(--text-md);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .arbitraje__partido-estadio {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-top: var(--space-xs);
+        }
+
+        .arbitraje__rol {
+            padding: var(--space-md);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .arbitraje__rol:last-child {
+            border-bottom: none;
+        }
+
+        .arbitraje__rol-label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .arbitraje__rol-name {
+            font-size: var(--text-base);
+            font-weight: 500;
+        }
+
+        /* Documentos */
+        .arbitraje__documentos {
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            text-align: center;
+            border-top: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .arbitraje__doc-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .arbitraje__doc-desc {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            max-width: 40rem;
+            margin-inline: auto;
+        }
+
+        .arbitraje__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-lg);
+            background-color: transparent;
+            color: var(--text-inverse);
+            border: var(--border-base) solid var(--color-brand);
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: var(--radius-base);
+            transition: var(--transition-base);
+            text-decoration: none;
+        }
+
+        .arbitraje__btn:hover {
+            background-color: var(--color-brand);
+            color: var(--bg-inverse);
+        }
+
+        /* Responsive */
+        @media (min-width: 48rem) {
+            .arbitraje__pilares {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .arbitraje__header-row {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+
+            .arbitraje__select {
+                width: auto;
+                min-width: 15rem;
+            }
+            
+            .arbitraje__partido {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .arbitraje__partido-info {
+                grid-column: span 2;
+            }
+
+            .arbitraje__rol {
+                border-bottom: none;
+                border-right: var(--border-base) solid var(--border-color-inverse);
+            }
+            
+            .arbitraje__rol:nth-child(even) {
+                border-right: none;
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .arbitraje__hero-title {
+                font-size: var(--text-xxl); /* Ajuste natural de la variable */
+            }
+
+            .arbitraje__partido {
+                grid-template-columns: 30% repeat(4, 1fr);
+            }
+
+            .arbitraje__partido-info {
+                grid-column: span 1;
+                border-bottom: none;
+                border-right: var(--border-base) solid var(--border-color-inverse);
+            }
+            
+            .arbitraje__rol {
+                border-right: var(--border-base) solid var(--border-color-inverse);
+            }
+            
+            .arbitraje__rol:nth-child(even) {
+                border-right: var(--border-base) solid var(--border-color-inverse);
+            }
+            
+            .arbitraje__rol:last-child {
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="modulo-arbitraje">
+        
+        <div class="arbitraje__hero">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Fondo Arbitraje" class="arbitraje__hero-img">
+            <div class="arbitraje__hero-overlay"></div>
+            <div class="arbitraje__hero-content">
+                <div class="arbitraje__hero-eyebrow">Institución del Fútbol Asociado</div>
+                <h1 class="arbitraje__hero-title">Dirección Nacional<br>de Arbitraje</h1>
+                <p class="arbitraje__hero-desc">La Comisión Arbitral de la I.F.A. es un órgano técnico e independiente encargado de garantizar la justicia, la transparencia y la correcta aplicación del reglamento en todas las competencias del ecosistema.</p>
+            </div>
+        </div>
+
+        <div class="arbitraje__pilares">
+            
+            <div class="arbitraje__card">
+                <i data-lucide="monitor-play" class="arbitraje__card-icon"></i>
+                <h3 class="arbitraje__card-title">Tecnología VAR</h3>
+                <p class="arbitraje__card-desc">Implementación obligatoria del sistema de Video Arbitraje (VAR) en el 100% de los encuentros de la Liga El Dorado para minimizar el margen de error humano y garantizar la justicia deportiva.</p>
+            </div>
+
+            <div class="arbitraje__card">
+                <i data-lucide="book-open-check" class="arbitraje__card-icon"></i>
+                <h3 class="arbitraje__card-title">Capacitación</h3>
+                <p class="arbitraje__card-desc">Programa continuo de formación física, técnica y psicológica bajo los estándares de la International Football Association Board (IFAB) para todos los jueces del panel central y asistentes.</p>
+            </div>
+
+            <div class="arbitraje__card">
+                <i data-lucide="award" class="arbitraje__card-icon"></i>
+                <h3 class="arbitraje__card-title">Evaluación y Mérito</h3>
+                <p class="arbitraje__card-desc">Las designaciones arbitrales se realizan de manera transparente mediante un sistema de evaluación de rendimiento fecha a fecha, asegurando que los mejores jueces dirijan los encuentros decisivos.</p>
+            </div>
+
+        </div>
+
+        <div class="arbitraje__designaciones">
+            <div class="arbitraje__header-row">
+                <h2 class="arbitraje__section-title">Designaciones Arbitrales</h2>
+                <select class="arbitraje__select">
+                    <option>Liga El Dorado - Fecha 1</option>
+                    <option>Liga El Dorado - Fecha 2</option>
+                    <option>Liga El Dorado - Fecha 3</option>
+                </select>
+            </div>
+
+            <div class="arbitraje__lista">
+                
+                <div class="arbitraje__partido">
+                    <div class="arbitraje__partido-info">
+                        <div class="arbitraje__partido-fecha">Sábado, 15 de Febrero | 18:00</div>
+                        <div class="arbitraje__partido-equipos">Club Guajira vs. Sabana</div>
+                        <div class="arbitraje__partido-estadio">Estadio Federico Serrano Soto (Riohacha)</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Juez Central</div>
+                        <div class="arbitraje__rol-name">Alejandro Restrepo</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Asistentes</div>
+                        <div class="arbitraje__rol-name">C. Torres / D. Ruiz</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Cuarto Árbitro</div>
+                        <div class="arbitraje__rol-name">Andrés F. Castro</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">VAR / AVAR</div>
+                        <div class="arbitraje__rol-name">S. Gómez / L. Peña</div>
+                    </div>
+                </div>
+
+                <div class="arbitraje__partido">
+                    <div class="arbitraje__partido-info">
+                        <div class="arbitraje__partido-fecha">Domingo, 16 de Febrero | 15:30</div>
+                        <div class="arbitraje__partido-equipos">Quindío F.C. vs. Caquetá</div>
+                        <div class="arbitraje__partido-estadio">Estadio Centenario (Armenia)</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Juez Central</div>
+                        <div class="arbitraje__rol-name">Jhon A. Ospina</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Asistentes</div>
+                        <div class="arbitraje__rol-name">D. Fuentes / H. Londoño</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">Cuarto Árbitro</div>
+                        <div class="arbitraje__rol-name">Carlos A. Vargas</div>
+                    </div>
+                    <div class="arbitraje__rol">
+                        <div class="arbitraje__rol-label">VAR / AVAR</div>
+                        <div class="arbitraje__rol-name">M. Pérez / J. Silva</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="arbitraje__documentos">
+            <h3 class="arbitraje__doc-title">Reglamento Arbitral I.F.A.</h3>
+            <p class="arbitraje__doc-desc">Acceda a las normativas vigentes, protocolos del uso del VAR y las reglas de juego actualizadas establecidas por la International Football Association Board (IFAB) para la temporada en curso.</p>
+            
+            <a href="#" class="arbitraje__btn">
+                <i data-lucide="download"></i>
+                Descargar Manual 2026 (PDF)
+            </a>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicializar Lucide Icons
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

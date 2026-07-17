@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Contacto - I.F.A.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* 1. COLORES */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-inverse: #050505;
+            --text-primary: #111111;
+            --text-secondary: #888888;
+            --text-inverse: #ffffff;
+            --color-accent: #ff5a00;
+            --color-brand: #d4af37;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --border-color-inverse: rgba(255, 255, 255, 0.1);
+
+            /* 2. TIPOGRAFÍAS */
+            --font-heading: "Montserrat", sans-serif;
+            --font-body: "Inter", sans-serif;
+
+            /* 3. TAMAÑOS DE TEXTO */
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.5rem;
+            --text-xl: 2.25rem;
+            --text-xxl: 3rem;
+
+            /* 4. ESPACIADOS RESPONSIVES */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+
+            /* 5. ESTRUCTURA Y UI */
+            --container-width: 90%;
+            --container-max: 75rem;
+            --radius-base: 0.5rem;
+            --radius-pill: 50rem;
+            --border-base: 0.0625rem;
+            --transition-base: all 0.3s ease;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+            line-height: 1.5;
+        }
+
+        .modulo-contacto {
+            padding-top: var(--space-xxl);
+            padding-bottom: var(--space-xxl);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        /* Cabecera */
+        .contacto__header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .contacto__eyebrow {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            margin-bottom: var(--space-md);
+            padding: var(--space-sm) var(--space-md);
+            border: var(--border-base) solid var(--color-accent);
+            border-radius: var(--radius-pill);
+        }
+
+        .contacto__title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            color: var(--text-inverse);
+        }
+
+        .contacto__desc {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+
+        .contacto__form {
+            /* #111111 debería convertirse posteriormente en una variable global --bg-card-dark */
+            background-color: #111111;
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            padding: var(--space-lg);
+            max-width: 50rem;
+            margin: 0 auto;
+            /* rgba(0,0,0,0.5) debería convertirse posteriormente en una variable global --shadow-base */
+            box-shadow: 0 var(--space-md) var(--space-lg) rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        .contacto__input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contacto__label {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .contacto__input,
+        .contacto__select,
+        .contacto__textarea {
+            background-color: transparent;
+            border: none;
+            /* #333333 debería convertirse posteriormente en una variable global --border-dark */
+            border-bottom: var(--border-base) solid #333333;
+            color: var(--text-inverse);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            padding-top: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-radius: 0;
+            transition: var(--transition-base);
+            outline: none;
+            width: 100%;
+        }
+
+        .contacto__input:focus,
+        .contacto__select:focus,
+        .contacto__textarea:focus {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .contacto__select {
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .contacto__select option {
+            /* #111111 debería convertirse posteriormente en una variable global --bg-card-dark */
+            background-color: #111111;
+            color: var(--text-inverse);
+        }
+
+        .contacto__textarea {
+            resize: vertical;
+            min-height: var(--space-xxl);
+        }
+
+        .contacto__footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .contacto__btn {
+            width: 100%;
+            background-color: var(--color-accent);
+            color: var(--text-inverse);
+            border: var(--border-base) solid var(--color-accent);
+            padding: var(--space-md) var(--space-lg);
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: var(--radius-base);
+            transition: var(--transition-base);
+        }
+
+        .contacto__btn:hover {
+            background-color: var(--bg-primary);
+            color: var(--bg-inverse);
+            border-color: var(--bg-primary);
+        }
+
+        .contacto__disclaimer {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .contacto__directo {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: var(--border-base) solid var(--border-color-inverse);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .contacto__info-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-secondary);
+        }
+
+        .contacto__info-icon {
+            color: var(--color-accent);
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .contacto__info-text {
+            font-size: var(--text-sm);
+            font-weight: 500;
+        }
+
+        @media (min-width: 48rem) {
+            .contacto__title {
+                font-size: var(--text-xxl);
+            }
+
+            .contacto__desc {
+                font-size: var(--text-lg);
+            }
+
+            .contacto__form {
+                grid-template-columns: repeat(2, 1fr);
+                padding: var(--space-xl);
+            }
+
+            .contacto__input-group--full {
+                grid-column: span 2;
+            }
+
+            .contacto__btn {
+                width: auto;
+            }
+
+            .contacto__directo {
+                flex-direction: row;
+                gap: var(--space-xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="modulo-contacto">
+
+        <div class="contacto__header">
+            <div class="contacto__eyebrow">Hablemos de negocios</div>
+            <h2 class="contacto__title">Contacto Institucional</h2>
+            <p class="contacto__desc">Dirija sus consultas comerciales, postulaciones para franquicias o solicitudes de
+                prensa directamente a nuestro equipo ejecutivo.</p>
+        </div>
+
+        <form class="contacto__form" action="#" method="POST" onsubmit="event.preventDefault();">
+
+            <div class="contacto__input-group">
+                <label for="nombre" class="contacto__label">Nombre Completo</label>
+                <input type="text" id="nombre" class="contacto__input" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="contacto__input-group">
+                <label for="correo" class="contacto__label">Correo Corporativo</label>
+                <input type="email" id="correo" class="contacto__input" placeholder="juan@empresa.com" required>
+            </div>
+
+            <div class="contacto__input-group">
+                <label for="empresa" class="contacto__label">Organización / Club</label>
+                <input type="text" id="empresa" class="contacto__input" placeholder="Nombre de su entidad">
+            </div>
+
+            <div class="contacto__input-group">
+                <label for="ciudad" class="contacto__label">Ciudad / Departamento</label>
+                <input type="text" id="ciudad" class="contacto__input" placeholder="Ej. Florencia, Caquetá" required>
+            </div>
+
+            <div class="contacto__input-group contacto__input-group--full">
+                <label for="motivo" class="contacto__label">Motivo de Contacto</label>
+                <select id="motivo" class="contacto__select" required>
+                    <option value="" disabled selected>Seleccione el asunto de su solicitud...</option>
+                    <option value="franquicia">Postulación para adquirir Franquicia</option>
+                    <option value="patrocinio">Patrocinios y Alianzas Comerciales</option>
+                    <option value="prensa">Acreditaciones de Prensa / Medios</option>
+                    <option value="institucional">Asuntos Legales o Institucionales</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="contacto__input-group contacto__input-group--full">
+                <label for="mensaje" class="contacto__label">Mensaje o Propuesta</label>
+                <textarea id="mensaje" class="contacto__textarea"
+                    placeholder="Detalle aquí su solicitud o experiencia en el sector..." required></textarea>
+            </div>
+
+            <div class="contacto__input-group contacto__input-group--full contacto__footer">
+                <button type="submit" class="contacto__btn">Enviar Solicitud</button>
+                <div class="contacto__disclaimer">Al enviar este formulario, acepta nuestras políticas de tratamiento de
+                    datos.</div>
+            </div>
+
+        </form>
+
+        <div class="contacto__directo">
+            <div class="contacto__info-item">
+                <i data-lucide="mail" class="contacto__info-icon"></i>
+                <div class="contacto__info-text">presidencia@ifasociado.com.co</div>
+            </div>
+            <div class="contacto__info-item">
+                <i data-lucide="map-pin" class="contacto__info-icon"></i>
+                <div class="contacto__info-text">Bogotá D.C., Colombia</div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

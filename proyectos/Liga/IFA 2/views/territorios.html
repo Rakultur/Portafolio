@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Territorios y Prensa - I.F.A.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-inverse);
+            font-family: var(--font-body);
+            color: var(--text-inverse);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sec-territorios {
+            padding: var(--space-xxl) 0;
+            background-color: var(--bg-inverse);
+        }
+
+        .ter-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ter-eyebrow {
+            display: block;
+            color: var(--color-brand);
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .ter-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xxl);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .ter-title {
+                font-size: 3rem;
+            }
+        }
+
+        .ter-map-placeholder {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto var(--space-xl) auto;
+            height: 25rem;
+            /* Futura variable global: --bg-dark-soft */
+            background-color: #1a1a1a;
+            border: var(--border-base) dashed var(--text-secondary);
+            border-radius: var(--radius-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ter-map-text {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+        }
+
+        .ter-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 48rem) {
+            .ter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .ter-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .ter-card {
+            /* Futura variable global: --bg-dark */
+            background-color: #111111;
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .ter-card:hover {
+            transform: translateY(calc(var(--space-sm) * -1));
+            border-color: var(--color-brand);
+        }
+
+        .ter-card--highlight {
+            /* Futura variable global: --bg-gradient-dark */
+            background: linear-gradient(to bottom right, #1a1a1a, #050505);
+            border-color: var(--color-brand);
+        }
+
+        @media (min-width: 64rem) {
+            .ter-card--highlight {
+                grid-column: span 2;
+            }
+        }
+
+        .ter-card-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 800;
+            color: var(--text-inverse);
+            margin-bottom: 0.25rem;
+        }
+
+        .ter-card-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-brand);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .ter-card--highlight .ter-card-subtitle {
+            color: var(--color-accent);
+        }
+
+        .ter-info-heading {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.125rem;
+            margin-top: var(--space-md);
+        }
+
+        .ter-info-text {
+            font-size: var(--text-sm);
+            /* Futura variable global: --text-muted-light */
+            color: #dddddd;
+            margin-bottom: var(--space-sm);
+        }
+
+        .ter-list-item {
+            font-size: var(--text-sm);
+            /* Futura variable global: --text-muted-light */
+            color: #dddddd;
+            position: relative;
+            padding-left: var(--space-md);
+            margin-bottom: 0.25rem;
+        }
+
+        .ter-list-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.375rem;
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: var(--color-accent);
+            border-radius: var(--radius-pill);
+        }
+
+        .ter-impact {
+            margin-top: var(--space-xxl);
+            padding: var(--space-xl);
+            /* Futura variable global: --bg-dark-soft */
+            background-color: #1a1a1a;
+            border-radius: var(--radius-base);
+            text-align: center;
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ter-impact-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            color: var(--text-inverse);
+            margin-bottom: var(--space-lg);
+        }
+
+        .ter-impact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .ter-impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .ter-impact-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .ter-impact-num {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: var(--text-xxl);
+            font-weight: 900;
+            color: var(--color-brand);
+            margin-bottom: var(--space-sm);
+        }
+
+        .ter-impact-lbl {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .ter-impact-conclusion {
+            margin-top: var(--space-xl);
+            font-size: var(--text-lg);
+            color: var(--text-inverse);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .sec-prensa {
+            position: relative;
+            padding: 8rem 0;
+            /* Futura variable global: --bg-navy-dark */
+            background-color: #030816;
+            border-top: var(--border-base) solid var(--border-color-inverse);
+            overflow: hidden;
+        }
+
+        .pre-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            mix-blend-mode: luminosity;
+            z-index: 0;
+        }
+
+        .pre-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Futura variable global: --gradient-navy */
+            background: linear-gradient(to right, rgba(3, 8, 22, 0.95), rgba(3, 8, 22, 0.8));
+            z-index: 1;
+        }
+
+        .pre-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pre-logo {
+            width: var(--space-xxl);
+            height: var(--space-xxl);
+            background-color: var(--text-inverse);
+            border-radius: var(--radius-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            font-family: var(--font-heading);
+            font-weight: 900;
+            color: var(--bg-inverse);
+        }
+
+        .pre-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xxl);
+            font-weight: 900;
+            color: var(--text-inverse);
+        }
+
+        .pre-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 64rem) {
+            .pre-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .pre-video {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: var(--bg-inverse);
+            border: var(--border-base) solid var(--border-color-inverse);
+            border-radius: var(--radius-base);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: 0 var(--space-md) var(--space-lg) rgba(0, 0, 0, 0.5);
+        }
+
+        .pre-video-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            color: var(--color-brand);
+            margin-bottom: var(--space-md);
+        }
+
+        .pre-video-text {
+            font-size: var(--text-sm);
+            color: var(--text-inverse);
+        }
+
+        .pre-play-btn {
+            margin-top: var(--space-lg);
+            width: var(--space-xl);
+            height: var(--space-xl);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-pill);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pre-play-btn::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-left: 0.75rem solid var(--text-inverse);
+            margin-left: 0.25rem;
+        }
+
+        .pre-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(0.5rem);
+            border: var(--border-base) solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: var(--radius-base);
+            text-align: center;
+        }
+
+        .pre-info-text {
+            font-size: var(--text-base);
+            /* Futura variable global: --text-muted-light */
+            color: #dddddd;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .pre-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            justify-content: center;
+        }
+
+        @media (min-width: 48rem) {
+            .pre-actions {
+                flex-direction: row;
+            }
+        }
+
+        .pre-btn {
+            padding: var(--space-md) 3rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            color: var(--text-inverse);
+            background-color: transparent;
+            /* Futura variable global: --color-blue-brand */
+            border: 0.125rem solid #0056b3;
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .pre-btn:hover {
+            /* Futura variable global: --color-blue-brand */
+            background-color: #0056b3;
+        }
+
+        .pre-btn--solid {
+            /* Futura variable global: --color-blue-brand */
+            background-color: #0056b3;
+        }
+
+        .pre-btn--solid:hover {
+            /* Futura variable global: --color-blue-dark */
+            background-color: #004494;
+            border-color: #004494;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="sec-territorios">
+        
+        <div class="ter-header">
+            <div class="ter-eyebrow">Expansión Nacional</div>
+            <h2 class="ter-title">Territorios y Clubes</h2>
+        </div>
+
+        <div class="ter-map-placeholder">
+            <div class="ter-map-text">IMAGEN.- MAPA--</div>
+        </div>
+
+        <div class="ter-grid">
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">La Guajira</h3>
+                <div class="ter-card-subtitle">Riohacha | Más de 210.000 hab.</div>
+
+                <div class="ter-info-heading">El Territorio</div>
+                <p class="ter-info-text">Mayor identidad cultural de Colombia. Riqueza indígena, ubicación estratégica sobre el Caribe y arraigo del pueblo Wayúu.</p>
+                
+                <div class="ter-info-heading">Historia Futbolística</div>
+                <p class="ter-info-text">Ha producido talento de gran nivel, pero nunca ha logrado consolidar un proyecto profesional estable.</p>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Convertir a Riohacha en la puerta de entrada del fútbol profesional al extremo norte de Colombia.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Caquetá</h3>
+                <div class="ter-card-subtitle">Florencia | Más de 180.000 hab.</div>
+
+                <div class="ter-info-heading">El Territorio & Historia</div>
+                <p class="ter-info-text">Frontera del desarrollo deportivo. Región joven con fuerte arraigo aficionado. Históricamente, el talento ha migrado a otras regiones por falta de estructura.</p>
+                
+                <div class="ter-info-heading">Problemática</div>
+                <div class="ter-list-item">Escasas oportunidades de competencia profesional.</div>
+                <div class="ter-list-item">Fuga permanente de talento.</div>
+                <div class="ter-list-item">Baja inversión en procesos deportivos.</div>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Construir el primer proyecto sostenible que represente al departamento.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Huila</h3>
+                <div class="ter-card-subtitle">Garzón | Conecta el centro-sur</div>
+
+                <div class="ter-info-heading">Historia Futbolística</div>
+                <p class="ter-info-text">Tradición futbolística en la capital, pero el centro del departamento nunca ha tenido representación directa.</p>
+                
+                <div class="ter-info-heading">Problemática</div>
+                <div class="ter-list-item">Concentración del fútbol únicamente en la capital.</div>
+                <div class="ter-list-item">Escasas oportunidades para el centro y sur.</div>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Convertir a Garzón en un nuevo polo deportivo y descentralizar el desarrollo futbolístico.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Cundinamarca</h3>
+                <div class="ter-card-subtitle">Fusagasugá | Más de 150.000 hab.</div>
+
+                <div class="ter-info-heading">El Territorio & Historia</div>
+                <p class="ter-info-text">Ubicación estratégica cerca de Bogotá, economía dinámica. Ha contado con procesos de formación, pero sin institución profesional permanente.</p>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Convertirse en uno de los principales mercados futbolísticos del centro del país.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Cundinamarca</h3>
+                <div class="ter-card-subtitle">Zipaquirá | Sabana Norte</div>
+
+                <div class="ter-info-heading">El Territorio & Historia</div>
+                <p class="ter-info-text">Alto crecimiento económico y turístico. Procesos en fútbol base sin continuidad hacia el profesionalismo.</p>
+                
+                <div class="ter-info-heading">Problemática</div>
+                <div class="ter-list-item">Ausencia histórica de clubes profesionales.</div>
+                <div class="ter-list-item">Talento que termina migrando hacia Bogotá.</div>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Consolidar un proyecto deportivo para toda la Sabana Norte.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Quindío</h3>
+                <div class="ter-card-subtitle">Armenia | Más de 300.000 hab.</div>
+
+                <div class="ter-info-heading">Historia Futbolística</div>
+                <p class="ter-info-text">Una de las tradiciones futbolísticas más importantes, pero marcada recientemente por dificultades deportivas e institucionales.</p>
+                
+                <div class="ter-info-heading">Problemática</div>
+                <div class="ter-list-item">Pérdida de protagonismo nacional.</div>
+                <div class="ter-list-item">Menor inversión deportiva.</div>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Recuperar la importancia del Quindío como una de las regiones históricas del fútbol colombiano.</p>
+            </div>
+
+            <div class="ter-card">
+                <h3 class="ter-card-title">Santander</h3>
+                <div class="ter-card-subtitle">Nuevas Regiones | Fuerte afición</div>
+
+                <div class="ter-info-heading">El Territorio & Historia</div>
+                <p class="ter-info-text">Mayor desarrollo económico del país. Protagonista histórico con importante cantera de jugadores.</p>
+                
+                <div class="ter-info-heading">Problemática</div>
+                <div class="ter-list-item">Gran concentración del fútbol en Bucaramanga.</div>
+                <div class="ter-list-item">Escasas oportunidades para otras ciudades.</div>
+                
+                <div class="ter-info-heading">Oportunidad</div>
+                <p class="ter-info-text">Expandir el desarrollo futbolístico hacia nuevas regiones del departamento.</p>
+            </div>
+
+            <div class="ter-card ter-card--highlight">
+                <h3 class="ter-card-title">Club Omar Sebastián Pérez</h3>
+                <div class="ter-card-subtitle">Una franquicia con identidad nacional</div>
+
+                <div class="ter-info-heading">Visión y Liderazgo</div>
+                <p class="ter-info-text">La octava franquicia estará liderada por Omar Sebastián Pérez, uno de los futbolistas más importantes en la historia reciente del fútbol colombiano.</p>
+                <p class="ter-info-text">Más que representar únicamente un territorio, este proyecto nace con la visión de convertirse en un referente nacional para la formación de talento, la innovación deportiva y el desarrollo institucional.</p>
+                <p class="ter-info-text">Su experiencia aporta liderazgo, credibilidad y una visión de largo plazo al crecimiento de la Liga El Dorado.</p>
+            </div>
+
+        </div>
+
+        <div class="ter-impact">
+            <h3 class="ter-impact-title">Los ocho proyectos fundadores transformarán el mapa del fútbol colombiano.</h3>
+
+            <div class="ter-impact-grid">
+                <div>
+                    <div class="ter-impact-num">11M+</div>
+                    <div class="ter-impact-lbl">Personas Impactadas</div>
+                </div>
+                <div>
+                    <div class="ter-impact-num">8</div>
+                    <div class="ter-impact-lbl">Mercados Regionales</div>
+                </div>
+                <div>
+                    <div class="ter-impact-num">Miles</div>
+                    <div class="ter-impact-lbl">Jóvenes con Oportunidades</div>
+                </div>
+                <div>
+                    <div class="ter-impact-num">100%</div>
+                    <div class="ter-impact-lbl">Inversión Privada</div>
+                </div>
+            </div>
+
+            <p class="ter-impact-conclusion">Un ecosistema que conecta deporte, territorio y desarrollo económico.</p>
+        </div>
+
+    </section>
+
+    <section class="sec-prensa">
+        <img src="https://images.unsplash.com/photo-1518605368461-1e1252281a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Fondo Estadio" class="pre-bg">
+        <div class="pre-overlay"></div>
+
+        <div class="pre-header">
+            <div class="pre-logo">IFA</div>
+            <h2 class="pre-title">Acreditaciones Institucionales 2026</h2>
+        </div>
+
+        <div class="pre-grid">
+            <div class="pre-video">
+                <h4 class="pre-video-title">Guía de Registro</h4>
+                <p class="pre-video-text">Para poder acceder y registrarse debes entrar al sitio oficial.</p>
+                <div class="pre-play-btn"></div>
+            </div>
+
+            <div class="pre-info">
+                <p class="pre-info-text">Las acreditaciones otorgadas en 2025, no serán válidas para 2026. Por eso, si usted está interesado(a) en cubrir las competencias este año deberá actualizar sus datos, o si es un usuario nuevo, deberá realizar el registro.</p>
+
+                <div class="pre-actions">
+                    <a href="#" class="pre-btn">Acceso</a>
+                    <a href="#" class="pre-btn pre-btn--solid">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+:root {
+  /* =========================================
+     1. COLORES (Nombres semánticos)
+  ========================================= */
+  /* Fondos y Superficies */
+  --bg-primary: #ffffff; /* Fondo principal */
+  --bg-secondary: #f5f5f5; /* Fondo secundario / tarjetas */
+  --bg-inverse: #050505; /* Fondo oscuro (ej. Footer) */
+
+  /* Textos */
+  --text-primary: #111111; /* Texto principal (Cuerpo) */
+  --text-secondary: #888888; /* Texto secundario / muted */
+  --text-inverse: #ffffff; /* Texto sobre fondos oscuros */
+
+  /* Acentos / Marca */
+  --color-accent: #ff5a00; /* Naranja institucional */
+  --color-brand: #d4af37; /* Dorado institucional */
+
+  /* UI */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color-inverse: rgba(255, 255, 255, 0.1);
+
+  /* =========================================
+     2. TIPOGRAFÍAS
+  ========================================= */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* =========================================
+     3. TAMAÑOS DE TEXTO (Escala T-Shirt)
+  ========================================= */
+  /* Simplificado para adaptarse a cualquier pantalla */
+  --text-sm: 0.875rem; /* Notas, etiquetas */
+  --text-base: 1rem; /* Texto de párrafo estándar */
+  --text-md: 1.125rem; /* Subtítulos pequeños */
+  --text-lg: 1.5rem; /* Títulos de sección (H3) */
+  --text-xl: 2.25rem; /* Títulos principales (H2) */
+  --text-xxl: 1rem; /* Títulos hero (H1) */
+
+  /* =========================================
+     4. ESPACIADOS RESPONSIVES (Sistema 8px)
+  ========================================= */
+  --space-xs: 0.25rem; /* 4px - Separación mínima */
+  --space-sm: 0.5rem; /* 8px - Elementos internos */
+  --space-md: 1rem; /* 16px - Padding estándar */
+  --space-lg: 2rem; /* 32px - Separación de secciones pequeñas */
+  --space-xl: 4rem; /* 64px - Separación de bloques */
+  --space-xxl: 6rem; /* 96px - Espaciado de grandes secciones */
+
+  /* =========================================
+     5. ESTRUCTURA Y UI
+  ========================================= */
+  --container-width: 90%; /* Margen de seguridad en móviles */
+  --container-max: 75rem; /* 1200px - Tope en PC */
+
+  --radius-base: 0.5rem; /* Bordes redondeados estándar */
+  --radius-pill: 50rem; /* Botones tipo píldora */
+  --border-base: 0.0625rem; /* Borde de 1px */
+
+  --transition-base: all 0.3s ease;
+}

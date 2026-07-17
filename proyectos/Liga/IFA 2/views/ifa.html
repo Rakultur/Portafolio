@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Franquicias - I.F.A.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* =========================================
+               1. COLORES (Nombres semánticos)
+            ========================================= */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-inverse: #050505;
+            --text-primary: #111111;
+            --text-secondary: #888888;
+            --text-inverse: #ffffff;
+            --color-accent: #ff5a00;
+            --color-brand: #d4af37;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --border-color-inverse: rgba(255, 255, 255, 0.1);
+
+            /* =========================================
+               2. TIPOGRAFÍAS
+            ========================================= */
+            --font-heading: "Montserrat", sans-serif;
+            --font-body: "Inter", sans-serif;
+
+            /* =========================================
+               3. TAMAÑOS DE TEXTO
+            ========================================= */
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.5rem;
+            --text-xl: 2.25rem;
+            --text-xxl: 3rem;
+
+            /* =========================================
+               4. ESPACIADOS RESPONSIVES
+            ========================================= */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 4rem;
+            --space-xxl: 6rem;
+
+            /* =========================================
+               5. ESTRUCTURA Y UI
+            ========================================= */
+            --container-width: 90%;
+            --container-max: 75rem;
+            --radius-base: 0.5rem;
+            --radius-pill: 50rem;
+            --border-base: 0.0625rem;
+            --transition-base: all 0.3s ease;
+        }
+
+        /* Reseteo básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-inverse);
+            font-family: var(--font-body);
+            color: var(--text-inverse);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* =========================================
+           Contenedor Principal
+        ========================================= */
+        .modulo-franquicias {
+            width: 100%;
+        }
+
+        .modulo-franquicias__container {
+            width: var(--container-width);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           Botones Globales
+        ========================================= */
+        .modulo-franquicias__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.0625rem;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-base);
+            border: var(--border-base) solid transparent;
+        }
+
+        .modulo-franquicias__btn--accent {
+            background-color: var(--color-accent);
+            color: var(--text-inverse);
+            /* Hex fallback para sombra de acento - Debería ser var global --shadow-accent */
+            box-shadow: 0 var(--space-sm) var(--space-md) rgba(255, 90, 0, 0.3);
+        }
+
+        .modulo-franquicias__btn--accent:hover {
+            background-color: var(--text-inverse);
+            color: var(--bg-inverse);
+            box-shadow: none;
+        }
+
+        .modulo-franquicias__btn--dark {
+            background-color: var(--bg-inverse);
+            color: var(--text-inverse);
+        }
+
+        .modulo-franquicias__btn--dark:hover {
+            background-color: var(--color-accent);
+            color: var(--text-inverse);
+        }
+
+        /* =========================================
+           Sección: Hero Franquicias
+        ========================================= */
+        .modulo-franquicias__hero {
+            position: relative;
+            padding: var(--space-xxl) 0;
+            background-color: var(--bg-inverse);
+            text-align: center;
+            overflow: hidden;
+            border-bottom: var(--border-base) solid var(--border-color-inverse);
+        }
+
+        .modulo-franquicias__hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            mix-blend-mode: luminosity;
+            z-index: 0;
+        }
+
+        .modulo-franquicias__hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Hex fallbacks - Debería ser gradiente definido globalmente */
+            background: linear-gradient(to bottom, #050505, rgba(5, 5, 5, 0.8), #050505);
+            z-index: 1;
+        }
+
+        .modulo-franquicias__hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+
+        .modulo-franquicias__hero-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            color: var(--text-inverse);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__hero-title {
+                font-size: var(--text-xxl);
+                /* Añadiendo tamaño extra para pantallas grandes basado en el requerimiento original (fs-5xl) */
+                font-size: 3.5rem; 
+            }
+        }
+
+        .modulo-franquicias__hero-desc {
+            font-size: var(--text-md);
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           Sección: Hero Beneficios (Grid)
+        ========================================= */
+        .modulo-franquicias__beneficios-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            text-align: left;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__beneficios-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .modulo-franquicias__beneficio-card {
+            /* Hex fallback - Fondo semi-transparente - Debería ser var global */
+            background-color: rgba(255, 255, 255, 0.03);
+            border: var(--border-base) solid var(--border-color-inverse);
+            padding: var(--space-lg);
+            border-radius: var(--radius-base);
+            backdrop-filter: blur(0.5rem);
+        }
+
+        .modulo-franquicias__beneficio-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--color-accent);
+            margin-bottom: var(--space-md);
+        }
+        
+        /* CSS Mask para SVG */
+        .modulo-franquicias__beneficio-icon--shield {
+            background-color: currentColor;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+
+        .modulo-franquicias__beneficio-icon--chart {
+            background-color: currentColor;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+
+        .modulo-franquicias__beneficio-icon--briefcase {
+            background-color: currentColor;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6'/%3E%3C/svg%3E") no-repeat center / contain;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+
+        .modulo-franquicias__beneficio-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--text-inverse);
+        }
+
+        .modulo-franquicias__beneficio-desc {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           Sección: Opciones de Inversión
+        ========================================= */
+        .modulo-franquicias__inversion {
+            padding: var(--space-xxl) 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .modulo-franquicias__inversion-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .modulo-franquicias__inversion-eyebrow {
+            display: block;
+            color: var(--color-accent);
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.125rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .modulo-franquicias__inversion-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__inversion-title {
+                font-size: var(--text-xxl);
+            }
+        }
+
+        .modulo-franquicias__inversion-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 64rem) {
+            .modulo-franquicias__inversion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* =========================================
+           Tarjetas de Inversión
+        ========================================= */
+        .modulo-franquicias__card {
+            background-color: var(--bg-primary);
+            border: var(--border-base) solid var(--border-color);
+            border-radius: var(--radius-base);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            /* Hex fallback sombra ligera - Debería ser var global */
+            box-shadow: 0 var(--space-sm) var(--space-md) rgba(0, 0, 0, 0.03);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__card {
+                padding: var(--space-xl) var(--space-lg);
+            }
+        }
+
+        .modulo-franquicias__card-badge {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 0.25rem var(--space-md);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.0625rem;
+            margin-bottom: var(--space-lg);
+            border-radius: var(--radius-base);
+        }
+
+        .modulo-franquicias__card-badge--dorado {
+            background-color: var(--color-brand);
+            color: var(--text-primary);
+        }
+
+        .modulo-franquicias__card-badge--plata {
+            /* Hex fallback color plata - Debería ser var global */
+            background-color: #e0e0e0;
+            color: var(--text-primary);
+        }
+
+        .modulo-franquicias__card-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__card-title {
+                font-size: var(--text-xl);
+            }
+        }
+
+        .modulo-franquicias__card-intro {
+            font-weight: 700;
+            font-size: var(--text-base);
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .modulo-franquicias__card-text {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           Lista de Beneficios en Tarjeta
+        ========================================= */
+        .modulo-franquicias__card-list {
+            margin-top: auto;
+            margin-bottom: var(--space-lg);
+            padding-top: var(--space-lg);
+            border-top: var(--border-base) solid var(--border-color);
+        }
+
+        .modulo-franquicias__card-list-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            letter-spacing: 0.0625rem;
+            font-weight: 600;
+        }
+
+        .modulo-franquicias__card-item {
+            display: flex;
+            align-items: flex-start;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
+        }
+
+        .modulo-franquicias__card-bullet {
+            display: inline-block;
+            width: var(--space-sm);
+            height: var(--space-sm);
+            background-color: var(--color-accent);
+            border-radius: var(--radius-pill);
+            margin-top: 0.25rem;
+            margin-right: var(--space-sm);
+            flex-shrink: 0;
+        }
+
+        .modulo-franquicias__card-item-strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* =========================================
+           Sección: Proceso de Adquisición
+        ========================================= */
+        .modulo-franquicias__proceso {
+            padding: var(--space-xxl) 0;
+            background-color: var(--bg-primary);
+        }
+
+        .modulo-franquicias__proceso-header {
+            text-align: center;
+            margin-bottom: var(--space-xxl);
+        }
+
+        .modulo-franquicias__proceso-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.05rem;
+            color: var(--text-primary);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__proceso-title {
+                font-size: var(--text-xxl);
+            }
+        }
+
+        .modulo-franquicias__proceso-steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            position: relative;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__proceso-steps {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0;
+            }
+        }
+
+        /* Línea conectora base (móvil) vertical */
+        .modulo-franquicias__proceso-line {
+            position: absolute;
+            top: var(--space-lg);
+            left: var(--space-lg);
+            /* Hex fallback gris claro - Debería ser var global */
+            background-color: #f0f0f0; 
+            z-index: 0;
+            width: 0.125rem;
+            height: calc(100% - var(--space-xl));
+            transform: translateX(-50%);
+        }
+
+        @media (min-width: 48rem) {
+            /* Línea conectora (desktop) horizontal */
+            .modulo-franquicias__proceso-line {
+                top: var(--space-lg);
+                left: var(--space-lg);
+                width: calc(100% - var(--space-xl));
+                height: 0.125rem;
+                transform: translateY(-50%);
+            }
+        }
+
+        .modulo-franquicias__step {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            text-align: left;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 48rem) {
+            .modulo-franquicias__step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: var(--space-md);
+                width: 100%;
+                padding: 0 var(--space-sm);
+            }
+        }
+
+        .modulo-franquicias__step-circle {
+            width: 4rem;
+            height: 4rem;
+            border-radius: var(--radius-pill);
+            background-color: var(--bg-primary);
+            /* Hex fallback - Debería ser var global --border-light */
+            border: 0.125rem solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 800;
+            /* Hex fallback - Debería ser var global --text-muted-light */
+            color: #cccccc;
+            flex-shrink: 0;
+            transition: var(--transition-base);
+        }
+
+        .modulo-franquicias__step:hover .modulo-franquicias__step-circle {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .modulo-franquicias__step--final .modulo-franquicias__step-circle {
+            background-color: var(--bg-inverse);
+            border-color: var(--bg-inverse);
+            color: var(--text-inverse);
+            /* Hex fallback sombra - Debería ser var global */
+            box-shadow: 0 var(--space-sm) var(--space-lg) rgba(0, 0, 0, 0.2);
+        }
+
+        .modulo-franquicias__step-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 0.125rem;
+        }
+
+        .modulo-franquicias__step-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="modulo-franquicias">
+
+        <!-- Hero Franquicias -->
+        <div class="modulo-franquicias__hero">
+            <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Estadio de fútbol oscuro" class="modulo-franquicias__hero-bg">
+            <div class="modulo-franquicias__hero-overlay"></div>
+
+            <div class="modulo-franquicias__container modulo-franquicias__hero-content">
+                <h1 class="modulo-franquicias__hero-title">Conviértase en propietario de una franquicia oficial.</h1>
+                <p class="modulo-franquicias__hero-desc">Una oportunidad de inversión única. Adquiera derechos de exclusividad territorial, respaldo institucional total y participación directa en los ingresos comerciales y de transmisión.</p>
+
+                <!-- Grid de Beneficios en Hero -->
+                <div class="modulo-franquicias__beneficios-grid">
+                    <div class="modulo-franquicias__beneficio-card">
+                        <div class="modulo-franquicias__beneficio-icon modulo-franquicias__beneficio-icon--shield"></div>
+                        <h3 class="modulo-franquicias__beneficio-title">Exclusividad Territorial</h3>
+                        <p class="modulo-franquicias__beneficio-desc">Protección de mercado en su ciudad o región asignada.</p>
+                    </div>
+                    <div class="modulo-franquicias__beneficio-card">
+                        <div class="modulo-franquicias__beneficio-icon modulo-franquicias__beneficio-icon--chart"></div>
+                        <h3 class="modulo-franquicias__beneficio-title">Modelo Sostenible</h3>
+                        <p class="modulo-franquicias__beneficio-desc">Topes salariales y fair play financiero auditado por I.F.A.</p>
+                    </div>
+                    <div class="modulo-franquicias__beneficio-card">
+                        <div class="modulo-franquicias__beneficio-icon modulo-franquicias__beneficio-icon--briefcase"></div>
+                        <h3 class="modulo-franquicias__beneficio-title">Derechos Comerciales</h3>
+                        <p class="modulo-franquicias__beneficio-desc">Repartición equitativa de ingresos por TV y sponsors globales.</p>
+                    </div>
+                </div>
+
+                <a href="#contacto" class="modulo-franquicias__btn modulo-franquicias__btn--accent">Aplicar Ahora</a>
+            </div>
+        </div>
+
+        <!-- Opciones de Inversión -->
+        <div class="modulo-franquicias__inversion">
+            <div class="modulo-franquicias__container">
+                <div class="modulo-franquicias__inversion-header">
+                    <span class="modulo-franquicias__inversion-eyebrow">Invierta en el futuro del fútbol colombiano</span>
+                    <h2 class="modulo-franquicias__inversion-title">Adquiera una Franquicia</h2>
+                </div>
+
+                <div class="modulo-franquicias__inversion-grid">
+                    
+                    <!-- Tarjeta: Liga El Dorado -->
+                    <div class="modulo-franquicias__card">
+                        <div class="modulo-franquicias__card-badge modulo-franquicias__card-badge--dorado">Liga El Dorado</div>
+                        <h3 class="modulo-franquicias__card-title">Liga El Dorado</h3>
+                        <p class="modulo-franquicias__card-intro">Invierta en la máxima categoría del nuevo fútbol colombiano.</p>
+                        <p class="modulo-franquicias__card-text">Conviértase en propietario de una de las franquicias de la máxima división de la Liga El Dorado y haga parte de un proyecto construido para garantizar estabilidad deportiva, financiera e institucional.</p>
+                        <p class="modulo-franquicias__card-text">Con el fin de consolidar clubes sólidos y sostenibles, la Liga El Dorado no tendrá ascensos ni descensos hasta la temporada 2031, permitiendo que los propietarios desarrollen su estructura deportiva, fortalezcan sus marcas y consoliden sus operaciones con visión de largo plazo.</p>
+
+                        <div class="modulo-franquicias__card-list">
+                            <div class="modulo-franquicias__card-list-title">Beneficios</div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Estructura Legal independiente.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Exclusividad territorial.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Estabilidad deportiva.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Participación en ingresos comerciales y audiovisuales.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Respaldo institucional de la IFA.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                <span class="modulo-franquicias__card-item-strong">Cupos limitados: Disponibles 12 de 20 Cupos.</span>
+                            </div>
+                        </div>
+                        <a href="#contacto" class="modulo-franquicias__btn modulo-franquicias__btn--dark">Solicitar Información</a>
+                    </div>
+
+                    <!-- Tarjeta: División Plata -->
+                    <div class="modulo-franquicias__card">
+                        <div class="modulo-franquicias__card-badge modulo-franquicias__card-badge--plata">División Plata</div>
+                        <h3 class="modulo-franquicias__card-title">División Plata</h3>
+                        <p class="modulo-franquicias__card-intro">El punto de partida para construir el próximo gran club de Colombia.</p>
+                        <p class="modulo-franquicias__card-text">La División Plata iniciará en 2028 y representa una oportunidad para empresarios e inversionistas que desean ingresar al ecosistema profesional del fútbol con una inversión más accesible y un alto potencial de crecimiento.</p>
+                        <p class="modulo-franquicias__card-text">Cada franquicia contará con el respaldo organizacional de la IFA, una estructura deportiva profesional y un camino claro hacia la máxima categoría mediante el sistema de ascensos y descensos que comenzará a operar en 2031.</p>
+
+                        <div class="modulo-franquicias__card-list">
+                            <div class="modulo-franquicias__card-list-title">Beneficios</div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Estructura Legal independiente.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Inicio oficial en 2028.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Inversión de acceso más competitiva.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Modelo de gestión profesional.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                Proyección hacia la Liga El Dorado.
+                            </div>
+                            <div class="modulo-franquicias__card-item">
+                                <span class="modulo-franquicias__card-bullet"></span>
+                                <span class="modulo-franquicias__card-item-strong">Solo 8 franquicias disponibles.</span>
+                            </div>
+                        </div>
+                        <a href="#contacto" class="modulo-franquicias__btn modulo-franquicias__btn--dark">Solicitar Información</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceso de Adquisición -->
+        <div class="modulo-franquicias__proceso">
+            <div class="modulo-franquicias__container">
+                <div class="modulo-franquicias__proceso-header">
+                    <h2 class="modulo-franquicias__proceso-title">Proceso de Adquisición</h2>
+                </div>
+
+                <div class="modulo-franquicias__proceso-steps">
+                    <!-- Línea Conectora -->
+                    <div class="modulo-franquicias__proceso-line"></div>
+
+                    <div class="modulo-franquicias__step">
+                        <div class="modulo-franquicias__step-circle">1</div>
+                        <div>
+                            <div class="modulo-franquicias__step-title">Solicitud</div>
+                            <div class="modulo-franquicias__step-desc">Envío de carta de intención.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modulo-franquicias__step">
+                        <div class="modulo-franquicias__step-circle">2</div>
+                        <div>
+                            <div class="modulo-franquicias__step-title">Evaluación</div>
+                            <div class="modulo-franquicias__step-desc">Due diligence financiero.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modulo-franquicias__step">
+                        <div class="modulo-franquicias__step-circle">3</div>
+                        <div>
+                            <div class="modulo-franquicias__step-title">Proyecto</div>
+                            <div class="modulo-franquicias__step-desc">Presentación deportiva.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modulo-franquicias__step">
+                        <div class="modulo-franquicias__step-circle">4</div>
+                        <div>
+                            <div class="modulo-franquicias__step-title">Revisión</div>
+                            <div class="modulo-franquicias__step-desc">Aprobación jurídica final.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modulo-franquicias__step modulo-franquicias__step--final">
+                        <div class="modulo-franquicias__step-circle">F</div>
+                        <div>
+                            <div class="modulo-franquicias__step-title">Firma</div>
+                            <div class="modulo-franquicias__step-desc">Inicio de operaciones.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
