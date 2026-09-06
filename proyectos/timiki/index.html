@@ -1,0 +1,2489 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TIKIMI - Hecho con Amor</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1d1b19",
+              "outline-variant": "#d1c5af",
+              "secondary-container": "#f3dbce",
+              "on-tertiary-fixed-variant": "#584400",
+              "surface-variant": "#e7e1dd",
+              "primary-fixed": "#ffdf98",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ebc24d",
+              "on-primary-fixed-variant": "#5a4300",
+              "surface-container-highest": "#e7e1dd",
+              error: "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#ffe08f",
+              "surface-dim": "#dfd9d5",
+              "secondary-fixed-dim": "#d9c2b5",
+              "on-secondary-container": "#715f55",
+              primary: "#775a00",
+              "on-primary-fixed": "#251a00",
+              background: "#fef8f4",
+              "primary-container": "#c59b27",
+              "tertiary-container": "#c29c29",
+              "inverse-on-surface": "#f6f0ec",
+              "on-error": "#ffffff",
+              "surface-container-high": "#ede7e3",
+              tertiary: "#755b00",
+              "on-tertiary-container": "#463500",
+              "surface-tint": "#775a00",
+              "on-primary-container": "#473500",
+              surface: "#fef8f4",
+              outline: "#807663",
+              "on-secondary-fixed": "#251911",
+              "inverse-surface": "#32302e",
+              "inverse-primary": "#eec14b",
+              "surface-bright": "#fef8f4",
+              "surface-container-low": "#f8f2ee",
+              "secondary-fixed": "#f6ded1",
+              "on-tertiary-fixed": "#241a00",
+              secondary: "#6c5b51",
+              "on-background": "#1d1b19",
+              "on-surface-variant": "#4e4635",
+              "surface-container": "#f3ede9",
+              "primary-fixed-dim": "#eec14b",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#54433a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-desktop": "1.75rem",
+              "spacing-lg": "1.5rem",
+              "spacing-3xl": "4.5rem",
+              "spacing-2xs": "0.25rem",
+              "spacing-2xl": "3rem",
+              "spacing-xl": "2rem",
+              "spacing-md": "1rem",
+              "spacing-xs": "0.5rem",
+              "gutter-mobile": "1rem",
+              "spacing-3xs": "0.125rem",
+              "spacing-sm": "0.75rem",
+              "container-max": "80rem",
+            },
+            fontFamily: {
+              "title-md": ["Plus Jakarta Sans"],
+              "headline-md": ["Playfair Display"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Playfair Display"],
+              "title-lg": ["Plus Jakarta Sans"],
+              "display-lg-mobile": ["Playfair Display"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "display-lg": ["Playfair Display"],
+              "headline-sm": ["Playfair Display"],
+              "headline-lg-mobile": ["Playfair Display"],
+            },
+            fontSize: {
+              "title-md": [
+                "16px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "headline-md": [
+                "26px",
+                { lineHeight: "34px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "15px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "0.005em",
+                  fontWeight: "400",
+                },
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "38px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "title-lg": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": [
+                "17px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "display-lg": [
+                "52px",
+                {
+                  lineHeight: "60px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased relative selection:bg-secondary-container selection:text-on-secondary-container"
+  >
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(43,30,22,0.06)]"
+    >
+      <div
+        class="h-20 max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex items-center justify-between"
+      >
+        <a
+          class="flex items-center gap-spacing-sm group focus:outline-none"
+          href="#inicio"
+          ><div
+            class="p-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(43,30,22,0.08)]"
+          >
+            <img
+              alt="TIKIMI Logo"
+              class="w-11 h-11 rounded-lg object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1WfHJQ01rtM-h2E9IMZJB_lce4WUP7qk_Kf6MnxQAxUxaQG3YlvdTBnx-LG3HSYJthMq3n8WmejOB_iU2qH7Hh_xIAEiG4fGA55bilpl4JPzpwWHGLII8UmnnkPYxTmK-sfyCszXlYom0jjLVxzkc1pdOjsrNzqRuZooJK00fdiWXXUzS52uwkltBOSo7N_fbshA6aLMFI4zT-taAPLTfVHixGmEMasl7GBr-jFrkTOYMpHU8Cr-N3RYiq1uuz77eZ_DqPg938CfBw"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold leading-none"
+              >TIKIMI</span
+            ><span
+              class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold mt-spacing-3xs"
+              >hecho con amor</span
+            >
+          </div></a
+        >
+        <nav
+          class="hidden lg:flex items-center gap-spacing-xl"
+          data-active-classes="text-primary font-bold"
+        >
+          <a
+            aria-current="page"
+            class="transition-colors tracking-wide text-primary font-bold"
+            data-path="home"
+            href="#inicio"
+            >INICIO</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wide"
+            data-path="productos"
+            href="#productos"
+            >PRODUCTOS</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wide"
+            data-path="servicios"
+            href="#servicios"
+            >SERVICIOS</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wide"
+            data-path="nosotros"
+            href="#nosotros"
+            >NOSOTROS</a
+          ><a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wide"
+            data-path="contacto"
+            href="#contacto"
+            >CONTACTO</a
+          >
+        </nav>
+        <div class="hidden md:flex items-center gap-spacing-md">
+          <a
+            class="inline-flex items-center gap-spacing-xs px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_4px_14px_rgba(197,155,39,0.35)] hover:shadow-[0_6px_20px_rgba(197,155,39,0.5)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+            href="https://wa.me/573196332217"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><span class="material-symbols-outlined text-[20px]">chat</span
+            ><span>Habla con nosotros</span></a
+          ><img
+            alt="Profile"
+            class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(43,30,22,0.15)]"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1WfHJQ01rtM-h2E9IMZJB_lce4WUP7qk_Kf6MnxQAxUxaQG3YlvdTBnx-LG3HSYJthMq3n8WmejOB_iU2qH7Hh_xIAEiG4fGA55bilpl4JPzpwWHGLII8UmnnkPYxTmK-sfyCszXlYom0jjLVxzkc1pdOjsrNzqRuZooJK00fdiWXXUzS52uwkltBOSo7N_fbshA6aLMFI4zT-taAPLTfVHixGmEMasl7GBr-jFrkTOYMpHU8Cr-N3RYiq1uuz77eZ_DqPg938CfBw"
+          />
+        </div>
+        <button
+          aria-label="Abrir menú"
+          class="lg:hidden flex items-center justify-center p-spacing-xs rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors"
+          id="tikimi-mobile-toggle"
+        >
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+    </header>
+    <div class="fixed inset-0 z-50 hidden" id="tikimi-drawer">
+      <div
+        class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity"
+        id="tikimi-backdrop"
+      ></div>
+      <div
+        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-surface-container-lowest shadow-2xl p-spacing-lg flex flex-col justify-between overflow-y-auto"
+      >
+        <div class="flex flex-col">
+          <div class="flex items-center justify-between pb-spacing-md">
+            <div class="flex items-center gap-spacing-xs">
+              <img
+                alt="TIKIMI Logo Mobile"
+                class="w-9 h-9 rounded-lg object-cover"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WfHJQ01rtM-h2E9IMZJB_lce4WUP7qk_Kf6MnxQAxUxaQG3YlvdTBnx-LG3HSYJthMq3n8WmejOB_iU2qH7Hh_xIAEiG4fGA55bilpl4JPzpwWHGLII8UmnnkPYxTmK-sfyCszXlYom0jjLVxzkc1pdOjsrNzqRuZooJK00fdiWXXUzS52uwkltBOSo7N_fbshA6aLMFI4zT-taAPLTfVHixGmEMasl7GBr-jFrkTOYMpHU8Cr-N3RYiq1uuz77eZ_DqPg938CfBw"
+              /><span
+                class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                >TIKIMI</span
+              >
+            </div>
+            <button
+              aria-label="Cerrar menú"
+              class="p-spacing-xs text-on-surface-variant hover:text-on-surface"
+              id="tikimi-drawer-close"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <div class="flex flex-col gap-spacing-xs mt-spacing-md">
+            <a
+              class="tikimi-mobile-link px-spacing-md py-spacing-sm rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-primary transition-colors"
+              href="#inicio"
+              >INICIO</a
+            ><a
+              class="tikimi-mobile-link px-spacing-md py-spacing-sm rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-primary transition-colors"
+              href="#productos"
+              >PRODUCTOS</a
+            ><a
+              class="tikimi-mobile-link px-spacing-md py-spacing-sm rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-primary transition-colors"
+              href="#servicios"
+              >SERVICIOS</a
+            ><a
+              class="tikimi-mobile-link px-spacing-md py-spacing-sm rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-primary transition-colors"
+              href="#nosotros"
+              >NOSOTROS</a
+            ><a
+              class="tikimi-mobile-link px-spacing-md py-spacing-sm rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-primary transition-colors"
+              href="#contacto"
+              >CONTACTO</a
+            >
+          </div>
+        </div>
+        <div class="pt-spacing-lg flex flex-col gap-spacing-md">
+          <a
+            class="w-full py-spacing-sm flex items-center justify-center gap-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-md"
+            href="https://wa.me/573196332217"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><span class="material-symbols-outlined text-[20px]">chat</span
+            ><span>Habla con nosotros</span></a
+          >
+          <div
+            class="text-center text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase"
+          >
+            Boutique &amp; Cuidado Canino
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="w-full pt-20 bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- ======================== 1. HERO SECTION (#inicio) ======================== -->
+        <section
+          class="relative w-full overflow-hidden bg-surface pt-spacing-xl pb-spacing-3xl"
+          id="inicio"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-xl items-center"
+            >
+              <!-- Content Column -->
+              <div
+                class="lg:col-span-7 flex flex-col items-start gap-spacing-md z-10"
+              >
+                <!-- Badge Artesanal con Huellitas y Toque Dorado -->
+                <div
+                  class="inline-flex items-center gap-spacing-xs px-spacing-md py-spacing-2xs rounded-full bg-secondary-container/70 shadow-sm"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >pets</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm tracking-widest text-on-secondary-container uppercase"
+                    >✦ TIKIMI · HECHO CON AMOR ✦</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >pets</span
+                  >
+                </div>
+                <!-- Titular Principal -->
+                <h1
+                  class="font-display-lg text-display-lg text-on-surface leading-[1.08] tracking-tight"
+                >
+                  Todo lo que tu mascota necesita,
+                  <span class="italic font-headline-lg text-primary font-normal"
+                    >en un solo lugar.</span
+                  >
+                </h1>
+                <!-- Subtítulo Enriquecido -->
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl"
+                >
+                  Alimentos, accesorios, higiene, snacks y servicios pensados
+                  para consentir y brindar bienestar absoluto a tu mejor amigo.
+                </p>
+                <!-- Slogan Secundario Destacado -->
+                <div class="flex items-center gap-spacing-sm py-spacing-xs">
+                  <span
+                    class="w-8 h-[2px] bg-primary-container rounded-full"
+                  ></span>
+                  <span
+                    class="font-headline-md text-headline-sm italic text-primary"
+                    >hecho con amor</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[20px] text-primary-container"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >pets</span
+                  >
+                </div>
+                <!-- Botones de Acción Principal -->
+                <div
+                  class="flex flex-wrap items-center gap-spacing-md pt-spacing-xs"
+                >
+                  <a
+                    class="inline-flex items-center gap-spacing-xs px-spacing-xl py-spacing-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-md hover:bg-tertiary-fixed-dim hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
+                    href="#productos"
+                  >
+                    <span>Ver productos</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >arrow_forward</span
+                    >
+                  </a>
+                  <a
+                    class="inline-flex items-center gap-spacing-xs px-spacing-xl py-spacing-sm rounded-full bg-surface-container text-secondary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-all"
+                    href="#servicios"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >spa</span
+                    >
+                    <span>Conoce nuestros servicios</span>
+                  </a>
+                </div>
+                <!-- Mini Insignias de Confianza -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-3 gap-spacing-sm w-full pt-spacing-lg"
+                >
+                  <div
+                    class="flex items-center gap-spacing-xs p-spacing-sm rounded-xl bg-surface-container-lowest shadow-sm"
+                  >
+                    <div
+                      class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >favorite</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface font-semibold leading-snug"
+                      >+ Cuidado y dedicación</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-spacing-xs p-spacing-sm rounded-xl bg-surface-container-lowest shadow-sm"
+                  >
+                    <div
+                      class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >verified</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface font-semibold leading-snug"
+                      >Ingredientes y marcas seleccionadas</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-spacing-xs p-spacing-sm rounded-xl bg-surface-container-lowest shadow-sm"
+                  >
+                    <div
+                      class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >support_agent</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface font-semibold leading-snug"
+                      >Atención cercana y personalizada</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Visual Hero Column con Fotografía https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA -->
+              <div class="lg:col-span-5 relative flex justify-center">
+                <!-- Aura ambiental suave -->
+                <div
+                  class="absolute -inset-4 bg-gradient-to-tr from-primary-fixed/30 to-secondary-container/50 rounded-3xl blur-2xl pointer-events-none"
+                ></div>
+                <!-- Marco con imagen y tarjeta flotante -->
+                <div
+                  class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-surface-container-lowest p-spacing-xs"
+                >
+                  <img
+                    alt="Perro y gato felices en boutique cálida TIKIMI"
+                    class="w-full h-[420px] md:h-[480px] object-cover rounded-xl"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA"
+                  />
+                  <!-- Etiqueta Flotante de Garantía -->
+                  <div
+                    class="absolute bottom-spacing-lg left-spacing-lg right-spacing-lg p-spacing-md rounded-xl bg-surface/90 backdrop-blur-md shadow-lg flex items-center justify-between"
+                  >
+                    <div class="flex items-center gap-spacing-sm">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >auto_awesome</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          class="font-title-md text-title-md text-on-surface"
+                        >
+                          Boutique &amp; Spa
+                        </div>
+                        <div
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          Experiencia artesanal exclusiva
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider px-spacing-sm py-1 bg-primary-fixed/60 rounded-full"
+                      >TIKIMI</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 2. CATEGORÍAS DE PRODUCTOS (#categorias) ======================== -->
+        <section
+          class="w-full bg-surface-container-low py-spacing-3xl relative"
+          id="categorias"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex flex-col gap-spacing-2xl"
+          >
+            <!-- Encabezado de Sección -->
+            <div
+              class="flex flex-col items-center text-center gap-spacing-xs max-w-2xl mx-auto"
+            >
+              <span
+                class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                >SELECCIÓN CON AMOR</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                Todo para consentirlo
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Encuentra lo que tu mascota necesita para estar feliz, saludable
+                y llena de energía.
+              </p>
+            </div>
+            <!-- Grid de 4 Categorías -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-spacing-lg"
+            >
+              <!-- Tarjeta 1: Alimento -->
+              <div
+                class="group flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div
+                  class="w-14 h-14 rounded-2xl bg-primary-fixed/40 text-primary flex items-center justify-center mb-spacing-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[30px]"
+                    >restaurant</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider mb-spacing-3xs"
+                  >Nutrición Especial</span
+                >
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                >
+                  ALIMENTO
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Alimentos de las mejores marcas para acompañar cada etapa de
+                  su vida con vitalidad y salud integral.
+                </p>
+                <a
+                  class="inline-flex items-center justify-between w-full pt-spacing-xs font-label-lg text-label-lg text-primary font-bold hover:text-on-surface transition-colors"
+                  href="#productos"
+                >
+                  <span>Ver productos</span>
+                  <span
+                    class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+              <!-- Tarjeta 2: Accesorios -->
+              <div
+                class="group flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div
+                  class="w-14 h-14 rounded-2xl bg-secondary-container/60 text-secondary flex items-center justify-center mb-spacing-md group-hover:bg-secondary group-hover:text-on-secondary transition-colors shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[30px]"
+                    >pets</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider mb-spacing-3xs"
+                  >Paseo &amp; Confort</span
+                >
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                >
+                  ACCESORIOS
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Todo lo que necesita para jugar, pasear y disfrutar cada día
+                  con diseño ergonómico y resistente.
+                </p>
+                <a
+                  class="inline-flex items-center justify-between w-full pt-spacing-xs font-label-lg text-label-lg text-primary font-bold hover:text-on-surface transition-colors"
+                  href="#productos"
+                >
+                  <span>Ver productos</span>
+                  <span
+                    class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+              <!-- Tarjeta 3: Higiene y Cuidado -->
+              <div
+                class="group flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div
+                  class="w-14 h-14 rounded-2xl bg-primary-fixed/40 text-primary flex items-center justify-center mb-spacing-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[30px]"
+                    >soap</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider mb-spacing-3xs"
+                  >Bienestar Dérmico</span
+                >
+                <h3
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                >
+                  HIGIENE Y CUIDADO
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Productos para mantener a tu mascota limpia, saludable y bien
+                  cuidada con fórmulas suaves e hidratantes.
+                </p>
+                <a
+                  class="inline-flex items-center justify-between w-full pt-spacing-xs font-label-lg text-label-lg text-primary font-bold hover:text-on-surface transition-colors"
+                  href="#productos"
+                >
+                  <span>Ver productos</span>
+                  <span
+                    class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+              <!-- Tarjeta 4: Snacks y Premios con Imagen https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg -->
+              <div
+                class="group flex flex-col rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="h-36 w-full overflow-hidden relative">
+                  <img
+                    alt="Snacks y premios artesanales para mascotas en TIKIMI"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                  ></div>
+                  <div
+                    class="absolute bottom-2 left-3 flex items-center gap-1 text-on-primary"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >cookie</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider font-bold"
+                      >100% Artesanal</span
+                    >
+                  </div>
+                </div>
+                <div class="p-spacing-md flex flex-col flex-1">
+                  <span
+                    class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider mb-spacing-3xs"
+                    >Consentidos</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                  >
+                    SNACKS Y PREMIOS
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-md flex-1"
+                  >
+                    Premios deliciosos para consentirlo y celebrar cada momento
+                    con recetas nutritivas e irresistibles.
+                  </p>
+                  <a
+                    class="inline-flex items-center justify-between w-full pt-spacing-xs font-label-lg text-label-lg text-primary font-bold hover:text-on-surface transition-colors"
+                    href="#productos"
+                  >
+                    <span>Ver productos</span>
+                    <span
+                      class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 3. PRODUCTOS DESTACADOS (#productos) ======================== -->
+        <section
+          class="w-full bg-surface py-spacing-3xl relative"
+          id="productos"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex flex-col gap-spacing-2xl"
+          >
+            <!-- Encabezado de Productos -->
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-spacing-md"
+            >
+              <div class="flex flex-col gap-spacing-xs max-w-2xl">
+                <span
+                  class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                  >CATÁLOGO BOUTIQUE</span
+                >
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                  Nuestros productos
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                  Selección especial para perros y gatos. Diseñado para
+                  conectarse próximamente con nuestro catálogo online.
+                </p>
+              </div>
+              <!-- Categorías de Filtro Demostrativo -->
+              <div class="flex flex-wrap items-center gap-spacing-xs">
+                <button
+                  class="px-spacing-md py-spacing-2xs rounded-full bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg shadow-sm"
+                >
+                  Todos
+                </button>
+                <button
+                  class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors"
+                >
+                  Perros
+                </button>
+                <button
+                  class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors"
+                >
+                  Gatos
+                </button>
+                <button
+                  class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors"
+                >
+                  Snacks
+                </button>
+              </div>
+            </div>
+            <!-- Grid de 6 Productos de Muestra -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-spacing-xl"
+            >
+              <!-- Producto 1 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase"
+                    >Perros</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Alimentos</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl bg-surface-container-low flex flex-col items-center justify-center p-spacing-md mb-spacing-md text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px] text-primary-container mb-spacing-xs"
+                    >nutrition</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Nutrición Premium Especializada</span
+                  >
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Alimento Premium Balanceado para Perro
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Nutrición completa con ingredientes naturales para vitalidad
+                  diaria, pelaje reluciente y digestión óptima.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >verified</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >Selección Vet</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Alimento%20Premium%20Balanceado%20para%20Perro"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+              <!-- Producto 2 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase"
+                    >Gatos</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Alimentos</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl bg-surface-container-low flex flex-col items-center justify-center p-spacing-md mb-spacing-md text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px] text-secondary mb-spacing-xs"
+                    >set_meal</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Cuidado Renal &amp; Pelaje</span
+                  >
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Concentrado Gourmet para Gatos Adultos
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Fórmula especial para cuidado renal y pelaje brillante con
+                  proteínas de alta digestibilidad.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >verified</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >Alta Palatabilidad</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Concentrado%20Gourmet%20para%20Gatos%20Adultos"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+              <!-- Producto 3 con Imagen https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase"
+                    >Snacks</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Hecho con Amor</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl overflow-hidden mb-spacing-md relative"
+                >
+                  <img
+                    alt="Snacks artesanales horneados TIKIMI"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg"
+                  />
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Snacks Artesanales Horneados
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Galletas nutritivas sin conservantes artificiales, preparadas
+                  con ingredientes frescos y seleccionados.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >workspace_premium</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >100% Casero</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Snacks%20Artesanales%20Horneados"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+              <!-- Producto 4 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase"
+                    >Cuidado</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Higiene</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl bg-surface-container-low flex flex-col items-center justify-center p-spacing-md mb-spacing-md text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px] text-primary mb-spacing-xs"
+                    >sanitizer</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Extractos Botánicos</span
+                  >
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Shampoo Hipoalergénico y Calmante
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Cuidado dérmico con extractos naturales y aroma suave para
+                  baños libres de irritación y estrés.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >spa</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >pH Balanceado</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Shampoo%20Hipoalerg%C3%A9nico%20y%20Calmante"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+              <!-- Producto 5 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase"
+                    >Accesorios</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Paseo Seguro</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl bg-surface-container-low flex flex-col items-center justify-center p-spacing-md mb-spacing-md text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px] text-primary-container mb-spacing-xs"
+                    >link</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Seguridad Reforzada</span
+                  >
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Arnés Ergonómico y Correa Reforzada
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Máxima comodidad y seguridad en cada paseo con materiales
+                  acolchados y herrajes de alta resistencia.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >shield</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >Confort Total</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Arn%C3%A9s%20Ergon%C3%B3mico%20y%20Correa%20Reforzada"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+              <!-- Producto 6 -->
+              <div
+                class="flex flex-col rounded-2xl bg-surface-container-lowest p-spacing-lg shadow-sm hover:shadow-lg transition-all relative"
+              >
+                <div class="flex items-center justify-between mb-spacing-sm">
+                  <span
+                    class="px-spacing-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase"
+                    >Accesorios</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold"
+                    >Juego &amp; Estimulación</span
+                  >
+                </div>
+                <div
+                  class="h-44 rounded-xl bg-surface-container-low flex flex-col items-center justify-center p-spacing-md mb-spacing-md text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px] text-secondary mb-spacing-xs"
+                    >sports_baseball</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Estimulación Positiva</span
+                  >
+                </div>
+                <h3
+                  class="font-title-lg text-title-lg text-on-surface font-bold mb-spacing-xs"
+                >
+                  Juguete Interactivo Mordedor
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-lg flex-1"
+                >
+                  Material resistente y seguro para horas de juego sano, reduce
+                  la ansiedad y fortalece encías.
+                </p>
+                <div class="pt-spacing-xs flex items-center justify-between">
+                  <div class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                      >mood</span
+                    >
+                    <span class="font-body-sm text-body-sm font-semibold"
+                      >No Tóxico</span
+                    >
+                  </div>
+                  <a
+                    class="px-spacing-lg py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20consultar%20sobre%20Juguete%20Interactivo%20Mordedor"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Nota Visible Clara -->
+            <div
+              class="flex items-center justify-center gap-spacing-xs p-spacing-md rounded-2xl bg-surface-container text-center shadow-sm"
+            >
+              <span class="material-symbols-outlined text-primary text-[20px]"
+                >info</span
+              >
+              <span class="font-body-md text-body-md text-on-surface-variant">
+                Mostrando catálogo de muestra. Consulta disponibilidad directa a
+                través de WhatsApp.
+              </span>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 4. SERVICIOS PARA SU BIENESTAR (#servicios) ======================== -->
+        <section
+          class="w-full bg-surface-container-low py-spacing-3xl relative"
+          id="servicios"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex flex-col gap-spacing-2xl"
+          >
+            <!-- Encabezado de Servicios -->
+            <div
+              class="flex flex-col items-center text-center gap-spacing-xs max-w-2xl mx-auto"
+            >
+              <span
+                class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                >SPA CANINO &amp; FELINO</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                SERVICIOS PARA SU BIENESTAR
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Porque cuidar de ellos también significa consentirlos.
+              </p>
+            </div>
+            <!-- Grid de 4 Servicios con imágenes correspondientes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-spacing-xl">
+              <!-- Servicio 1: BAÑO con https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ -->
+              <div
+                class="flex flex-col sm:flex-row rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                  <img
+                    alt="Baño profesional y relajante para mascotas en TIKIMI"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ"
+                  />
+                  <div
+                    class="absolute top-3 left-3 px-spacing-sm py-1 rounded-full bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-on-surface font-bold"
+                  >
+                    Esencial
+                  </div>
+                </div>
+                <div
+                  class="sm:w-1/2 p-spacing-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div
+                      class="flex items-center gap-spacing-xs text-primary mb-spacing-xs"
+                    >
+                      <span class="material-symbols-outlined text-[24px]"
+                        >bathtub</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm tracking-wider uppercase font-bold"
+                        >Limpieza Delicada</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                    >
+                      BAÑO
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-md"
+                    >
+                      Baño con productos especiales para cuidar su piel y
+                      pelaje, agua templada y secado suave sin estrés.
+                    </p>
+                  </div>
+                  <a
+                    class="inline-flex items-center justify-center gap-spacing-xs w-full py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20agendar%20un%20servicio%20para%20mi%20mascota:%20Baño"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >calendar_today</span
+                    >
+                    <span>Agendar servicio</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Servicio 2: PELUQUERÍA con https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg -->
+              <div
+                class="flex flex-col sm:flex-row rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                  <img
+                    alt="Peluquería canina con estilista profesional en TIKIMI"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg"
+                  />
+                  <div
+                    class="absolute top-3 left-3 px-spacing-sm py-1 rounded-full bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-on-surface font-bold"
+                  >
+                    Estilo
+                  </div>
+                </div>
+                <div
+                  class="sm:w-1/2 p-spacing-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div
+                      class="flex items-center gap-spacing-xs text-primary mb-spacing-xs"
+                    >
+                      <span class="material-symbols-outlined text-[24px]"
+                        >content_cut</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm tracking-wider uppercase font-bold"
+                        >Estilismo Canino</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                    >
+                      PELUQUERÍA
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-md"
+                    >
+                      Cortes de pelo, desenredado y estilos según su raza con
+                      herramientas de precisión y paciencia cariñosa.
+                    </p>
+                  </div>
+                  <a
+                    class="inline-flex items-center justify-center gap-spacing-xs w-full py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20agendar%20un%20servicio%20para%20mi%20mascota:%20Peluquería"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >calendar_today</span
+                    >
+                    <span>Agendar servicio</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Servicio 3: BAÑO PREMIUM con https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ -->
+              <div
+                class="flex flex-col sm:flex-row rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                  <img
+                    alt="Baño premium relajante con aromaterapia para mascotas en TIKIMI"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ"
+                  />
+                  <div
+                    class="absolute top-3 left-3 px-spacing-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold"
+                  >
+                    ✦ Exclusivo
+                  </div>
+                </div>
+                <div
+                  class="sm:w-1/2 p-spacing-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div
+                      class="flex items-center gap-spacing-xs text-primary mb-spacing-xs"
+                    >
+                      <span class="material-symbols-outlined text-[24px]"
+                        >spa</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm tracking-wider uppercase font-bold"
+                        >Tratamiento Spa</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                    >
+                      BAÑO PREMIUM
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-md"
+                    >
+                      Baños relajantes con aromas y cuidado especial,
+                      mascarillas hidratantes dérmicas y masajes calmantes.
+                    </p>
+                  </div>
+                  <a
+                    class="inline-flex items-center justify-center gap-spacing-xs w-full py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20agendar%20un%20servicio%20para%20mi%20mascota:%20Baño%20Premium"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >calendar_today</span
+                    >
+                    <span>Agendar servicio</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Servicio 4: PELUQUERÍA ESPECIALIZADA con https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg -->
+              <div
+                class="flex flex-col sm:flex-row rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                  <img
+                    alt="Peluquería especializada y acabados de alta costura canina en TIKIMI"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg"
+                  />
+                  <div
+                    class="absolute top-3 left-3 px-spacing-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold"
+                  >
+                    ✦ Alta Gama
+                  </div>
+                </div>
+                <div
+                  class="sm:w-1/2 p-spacing-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div
+                      class="flex items-center gap-spacing-xs text-primary mb-spacing-xs"
+                    >
+                      <span class="material-symbols-outlined text-[24px]"
+                        >auto_fix_high</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm tracking-wider uppercase font-bold"
+                        >Técnica Avanzada</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-spacing-xs"
+                    >
+                      PELUQUERÍA ESPECIALIZADA
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-spacing-md"
+                    >
+                      Acabados profesionales para que luzcan increíbles,
+                      perfilado minucioso de caritas, patas y mantos largos.
+                    </p>
+                  </div>
+                  <a
+                    class="inline-flex items-center justify-center gap-spacing-xs w-full py-spacing-xs rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-tertiary-fixed-dim transition-colors"
+                    href="https://wa.me/573196332217?text=Hola%20TIKIMI,%20quisiera%20agendar%20un%20servicio%20para%20mi%20mascota:%20Peluquería%20Especializada"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >calendar_today</span
+                    >
+                    <span>Agendar servicio</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 5. ¿POR QUÉ ELEGIRNOS? (#beneficios) ======================== -->
+        <section
+          class="w-full bg-surface py-spacing-3xl relative"
+          id="beneficios"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-2xl items-center"
+            >
+              <!-- Columna de Beneficios -->
+              <div class="lg:col-span-6 flex flex-col gap-spacing-xl">
+                <div class="flex flex-col gap-spacing-xs">
+                  <span
+                    class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                    >NUESTRO COMPROMISO</span
+                  >
+                  <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                    ¿Por qué elegirnos?
+                  </h2>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Cada decisión que tomamos en TIKIMI está inspirada en la
+                    ternura, el respeto y la devoción hacia tu compañero de
+                    cuatro patas.
+                  </p>
+                </div>
+                <!-- Lista de 4 Beneficios con Iconos de Huellitas -->
+                <div class="flex flex-col gap-spacing-md">
+                  <div
+                    class="flex items-start gap-spacing-md p-spacing-md rounded-xl bg-surface-container-low shadow-sm"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[22px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >pets</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-lg text-title-lg text-on-surface font-bold"
+                      >
+                        Productos de calidad garantizada
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Solo trabajamos con marcas y formulaciones que cumplen
+                        con los más rigurosos estándares de nutrición e
+                        inocuidad.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-start gap-spacing-md p-spacing-md rounded-xl bg-surface-container-low shadow-sm"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[22px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >pets</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-lg text-title-lg text-on-surface font-bold"
+                      >
+                        Atención personalizada
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Escuchamos las necesidades específicas de tu perro o
+                        gato para asesorarte de manera transparente y cercana.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-start gap-spacing-md p-spacing-md rounded-xl bg-surface-container-low shadow-sm"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[22px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >pets</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-lg text-title-lg text-on-surface font-bold"
+                      >
+                        Precios justos
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        La mejor relación entre excelencia artesanal, cuidado
+                        profesional y accesibilidad para toda la familia.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-start gap-spacing-md p-spacing-md rounded-xl bg-surface-container-low shadow-sm"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[22px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >pets</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-lg text-title-lg text-on-surface font-bold"
+                      >
+                        Amamos a las mascotas como tú
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        No es un simple oficio, es nuestra vocación genuina:
+                        tratamos a cada consentido como si fuera parte de
+                        nuestro hogar.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Columna de Imagen Emocional con https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA -->
+              <div class="lg:col-span-6 relative">
+                <div
+                  class="relative rounded-3xl overflow-hidden shadow-2xl bg-surface-container-lowest p-spacing-xs"
+                >
+                  <img
+                    alt="Ambiente cálido TIKIMI con mascotas felices y cuidadas"
+                    class="w-full h-[460px] object-cover rounded-2xl"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA"
+                  />
+                  <div
+                    class="absolute -bottom-6 -right-6 hidden sm:flex flex-col items-center justify-center p-spacing-lg rounded-2xl bg-surface-container-lowest text-on-surface shadow-2xl max-w-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[36px] text-primary-container mb-1"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >favorite</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary font-bold text-center leading-tight"
+                      >100% Amor</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant text-center"
+                      >en cada baño, cepillado y alimento</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 6. SOBRE LA MARCA (#nosotros) ======================== -->
+        <section
+          class="w-full bg-surface-container-low py-spacing-3xl relative"
+          id="nosotros"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex flex-col gap-spacing-2xl"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-2xl items-center"
+            >
+              <!-- Logotipo Destacado con marco dorado fino -->
+              <div
+                class="lg:col-span-5 flex flex-col items-center justify-center"
+              >
+                <div
+                  class="relative p-spacing-lg rounded-full bg-surface-container-lowest shadow-xl flex items-center justify-center"
+                >
+                  <!-- Doble aro concéntrico de acento dorado -->
+                  <div
+                    class="w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-gradient-to-tr from-primary via-primary-container to-tertiary-fixed shadow-inner flex items-center justify-center"
+                  >
+                    <div
+                      class="w-full h-full rounded-full bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden"
+                    >
+                      <img
+                        alt="TIKIMI hecho con amor logo insignia"
+                        class="w-full h-full object-cover rounded-full"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1WfHJQ01rtM-h2E9IMZJB_lce4WUP7qk_Kf6MnxQAxUxaQG3YlvdTBnx-LG3HSYJthMq3n8WmejOB_iU2qH7Hh_xIAEiG4fGA55bilpl4JPzpwWHGLII8UmnnkPYxTmK-sfyCszXlYom0jjLVxzkc1pdOjsrNzqRuZooJK00fdiWXXUzS52uwkltBOSo7N_fbshA6aLMFI4zT-taAPLTfVHixGmEMasl7GBr-jFrkTOYMpHU8Cr-N3RYiq1uuz77eZ_DqPg938CfBw"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Contenido Editorial de Marca -->
+              <div class="lg:col-span-7 flex flex-col gap-spacing-md">
+                <span
+                  class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                  >NUESTRA ESENCIA</span
+                >
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                  Más que una tienda, somos parte de su familia
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  En TIKIMI creemos que nuestras mascotas son parte de la
+                  familia. Por eso seleccionamos productos y servicios pensados
+                  para su bienestar, comodidad y felicidad.
+                </p>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  Nacimos con el anhelo de transformar la rutina de cuidado en
+                  una experiencia de ternura artesanal, donde cada detalle huela
+                  a cariño y donde cada colita que se mueva sea nuestro mayor
+                  reconocimiento.
+                </p>
+                <!-- 4 Bloques de Valor -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 gap-spacing-md pt-spacing-sm"
+                >
+                  <div
+                    class="p-spacing-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-2xs"
+                  >
+                    <div class="flex items-center gap-spacing-xs text-primary">
+                      <span class="material-symbols-outlined text-[20px]"
+                        >favorite</span
+                      >
+                      <h3
+                        class="font-title-md text-title-md text-on-surface font-bold"
+                      >
+                        Amor por los animales
+                      </h3>
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Cada trato, baño y producto nace desde el cariño
+                      incondicional hacia ellos.
+                    </p>
+                  </div>
+                  <div
+                    class="p-spacing-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-2xs"
+                  >
+                    <div class="flex items-center gap-spacing-xs text-primary">
+                      <span class="material-symbols-outlined text-[20px]"
+                        >person_pin</span
+                      >
+                      <h3
+                        class="font-title-md text-title-md text-on-surface font-bold"
+                      >
+                        Atención personalizada
+                      </h3>
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Cada mascota es un ser único con personalidad, pelaje y
+                      necesidades particulares.
+                    </p>
+                  </div>
+                  <div
+                    class="p-spacing-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-2xs"
+                  >
+                    <div class="flex items-center gap-spacing-xs text-primary">
+                      <span class="material-symbols-outlined text-[20px]"
+                        >auto_awesome</span
+                      >
+                      <h3
+                        class="font-title-md text-title-md text-on-surface font-bold"
+                      >
+                        Productos seleccionados
+                      </h3>
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Curaduría minuciosa de snacks, accesorios e higiene de la
+                      más alta confianza.
+                    </p>
+                  </div>
+                  <div
+                    class="p-spacing-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-2xs"
+                  >
+                    <div class="flex items-center gap-spacing-xs text-primary">
+                      <span class="material-symbols-outlined text-[20px]"
+                        >verified_user</span
+                      >
+                      <h3
+                        class="font-title-md text-title-md text-on-surface font-bold"
+                      >
+                        Cuidado responsable
+                      </h3>
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Protocolos respetuosos y pacíficos para evitar el estrés
+                      durante el servicio de spa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 7. GALERÍA / EXPERIENCIA TIKIMI ======================== -->
+        <section class="w-full bg-surface py-spacing-3xl relative">
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop flex flex-col gap-spacing-2xl"
+          >
+            <!-- Encabezado de Galería -->
+            <div
+              class="flex flex-col items-center text-center gap-spacing-xs max-w-xl mx-auto"
+            >
+              <span
+                class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                >GALERÍA FOTOGRÁFICA</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                Momentos TIKIMI
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                La felicidad de nuestros consentidos en fotos.
+              </p>
+            </div>
+            <!-- Grid Editorial Limpio con las 4 Imágenes Disponibles -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-spacing-md"
+            >
+              <!-- Foto 1: Peluquería https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg -->
+              <div
+                class="group relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <img
+                  alt="Corte y peinado canino profesional en salón TIKIMI"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlbJzJ-1EGQqqL5EKx3G43A86lcoZrNCG7egiaZ_xMhKoOcsZ2rJGiDefSV4MnzZmeTWOE-ck-FK_hajX8ggzavhMXfltBqfRHHyzZTcVKy4Z1jJjK_YxeBZK0NobKP4O61HUp_8l2GXMxLiQp82t8aEbajwFLmutwE6FVnUP1BRfNGX4UlF0hjqexjrlrOd2-gmN1wwG7TvhAKj9Iu2bCATuyIPo1Va9X9BJKNNode9FIbOJjjWgQkg"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div
+                  class="absolute bottom-spacing-md left-spacing-md right-spacing-md text-white"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold"
+                    >Grooming &amp; Estilo</span
+                  >
+                  <div class="font-title-md text-title-md font-bold">
+                    Peluquería Experta
+                  </div>
+                </div>
+              </div>
+              <!-- Foto 2: Snacks Artesanales https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg -->
+              <div
+                class="group relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <img
+                  alt="Snacks saludables y premios gourmet en TIKIMI"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZYvgfO3CTaLJk_8G3M3-qawQLoJTKircyh2AViM9RKcv1BGLbOLcDX4J4965iFz7Pv_LKxpFKjVzqeQ6YonZNYaCK4qv6dtPx2aB7uWsfjqXrMUHy1_rqsiluZODT26l679Z6J2fyVF0Q9bZ8Ac8PAy2CKex1t5-erb1-24MIgJmdUoGV8SMu3tbcgNU3C0552BveaBuJsYUvrEZGpKBRz-xrtPSuCc3MpCIROBVOKfq1s03X4cBtg"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div
+                  class="absolute bottom-spacing-md left-spacing-md right-spacing-md text-white"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold"
+                    >Nutrición Gourmet</span
+                  >
+                  <div class="font-title-md text-title-md font-bold">
+                    Snacks Saludables
+                  </div>
+                </div>
+              </div>
+              <!-- Foto 3: Baño Spa https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ -->
+              <div
+                class="group relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <img
+                  alt="Baño de burbujas suave y cariñoso para mascotas"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVNQHZ-DjHZc4t-Lku64N4zBIKUjuHJxviOfva61GTBY2GnB9tOVyE2e_ZjVR_0zdhzCuhiTs7C5ji1QuYaxS_fOO4wpOiABdL4JEQNFtJJQFjOMFxDZeZA69ZpN-f7z6uaAcQyIOuakDXXM6n_l323rlv0tQFywuwg6hi8jadCaFJXYhter4_U_dC68nQy0vhLh2AQ7s9ML0L599lTtG3nDLTjMF3IFjvU5XpTIF_Ichay7xST3VEQ"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div
+                  class="absolute bottom-spacing-md left-spacing-md right-spacing-md text-white"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold"
+                    >Bienestar &amp; Spa</span
+                  >
+                  <div class="font-title-md text-title-md font-bold">
+                    Baño Relajante
+                  </div>
+                </div>
+              </div>
+              <!-- Foto 4: Mascotas Felices https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA -->
+              <div
+                class="group relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <img
+                  alt="Perro y gato descansando felices en el atelier TIKIMI"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ygzLMZZzarY9tD2pypXI99PrmVbnpB_Ne0XnWBf_wkzBepL1YImA2Ddzi9thSc0jD86FueGOgILiSdG5mWBh5GnJTAEs0lqUcbi-Oh54hN3irEQ5TlR_AtA5n0ZLNP-bGEjUFklHAzTlp4WocPcpmpQMtczINFu3gi8ciEWlJdGviFx-LyNaAsw7Yto6c6KT0y-iNYUoTC6cH79WORxu-FewTdUme2oUajIjkv0T3-lE1XMVpc37NA"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div
+                  class="absolute bottom-spacing-md left-spacing-md right-spacing-md text-white"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold"
+                    >Compañía &amp; Felicidad</span
+                  >
+                  <div class="font-title-md text-title-md font-bold">
+                    Consentidos Felices
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 8. LLAMADO A LA ACCIÓN (CTA BANNER) ======================== -->
+        <section
+          class="w-full bg-surface-container-low py-spacing-2xl relative"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop"
+          >
+            <!-- Contenedor Principal del Banner -->
+            <div
+              class="relative overflow-hidden rounded-3xl bg-secondary text-on-secondary p-spacing-xl sm:p-spacing-3xl shadow-xl flex flex-col items-center text-center gap-spacing-lg"
+            >
+              <!-- Insignia Dorada Superior -->
+              <div
+                class="inline-flex items-center gap-spacing-xs px-spacing-md py-spacing-2xs rounded-full bg-surface/10 text-primary-fixed"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >volunteer_activism</span
+                >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest font-bold"
+                  >CUIDADO Y CARIÑO PARA TU MASCOTA</span
+                >
+              </div>
+              <div class="flex flex-col gap-spacing-xs max-w-2xl">
+                <h2
+                  class="font-headline-lg text-headline-lg text-surface-bright font-bold"
+                >
+                  Visítanos y consintamos a tu mejor amigo
+                </h2>
+                <p class="font-body-lg text-body-lg text-surface-variant">
+                  Todo lo que tu mascota necesita, hecho con amor.
+                </p>
+              </div>
+              <!-- Ubicación visible directa -->
+              <div
+                class="inline-flex items-center gap-spacing-xs px-spacing-lg py-spacing-xs rounded-xl bg-surface/10 text-surface-bright font-body-sm text-body-sm shadow-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-primary-fixed text-[20px]"
+                  >storefront</span
+                >
+                <span
+                  >Sede TIKIMI:
+                  <strong class="font-semibold text-white"
+                    >[DIRECCIÓN DEL PUNTO DE VENTA]</strong
+                  ></span
+                >
+              </div>
+              <!-- Botones de Acción Múltiple -->
+              <div
+                class="flex flex-wrap items-center justify-center gap-spacing-md pt-spacing-xs"
+              >
+                <a
+                  class="inline-flex items-center gap-spacing-xs px-spacing-xl py-spacing-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-lg hover:bg-tertiary-fixed-dim transform hover:-translate-y-0.5 transition-all"
+                  href="https://wa.me/573196332217"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >chat</span
+                  >
+                  <span>Hablar por WhatsApp</span>
+                </a>
+                <a
+                  class="inline-flex items-center gap-spacing-xs px-spacing-xl py-spacing-sm rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow hover:bg-surface-container-high transition-all"
+                  href="#servicios"
+                >
+                  <span class="material-symbols-outlined text-[20px]">spa</span>
+                  <span>Ver servicios</span>
+                </a>
+                <a
+                  class="inline-flex items-center gap-spacing-xs px-spacing-xl py-spacing-sm rounded-full bg-surface/20 text-white font-label-lg text-label-lg hover:bg-surface/30 transition-all"
+                  href="#contacto"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >navigation</span
+                  >
+                  <span>Cómo llegar</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ======================== 9. CONTACTO DIRECTO (#contacto) ======================== -->
+        <section
+          class="w-full bg-surface py-spacing-3xl relative"
+          id="contacto"
+        >
+          <div
+            class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop"
+          >
+            <!-- Encabezado -->
+            <div
+              class="flex flex-col items-center text-center gap-spacing-xs max-w-xl mx-auto mb-spacing-2xl"
+            >
+              <span
+                class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold"
+                >ESTAMOS PARA AYUDARTE</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                Contacto &amp; Asesoría
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Ponte en contacto con TIKIMI «hecho con amor». Resolveremos tus
+                dudas y agendaremos el momento ideal para tu mascota.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-2xl">
+              <!-- Columna de Datos de Contacto Directo -->
+              <div class="lg:col-span-5 flex flex-col gap-spacing-lg">
+                <div
+                  class="p-spacing-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-md"
+                >
+                  <div class="flex items-center gap-spacing-sm pb-spacing-xs">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >pets</span
+                      >
+                    </div>
+                    <div>
+                      <div
+                        class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                      >
+                        TIKIMI
+                      </div>
+                      <div
+                        class="font-label-sm text-label-sm text-primary uppercase font-bold"
+                      >
+                        hecho con amor
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-spacing-md">
+                    <!-- Teléfono -->
+                    <div class="flex items-start gap-spacing-sm">
+                      <div
+                        class="p-2 rounded-xl bg-surface-container text-primary flex-shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >call</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                        >
+                          Teléfono / WhatsApp Directo
+                        </div>
+                        <a
+                          class="font-title-lg text-title-lg text-on-surface font-bold hover:text-primary transition-colors"
+                          href="https://wa.me/573196332217"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          319 633 22 17
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Dirección -->
+                    <div class="flex items-start gap-spacing-sm">
+                      <div
+                        class="p-2 rounded-xl bg-surface-container text-primary flex-shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >location_on</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                        >
+                          Dirección
+                        </div>
+                        <div
+                          class="font-body-md text-body-md text-on-surface font-semibold"
+                        >
+                          [DIRECCIÓN DEL PUNTO DE VENTA]
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Horario -->
+                    <div class="flex items-start gap-spacing-sm">
+                      <div
+                        class="p-2 rounded-xl bg-surface-container text-primary flex-shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >schedule</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                        >
+                          Horario de Atención
+                        </div>
+                        <div class="font-body-md text-body-md text-on-surface">
+                          [HORARIO DE ATENCIÓN]
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Correo -->
+                    <div class="flex items-start gap-spacing-sm">
+                      <div
+                        class="p-2 rounded-xl bg-surface-container text-primary flex-shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >mail</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                        >
+                          Correo Electrónico
+                        </div>
+                        <div class="font-body-md text-body-md text-on-surface">
+                          [CORREO ELECTRÓNICO]
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Redes Sociales -->
+                  <div class="pt-spacing-sm">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold mb-spacing-xs block"
+                      >Canales Oficiales</span
+                    >
+                    <div class="flex flex-wrap items-center gap-spacing-xs">
+                      <span
+                        class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold"
+                        >[INSTAGRAM]</span
+                      >
+                      <span
+                        class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold"
+                        >[FACEBOOK]</span
+                      >
+                      <span
+                        class="px-spacing-md py-spacing-2xs rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold"
+                        >[TIKTOK]</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Columna de Formulario de Consulta Rápida con envío a WhatsApp -->
+              <div class="lg:col-span-7">
+                <div
+                  class="p-spacing-xl rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-spacing-lg"
+                >
+                  <div class="flex flex-col gap-spacing-3xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                    >
+                      Envíanos un mensaje rápido
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Completa los datos de tu mascota y nuestro equipo te
+                      responderá de inmediato vía WhatsApp.
+                    </p>
+                  </div>
+                  <form
+                    class="flex flex-col gap-spacing-md"
+                    id="tikimi-quick-form"
+                  >
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-spacing-md">
+                      <div class="flex flex-col gap-1">
+                        <label
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                          >Tu Nombre</label
+                        >
+                        <input
+                          class="w-full px-spacing-md py-spacing-xs rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                          id="form-nombre"
+                          placeholder="Ej. Carolina Restrepo"
+                          required=""
+                          type="text"
+                        />
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <label
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                          >Nombre de tu Mascota</label
+                        >
+                        <input
+                          class="w-full px-spacing-md py-spacing-xs rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                          id="form-mascota"
+                          placeholder="Ej. Bruno / Mía"
+                          required=""
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-spacing-md">
+                      <div class="flex flex-col gap-1">
+                        <label
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                          >Tipo de Mascota</label
+                        >
+                        <select
+                          class="w-full px-spacing-md py-spacing-xs rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                          id="form-tipo"
+                        >
+                          <option value="Perro">Perro</option>
+                          <option value="Gato">Gato</option>
+                          <option value="Ambos">Tengo ambos</option>
+                        </select>
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <label
+                          class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                          >Interés Principal</label
+                        >
+                        <select
+                          class="w-full px-spacing-md py-spacing-xs rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                          id="form-interes"
+                        >
+                          <option value="Servicio de Baño o Spa">
+                            Servicio de Baño / Spa
+                          </option>
+                          <option value="Peluquería Canina">
+                            Peluquería Canina
+                          </option>
+                          <option value="Alimento o Snacks">
+                            Alimento o Snacks
+                          </option>
+                          <option value="Accesorios e Higiene">
+                            Accesorios e Higiene
+                          </option>
+                          <option value="Consulta General">
+                            Consulta General
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold"
+                        >Mensaje o Detalle</label
+                      >
+                      <textarea
+                        class="w-full px-spacing-md py-spacing-xs rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                        id="form-mensaje"
+                        placeholder="Cuéntanos sobre tu mascota o qué día te gustaría agendar su servicio..."
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <button
+                      class="inline-flex items-center justify-center gap-spacing-xs w-full py-spacing-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-md hover:bg-tertiary-fixed-dim transition-all"
+                      type="submit"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >send</span
+                      >
+                      <span>Enviar Consulta a WhatsApp</span>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Script para envío interactivo directo del formulario al WhatsApp de TIKIMI -->
+        <script>
+          document
+            .getElementById("tikimi-quick-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              var nombre = encodeURIComponent(
+                document.getElementById("form-nombre").value.trim(),
+              );
+              var mascota = encodeURIComponent(
+                document.getElementById("form-mascota").value.trim(),
+              );
+              var tipo = encodeURIComponent(
+                document.getElementById("form-tipo").value,
+              );
+              var interes = encodeURIComponent(
+                document.getElementById("form-interes").value,
+              );
+              var mensaje = encodeURIComponent(
+                document.getElementById("form-mensaje").value.trim(),
+              );
+
+              var texto =
+                "Hola%20TIKIMI,%20mi%20nombre%20es%20" +
+                nombre +
+                ".%20Tengo%20un%20" +
+                tipo +
+                "%20llamado%20" +
+                mascota +
+                ".%20Estoy%20interesado%20en:%20" +
+                interes +
+                ".%20Nota:%20" +
+                mensaje;
+
+              window.open("https://wa.me/573196332217?text=" + texto, "_blank");
+            });
+        </script>
+      </div>
+    </main>
+    <div class="fixed bottom-6 right-6 z-40 flex items-center group">
+      <div
+        class="hidden sm:flex items-center mr-3 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface shadow-[0_4px_16px_rgba(43,30,22,0.12)] text-xs font-semibold gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+      >
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span
+        ><span>Atención Inmediata</span>
+      </div>
+      <a
+        aria-label="Chatea con TIKIMI en WhatsApp"
+        class="relative flex items-center justify-center w-14 h-14 rounded-full bg-primary-container text-on-primary-container shadow-[0_8px_24px_rgba(197,155,39,0.45)] hover:shadow-[0_12px_32px_rgba(197,155,39,0.6)] transform hover:scale-105 transition-all duration-200"
+        href="https://wa.me/573196332217"
+        rel="noopener noreferrer"
+        target="_blank"
+        ><span class="material-symbols-outlined text-[30px]">chat</span
+        ><span class="absolute -top-1 -right-1 flex h-4 w-4"
+          ><span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"
+          ></span
+          ><span
+            class="relative inline-flex rounded-full h-4 w-4 bg-primary text-[9px] font-bold text-on-primary items-center justify-center"
+            >1</span
+          ></span
+        ></a
+      >
+    </div>
+    <footer
+      class="w-full bg-[#231812] text-[#fbf9f5] relative overflow-hidden pt-spacing-3xl pb-spacing-xl"
+    >
+      <div
+        class="absolute top-6 left-12 text-[#34241b] select-none pointer-events-none opacity-40"
+      >
+        <span class="material-symbols-outlined text-[72px]">pets</span>
+      </div>
+      <div
+        class="absolute bottom-8 right-16 text-[#34241b] select-none pointer-events-none opacity-30"
+      >
+        <span class="material-symbols-outlined text-[96px]">pets</span>
+      </div>
+      <div
+        class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop relative z-10"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-spacing-2xl mb-spacing-2xl"
+        >
+          <div class="flex flex-col gap-spacing-md">
+            <div class="flex items-center gap-spacing-sm">
+              <div class="p-1 rounded-xl bg-surface-container-lowest/10">
+                <img
+                  alt="TIKIMI Footer Logo"
+                  class="w-10 h-10 rounded-lg object-cover"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1WfHJQ01rtM-h2E9IMZJB_lce4WUP7qk_Kf6MnxQAxUxaQG3YlvdTBnx-LG3HSYJthMq3n8WmejOB_iU2qH7Hh_xIAEiG4fGA55bilpl4JPzpwWHGLII8UmnnkPYxTmK-sfyCszXlYom0jjLVxzkc1pdOjsrNzqRuZooJK00fdiWXXUzS52uwkltBOSo7N_fbshA6aLMFI4zT-taAPLTfVHixGmEMasl7GBr-jFrkTOYMpHU8Cr-N3RYiq1uuz77eZ_DqPg938CfBw"
+                />
+              </div>
+              <div>
+                <div
+                  class="font-headline-md text-headline-md font-bold tracking-tight text-[#ffdf98]"
+                >
+                  TIKIMI
+                </div>
+                <div
+                  class="font-label-sm text-label-sm tracking-widest text-[#dfb743] uppercase"
+                >
+                  hecho con amor
+                </div>
+              </div>
+            </div>
+            <p class="font-body-sm text-body-sm text-[#d1c5af] leading-relaxed">
+              Boutique artesanal de nutrición gourmet, accesorios de autor y
+              cuidado estético integral para consentir a los miembros más
+              especiales de la familia.
+            </p>
+            <div class="flex items-center gap-spacing-sm pt-spacing-xs">
+              <span class="material-symbols-outlined text-[#dfb743] text-[20px]"
+                >pets</span
+              ><span
+                class="font-body-sm text-body-sm text-[#e7e1dd] italic font-serif"
+                >Dedicados con cariño a tu compañero fiel</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-spacing-sm">
+            <span
+              class="font-title-lg text-title-lg text-[#ffdf98] font-headline-md tracking-wide"
+              >Navegación</span
+            >
+            <div
+              class="flex flex-col gap-spacing-xs font-body-md text-body-md text-[#d1c5af]"
+            >
+              <a class="hover:text-[#ffdf98] transition-colors" href="#inicio"
+                >Inicio</a
+              ><a
+                class="hover:text-[#ffdf98] transition-colors"
+                href="#productos"
+                >Colección &amp; Productos</a
+              ><a
+                class="hover:text-[#ffdf98] transition-colors"
+                href="#servicios"
+                >Servicios de Atelier &amp; Spa</a
+              ><a
+                class="hover:text-[#ffdf98] transition-colors"
+                href="#nosotros"
+                >Nuestra Filosofía</a
+              ><a
+                class="hover:text-[#ffdf98] transition-colors"
+                href="#contacto"
+                >Contacto &amp; Citas</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-spacing-sm">
+            <span
+              class="font-title-lg text-title-lg text-[#ffdf98] font-headline-md tracking-wide"
+              >Contacto Directo</span
+            >
+            <div
+              class="flex flex-col gap-spacing-sm font-body-sm text-body-sm text-[#d1c5af]"
+            >
+              <div class="flex items-start gap-spacing-xs">
+                <span
+                  class="material-symbols-outlined text-[#dfb743] text-[20px]"
+                  >call</span
+                ><span class="font-medium text-surface-bright"
+                  >319 633 22 17</span
+                >
+              </div>
+              <div class="flex items-start gap-spacing-xs">
+                <span
+                  class="material-symbols-outlined text-[#dfb743] text-[20px]"
+                  >location_on</span
+                ><span>[DIRECCIÓN DEL PUNTO DE VENTA]</span>
+              </div>
+              <div class="flex items-start gap-spacing-xs">
+                <span
+                  class="material-symbols-outlined text-[#dfb743] text-[20px]"
+                  >schedule</span
+                ><span>[HORARIO DE ATENCIÓN]</span>
+              </div>
+              <div class="flex items-start gap-spacing-xs">
+                <span
+                  class="material-symbols-outlined text-[#dfb743] text-[20px]"
+                  >mail</span
+                ><span>[CORREO ELECTRÓNICO]</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-spacing-sm">
+            <span
+              class="font-title-lg text-title-lg text-[#ffdf98] font-headline-md tracking-wide"
+              >Comunidad TIKIMI</span
+            >
+            <p class="font-body-sm text-body-sm text-[#d1c5af]">
+              Acompáñanos y descubre historias, lanzamientos exclusivos y
+              consejos de nutrición.
+            </p>
+            <div class="flex flex-col gap-spacing-xs pt-spacing-xs">
+              <a
+                class="inline-flex items-center gap-spacing-xs text-[#d1c5af] hover:text-[#ffdf98] transition-colors font-body-sm text-body-sm"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >photo_camera</span
+                ><span>[INSTAGRAM]</span></a
+              ><a
+                class="inline-flex items-center gap-spacing-xs text-[#d1c5af] hover:text-[#ffdf98] transition-colors font-body-sm text-body-sm"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >thumb_up</span
+                ><span>[FACEBOOK]</span></a
+              ><a
+                class="inline-flex items-center gap-spacing-xs text-[#d1c5af] hover:text-[#ffdf98] transition-colors font-body-sm text-body-sm"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >play_circle</span
+                ><span>[TIKTOK]</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-spacing-lg border-t border-[#3d2b1f] flex flex-col sm:flex-row items-center justify-between gap-spacing-md font-body-sm text-body-sm text-[#a8998b]"
+        >
+          <div class="flex items-center gap-spacing-xs">
+            <span class="material-symbols-outlined text-[16px] text-[#dfb743]"
+              >pets</span
+            ><span
+              >© 2026 TIKIMI · Hecho con Amor. Todos los derechos
+              reservados.</span
+            >
+          </div>
+          <div class="flex items-center gap-spacing-lg">
+            <span class="hover:text-[#ffdf98] cursor-pointer transition-colors"
+              >Privacidad</span
+            ><span class="hover:text-[#ffdf98] cursor-pointer transition-colors"
+              >Términos</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const toggle = document.getElementById("tikimi-mobile-toggle");
+        const drawer = document.getElementById("tikimi-drawer");
+        const closeBtn = document.getElementById("tikimi-drawer-close");
+        const backdrop = document.getElementById("tikimi-backdrop");
+        const links = document.querySelectorAll(".tikimi-mobile-link");
+        function openMenu() {
+          drawer.classList.remove("hidden");
+        }
+        function closeMenu() {
+          drawer.classList.add("hidden");
+        }
+        if (toggle) toggle.addEventListener("click", openMenu);
+        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+        if (backdrop) backdrop.addEventListener("click", closeMenu);
+        links.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      })();
+    </script>
+  </body>
+</html>
