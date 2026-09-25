@@ -1,0 +1,1428 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#e6bdb8",
+              primary: "#b70011",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#ffb4ab",
+              "surface-container-highest": "#e5e2db",
+              "tertiary-fixed": "#dce2f7",
+              error: "#ba1a1a",
+              outline: "#916f6b",
+              "secondary-container": "#fdc425",
+              "secondary-fixed-dim": "#f7be1d",
+              "on-background": "#1c1c18",
+              "on-secondary-container": "#6d5200",
+              "tertiary-container": "#6b7284",
+              surface: "#fcf9f2",
+              "on-secondary-fixed-variant": "#5a4300",
+              "primary-fixed": "#ffdad6",
+              "on-secondary-fixed": "#251a00",
+              tertiary: "#53596b",
+              "on-tertiary-fixed-variant": "#404758",
+              "surface-dim": "#dcdad3",
+              "on-tertiary-fixed": "#141b2b",
+              "inverse-on-surface": "#f3f0e9",
+              "on-primary-fixed-variant": "#93000b",
+              "on-primary-container": "#fff6f5",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#bf0715",
+              "surface-variant": "#e5e2db",
+              "secondary-fixed": "#ffdf9a",
+              "inverse-surface": "#31312c",
+              background: "#fcf9f2",
+              "tertiary-fixed-dim": "#c0c6db",
+              "primary-container": "#dc2626",
+              "on-primary-fixed": "#410002",
+              "on-surface-variant": "#5c403c",
+              secondary: "#785a00",
+              "surface-container-high": "#ebe8e1",
+              "surface-container": "#f1eee7",
+              "surface-bright": "#fcf9f2",
+              "on-surface": "#1c1c18",
+              "primary-fixed-dim": "#ffb4ab",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f6f3ec",
+              "on-tertiary-container": "#f8f8ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+              "margin-mobile": "1.25rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              gutter: "1.5rem",
+              "space-xs": "0.25rem",
+              margin: "3rem",
+              "gutter-mobile": "1rem",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Syne"],
+              "display-xl-mobile": ["Syne"],
+              "headline-lg": ["Syne"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "headline-md": ["Syne"],
+              "headline-sm": ["Syne"],
+              "display-xl": ["Syne"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-sm": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-xl-mobile": [
+                "36px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "42px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "15px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "30px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "display-xl": [
+                "56px",
+                {
+                  lineHeight: "60px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": [
+                "13px",
+                { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-highest/60"
+    >
+      <div
+        class="h-20 w-full px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-sm flex-shrink-0">
+          <img
+            alt="JM INDUSTRY Logo"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1WfzfJ1TYpCfPxkrQg8jFft2Dzow4Z8IwFy3q3JumSCOZ3gFKGvfZMEQGWwPXvmok8mPWasHjLI7vBJ70QI5BeT_udRXXBDSarvtb0H79y9Gigdn5-7Lc6dl5Rc7aqn5FYMMgf34vKf-urvd8h4Y76vja3BSXmRlwN0Vas7U1ln008wM70yXrJNVtnFx_rvLStkELy94Koztr5WT8t6TXJXWvt2qvnYAnVQRzWhSWh9VKWtkoy9vfqN8TXl"
+          /><span
+            class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold"
+            >JM INDUSTRY</span
+          >
+        </div>
+        <nav
+          class="hidden xl:flex items-center gap-space-lg"
+          data-active-classes="text-primary font-semibold"
+        >
+          <a
+            aria-current="page"
+            class="uppercase tracking-wider transition-colors text-primary font-semibold"
+            data-path="inicio"
+            href="/proyectos/jmindustry_1/index.html"
+            >INICIO</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="nosotros"
+            href="/proyectos/jmindustry_1/nosotros.html"
+            >NOSOTROS</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="catalogo"
+            href="/proyectos/jmindustry_1/catalogo.html"
+            >CATÁLOGO</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="servicios"
+            href="/proyectos/jmindustry_1/servicios.html"
+            >SERVICIOS</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="personaliza-tu-prenda"
+            href="/proyectos/jmindustry_1/personalizado.html"
+            >PERSONALIZA TU PRENDA</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="contacto"
+            href="/proyectos/jmindustry_1/contacto.html"
+            >CONTACTO</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md flex-shrink-0">
+          <a
+            class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm"
+            data-path="personaliza-tu-prenda"
+            href="/proyectos/jmindustry_1/personalizado.html"
+            >PERSONALIZA TU PRENDA</a
+          >
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- WooCommerce Breadcrumbs & Shop Header Bar -->
+        <div
+          class="w-full bg-surface-container-low/50 border-b border-surface-container-highest/60 py-space-sm"
+        >
+          <div
+            class="w-full px-gutter-mobile md:px-gutter lg:px-margin max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm"
+          >
+            <nav
+              class="flex items-center gap-2 text-on-surface-variant font-label-sm uppercase tracking-wider"
+            >
+              <a class="hover:text-primary transition-colors" href="#"
+                >Inicio</a
+              >
+              <span class="text-tertiary">/</span>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Tienda</a
+              >
+              <span class="text-tertiary">/</span>
+              <span class="text-on-surface font-semibold"
+                >Prendas Base &amp; Catálogo B2B</span
+              >
+            </nav>
+            <div
+              class="flex items-center gap-4 text-label-sm text-on-surface-variant"
+            >
+              <span class="flex items-center gap-1 font-semibold"
+                ><span
+                  class="material-symbols-outlined text-[15px] text-primary"
+                  >verified</span
+                >
+                Atelier Certificado ISO 9001</span
+              >
+              <span class="hidden md:inline text-tertiary">•</span>
+              <span class="hidden md:flex items-center gap-1"
+                ><span
+                  class="material-symbols-outlined text-[15px] text-secondary"
+                  >local_shipping</span
+                >
+                Despachos a Nivel Nacional</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Shop Main Layout Container -->
+        <div
+          class="w-full py-space-lg md:py-space-xl px-gutter-mobile md:px-gutter lg:px-margin max-w-7xl mx-auto"
+        >
+          <!-- Shop Title & Intro -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg pb-space-sm border-b border-surface-container-highest/60"
+          >
+            <div>
+              <span
+                class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold block mb-1"
+                >WooCommerce Textile Atelier</span
+              >
+              <h1
+                class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface font-bold"
+              >
+                Tienda / Catálogo Textil
+              </h1>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                Bases textiles premium para personalización, serigrafía de alta
+                densidad y termosellado profesional.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-container-highest bg-surface-container-lowest hover:bg-surface text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-colors"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-base text-primary"
+                  >picture_as_pdf</span
+                >
+                Ficha Técnica PDF
+              </a>
+            </div>
+          </div>
+          <!-- 2-Column WooCommerce Layout: Sidebar + Catalog Loop -->
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-space-lg items-start">
+            <!-- LEFT SIDEBAR: WooCommerce Widgets & Filters -->
+            <aside
+              class="lg:col-span-1 flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded-xl border border-surface-container-highest/60 shadow-sm"
+            >
+              <div
+                class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest/60"
+              >
+                <h2
+                  class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >tune</span
+                  >
+                  Filtros
+                </h2>
+                <button
+                  class="font-label-sm text-label-sm text-tertiary hover:text-primary transition-colors uppercase tracking-wider"
+                >
+                  Limpiar
+                </button>
+              </div>
+              <!-- Widget 1: Categorías de Producto -->
+              <div class="space-y-space-xs">
+                <h3
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Categorías
+                </h3>
+                <ul
+                  class="space-y-1 font-body-sm text-body-sm text-on-surface-variant"
+                >
+                  <li
+                    class="flex items-center justify-between py-1 px-2 rounded-lg bg-surface-container-low text-primary font-bold cursor-pointer"
+                  >
+                    <span>Todas las prendas</span>
+                    <span
+                      class="text-label-sm bg-primary/10 px-2 py-0.5 rounded-full"
+                      >24</span
+                    >
+                  </li>
+                  <li
+                    class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-surface cursor-pointer transition-colors"
+                  >
+                    <span>Camisetas &amp; Polos</span>
+                    <span class="text-label-sm text-tertiary">12</span>
+                  </li>
+                  <li
+                    class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-surface cursor-pointer transition-colors"
+                  >
+                    <span>Hoodies &amp; Buzos</span>
+                    <span class="text-label-sm text-tertiary">8</span>
+                  </li>
+                  <li
+                    class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-surface cursor-pointer transition-colors"
+                  >
+                    <span>Niños &amp; Bebés</span>
+                    <span class="text-label-sm text-tertiary">4</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="h-px bg-surface-container-highest/60 w-full"></div>
+              <!-- Widget 2: Gramaje Textil (GSM) -->
+              <div class="space-y-space-xs">
+                <h3
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Gramaje (GSM)
+                </h3>
+                <div class="flex flex-col gap-1.5 font-body-sm text-body-sm">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      checked=""
+                      class="accent-primary w-4 h-4 rounded"
+                      type="checkbox"
+                    />
+                    <span class="text-on-surface"
+                      >220 - 240 GSM (Heavyweight)</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      checked=""
+                      class="accent-primary w-4 h-4 rounded"
+                      type="checkbox"
+                    />
+                    <span class="text-on-surface"
+                      >300 - 350 GSM (Ultra Heavy)</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      class="accent-primary w-4 h-4 rounded"
+                      type="checkbox"
+                    />
+                    <span class="text-on-surface"
+                      >180 - 200 GSM (Ligero &amp; Suave)</span
+                    >
+                  </label>
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-highest/60 w-full"></div>
+              <!-- Widget 3: Técnica Textil Apta -->
+              <div class="space-y-space-xs">
+                <h3
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Técnica Recomendada
+                </h3>
+                <div class="flex flex-wrap gap-1.5">
+                  <span
+                    class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold cursor-pointer hover:bg-surface-container-highest"
+                    >DTF Digital HD</span
+                  >
+                  <span
+                    class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold cursor-pointer hover:bg-surface-container-highest"
+                    >Bordado Directo</span
+                  >
+                  <span
+                    class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold cursor-pointer hover:bg-surface-container-highest"
+                    >Termosellado TPU</span
+                  >
+                  <span
+                    class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-[11px] font-semibold cursor-pointer hover:bg-surface-container-highest"
+                    >Sublimación Textil</span
+                  >
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-highest/60 w-full"></div>
+              <!-- Widget 4: Paleta de Colores Base -->
+              <div class="space-y-space-xs">
+                <h3
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Colores Base Disponibles
+                </h3>
+                <div class="flex items-center gap-2 pt-1">
+                  <button
+                    class="w-6 h-6 rounded-full bg-white border border-stone-300 shadow-sm ring-2 ring-primary ring-offset-1"
+                    title="Blanco Puro"
+                  ></button>
+                  <button
+                    class="w-6 h-6 rounded-full bg-stone-900 border border-stone-800 shadow-sm"
+                    title="Negro Carbón"
+                  ></button>
+                  <button
+                    class="w-6 h-6 rounded-full bg-stone-300 border border-stone-400 shadow-sm"
+                    title="Gris Heather"
+                  ></button>
+                  <button
+                    class="w-6 h-6 rounded-full bg-amber-100 border border-amber-200 shadow-sm"
+                    title="Crudo / Arena"
+                  ></button>
+                  <button
+                    class="w-6 h-6 rounded-full bg-blue-900 border border-blue-950 shadow-sm"
+                    title="Azul Profundo"
+                  ></button>
+                  <button
+                    class="w-6 h-6 rounded-full bg-primary border border-red-900 shadow-sm"
+                    title="Rojo Atelier"
+                  ></button>
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-highest/60 w-full"></div>
+              <!-- Widget 5: Disponibilidad de Taller -->
+              <div class="space-y-space-xs">
+                <h3
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Disponibilidad
+                </h3>
+                <div
+                  class="flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface-variant"
+                >
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      checked=""
+                      class="accent-primary w-4 h-4 rounded"
+                      type="checkbox"
+                    />
+                    <span>Stock Inmediato Taller (≥24h)</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      class="accent-primary w-4 h-4 rounded"
+                      type="checkbox"
+                    />
+                    <span>Confección Bajo Pedido</span>
+                  </label>
+                </div>
+              </div>
+              <!-- Quick B2B Info Box in Sidebar -->
+              <div
+                class="mt-space-sm p-3 bg-surface-container-low rounded-lg border border-surface-container-highest/40 flex flex-col gap-1"
+              >
+                <div
+                  class="flex items-center gap-1.5 font-bold text-on-surface text-label-sm uppercase"
+                >
+                  <span class="material-symbols-outlined text-primary text-base"
+                    >help</span
+                  >
+                  ¿Pedido Corporativo?
+                </div>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+                >
+                  Lotes mínimos desde 12 unidades con estampación y etiqueta
+                  personalizada de marca.
+                </p>
+              </div>
+            </aside>
+            <!-- RIGHT: WooCommerce Product Loop Toolbar & Grid -->
+            <div class="lg:col-span-3 flex flex-col gap-space-md">
+              <!-- WooCommerce Shop Toolbar (Results count, Sorting dropdown, View mode) -->
+              <div
+                class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl border border-surface-container-highest/60 shadow-sm"
+              >
+                <div
+                  class="text-body-sm font-body-sm text-on-surface-variant px-1"
+                >
+                  Mostrando
+                  <span class="font-bold text-on-surface">1–6</span> de
+                  <span class="font-bold text-on-surface">24</span> resultados
+                </div>
+                <div
+                  class="flex items-center gap-space-sm justify-between sm:justify-end"
+                >
+                  <div class="flex items-center gap-2">
+                    <label
+                      class="text-label-sm font-label-sm uppercase text-tertiary hidden md:inline"
+                      for="woocommerce-sort"
+                      >Ordenar:</label
+                    >
+                    <select
+                      class="bg-surface border border-surface-container-highest/60 text-on-surface font-body-sm text-body-sm py-1.5 px-3 rounded-lg outline-none cursor-pointer focus:border-primary"
+                      id="woocommerce-sort"
+                    >
+                      <option>Ordenar por popularidad</option>
+                      <option>Ordenar por novedades</option>
+                      <option>Ordenar por gramaje: mayor a menor</option>
+                      <option>Ordenar por nombre: A-Z</option>
+                      <option>Ordenar por precio de maquila</option>
+                    </select>
+                  </div>
+                  <div
+                    class="flex items-center gap-1 border-l border-surface-container-highest/60 pl-2 text-tertiary"
+                  >
+                    <button
+                      class="p-1.5 rounded hover:bg-surface text-primary"
+                      title="Cuadrícula 3 Columnas"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >grid_view</span
+                      >
+                    </button>
+                    <button
+                      class="p-1.5 rounded hover:bg-surface hover:text-on-surface"
+                      title="Vista en Lista"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >view_list</span
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- WooCommerce Products Grid -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md"
+              >
+                <!-- PRODUCT 1: Camiseta Oversize Heavy Cotton -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Camiseta Oversize Heavy Cotton 240g"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida/AEtjO1UH6LKx3z_7oj1I8ohAnnVxqKvVI-2_YSd3z22kK-05UyNR8fQVFT2s1lzLoXwD8H29eBn4OjzlsxCtnTnNl3J48j3i2NmioNeQPVC6euo1Gb1oQzo8Rk-aP2BygffPNXXzpLLd13kdP1n7LZ_q4IPXVwioaME_K6QqIUT911-O9dqcedlait1cL0pJOTfvFv5FJVhk-FF_9YasXxnuh5i98_ksgqH8SV3a4o5Sjxy1qJnfbGbix2Q5He0c"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-primary-container text-on-primary font-label-sm text-label-sm rounded uppercase tracking-wider font-bold shadow-sm"
+                        >Bestseller</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >240 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Unisex</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Streetwear / 100% Algodón Peinado</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Camiseta Oversize Heavy Cotton
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $18.500 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-white border border-stone-300 shadow-inner"
+                            title="Blanco"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-900"
+                            title="Negro"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-300"
+                            title="Gris"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-amber-900"
+                            title="Marrón"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-emerald-900"
+                            title="Verde Bosque"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >8 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <!-- PRODUCT 2: Hoodie Heavyweight 320g -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Hoodie Streetwear Heavyweight 320g"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida/AEtjO1WquhqOIqRKU8oLzFdYmJ1jPuRVt5edk7vaSOjZ7CaQVlSy7hIU9TAUTc--a17c9e6g_V5f5ZprP2xsx1QLHW1DjoXvTCq5z_h55tyJpSdpBJd7Vy4Eh7h4jQhdErerCCoMdJD97qtjLdQFeW8AhGumBfPl6ySEOVHhK7uuo_P3rYgHsXJYR39XJ1ZYrNhHQtrIFuPG1UcRRVe-0xmPZzwdQlFERJ5wmmjzEHJXAxXH4A2LGkTyEiPkCSwA"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded uppercase tracking-wider font-bold shadow-sm"
+                        >Heavyweight</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >320 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Hombre / Dama</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Abrigo / Franela Perchada</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Hoodie Streetwear Capucha
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $38.000 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-300"
+                            title="Gris Jaspe"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-900"
+                            title="Negro"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-amber-100"
+                            title="Arena"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-blue-900"
+                            title="Azul Oscuro"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >6 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <!-- PRODUCT 3: Buzo Cuello Redondo Crewneck -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Buzo Cuello Redondo Crewneck 300g"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida/AEtjO1XuRdeGlL3-8rHSQF8gTv3rFXVXwEF2l9okBzq8hcHqIuu95E6NSfuT1ZFpkgjt1mnTuxCRnZccoerz29rU85mke6BEnJGyHKgAUgPo6ueolrR9S3l2GTGlRqU0r_K3nFKvpAaDn3n58S2jHe41rnEOEi01S1Jpf5ZmX8S1UyvJ-bKT4KzCUZuB7DCaMm4Y7LeT1mqWuynkn0WVOoLDuSklNFSyZKjq9Sr4AmGHSYBUWundL8ah1wol7LLC"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase tracking-wider font-semibold shadow-sm"
+                        >Street Classic</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >300 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Unisex</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Sweatshirt / Franela Pesada (80/20)</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Buzo Cuello Redondo
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $32.500 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-white border border-stone-300 shadow-inner"
+                            title="Marfil/Hueso"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-900"
+                            title="Negro"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-300"
+                            title="Gris"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-amber-800"
+                            title="Camel"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >5 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <!-- PRODUCT 4: Camiseta Piel de Durazno -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Camiseta Piel de Durazno Mujer"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiaV7LxqiU941ZlIIIYL9boGlUTtsTejRgpsAf_7EonXxLsV9ZHSFGPofL8AIE1UmN0ynNGcZI8QsPVYQFPtMm_95lzM-wl8MnGCnWFuZP9FtHC-NYYQvu_aFOyj03FW9voAUXeBEAU0WJP7tBgy3gW9mTKZrRnGT8NtLrOyxwQ0ZCfAt4qVA1wCcruWcxGYJTeJUHPeir4Ir5mk6kYcxCri9uuDGasUO858ZlXWPTzcoslIZG1PaOhg"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase tracking-wider font-semibold shadow-sm"
+                        >Ultra Soft</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >185 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Mujer</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Moda Femenina / Polimicrofibra</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Camiseta Piel de Durazno
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $16.000 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-white border border-stone-300 shadow-inner"
+                            title="Blanco"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-pink-100"
+                            title="Rosa Pálido"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-sky-100"
+                            title="Celeste"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-900"
+                            title="Negro"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >5 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <!-- PRODUCT 5: Polo Piqué Premium 230g -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Polo Piqué Premium Corporativo"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4T1Ci_RG8ayK8_dksBd77Cnv1HJwSAwdLmkqZyEhBShu6hYhpX-ZW7Rn1AY2aG51t7tfdi2u7svyEefmV4BAfpZEGN7W4Ii2HXdMBcWbNCwToWehX8qdsDio-rkOyEJ6LQ9IcqYXFiiKpTps4PrGHIpNbEQENBGfuT_FpfN_b8h7uvDhxTPuyFdMJfneIIjFtoUgBV42XAOkZaAYhtabYz47BcNABGJ5fKmdKDoayqpOF8p6Ydk5MAw"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase tracking-wider font-semibold shadow-sm"
+                        >Piqué Pro</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >230 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Hombre / Dama</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Dotación &amp; Estilo / Piqué 100% Algodón</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Camiseta Tipo Polo Piqué
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $22.000 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-white border border-stone-300 shadow-inner"
+                            title="Blanco"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-stone-900"
+                            title="Negro"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-blue-900"
+                            title="Azul Oscuro"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-red-800"
+                            title="Rojo"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >6 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+                <!-- PRODUCT 6: Body Bebé Algodón Hipoalergénico -->
+                <article
+                  class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-highest/60 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    class="relative w-full aspect-square bg-surface-container-low overflow-hidden flex items-center justify-center"
+                  >
+                    <img
+                      alt="Body Bebé Algodón Hipoalergénico"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAltcr7BJX-Y0upPm7JegqCw3rNiGHOJQpEhkSBEZ0TJs4fRBjRJIpvMhP2Gv2rP8979z4h06GdsCG2FIC_WkcQEJ0meo_XAINhly40c6-Kvi3-ZgiKV43L00T3ditFgC3gQ-e5YvCYfou4L9wW-_Ma_u3_MMllYVVz5FSZFTkD4GU-gETe57fk_HCIvDCjxnJh3FcGjpiJsWaFxZejeE5SY8N0lpi1t7g1HC6hfzACcGXQGpZF-LAbQA"
+                    />
+                    <div
+                      class="absolute top-3 left-3 flex flex-col gap-1 items-start z-10"
+                    >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase tracking-wider font-semibold shadow-sm"
+                        >Hipoalergénico</span
+                      >
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] rounded font-bold shadow-sm"
+                        >190 GSM</span
+                      >
+                    </div>
+                    <div class="absolute top-3 right-3 z-10">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-sm text-[11px] rounded uppercase font-semibold"
+                        >Bebés</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm flex-1 flex flex-col justify-between space-y-space-xs"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-[11px] text-tertiary uppercase tracking-wider block"
+                        >Infantil / 100% Algodón Pima</span
+                      >
+                      <h3
+                        class="font-headline-sm text-[17px] text-on-surface font-bold leading-tight mt-0.5"
+                      >
+                        Body Bebé Manga Corta
+                      </h3>
+                      <div class="mt-1 flex items-baseline gap-1.5">
+                        <span class="text-body-sm font-semibold text-primary"
+                          >Desde $14.500 COP</span
+                        >
+                        <span class="text-[11px] text-tertiary"
+                          >/ ud (Lote ≥12)</span
+                        >
+                      </div>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-1">
+                          <span
+                            class="w-3 h-3 rounded-full bg-white border border-stone-300 shadow-inner"
+                            title="Blanco"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-amber-50"
+                            title="Marfil"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-sky-200"
+                            title="Celeste"
+                          ></span>
+                          <span
+                            class="w-3 h-3 rounded-full bg-pink-200"
+                            title="Rosa"
+                          ></span>
+                        </div>
+                        <span class="font-label-sm text-[11px] text-tertiary"
+                          >4 colores</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-2 gap-1.5 pt-space-xs border-t border-surface-container-highest/40"
+                    >
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold"
+                      >
+                        Ficha &amp; Lote
+                      </button>
+                      <button
+                        class="py-2 px-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-[11px] uppercase tracking-wider transition-colors text-center font-bold shadow-sm"
+                      >
+                        Personalizar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- Classic WooCommerce Pagination -->
+              <nav
+                class="flex items-center justify-center gap-1.5 pt-space-md pb-space-sm"
+              >
+                <span
+                  class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm"
+                  >1</span
+                >
+                <a
+                  class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-surface-container-highest/60 text-on-surface font-label-md text-label-md transition-colors"
+                  href="#"
+                  >2</a
+                >
+                <a
+                  class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-surface-container-highest/60 text-on-surface font-label-md text-label-md transition-colors"
+                  href="#"
+                  >3</a
+                >
+                <a
+                  class="px-3 h-9 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-surface-container-highest/60 text-on-surface font-label-md text-label-md transition-colors gap-1"
+                  href="#"
+                >
+                  <span>Siguiente</span>
+                  <span class="material-symbols-outlined text-base"
+                    >chevron_right</span
+                  >
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Swatchbook Callout Banner -->
+        <div
+          class="w-full bg-surface-container-lowest border-t border-surface-container-highest/60 py-space-xl"
+        >
+          <div
+            class="w-full px-gutter-mobile md:px-gutter lg:px-margin max-w-7xl mx-auto"
+          >
+            <div
+              class="rounded-2xl bg-surface-container-low p-space-lg md:p-space-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-sm border border-surface-container-highest/50"
+            >
+              <div class="space-y-space-xs max-w-2xl z-10">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block"
+                  >Servicio para Marcas &amp; Talleres</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-md md:text-headline-lg uppercase text-on-surface tracking-tight leading-tight font-bold"
+                >
+                  ¿Necesitas muestras físicas de tela y acabados?
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Solicita el muestrario textil con muestras táctiles de 240g,
+                  320g y pruebas reales de termosellado TPU y DTG de alta
+                  definición.
+                </p>
+              </div>
+              <div
+                class="flex flex-col sm:flex-row gap-space-sm w-full sm:w-auto flex-shrink-0 z-10"
+              >
+                <a
+                  class="inline-flex items-center justify-center px-space-lg py-3 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg transition-all shadow-md text-center font-bold"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined mr-2 text-xl"
+                    >auto_stories</span
+                  >SOLICITAR MUESTRARIO
+                </a>
+                <button
+                  class="inline-flex items-center justify-center px-space-md py-3 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors text-center font-semibold"
+                >
+                  <span class="material-symbols-outlined mr-2 text-xl"
+                    >call</span
+                  >HABLAR CON ASESOR
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-lg"
+    >
+      <div class="w-full px-gutter-mobile md:px-gutter lg:px-margin">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl border-b border-inverse-on-surface/10"
+        >
+          <div class="space-y-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-md text-headline-md tracking-tight uppercase text-on-tertiary-container"
+                >JM INDUSTRY</span
+              >
+            </div>
+            <p class="font-body-sm text-body-sm text-inverse-on-surface/70">
+              Atelier especializado en personalización textil de alta gama,
+              serigrafía industrial, bordado de precisión y confección para
+              marcas líderes y proyectos exigentes.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary tracking-widest uppercase"
+                >Sello Textil Pro</span
+              >
+            </div>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Explora
+            </h4>
+            <ul class="space-y-space-xs font-body-sm text-body-sm">
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Inicio
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Sobre el Atelier
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Catálogo de Prendas
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Técnicas y Servicios
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Configurador Online
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Servicios Técnicos
+            </h4>
+            <ul class="space-y-space-xs font-body-sm text-body-sm">
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Serigrafía de Alto Relieve
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Bordado Directo &amp; Parches
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Impresión DTG HD
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Sublimación Especializada
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Etiquetado de Marca Privada
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Contacto &amp; Taller
+            </h4>
+            <div
+              class="space-y-space-xs font-body-sm text-body-sm text-inverse-on-surface/70"
+            >
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >location_on</span
+                >
+                Zona Industrial Textil, Nave 04
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >mail</span
+                >
+                cotizaciones@jmindustry.com
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >call</span
+                >
+                +52 (55) 8900 4520
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >schedule</span
+                >
+                Lun - Vie: 08:00 - 18:00 hrs
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-inverse-on-surface/60"
+        >
+          <div class="">
+            © 2024 JM INDUSTRY. Estándar de Calidad Textil Industrial. Todos los
+            derechos reservados.
+          </div>
+          <div class="flex items-center gap-space-md">
+            <span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Políticas de Privacidad</span
+            ><span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Términos del Servicio</span
+            ><span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Garantía Textil</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

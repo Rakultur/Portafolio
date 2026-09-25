@@ -1,0 +1,2902 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#e6bdb8",
+              primary: "#b70011",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#ffb4ab",
+              "surface-container-highest": "#e5e2db",
+              "tertiary-fixed": "#dce2f7",
+              error: "#ba1a1a",
+              outline: "#916f6b",
+              "secondary-container": "#fdc425",
+              "secondary-fixed-dim": "#f7be1d",
+              "on-background": "#1c1c18",
+              "on-secondary-container": "#6d5200",
+              "tertiary-container": "#6b7284",
+              surface: "#fcf9f2",
+              "on-secondary-fixed-variant": "#5a4300",
+              "primary-fixed": "#ffdad6",
+              "on-secondary-fixed": "#251a00",
+              tertiary: "#53596b",
+              "on-tertiary-fixed-variant": "#404758",
+              "surface-dim": "#dcdad3",
+              "on-tertiary-fixed": "#141b2b",
+              "inverse-on-surface": "#f3f0e9",
+              "on-primary-fixed-variant": "#93000b",
+              "on-primary-container": "#fff6f5",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#bf0715",
+              "surface-variant": "#e5e2db",
+              "secondary-fixed": "#ffdf9a",
+              "inverse-surface": "#31312c",
+              background: "#fcf9f2",
+              "tertiary-fixed-dim": "#c0c6db",
+              "primary-container": "#dc2626",
+              "on-primary-fixed": "#410002",
+              "on-surface-variant": "#5c403c",
+              secondary: "#785a00",
+              "surface-container-high": "#ebe8e1",
+              "surface-container": "#f1eee7",
+              "surface-bright": "#fcf9f2",
+              "on-surface": "#1c1c18",
+              "primary-fixed-dim": "#ffb4ab",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f6f3ec",
+              "on-tertiary-container": "#f8f8ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+              "margin-mobile": "1.25rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              gutter: "1.5rem",
+              "space-xs": "0.25rem",
+              margin: "3rem",
+              "gutter-mobile": "1rem",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Syne"],
+              "display-xl-mobile": ["Syne"],
+              "headline-lg": ["Syne"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "headline-md": ["Syne"],
+              "headline-sm": ["Syne"],
+              "display-xl": ["Syne"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-sm": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-xl-mobile": [
+                "36px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "42px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "15px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "30px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "display-xl": [
+                "56px",
+                {
+                  lineHeight: "60px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": [
+                "13px",
+                { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-highest/60"
+    >
+      <div
+        class="h-20 w-full px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-sm flex-shrink-0">
+          <img
+            alt="JM INDUSTRY Logo"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1WfzfJ1TYpCfPxkrQg8jFft2Dzow4Z8IwFy3q3JumSCOZ3gFKGvfZMEQGWwPXvmok8mPWasHjLI7vBJ70QI5BeT_udRXXBDSarvtb0H79y9Gigdn5-7Lc6dl5Rc7aqn5FYMMgf34vKf-urvd8h4Y76vja3BSXmRlwN0Vas7U1ln008wM70yXrJNVtnFx_rvLStkELy94Koztr5WT8t6TXJXWvt2qvnYAnVQRzWhSWh9VKWtkoy9vfqN8TXl"
+          /><span
+            class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold"
+            >JM INDUSTRY</span
+          >
+        </div>
+        <nav
+          class="hidden xl:flex items-center gap-space-lg"
+          data-active-classes="text-primary font-semibold"
+        >
+          <a
+            aria-current="page"
+            class="uppercase tracking-wider transition-colors text-primary font-semibold"
+            data-path="inicio"
+            href="/proyectos/jmindustry_2/index.html"
+            >INICIO</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="nosotros"
+            href="/proyectos/jmindustry_2/nosotros.html"
+            >NOSOTROS</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="catalogo"
+            href="/proyectos/jmindustry_2/catalogo.html"
+            >CATÁLOGO</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="servicios"
+            href="/proyectos/jmindustry_2/servicios.html"
+            >SERVICIOS</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="personaliza-tu-prenda"
+            href="/proyectos/jmindustry_2/perzonalizado.html"
+            >PERSONALIZA TU PRENDA</a
+          ><a
+            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="contacto"
+            href="/proyectos/jmindustry_2/contacto.html"
+            >CONTACTO</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md flex-shrink-0">
+          <a
+            class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm"
+            data-path="personaliza-tu-prenda"
+            href="#"
+            >PERSONALIZA TU PRENDA</a
+          >
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Interactive Navigation Hook to highlight 'NOSOTROS' in App Shell -->
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll(
+              'header nav a[data-path="nosotros"]',
+            );
+            navLinks.forEach((link) => {
+              link.classList.remove("text-on-surface-variant");
+              link.classList.add("text-primary", "font-semibold");
+            });
+          });
+        </script>
+        <!-- SECTION 1: MANIFESTO & SUB-HEADER -->
+        <section
+          class="w-full px-gutter-mobile md:px-gutter lg:px-margin pt-space-lg pb-space-xl"
+        >
+          <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary-container/20 text-on-surface font-label-sm text-label-sm uppercase tracking-wider"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-secondary-container"
+                ></span>
+                Manifiesto &amp; Taller
+              </span>
+              <span class="text-on-surface-variant/40 text-body-sm">•</span>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant"
+              >
+                Ingeniería Textil con ADN Creativo
+              </span>
+            </div>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end"
+            >
+              <div class="lg:col-span-8 space-y-space-sm">
+                <h1
+                  class="font-headline-lg text-headline-lg md:text-[44px] md:leading-[50px] uppercase text-on-surface font-extrabold tracking-tight"
+                >
+                  Detrás de cada prenda hay un oficio y una obsesión por el
+                  detalle
+                </h1>
+              </div>
+              <div class="lg:col-span-4 lg:pb-1">
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  En JM INDUSTRY fusionamos la precisión técnica de la
+                  estampación industrial con la cultura, actitud y visión del
+                  diseño urbano independiente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 2: STORY & ATELIER HERO (GRID WITH IMAGE_14) -->
+        <section
+          class="w-full px-gutter-mobile md:px-gutter lg:px-margin pb-space-xl"
+        >
+          <div class="max-w-6xl mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start"
+            >
+              <!-- Atelier Real Photo Canvas -->
+              <div class="lg:col-span-7 flex flex-col space-y-space-xs">
+                <div
+                  class="relative bg-surface-container-high rounded overflow-hidden shadow-sm group"
+                >
+                  <img
+                    alt="Taller de personalización textil JM INDUSTRY con operarios en serigrafía y prensa térmica"
+                    class="w-full h-auto aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_MnzxM_DFGgETgzU9CChT_nQTR8Ot8kCJwUvTEX-6JizLa9fr2F2qMx7YO63fle-s1lbU0gdifKsIbVcftX_VgRLXtX9sm7K4pfGs3ZzDYdbubCi9-DCIvKpna7EJn1J4hM0vJlSit58Os-Me3H4u-hziX14vkz2Yl6k9rMWfXe86rrNZsxzghpXMiomR8lIWUU59ogMae9oL2HZoV912Ss-ISKi3gXn6DJoQX1nSzcuqaRcKkvDbBQ"
+                  />
+                  <div class="absolute top-4 left-4">
+                    <span
+                      class="px-2.5 py-1 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm tracking-widest uppercase rounded shadow-sm"
+                    >
+                      Laboratorio Activo
+                    </span>
+                  </div>
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/40 to-transparent p-space-md"
+                  >
+                    <p
+                      class="text-inverse-on-surface font-label-md text-label-md tracking-wider uppercase"
+                    >
+                      Nuestro Taller Central • Estándar de Curado y Termosellado
+                      Calibrado
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between text-on-surface-variant px-1 pt-1"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold"
+                    >Línea de Confección &amp; Acabados Directos</span
+                  >
+                  <span class="font-body-sm text-body-sm opacity-60"
+                    >CDMX, Taller 04</span
+                  >
+                </div>
+              </div>
+              <!-- Narrative Column -->
+              <div
+                class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded shadow-sm flex flex-col justify-between h-full space-y-space-md"
+              >
+                <div class="space-y-space-sm">
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold"
+                    >Nuestra Filosofía</span
+                  >
+                  <h2
+                    class="font-headline-md text-headline-md uppercase text-on-surface font-bold tracking-tight"
+                  >
+                    Nacimos en el taller, no en un escritorio
+                  </h2>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    JM INDUSTRY nació como una respuesta tangible a creadores
+                    independientes y marcas consolidadas que estaban hartas de
+                    estampados acartonados, cuarteados a la tercera lavada y
+                    patrones sin cuerpo.
+                  </p>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Creemos que un textil personalizado debe resistir la calle,
+                    los lavados intensivos y el paso del tiempo con la misma
+                    dignidad que una prenda de diseñador.
+                  </p>
+                </div>
+                <!-- Key Craft Bullet Points -->
+                <div class="space-y-space-sm pt-space-xs">
+                  <div
+                    class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-bold flex-shrink-0"
+                      >1</span
+                    >
+                    <div>
+                      <h4
+                        class="font-headline-sm text-[15px] font-bold text-on-surface uppercase"
+                      >
+                        Rigor en Hilaturas
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Tejidos pesados de 220g a 320g peinados punto por punto
+                        para evitar encogimientos y deformaciones.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="w-6 h-6 rounded bg-secondary text-on-secondary flex items-center justify-center font-label-sm font-bold flex-shrink-0"
+                      >2</span
+                    >
+                    <div>
+                      <h4
+                        class="font-headline-sm text-[15px] font-bold text-on-surface uppercase"
+                      >
+                        Colorimetría Fiel
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Calibración espectral estricta para igualar cartas
+                        Pantone exactas y degradados de alta densidad gráfica.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="w-6 h-6 rounded bg-on-surface text-surface flex items-center justify-center font-label-sm font-bold flex-shrink-0"
+                      >3</span
+                    >
+                    <div>
+                      <h4
+                        class="font-headline-sm text-[15px] font-bold text-on-surface uppercase"
+                      >
+                        Compromiso Humano
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                      >
+                        Asesoramiento técnico presencial y digital desde el
+                        primer mock-up hasta la entrega de la producción final.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 3: 4 PILARES DE NUESTRA CULTURA TEXTIL -->
+        <section
+          class="w-full bg-surface-container-low py-space-xl px-gutter-mobile md:px-gutter lg:px-margin"
+        >
+          <div class="max-w-6xl mx-auto space-y-space-lg">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm"
+            >
+              <div>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold"
+                  >Metodología de Producción</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg uppercase text-on-surface font-extrabold tracking-tight mt-1"
+                >
+                  Los 4 Pilares de Nuestra Cultura
+                </h2>
+              </div>
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant max-w-md"
+              >
+                Un ecosistema diseñado para eliminar el margen de error entre el
+                archivo digital y la tinta curada sobre la fibra.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <!-- Pilar 1 -->
+              <div
+                class="bg-surface-container-lowest p-space-md rounded shadow-sm hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary mb-space-md"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >brush</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs"
+                  >
+                    Creatividad Aplicada
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                  >
+                    Convertimos ideas complejas en separaciones vectoriales y
+                    fotolitos optimizados para una estampación sin pérdida de
+                    definición ni pixelado.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-surface-container-high/60 flex items-center gap-2"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70"
+                    >Tolerancia Cero Error</span
+                  >
+                </div>
+              </div>
+              <!-- Pilar 2 -->
+              <div
+                class="bg-surface-container-lowest p-space-md rounded shadow-sm hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-secondary mb-space-md"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >heat_pump</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs"
+                  >
+                    Ciencia del Sellado
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                  >
+                    Control de presión neumática constante a 6 bares y curado
+                    térmico infrarrojo para asegurar una fijación de más de 60
+                    lavadas continuas.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-surface-container-high/60 flex items-center gap-2"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70"
+                    >6 Bares Neumáticos</span
+                  >
+                </div>
+              </div>
+              <!-- Pilar 3 -->
+              <div
+                class="bg-surface-container-lowest p-space-md rounded shadow-sm hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-on-surface mb-space-md"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >handshake</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs"
+                  >
+                    Cercanía Real
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                  >
+                    Trato directo entre diseñadores y técnicos textiles. Te
+                    orientamos sobre telas, tintas al agua, plastisol eco y
+                    bordados 3D.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-surface-container-high/60 flex items-center gap-2"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70"
+                    >Soporte 1 a 1</span
+                  >
+                </div>
+              </div>
+              <!-- Pilar 4 -->
+              <div
+                class="bg-surface-container-lowest p-space-md rounded shadow-sm hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary-container mb-space-md"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >verified</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs"
+                  >
+                    Trazabilidad Total
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                  >
+                    Inspección unitaria manual de cada prenda antes del
+                    planchado a vapor, etiquetado y empaque listo para venta en
+                    boutique.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-surface-container-high/60 flex items-center gap-2"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70"
+                    >Empaque Boutique</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 4: MÉTRICAS REALES Y CERTIFICACIONES -->
+        <section
+          class="w-full py-space-xl px-gutter-mobile md:px-gutter lg:px-margin"
+        >
+          <div class="max-w-6xl mx-auto">
+            <div
+              class="bg-surface-container-high p-space-lg rounded grid grid-cols-2 lg:grid-cols-4 gap-space-lg text-center divide-y md:divide-y-0 md:divide-x divide-on-surface-variant/10"
+            >
+              <div class="space-y-1 pt-space-xs md:pt-0">
+                <div
+                  class="font-headline-lg text-headline-lg text-primary font-extrabold tracking-tight"
+                >
+                  +50,000
+                </div>
+                <p
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Prendas Producidas
+                </p>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Sin reclamaciones estructurales</span
+                >
+              </div>
+              <div class="space-y-1 pt-space-xs md:pt-0">
+                <div
+                  class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight"
+                >
+                  99.4%
+                </div>
+                <p
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Fidelidad Gráfica
+                </p>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Igualación cromática Pantone</span
+                >
+              </div>
+              <div class="space-y-1 pt-space-xs md:pt-0">
+                <div
+                  class="font-headline-lg text-headline-lg text-secondary font-extrabold tracking-tight"
+                >
+                  60+
+                </div>
+                <p
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Ciclos de Lavado
+                </p>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Curado en túnel industrial</span
+                >
+              </div>
+              <div class="space-y-1 pt-space-xs md:pt-0">
+                <div
+                  class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight"
+                >
+                  100%
+                </div>
+                <p
+                  class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold"
+                >
+                  Confección Nacional
+                </p>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Hecho con manos de oficio</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 5: TRABAJOS QUE INSPIRAN (EDITORIAL GALLERY) -->
+        <section
+          class="w-full px-gutter-mobile md:px-gutter lg:px-margin pb-space-xl"
+        >
+          <div class="max-w-6xl mx-auto space-y-space-lg">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm border-b border-surface-container-highest pb-space-md"
+            >
+              <div>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold"
+                  >Galería de Acabados</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg uppercase text-on-surface font-extrabold tracking-tight"
+                >
+                  Trabajos que Inspiran
+                </h2>
+              </div>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-sm"
+              >
+                Muestras reales desarrolladas en nuestro taller para colecciones
+                urbanas, cápsulas y marcas de vanguardia.
+              </p>
+            </div>
+            <!-- Asymmetric Editorial Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+              <!-- Piece 1: Large Feature -->
+              <div
+                class="md:col-span-7 bg-surface-container-lowest rounded overflow-hidden shadow-sm group"
+              >
+                <div class="relative bg-surface-container h-80 overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Close up shot of a luxury black heavyweight oversized hoodie on a clean studio table, showing 3D high-density red screen print artwork and tactical textile tags under soft editorial lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJbfbNiJhaLxJ5qwBJXQArul3M1ZwDa1k600USKtZAaBLNDiYZoDl4hzyKWwWKwUyDvl3IE3JZFNsRFwOBuJHm6tS89VwDgvUF-3bRCelRSLu25gpRXyxnPGc7Q4siqtwN3BKJUrVTIuvxoeUxwPWKu7hymjkENX1KDC4T8bVj9hceMgtbWzGuiR9mdf0-j0XKMpdh2VFq6vqpccf0qKt2e-G1TiuJqadrReciasdF4gCjtw3RhtrKrQ"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[11px] font-bold text-on-surface uppercase tracking-wider"
+                  >
+                    Streetwear Heavyweight
+                  </div>
+                </div>
+                <div class="p-space-md space-y-space-xs">
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface"
+                    >
+                      Hoodie Oversized 360g
+                    </h3>
+                    <span
+                      class="font-label-sm text-label-sm text-primary font-bold uppercase"
+                      >Alto Relieve 3D</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Confección en felpa perchada premium con aplique TPU
+                    tridimensional y serigrafía inflable plastisol de tacto
+                    suave.
+                  </p>
+                </div>
+              </div>
+              <!-- Piece 2: Medium Feature -->
+              <div
+                class="md:col-span-5 bg-surface-container-lowest rounded overflow-hidden shadow-sm group"
+              >
+                <div class="relative bg-surface-container h-80 overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Studio photograph of an off-white boxy heavy cotton t-shirt with vivid DTF print graphics of typographic street art on the front chest, detailed fabric texture in daylight"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM9quzvTnfD-eBpx1sJw2yb-XgmzcbGKO1thztB3RWcD0iaHLhpQ7nIDJj3Y2YsrFcjDv_xw0cKvuLbAIo8Ay3QUa0LHC0qYP7kBI2aWFKSqpXNgTVKuCBt-rpkteXPfs6Ffv7CfWH_gaCkhfaVdiFn3Lsjem0KkRmpPq4IUhw5q34hebtcW8zReVvrtlM5XsztiibRAbeQMa_6KQoY590p1wghoBbQTNxJGDB7ddQNfXPmIjI1JEciw"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[11px] font-bold text-on-surface uppercase tracking-wider"
+                  >
+                    Corte Boxy Fit
+                  </div>
+                </div>
+                <div class="p-space-md space-y-space-xs">
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface"
+                    >
+                      Camiseta Heavy Cotton 240g
+                    </h3>
+                    <span
+                      class="font-label-sm text-label-sm text-secondary font-bold uppercase"
+                      >DTF HD Ultra</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Algodón peinado peinador con impresión DTF de amplio
+                    formato, degradados fotográficos y tacto casi imperceptible.
+                  </p>
+                </div>
+              </div>
+              <!-- Piece 3: Small Card -->
+              <div
+                class="md:col-span-6 bg-surface-container-lowest rounded overflow-hidden shadow-sm group"
+              >
+                <div class="relative bg-surface-container h-64 overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Editorial lookbook detail shot showing a collection of custom streetwear jackets with reflective 3M printing, woven brand labels on the hem and industrial metal zipper pulls"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHaDqrrh6EVyeixpRpQ8NeYVB_pyaY-2rJhh0iCsxN6TYtB1Z77OrEK5rgwW_NvNP1S7ALu90AuCrkz9Al-clv6GgCi3CyEzMIffkQzyaDjugjMMjL7nEsBO45W8riJau8CdIgtG64fBSABN-wRTGRrEY4CeRGs0wj_RudAaa9VGzdQyMSYq0cZ2yIOj-U0_Y9bvk301dyc1oFNhLWyPqKZFNoZK29yxOnCRVWxI7XWKlEoOYQlOVuA"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[11px] font-bold text-on-surface uppercase tracking-wider"
+                  >
+                    Colección Cápsula
+                  </div>
+                </div>
+                <div class="p-space-md space-y-space-xs">
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface"
+                    >
+                      Cápsula Reflectiva 3M
+                    </h3>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase"
+                      >Edición Limitada</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Detalles fotoluminiscentes con termo-transfer de
+                    microprismas y etiquetas de damasco tejidas con hilo de alta
+                    definición.
+                  </p>
+                </div>
+              </div>
+              <!-- Piece 4: Small Card -->
+              <div
+                class="md:col-span-6 bg-surface-container-lowest rounded overflow-hidden shadow-sm group"
+              >
+                <div class="relative bg-surface-container h-64 overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Close up view of navy blue high-end pique polo shirt featuring micro precision direct embroidery of a modern brand monogram logo with seamless heat-welded neck labels"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu4ZGAEbWLT-38ci8WVoMywyRxshKvGQkFson5QbnPUYWH-Uw_kC_ujyEBWqux8Sc-dL-pvIRDi8Q5a1ZVYSwXm5XKS2prY2bOk9s5VsfP6ShKFNpyf0aPBIBJ6ugMyhCG1pmwvO6aM6PeYrxMVlwf-ZcxFUt_8pZuID_0Paq8lKIoTyrKFV2uSD9lr39rjpZUXR2MX06MUdANNKO7RYtfjyRbR05ftBz0eSdVeGfgMNUHwy7RGE1Ckg"
+                  />
+                  <div
+                    class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[11px] font-bold text-on-surface uppercase tracking-wider"
+                  >
+                    Línea Corporativa Élite
+                  </div>
+                </div>
+                <div class="p-space-md space-y-space-xs">
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface"
+                    >
+                      Polos de Piqué &amp; Bordado Directo
+                    </h3>
+                    <span
+                      class="font-label-sm text-label-sm text-primary font-bold uppercase"
+                      >Bordado Milimétrico</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Bordado japonés de alta densidad con más de 12,000 puntadas
+                    y transfer de cuello libre de etiquetas para máximo confort.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 6: CLOSING CTA BLOCK -->
+        <section
+          class="w-full px-gutter-mobile md:px-gutter lg:px-margin pb-space-xl"
+        >
+          <div
+            class="max-w-6xl mx-auto bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl shadow-md border-t-4 border-primary"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+            >
+              <div class="lg:col-span-8 space-y-space-sm">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold"
+                  >Puertas Abiertas a Creadores</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg uppercase text-on-surface font-extrabold tracking-tight"
+                >
+                  ¿Listo para visitar el taller o probar tu primer prototipo?
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed"
+                >
+                  Puedes diseñar directamente en nuestro configurador digital
+                  para calcular costes al instante, o bien contactar a uno de
+                  nuestros especialistas textiles para asesoría en telas
+                  personalizadas y tiradas especiales.
+                </p>
+                <div
+                  class="flex flex-wrap items-center gap-space-sm pt-space-xs"
+                >
+                  <!doctype html>
+
+                  <html lang="es">
+                    <head>
+                      <meta charset="utf-8" />
+                      <meta
+                        content="width=device-width, initial-scale=1.0"
+                        name="viewport"
+                      />
+                      <meta content="web_standard" name="shell-type" />
+                      <link
+                        href="https://fonts.googleapis.com"
+                        rel="preconnect"
+                      />
+                      <link
+                        crossorigin=""
+                        href="https://fonts.gstatic.com"
+                        rel="preconnect"
+                      />
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap"
+                        rel="stylesheet"
+                      />
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+                        rel="stylesheet"
+                      />
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                        rel="stylesheet"
+                      />
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                        rel="stylesheet"
+                      />
+                      <style>
+                        @layer base {
+                          html,
+                          body {
+                            margin: 0;
+                            padding: 0;
+                          }
+                          body {
+                            overscroll-behavior: none;
+                          }
+                          main > :first-child {
+                            margin-top: 0 !important;
+                          }
+                          main > :last-child {
+                            margin-bottom: 0 !important;
+                          }
+                        }
+                        ::-webkit-scrollbar {
+                          display: none;
+                        }
+                      </style>
+                      <script src="https://cdn.tailwindcss.com"></script>
+                      <script id="tailwind-config">
+                        tailwind.config = {
+                          darkMode: "class",
+                          theme: {
+                            extend: {
+                              colors: {
+                                "outline-variant": "#e6bdb8",
+                                primary: "#b70011",
+                                "on-error": "#ffffff",
+                                "on-secondary": "#ffffff",
+                                "on-primary": "#ffffff",
+                                "inverse-primary": "#ffb4ab",
+                                "surface-container-highest": "#e5e2db",
+                                "tertiary-fixed": "#dce2f7",
+                                error: "#ba1a1a",
+                                outline: "#916f6b",
+                                "secondary-container": "#fdc425",
+                                "secondary-fixed-dim": "#f7be1d",
+                                "on-background": "#1c1c18",
+                                "on-secondary-container": "#6d5200",
+                                "tertiary-container": "#6b7284",
+                                surface: "#fcf9f2",
+                                "on-secondary-fixed-variant": "#5a4300",
+                                "primary-fixed": "#ffdad6",
+                                "on-secondary-fixed": "#251a00",
+                                tertiary: "#53596b",
+                                "on-tertiary-fixed-variant": "#404758",
+                                "surface-dim": "#dcdad3",
+                                "on-tertiary-fixed": "#141b2b",
+                                "inverse-on-surface": "#f3f0e9",
+                                "on-primary-fixed-variant": "#93000b",
+                                "on-primary-container": "#fff6f5",
+                                "surface-container-lowest": "#ffffff",
+                                "on-tertiary": "#ffffff",
+                                "surface-tint": "#bf0715",
+                                "surface-variant": "#e5e2db",
+                                "secondary-fixed": "#ffdf9a",
+                                "inverse-surface": "#31312c",
+                                background: "#fcf9f2",
+                                "tertiary-fixed-dim": "#c0c6db",
+                                "primary-container": "#dc2626",
+                                "on-primary-fixed": "#410002",
+                                "on-surface-variant": "#5c403c",
+                                secondary: "#785a00",
+                                "surface-container-high": "#ebe8e1",
+                                "surface-container": "#f1eee7",
+                                "surface-bright": "#fcf9f2",
+                                "on-surface": "#1c1c18",
+                                "primary-fixed-dim": "#ffb4ab",
+                                "on-error-container": "#93000a",
+                                "error-container": "#ffdad6",
+                                "surface-container-low": "#f6f3ec",
+                                "on-tertiary-container": "#f8f8ff",
+                              },
+                              borderRadius: {
+                                DEFAULT: "0.125rem",
+                                lg: "0.25rem",
+                                xl: "0.5rem",
+                                full: "0.75rem",
+                              },
+                              spacing: {
+                                "space-xl": "2.5rem",
+                                "space-sm": "0.5rem",
+                                "margin-mobile": "1.25rem",
+                                "space-lg": "1.5rem",
+                                "space-md": "1rem",
+                                gutter: "1.5rem",
+                                "space-xs": "0.25rem",
+                                margin: "3rem",
+                                "gutter-mobile": "1rem",
+                              },
+                              fontFamily: {
+                                "headline-lg-mobile": ["Syne"],
+                                "display-xl-mobile": ["Syne"],
+                                "headline-lg": ["Syne"],
+                                "body-md": ["Plus Jakarta Sans"],
+                                "label-md": ["Plus Jakarta Sans"],
+                                "headline-md": ["Syne"],
+                                "headline-sm": ["Syne"],
+                                "display-xl": ["Syne"],
+                                "body-lg": ["Plus Jakarta Sans"],
+                                "label-sm": ["Plus Jakarta Sans"],
+                                "body-sm": ["Plus Jakarta Sans"],
+                              },
+                              fontSize: {
+                                "headline-lg-mobile": [
+                                  "28px",
+                                  {
+                                    lineHeight: "34px",
+                                    letterSpacing: "-0.01em",
+                                    fontWeight: "700",
+                                  },
+                                ],
+                                "display-xl-mobile": [
+                                  "36px",
+                                  {
+                                    lineHeight: "40px",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "800",
+                                  },
+                                ],
+                                "headline-lg": [
+                                  "36px",
+                                  {
+                                    lineHeight: "42px",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "700",
+                                  },
+                                ],
+                                "body-md": [
+                                  "15px",
+                                  {
+                                    lineHeight: "24px",
+                                    letterSpacing: "0em",
+                                    fontWeight: "400",
+                                  },
+                                ],
+                                "label-md": [
+                                  "12px",
+                                  {
+                                    lineHeight: "16px",
+                                    letterSpacing: "0.08em",
+                                    fontWeight: "700",
+                                  },
+                                ],
+                                "headline-md": [
+                                  "24px",
+                                  {
+                                    lineHeight: "30px",
+                                    letterSpacing: "-0.01em",
+                                    fontWeight: "700",
+                                  },
+                                ],
+                                "headline-sm": [
+                                  "18px",
+                                  {
+                                    lineHeight: "24px",
+                                    letterSpacing: "0em",
+                                    fontWeight: "600",
+                                  },
+                                ],
+                                "display-xl": [
+                                  "56px",
+                                  {
+                                    lineHeight: "60px",
+                                    letterSpacing: "-0.03em",
+                                    fontWeight: "800",
+                                  },
+                                ],
+                                "body-lg": [
+                                  "18px",
+                                  {
+                                    lineHeight: "28px",
+                                    letterSpacing: "-0.01em",
+                                    fontWeight: "400",
+                                  },
+                                ],
+                                "label-sm": [
+                                  "11px",
+                                  {
+                                    lineHeight: "14px",
+                                    letterSpacing: "0.05em",
+                                    fontWeight: "600",
+                                  },
+                                ],
+                                "body-sm": [
+                                  "13px",
+                                  {
+                                    lineHeight: "20px",
+                                    letterSpacing: "0em",
+                                    fontWeight: "400",
+                                  },
+                                ],
+                              },
+                            },
+                          },
+                        };
+                      </script>
+                    </head>
+                    <body
+                      class="bg-background font-body-md text-on-surface antialiased"
+                    >
+                      <main class="w-full pt-20 bg-background min-h-screen">
+                        <div class="flex flex-col w-full">
+                          <!-- SECTION 1: EDITORIAL INTRO HEADER -->
+                          <section
+                            class="w-full px-gutter-mobile md:px-gutter lg:px-margin pt-space-xl pb-space-lg relative overflow-hidden"
+                          >
+                            <div class="max-w-6xl mx-auto">
+                              <div
+                                class="flex flex-wrap items-center gap-space-xs mb-space-sm"
+                              >
+                                <span
+                                  class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full font-label-md text-label-md uppercase tracking-widest text-on-surface"
+                                >
+                                  <span
+                                    class="w-2 h-2 rounded-full bg-primary-container animate-pulse"
+                                  ></span>
+                                  Contacto &amp; Atelier B2B
+                                </span>
+                                <span
+                                  class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full font-label-md text-label-md tracking-wider"
+                                >
+                                  <span
+                                    class="material-symbols-outlined text-[14px]"
+                                    >bolt</span
+                                  >
+                                  Respuesta técnica en &lt; 24 horas
+                                </span>
+                              </div>
+                              <div
+                                class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-end"
+                              >
+                                <div class="lg:col-span-8">
+                                  <h1
+                                    class="font-display-xl text-display-xl uppercase tracking-tight text-on-surface leading-none"
+                                  >
+                                    Hablemos de tu
+                                    <br class="hidden sm:inline" />
+                                    <span class="text-primary-container"
+                                      >Proyecto Textil</span
+                                    >
+                                  </h1>
+                                </div>
+                                <div class="lg:col-span-4">
+                                  <p
+                                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                                  >
+                                    Ya sea una colección cápsula para tu marca
+                                    de moda, dotación técnica corporativa o una
+                                    tirada especial de alto gramaje, nuestros
+                                    ingenieros de confección te guían desde el
+                                    patronaje hasta la entrega final en bodega.
+                                  </p>
+                                </div>
+                              </div>
+                              <!-- Quick Metrics Bar -->
+                              <div
+                                class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-lg mt-space-lg border-t border-surface-container-highest/60"
+                              >
+                                <div
+                                  class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm"
+                                >
+                                  <div
+                                    class="font-headline-md text-headline-md text-on-surface"
+                                  >
+                                    12
+                                    <span
+                                      class="font-label-md text-label-md text-on-surface-variant"
+                                      >UDS</span
+                                    >
+                                  </div>
+                                  <div
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                                  >
+                                    Tiraje Mínimo Lab
+                                  </div>
+                                </div>
+                                <div
+                                  class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm"
+                                >
+                                  <div
+                                    class="font-headline-md text-headline-md text-on-surface"
+                                  >
+                                    320
+                                    <span
+                                      class="font-label-md text-label-md text-on-surface-variant"
+                                      >GSM</span
+                                    >
+                                  </div>
+                                  <div
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                                  >
+                                    Gramaje Heavyweight
+                                  </div>
+                                </div>
+                                <div
+                                  class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm"
+                                >
+                                  <div
+                                    class="font-headline-md text-headline-md text-primary-container"
+                                  >
+                                    &lt; 15
+                                    <span
+                                      class="font-label-md text-label-md text-on-surface-variant"
+                                      >MIN</span
+                                    >
+                                  </div>
+                                  <div
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                                  >
+                                    Respuesta WhatsApp
+                                  </div>
+                                </div>
+                                <div
+                                  class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm"
+                                >
+                                  <div
+                                    class="font-headline-md text-headline-md text-on-surface"
+                                  >
+                                    100%
+                                  </div>
+                                  <div
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                                  >
+                                    Inspección Pre-envío
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <!-- SECTION 2: MAIN DUAL-COLUMN SYSTEM (Bespoke Form & Atelier Desk) -->
+                          <section
+                            class="w-full px-gutter-mobile md:px-gutter lg:px-margin py-space-lg"
+                          >
+                            <div
+                              class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start"
+                            >
+                              <!-- LEFT COLUMN: QUOTE / SPECIFICATION ENGINE FORM -->
+                              <div
+                                class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm"
+                              >
+                                <div
+                                  class="flex items-start justify-between gap-space-sm pb-space-sm border-b border-surface-container-highest/60"
+                                >
+                                  <div>
+                                    <span
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold"
+                                      >Paso 01 // Ficha Técnica</span
+                                    >
+                                    <h2
+                                      class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight mt-0.5"
+                                    >
+                                      Cuéntanos tu idea
+                                    </h2>
+                                    <p
+                                      class="font-body-sm text-body-sm text-on-surface-variant mt-1"
+                                    >
+                                      Desglose preliminar de hilaturas, tintas y
+                                      técnicas recomendadas con viabilidad
+                                      garantizada.
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0"
+                                  >
+                                    <span
+                                      class="material-symbols-outlined text-[20px] text-on-surface"
+                                      >assignment</span
+                                    >
+                                  </div>
+                                </div>
+                                <form
+                                  class="space-y-space-md pt-space-md"
+                                  id="contact-atelier-form"
+                                  onsubmit="
+                                    event.preventDefault();
+                                    showFormConfirmation();
+                                  "
+                                >
+                                  <!-- Identity Fields -->
+                                  <div
+                                    class="grid grid-cols-1 md:grid-cols-2 gap-space-sm"
+                                  >
+                                    <div class="space-y-1">
+                                      <label
+                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                      >
+                                        Nombre y Apellidos *
+                                      </label>
+                                      <input
+                                        class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"
+                                        placeholder="Ej. Valentina Morales"
+                                        required=""
+                                        type="text"
+                                      />
+                                    </div>
+                                    <div class="space-y-1">
+                                      <label
+                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                      >
+                                        Marca / Estudio / Empresa *
+                                      </label>
+                                      <input
+                                        class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"
+                                        placeholder="Ej. Aethelwear Studio"
+                                        required=""
+                                        type="text"
+                                      />
+                                    </div>
+                                  </div>
+                                  <!-- Contact Fields -->
+                                  <div
+                                    class="grid grid-cols-1 md:grid-cols-2 gap-space-sm"
+                                  >
+                                    <div class="space-y-1">
+                                      <label
+                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                      >
+                                        Correo Profesional *
+                                      </label>
+                                      <input
+                                        class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"
+                                        placeholder="contacto@tumarca.com"
+                                        required=""
+                                        type="email"
+                                      />
+                                    </div>
+                                    <div class="space-y-1">
+                                      <label
+                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                      >
+                                        Teléfono / WhatsApp *
+                                      </label>
+                                      <input
+                                        class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all"
+                                        placeholder="+52 55 0000 0000"
+                                        required=""
+                                        type="tel"
+                                      />
+                                    </div>
+                                  </div>
+                                  <!-- Garment Selection -->
+                                  <div class="space-y-1">
+                                    <label
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                    >
+                                      Tipo de Prenda / Silueta Principal *
+                                    </label>
+                                    <div class="relative">
+                                      <select
+                                        class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface font-body-sm text-body-sm outline-none appearance-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] cursor-pointer"
+                                        required=""
+                                      >
+                                        <option
+                                          disabled=""
+                                          selected=""
+                                          value=""
+                                        >
+                                          Selecciona una categoría técnica...
+                                        </option>
+                                        <option value="streetwear">
+                                          Colección Streetwear Completa (Drop
+                                          Multiprenda)
+                                        </option>
+                                        <option value="oversize">
+                                          Camisetas Heavyweight Oversize
+                                          (240-280 GSM)
+                                        </option>
+                                        <option value="hoodies">
+                                          Hoodies &amp; Crewnecks Pesados
+                                          (320-400 GSM)
+                                        </option>
+                                        <option value="corporativa">
+                                          Ropa Corporativa Técnica / Polo Piqué
+                                          Premium
+                                        </option>
+                                        <option value="tote_gorras">
+                                          Accesorios (Tote Bags Loneta / Gorras
+                                          6 Paneles)
+                                        </option>
+                                        <option value="custom_cut">
+                                          Confección a Medida / Patronaje
+                                          Exclusivo
+                                        </option>
+                                      </select>
+                                      <span
+                                        class="material-symbols-outlined absolute right-3 top-2.5 pointer-events-none text-on-surface-variant text-[20px]"
+                                        >expand_more</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <!-- Technique Chips (Multi-choice visual tags) -->
+                                  <div class="space-y-2">
+                                    <div
+                                      class="flex items-center justify-between"
+                                    >
+                                      <label
+                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                      >
+                                        Técnicas de Personalización de Interés
+                                      </label>
+                                      <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant/70"
+                                        >Selecciona una o más</span
+                                      >
+                                    </div>
+                                    <div
+                                      class="flex flex-wrap gap-2"
+                                      id="tech-chips-group"
+                                    >
+                                      <button
+                                        class="tech-chip px-3 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                                        data-val="dtf"
+                                        onclick="toggleChip(this)"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="w-2 h-2 rounded-full bg-primary-container"
+                                        ></span>
+                                        DTF Digital HD
+                                      </button>
+                                      <button
+                                        class="tech-chip px-3 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                                        data-val="subli"
+                                        onclick="toggleChip(this)"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="w-2 h-2 rounded-full bg-secondary-container"
+                                        ></span>
+                                        Sublimación Textil
+                                      </button>
+                                      <button
+                                        class="tech-chip px-3 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                                        data-val="tpu"
+                                        onclick="toggleChip(this)"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="w-2 h-2 rounded-full bg-on-surface"
+                                        ></span>
+                                        Apliques TPU 3D
+                                      </button>
+                                      <button
+                                        class="tech-chip px-3 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                                        data-val="serigrafia"
+                                        onclick="toggleChip(this)"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="w-2 h-2 rounded-full bg-tertiary"
+                                        ></span>
+                                        Serigrafía &amp; Bordado
+                                      </button>
+                                      <button
+                                        class="tech-chip px-3 py-1.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5"
+                                        data-val="asesoria"
+                                        onclick="toggleChip(this)"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[14px]"
+                                          >psychology</span
+                                        >
+                                        Asesoría de Taller
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <!-- Volume Selector (Segmented buttons) -->
+                                  <div class="space-y-1">
+                                    <label
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                    >
+                                      Volumen Estimado del Pedido *
+                                    </label>
+                                    <div
+                                      class="grid grid-cols-2 sm:grid-cols-4 gap-2"
+                                    >
+                                      <label class="cursor-pointer">
+                                        <input
+                                          checked=""
+                                          class="peer sr-only"
+                                          name="order_vol"
+                                          type="radio"
+                                          value="12-50"
+                                        />
+                                        <div
+                                          class="p-2.5 rounded bg-surface peer-checked:bg-on-surface peer-checked:text-on-primary text-center transition-all hover:bg-surface-container"
+                                        >
+                                          <div
+                                            class="font-headline-sm text-headline-sm"
+                                          >
+                                            12 - 50
+                                          </div>
+                                          <div
+                                            class="font-label-sm text-label-sm uppercase tracking-widest opacity-80"
+                                          >
+                                            Pre-colección
+                                          </div>
+                                        </div>
+                                      </label>
+                                      <label class="cursor-pointer">
+                                        <input
+                                          class="peer sr-only"
+                                          name="order_vol"
+                                          type="radio"
+                                          value="50-200"
+                                        />
+                                        <div
+                                          class="p-2.5 rounded bg-surface peer-checked:bg-on-surface peer-checked:text-on-primary text-center transition-all hover:bg-surface-container"
+                                        >
+                                          <div
+                                            class="font-headline-sm text-headline-sm"
+                                          >
+                                            50 - 200
+                                          </div>
+                                          <div
+                                            class="font-label-sm text-label-sm uppercase tracking-widest opacity-80"
+                                          >
+                                            Drop Estándar
+                                          </div>
+                                        </div>
+                                      </label>
+                                      <label class="cursor-pointer">
+                                        <input
+                                          class="peer sr-only"
+                                          name="order_vol"
+                                          type="radio"
+                                          value="200-1000"
+                                        />
+                                        <div
+                                          class="p-2.5 rounded bg-surface peer-checked:bg-on-surface peer-checked:text-on-primary text-center transition-all hover:bg-surface-container"
+                                        >
+                                          <div
+                                            class="font-headline-sm text-headline-sm"
+                                          >
+                                            200 - 1K
+                                          </div>
+                                          <div
+                                            class="font-label-sm text-label-sm uppercase tracking-widest opacity-80"
+                                          >
+                                            Marca Escala
+                                          </div>
+                                        </div>
+                                      </label>
+                                      <label class="cursor-pointer">
+                                        <input
+                                          class="peer sr-only"
+                                          name="order_vol"
+                                          type="radio"
+                                          value="1000+"
+                                        />
+                                        <div
+                                          class="p-2.5 rounded bg-surface peer-checked:bg-on-surface peer-checked:text-on-primary text-center transition-all hover:bg-surface-container"
+                                        >
+                                          <div
+                                            class="font-headline-sm text-headline-sm"
+                                          >
+                                            +1,000
+                                          </div>
+                                          <div
+                                            class="font-label-sm text-label-sm uppercase tracking-widest opacity-80"
+                                          >
+                                            Gran Volumen
+                                          </div>
+                                        </div>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <!-- Drag and drop zone -->
+                                  <div class="space-y-1">
+                                    <label
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                    >
+                                      Archivos Gráficos / Mockups / Logotipos
+                                      (Opcional)
+                                    </label>
+                                    <div
+                                      class="relative bg-surface hover:bg-surface-container transition-all rounded p- space-md text-center cursor-pointer p-space-md"
+                                      id="drop-zone"
+                                    >
+                                      <input
+                                        accept=".ai,.psd,.pdf,.png,.svg"
+                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                        id="file-input"
+                                        multiple=""
+                                        type="file"
+                                      />
+                                      <div
+                                        class="flex flex-col items-center justify-center pointer-events-none"
+                                      >
+                                        <div
+                                          class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container mb-2"
+                                        >
+                                          <span
+                                            class="material-symbols-outlined text-[22px]"
+                                            >cloud_upload</span
+                                          >
+                                        </div>
+                                        <div
+                                          class="font-label-md text-label-md text-on-surface uppercase tracking-wider"
+                                        >
+                                          Arrastra tu archivo AI, PDF, PNG o SVG
+                                        </div>
+                                        <div
+                                          class="font-body-sm text-body-sm text-on-surface-variant/70 mt-0.5"
+                                        >
+                                          Límite de transferencia de hasta 25MB
+                                          • Formatos vectoriales optimizados
+                                        </div>
+                                        <div
+                                          class="hidden mt-2 px-3 py-1 bg-surface-container-highest text-on-surface rounded font-label-sm text-label-sm"
+                                          id="file-name-preview"
+                                        ></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Message textarea -->
+                                  <div class="space-y-1">
+                                    <label
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold"
+                                    >
+                                      Especificaciones Adicionales del Proyecto
+                                    </label>
+                                    <textarea
+                                      class="w-full bg-surface px-space-sm py-2.5 rounded text-on-surface placeholder:text-on-surface-variant/40 font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(220,38,38,0.25)] transition-all resize-none"
+                                      placeholder="Indica posiciones de estampado (ej. pecho izquierdo 10cm + espalda completa 38cm), pantones específicos o fechas límites de tu evento..."
+                                      rows="3"
+                                    ></textarea>
+                                  </div>
+                                  <!-- Consent Checkbox -->
+                                  <label
+                                    class="flex items-start gap-space-sm cursor-pointer select-none pt-1"
+                                  >
+                                    <input
+                                      class="mt-1 w-4 h-4 rounded text-primary-container accent-primary-container cursor-pointer"
+                                      required=""
+                                      type="checkbox"
+                                    />
+                                    <span
+                                      class="font-body-sm text-body-sm text-on-surface-variant"
+                                    >
+                                      Acepto la política de tratamiento de datos
+                                      y deseo recibir el dossier de muestras
+                                      físicas de tejido en mi dirección.
+                                    </span>
+                                  </label>
+                                  <!-- Submit Button & Security Micro-copy -->
+                                  <div class="pt-space-xs space-y-space-xs">
+                                    <button
+                                      class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
+                                      type="submit"
+                                    >
+                                      <span>ENVIAR SOLICITUD DE PROYECTO</span>
+                                      <span
+                                        class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                                        >arrow_forward</span
+                                      >
+                                    </button>
+                                    <div
+                                      class="flex items-center justify-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant/80 pt-1"
+                                    >
+                                      <span
+                                        class="material-symbols-outlined text-[15px] text-on-surface"
+                                        >lock</span
+                                      >
+                                      <span
+                                        >Confidencialidad garantizada con NDA
+                                        para colecciones inéditas y drops
+                                        protegidos.</span
+                                      >
+                                    </div>
+                                  </div>
+                                </form>
+                                <div
+                                  class="hidden mt-space-md p-space-md rounded bg-surface-container-high text-on-surface animate-fade-in"
+                                  id="form-success-banner"
+                                >
+                                  <div class="flex items-center gap-space-sm">
+                                    <span
+                                      class="material-symbols-outlined text-primary-container text-[24px]"
+                                      >verified</span
+                                    >
+                                    <div>
+                                      <div
+                                        class="font-headline-sm text-headline-sm"
+                                      >
+                                        ¡Solicitud recibida en Atelier!
+                                      </div>
+                                      <div
+                                        class="font-body-sm text-body-sm text-on-surface-variant"
+                                      >
+                                        Un ingeniero textil revisará tus
+                                        especificaciones y enviará la cotización
+                                        antes de 24h hábiles.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- RIGHT COLUMN: DIRECT CHANNELS & ATELIER EXPERIENCE -->
+                              <div class="lg:col-span-5 space-y-space-md">
+                                <!-- CARD 1: DIRECT WHATSAPP -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm relative overflow-hidden"
+                                >
+                                  <div
+                                    class="flex items-center justify-between gap-space-xs mb-space-sm"
+                                  >
+                                    <span
+                                      class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"
+                                    >
+                                      <span
+                                        class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+                                      ></span>
+                                      En Línea / Tiempo de respuesta ~15 min
+                                    </span>
+                                    <span
+                                      class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider"
+                                      >Mesa de Taller</span
+                                    >
+                                  </div>
+                                  <h3
+                                    class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight"
+                                  >
+                                    Atención Inmediata por WhatsApp
+                                  </h3>
+                                  <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant mt-2 mb-space-md leading-relaxed"
+                                  >
+                                    Habla directamente con nuestro jefe de
+                                    producción para dudas rápidas de stock de
+                                    algodón, disponibilidad de gramajes
+                                    especiales o urgencias de entrega.
+                                  </p>
+                                  <a
+                                    class="inline-flex items-center justify-center w-full py-3 px-space-md bg-inverse-surface hover:bg-on-surface text-inverse-on-surface font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm gap-2"
+                                    href="https://wa.me/525589004520?text=Hola%20JM%20Industry,%20quiero%20cotizar%20un%20proyecto%20textil"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    <span
+                                      class="material-symbols-outlined text-[18px]"
+                                      >chat</span
+                                    >
+                                    <span
+                                      >Chatear con Especialista (+52 55 8900
+                                      4520)</span
+                                    >
+                                  </a>
+                                </div>
+                                <!-- CARD 2: ATELIER SHOWROOM & PHYSICAL SAMPLES -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm space-y-space-sm"
+                                >
+                                  <div
+                                    class="flex items-center justify-between"
+                                  >
+                                    <span
+                                      class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold"
+                                      >Atelier Presencial</span
+                                    >
+                                    <span
+                                      class="material-symbols-outlined text-on-surface-variant text-[20px]"
+                                      >apartment</span
+                                    >
+                                  </div>
+                                  <h3
+                                    class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight"
+                                  >
+                                    Visita Nuestro Taller y Showroom
+                                  </h3>
+                                  <div
+                                    class="space-y-2 text-on-surface-variant font-body-sm text-body-sm"
+                                  >
+                                    <div class="flex items-start gap-2">
+                                      <span
+                                        class="material-symbols-outlined text-[18px] text-primary-container mt-0.5"
+                                        >location_on</span
+                                      >
+                                      <span
+                                        ><strong>Zona Industrial Textil</strong
+                                        >, Nave 04, Ciudad de México, CP
+                                        02300.</span
+                                      >
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                      <span
+                                        class="material-symbols-outlined text-[18px] text-on-surface mt-0.5"
+                                        >schedule</span
+                                      >
+                                      <span
+                                        >Lunes a Viernes: 08:00 - 18:00 hrs |
+                                        Sábados con cita previa.</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="p-3 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface leading-snug"
+                                  >
+                                    <span class="font-bold text-on-surface"
+                                      >Inspección sensorial:</span
+                                    >
+                                    Ven a tocar las hilaturas peinadas (240g a
+                                    320g), verificar pruebas de curado térmico y
+                                    contrastar tonalidades con guías Pantone
+                                    textiles físicas (TCX/TPG).
+                                  </div>
+                                  <!-- Atelier Workshop Map Preview -->
+                                  <div
+                                    class="w-full h-44 rounded overflow-hidden relative shadow-inner"
+                                  >
+                                    <div
+                                      class="w-full h-full bg-cover bg-center"
+                                      data-location="Zona Industrial, Mexico City"
+                                      style=""
+                                    ></div>
+                                    <div
+                                      class="absolute inset-0 bg-surface/30 backdrop-blur-[1px] flex items-center justify-center p-space-sm pointer-events-none"
+                                    >
+                                      <div
+                                        class="px-3 py-1.5 bg-surface-container-lowest/95 rounded shadow-md flex items-center gap-2"
+                                      >
+                                        <span
+                                          class="w-2.5 h-2.5 rounded-full bg-primary-container"
+                                        ></span>
+                                        <span
+                                          class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-on-surface"
+                                          >JM INDUSTRY • Nave Central 04</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- CARD 3: KEY DEPARTMENTS DIRECT INBOXES -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+                                >
+                                  <span
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold mb-space-sm"
+                                  >
+                                    Bandejas Directas por Departamento
+                                  </span>
+                                  <div class="space-y-2.5">
+                                    <div
+                                      class="flex items-center justify-between p-2 rounded bg-surface"
+                                    >
+                                      <div
+                                        class="flex items-center gap-2 min-w-0"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px] text-primary-container"
+                                          >point_of_sale</span
+                                        >
+                                        <div class="min-w-0">
+                                          <div
+                                            class="font-label-md text-label-md uppercase text-on-surface truncate"
+                                          >
+                                            Cotizaciones &amp; B2B
+                                          </div>
+                                          <div
+                                            class="font-body-sm text-body-sm text-on-surface-variant truncate"
+                                          >
+                                            cotizaciones@jmindustry.com
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button
+                                        class="p-1 hover:text-primary-container transition-colors text-on-surface-variant"
+                                        onclick="
+                                          navigator.clipboard.writeText(
+                                            'cotizaciones@jmindustry.com',
+                                          );
+                                          alert(
+                                            'Copiado: cotizaciones@jmindustry.com',
+                                          );
+                                        "
+                                        title="Copiar correo"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px]"
+                                          >content_copy</span
+                                        >
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="flex items-center justify-between p-2 rounded bg-surface"
+                                    >
+                                      <div
+                                        class="flex items-center gap-2 min-w-0"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px] text-secondary"
+                                          >architecture</span
+                                        >
+                                        <div class="min-w-0">
+                                          <div
+                                            class="font-label-md text-label-md uppercase text-on-surface truncate"
+                                          >
+                                            Dpto. Técnico &amp; Archivos
+                                          </div>
+                                          <div
+                                            class="font-body-sm text-body-sm text-on-surface-variant truncate"
+                                          >
+                                            diseno@jmindustry.com
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button
+                                        class="p-1 hover:text-primary-container transition-colors text-on-surface-variant"
+                                        onclick="
+                                          navigator.clipboard.writeText(
+                                            'diseno@jmindustry.com',
+                                          );
+                                          alert(
+                                            'Copiado: diseno@jmindustry.com',
+                                          );
+                                        "
+                                        title="Copiar correo"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px]"
+                                          >content_copy</span
+                                        >
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="flex items-center justify-between p-2 rounded bg-surface"
+                                    >
+                                      <div
+                                        class="flex items-center gap-2 min-w-0"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px] text-on-surface"
+                                          >handshake</span
+                                        >
+                                        <div class="min-w-0">
+                                          <div
+                                            class="font-label-md text-label-md uppercase text-on-surface truncate"
+                                          >
+                                            Prensa, Collabs &amp; Visitas
+                                          </div>
+                                          <div
+                                            class="font-body-sm text-body-sm text-on-surface-variant truncate"
+                                          >
+                                            hola@jmindustry.com
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button
+                                        class="p-1 hover:text-primary-container transition-colors text-on-surface-variant"
+                                        onclick="
+                                          navigator.clipboard.writeText(
+                                            'hola@jmindustry.com',
+                                          );
+                                          alert('Copiado: hola@jmindustry.com');
+                                        "
+                                        title="Copiar correo"
+                                      >
+                                        <span
+                                          class="material-symbols-outlined text-[18px]"
+                                          >content_copy</span
+                                        >
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <!-- SECTION 3: EDITORIAL CRAFT COMMITMENTS -->
+                          <section
+                            class="w-full px-gutter-mobile md:px-gutter lg:px-margin py-space-xl bg-surface-container-low"
+                          >
+                            <div class="max-w-6xl mx-auto">
+                              <div
+                                class="mb-space-lg text-center max-w-xl mx-auto"
+                              >
+                                <span
+                                  class="font-label-md text-label-md uppercase tracking-widest text-primary-container font-bold"
+                                  >Estándar de Atelier</span
+                                >
+                                <h2
+                                  class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface mt-1"
+                                >
+                                  Garantía y Protocolo de Calidad Textil
+                                </h2>
+                              </div>
+                              <div
+                                class="grid grid-cols-1 md:grid-cols-3 gap-space-md"
+                              >
+                                <!-- Pillar 1 -->
+                                <div
+                                  class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col justify-between"
+                                >
+                                  <div class="space-y-space-sm">
+                                    <div
+                                      class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container"
+                                    >
+                                      <span
+                                        class="material-symbols-outlined text-[28px]"
+                                        >verified_user</span
+                                      >
+                                    </div>
+                                    <h3
+                                      class="font-headline-sm text-headline-sm uppercase text-on-surface"
+                                    >
+                                      Muestra Previa de Aprobación
+                                    </h3>
+                                    <p
+                                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                    >
+                                      Elaboramos una prueba física de
+                                      calibración o mockup hiperrealista
+                                      milimétrico antes de imprimir la primera
+                                      yarda de producción masiva. Tu sello no se
+                                      compromete.
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="pt-space-md mt-space-md border-t border-surface-container-highest/60 flex items-center justify-between font-label-sm text-label-sm text-on-surface"
+                                  >
+                                    <span>TOLERANCIA COLOR</span>
+                                    <span
+                                      class="font-bold text-primary-container"
+                                      >Delta E &lt; 1.5</span
+                                    >
+                                  </div>
+                                </div>
+                                <!-- Pillar 2 -->
+                                <div
+                                  class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col justify-between"
+                                >
+                                  <div class="space-y-space-sm">
+                                    <div
+                                      class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary"
+                                    >
+                                      <span
+                                        class="material-symbols-outlined text-[28px]"
+                                        >local_shipping</span
+                                      >
+                                    </div>
+                                    <h3
+                                      class="font-headline-sm text-headline-sm uppercase text-on-surface"
+                                    >
+                                      Tiempos de Entrega Cumplidos
+                                    </h3>
+                                    <p
+                                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                    >
+                                      Programación industrial sincronizada con
+                                      cronograma inalterable y despacho
+                                      asegurado puerta a puerta con número de
+                                      seguimiento minuto a minuto a nivel
+                                      nacional.
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="pt-space-md mt-space-md border-t border-surface-container-highest/60 flex items-center justify-between font-label-sm text-label-sm text-on-surface"
+                                  >
+                                    <span>CUMPLIMIENTO SLA</span>
+                                    <span class="font-bold text-secondary"
+                                      >99.4% a tiempo</span
+                                    >
+                                  </div>
+                                </div>
+                                <!-- Pillar 3 -->
+                                <div
+                                  class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col justify-between"
+                                >
+                                  <div class="space-y-space-sm">
+                                    <div
+                                      class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface"
+                                    >
+                                      <span
+                                        class="material-symbols-outlined text-[28px]"
+                                        >wash</span
+                                      >
+                                    </div>
+                                    <h3
+                                      class="font-headline-sm text-headline-sm uppercase text-on-surface"
+                                    >
+                                      Garantía de Termosellado
+                                    </h3>
+                                    <p
+                                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                    >
+                                      Polímeros y tintas de alta adhesión que
+                                      superan más de 60 ciclos de lavado
+                                      industrial sin fisuras, decoloración ni
+                                      desprendimiento en bordes finos.
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="pt-space-md mt-space-md border-t border-surface-container-highest/60 flex items-center justify-between font-label-sm text-label-sm text-on-surface"
+                                  >
+                                    <span>RESISTENCIA TESTEADA</span>
+                                    <span class="font-bold text-on-surface"
+                                      >+60 Lavados Pro</span
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <!-- SECTION 4: FREQUENTLY ASKED QUESTIONS (Accordion System) -->
+                          <section
+                            class="w-full px-gutter-mobile md:px-gutter lg:px-margin py-space-xl"
+                          >
+                            <div class="max-w-4xl mx-auto">
+                              <div class="text-center mb-space-lg">
+                                <span
+                                  class="font-label-md text-label-md uppercase tracking-widest text-primary-container font-bold"
+                                  >Dudas Técnicas Resueltas</span
+                                >
+                                <h2
+                                  class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface mt-1"
+                                >
+                                  Preguntas Frecuentes sobre Pedidos y
+                                  Producción
+                                </h2>
+                              </div>
+                              <div class="space-y-space-sm" id="faq-container">
+                                <!-- FAQ 1 -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+                                >
+                                  <button
+                                    class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                                    onclick="toggleFaq(this)"
+                                    type="button"
+                                  >
+                                    <span
+                                      >¿Cuál es el tiraje mínimo de pedido
+                                      (MOQ)?</span
+                                    >
+                                    <span
+                                      class="material-symbols-outlined text-primary-container transition-transform duration-200"
+                                      >expand_more</span
+                                    >
+                                  </button>
+                                  <div
+                                    class="faq-answer hidden pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                  >
+                                    Nuestro tiraje mínimo de arranque en el
+                                    Custom Lab es de tan solo
+                                    <strong>12 unidades por diseño</strong> en
+                                    tecnologías como DTF Digital HD y apliques
+                                    termosellados. Para proyectos con serigrafía
+                                    tradicional a tintas planas recomendamos
+                                    partir de 50 unidades para optimizar el
+                                    coste de apertura de marcos y revelado.
+                                  </div>
+                                </div>
+                                <!-- FAQ 2 -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+                                >
+                                  <button
+                                    class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                                    onclick="toggleFaq(this)"
+                                    type="button"
+                                  >
+                                    <span
+                                      >¿En qué formatos y resoluciones debo
+                                      enviar mis artes?</span
+                                    >
+                                    <span
+                                      class="material-symbols-outlined text-primary-container transition-transform duration-200"
+                                      >expand_more</span
+                                    >
+                                  </button>
+                                  <div
+                                    class="faq-answer hidden pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                  >
+                                    Recomendamos siempre archivos vectoriales
+                                    limpios (Adobe Illustrator <code>.AI</code>,
+                                    <code>.PDF</code> vector o
+                                    <code>.SVG</code> con tipografías
+                                    convertidas a curvas). Si nos facilitas
+                                    bitmaps (como <code>.PNG</code> o
+                                    <code>.TIFF</code>), asegúrate de que se
+                                    encuentren a
+                                    <strong
+                                      >300 DPI a tamaño real de
+                                      impresión</strong
+                                    >
+                                    y con fondo 100% transparente para evitar
+                                    rebordes indeseados.
+                                  </div>
+                                </div>
+                                <!-- FAQ 3 -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+                                >
+                                  <button
+                                    class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                                    onclick="toggleFaq(this)"
+                                    type="button"
+                                  >
+                                    <span
+                                      >¿Puedo solicitar un kit de muestras
+                                      físicas de tela antes de comprar?</span
+                                    >
+                                    <span
+                                      class="material-symbols-outlined text-primary-container transition-transform duration-200"
+                                      >expand_more</span
+                                    >
+                                  </button>
+                                  <div
+                                    class="faq-answer hidden pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                  >
+                                    Totalmente. Contamos con el
+                                    <em>JM Atelier Swatchbox</em>, que incluye
+                                    muestras de nuestras 24 telas base (desde
+                                    algodón cardado ligero hasta friza peinada
+                                    de 400g), junto con estampas testigo en DTF,
+                                    vinilo soft y bordado 3D. El importe del kit
+                                    se descuenta íntegramente de tu primer
+                                    pedido en firme.
+                                  </div>
+                                </div>
+                                <!-- FAQ 4 -->
+                                <div
+                                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+                                >
+                                  <button
+                                    class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                                    onclick="toggleFaq(this)"
+                                    type="button"
+                                  >
+                                    <span
+                                      >¿Hacen envíos a todo el país y qué
+                                      garantías incluyen?</span
+                                    >
+                                    <span
+                                      class="material-symbols-outlined text-primary-container transition-transform duration-200"
+                                      >expand_more</span
+                                    >
+                                  </button>
+                                  <div
+                                    class="faq-answer hidden pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                                  >
+                                    Despachamos pedidos diarios mediante
+                                    paquetería de alta velocidad con
+                                    <strong
+                                      >cobertura asegurada al 100% contra
+                                      extravíos o daños</strong
+                                    >. Cada bulto viaja sellado con precinto de
+                                    seguridad e incluye una hoja de inspección
+                                    de calidad firmada por el operador de
+                                    taller.
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <!-- SECTION 5: FINAL IMPACT CTA -->
+                          <section
+                            class="w-full px-gutter-mobile md:px-gutter lg:px-margin pb-space-xl"
+                          >
+                            <div
+                              class="max-w-6xl mx-auto rounded-2xl bg-surface-container p-space-lg md:p-space-xl relative overflow-hidden shadow-sm"
+                            >
+                              <!-- Visual Accent Layer -->
+                              <div
+                                class="absolute -right-16 -bottom-16 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"
+                              ></div>
+                              <div
+                                class="absolute -left-16 -top-16 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"
+                              ></div>
+                              <div
+                                class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+                              >
+                                <div class="lg:col-span-8 space-y-space-xs">
+                                  <span
+                                    class="inline-flex items-center gap-1.5 font-label-md text-label-md uppercase tracking-wider text-primary-container font-bold"
+                                  >
+                                    <span
+                                      class="material-symbols-outlined text-[16px]"
+                                      >draw</span
+                                    >
+                                    Configurador Digital en Tiempo Real
+                                  </span>
+                                  <h2
+                                    class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight"
+                                  >
+                                    ¿Prefieres diseñar tu prenda en vivo ahora
+                                    mismo?
+                                  </h2>
+                                  <p
+                                    class="font-body-md text-body-md text-on-surface-variant max-w-xl"
+                                  >
+                                    Sube tu arte a nuestro configurador 2D
+                                    interactivo, rota la prenda, selecciona
+                                    tonalidades y obtén una previsualización
+                                    técnica lista para cotizar al instante.
+                                  </p>
+                                </div>
+                                <div
+                                  class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm justify-end"
+                                >
+                                  <a
+                                    class="inline-flex items-center justify-center px-space-md py-3.5 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-md gap-2"
+                                    href="#"
+                                  >
+                                    <span>IR AL PERSONALIZADOR 2D</span>
+                                    <span
+                                      class="material-symbols-outlined text-[18px]"
+                                      >tune</span
+                                    >
+                                  </a>
+                                  <a
+                                    class="inline-flex items-center justify-center px-space-md py-3.5 bg-surface-container-lowest hover:bg-on-surface hover:text-surface text-on-surface font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm gap-2"
+                                    href="#"
+                                  >
+                                    <span>DESCARGAR CATÁLOGO PDF</span>
+                                    <span
+                                      class="material-symbols-outlined text-[18px]"
+                                      >download</span
+                                    >
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                        <script>
+                          function toggleChip(button) {
+                            const isSelected =
+                              button.classList.contains("bg-on-surface");
+                            if (isSelected) {
+                              button.classList.remove(
+                                "bg-on-surface",
+                                "text-on-primary",
+                              );
+                              button.classList.add(
+                                "bg-surface",
+                                "text-on-surface",
+                              );
+                            } else {
+                              button.classList.remove(
+                                "bg-surface",
+                                "text-on-surface",
+                              );
+                              button.classList.add(
+                                "bg-on-surface",
+                                "text-on-primary",
+                              );
+                            }
+                          }
+
+                          function toggleFaq(button) {
+                            const answer = button.nextElementSibling;
+                            const icon = button.querySelector(
+                              ".material-symbols-outlined",
+                            );
+                            const isClosed =
+                              answer.classList.contains("hidden");
+
+                            // Close other FAQs
+                            document
+                              .querySelectorAll(".faq-answer")
+                              .forEach((el) => el.classList.add("hidden"));
+                            document
+                              .querySelectorAll(
+                                "#faq-container .material-symbols-outlined",
+                              )
+                              .forEach(
+                                (el) => (el.style.transform = "rotate(0deg)"),
+                              );
+
+                            if (isClosed) {
+                              answer.classList.remove("hidden");
+                              if (icon) icon.style.transform = "rotate(180deg)";
+                            }
+                          }
+
+                          // File upload visual feedback
+                          const fileInput =
+                            document.getElementById("file-input");
+                          const preview =
+                            document.getElementById("file-name-preview");
+                          if (fileInput && preview) {
+                            fileInput.addEventListener("change", function (e) {
+                              if (this.files && this.files.length > 0) {
+                                const fileNames = Array.from(this.files)
+                                  .map((f) => f.name)
+                                  .join(", ");
+                                preview.textContent = "Archivos: " + fileNames;
+                                preview.classList.remove("hidden");
+                              }
+                            });
+                          }
+
+                          function showFormConfirmation() {
+                            const form = document.getElementById(
+                              "contact-atelier-form",
+                            );
+                            const banner = document.getElementById(
+                              "form-success-banner",
+                            );
+                            if (form && banner) {
+                              form.reset();
+                              banner.classList.remove("hidden");
+                              banner.scrollIntoView({
+                                behavior: "smooth",
+                                block: "nearest",
+                              });
+                            }
+                          }
+                        </script>
+                      </main>
+                      <footer
+                        class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-lg"
+                      >
+                        <div
+                          class="w-full px-gutter-mobile md:px-gutter lg:px-margin"
+                        >
+                          <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl border-b border-inverse-on-surface/10"
+                          >
+                            <div class="space-y-space-sm">
+                              <div class="flex items-center gap-space-xs">
+                                <span
+                                  class="font-headline-md text-headline-md tracking-tight uppercase text-on-tertiary-container"
+                                  >JM INDUSTRY</span
+                                >
+                              </div>
+                              <p
+                                class="font-body-sm text-body-sm text-inverse-on-surface/70"
+                              >
+                                Atelier especializado en personalización textil
+                                de alta gama, serigrafía industrial, bordado de
+                                precisión y confección para marcas líderes y
+                                proyectos exigentes.
+                              </p>
+                              <div
+                                class="flex items-center gap-space-xs pt-space-xs"
+                              >
+                                <span
+                                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary tracking-widest uppercase"
+                                  >Sello Textil Pro</span
+                                >
+                              </div>
+                              <div
+                                class="flex items-center gap-space-sm pt-space-xs"
+                              >
+                                <a
+                                  aria-label="Instagram"
+                                  class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-primary text-inverse-on-surface flex items-center justify-center transition-colors"
+                                  href="#"
+                                  ><span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >photo_camera</span
+                                  ></a
+                                ><a
+                                  aria-label="Facebook"
+                                  class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-primary text-inverse-on-surface flex items-center justify-center transition-colors"
+                                  href="#"
+                                  ><span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >public</span
+                                  ></a
+                                ><a
+                                  aria-label="LinkedIn"
+                                  class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-primary text-inverse-on-surface flex items-center justify-center transition-colors"
+                                  href="#"
+                                  ><span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >business_center</span
+                                  ></a
+                                ><a
+                                  aria-label="WhatsApp"
+                                  class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-primary text-inverse-on-surface flex items-center justify-center transition-colors"
+                                  href="#"
+                                  ><span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >chat</span
+                                  ></a
+                                >
+                              </div>
+                            </div>
+                            <div>
+                              <h4
+                                class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+                              >
+                                Explora
+                              </h4>
+                              <ul
+                                class="space-y-space-xs font-body-sm text-body-sm"
+                              >
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="inicio" href="#">Inicio</a>
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="nosotros" href="#"
+                                    >Sobre el Atelier</a
+                                  >
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="catalogo" href="#"
+                                    >Catálogo de Prendas</a
+                                  >
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="servicios" href="#"
+                                    >Técnicas y Servicios</a
+                                  >
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="personaliza-tu-prenda" href="#"
+                                    >Configurador Online</a
+                                  >
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  <a data-path="contacto" href="#">Contacto</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <h4
+                                class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+                              >
+                                Servicios Técnicos
+                              </h4>
+                              <ul
+                                class="space-y-space-xs font-body-sm text-body-sm"
+                              >
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  Serigrafía de Alto Relieve
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  Bordado Directo &amp; Parches
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  Impresión DTG HD
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  Sublimación Especializada
+                                </li>
+                                <li
+                                  class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+                                >
+                                  Etiquetado de Marca Privada
+                                </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <h4
+                                class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+                              >
+                                Contacto &amp; Taller
+                              </h4>
+                              <div
+                                class="space-y-space-xs font-body-sm text-body-sm text-inverse-on-surface/70"
+                              >
+                                <p class="flex items-center gap-space-xs">
+                                  <span
+                                    class="material-symbols-outlined text-[18px] text-primary-fixed"
+                                    >location_on</span
+                                  >
+                                  Zona Industrial Textil, Nave 04
+                                </p>
+                                <p class="flex items-center gap-space-xs">
+                                  <span
+                                    class="material-symbols-outlined text-[18px] text-primary-fixed"
+                                    >mail</span
+                                  >
+                                  cotizaciones@jmindustry.com
+                                </p>
+                                <p class="flex items-center gap-space-xs">
+                                  <span
+                                    class="material-symbols-outlined text-[18px] text-primary-fixed"
+                                    >call</span
+                                  >
+                                  +52 (55) 8900 4520
+                                </p>
+                                <p class="flex items-center gap-space-xs">
+                                  <span
+                                    class="material-symbols-outlined text-[18px] text-primary-fixed"
+                                    >schedule</span
+                                  >
+                                  Lun - Vie: 08:00 - 18:00 hrs
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-inverse-on-surface/60"
+                          >
+                            <div>
+                              © 2024 JM INDUSTRY. Estándar de Calidad Textil
+                              Industrial. Todos los derechos reservados.
+                            </div>
+                            <div class="flex items-center gap-space-md">
+                              <span
+                                class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+                                >Políticas de Privacidad</span
+                              ><span
+                                class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+                                >Términos del Servicio</span
+                              ><span
+                                class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+                                >Garantía Textil</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </footer>
+                    </body>
+                  </html>
+                  <div
+                    class="flex items-center gap-2 text-on-surface-variant font-body-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px] text-primary"
+                      >schedule</span
+                    >
+                    <span>Respuesta técnica en &lt; 24h</span>
+                  </div>
+                  <span class="text-on-surface-variant/30">•</span>
+                  <div
+                    class="flex items-center gap-2 text-on-surface-variant font-body-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px] text-secondary"
+                      >verified_user</span
+                    >
+                    <span>Garantía de reimpresión si no cumple tu muestra</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm"
+              >
+                <a
+                  class="inline-flex items-center justify-center px-space-md py-3.5 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm text-center"
+                  data-path="personaliza-tu-prenda"
+                  href="#"
+                >
+                  Personaliza Tu Prenda
+                </a>
+                <a
+                  class="inline-flex items-center justify-center px-space-md py-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider rounded transition-colors text-center"
+                  data-path="contacto"
+                  href="#"
+                >
+                  Hablar con un Asesor Técnico
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-lg"
+    >
+      <div class="w-full px-gutter-mobile md:px-gutter lg:px-margin">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl border-b border-inverse-on-surface/10"
+        >
+          <div class="space-y-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-md text-headline-md tracking-tight uppercase text-on-tertiary-container"
+                >JM INDUSTRY</span
+              >
+            </div>
+            <p class="font-body-sm text-body-sm text-inverse-on-surface/70">
+              Atelier especializado en personalización textil de alta gama,
+              serigrafía industrial, bordado de precisión y confección para
+              marcas líderes y proyectos exigentes.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary tracking-widest uppercase"
+                >Sello Textil Pro</span
+              >
+            </div>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Explora
+            </h4>
+            <ul class="space-y-space-xs font-body-sm text-body-sm">
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Inicio
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Sobre el Atelier
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Catálogo de Prendas
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Técnicas y Servicios
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Configurador Online
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Servicios Técnicos
+            </h4>
+            <ul class="space-y-space-xs font-body-sm text-body-sm">
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Serigrafía de Alto Relieve
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Bordado Directo &amp; Parches
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Impresión DTG HD
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Sublimación Especializada
+              </li>
+              <li
+                class="cursor-pointer text-inverse-on-surface/70 hover:text-inverse-on-surface transition-colors"
+              >
+                Etiquetado de Marca Privada
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline-sm text-headline-sm text-inverse-on-surface mb-space-md"
+            >
+              Contacto &amp; Taller
+            </h4>
+            <div
+              class="space-y-space-xs font-body-sm text-body-sm text-inverse-on-surface/70"
+            >
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >location_on</span
+                >
+                Zona Industrial Textil, Nave 04
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >mail</span
+                >
+                cotizaciones@jmindustry.com
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >call</span
+                >
+                +52 (55) 8900 4520
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed"
+                  >schedule</span
+                >
+                Lun - Vie: 08:00 - 18:00 hrs
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-inverse-on-surface/60"
+        >
+          <div>
+            © 2024 JM INDUSTRY. Estándar de Calidad Textil Industrial. Todos los
+            derechos reservados.
+          </div>
+          <div class="flex items-center gap-space-md">
+            <span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Políticas de Privacidad</span
+            ><span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Términos del Servicio</span
+            ><span
+              class="cursor-pointer hover:text-inverse-on-surface transition-colors"
+              >Garantía Textil</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
