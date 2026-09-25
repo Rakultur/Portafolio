@@ -208,76 +208,176 @@
     </script>
   </head>
   <body class="bg-background font-body-md text-on-surface antialiased">
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-highest/60"
-    >
-      <div
-        class="h-20 w-full px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-space-md"
-      >
-        <div class="flex items-center gap-space-sm flex-shrink-0">
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-[#e4e1d9]/80">
+    <div class="h-20 w-full px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-4">
+      
+      <!-- LOGO & BRANDING -->
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <a href="/proyectos/jmindustry_1/index.html" class="flex items-center gap-3 group focus:outline-none">
           <img
             alt="JM INDUSTRY Logo"
-            class="h-8 w-auto object-contain"
+            class="h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             src="https://lh3.googleusercontent.com/aida/AEtjO1WfzfJ1TYpCfPxkrQg8jFft2Dzow4Z8IwFy3q3JumSCOZ3gFKGvfZMEQGWwPXvmok8mPWasHjLI7vBJ70QI5BeT_udRXXBDSarvtb0H79y9Gigdn5-7Lc6dl5Rc7aqn5FYMMgf34vKf-urvd8h4Y76vja3BSXmRlwN0Vas7U1ln008wM70yXrJNVtnFx_rvLStkELy94Koztr5WT8t6TXJXWvt2qvnYAnVQRzWhSWh9VKWtkoy9vfqN8TXl"
-          /><span
-            class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold"
-            >JM INDUSTRY</span
-          >
-        </div>
-        <nav
-          class="hidden xl:flex items-center gap-space-lg"
-          data-active-classes="text-primary font-semibold"
+          />
+          <span class="font-headline text-lg sm:text-xl tracking-tight text-[#1b1c19] uppercase font-extrabold group-hover:text-primary transition-colors">
+            JM INDUSTRY
+          </span>
+        </a>
+      </div>
+
+      <!-- DESKTOP NAVIGATION LINKS (Visible a partir de pantallas xl / lg con adaptabilidad) -->
+      <nav class="hidden xl:flex items-center gap-6 2xl:gap-8" data-active-classes="text-primary font-semibold">
+        <a
+          aria-current="page"
+          class="font-body text-xs 2xl:text-sm font-bold uppercase tracking-wider transition-colors text-primary py-1 border-b-2 border-primary"
+          data-path="inicio"
+          href="/proyectos/jmindustry_1/index.html"
         >
+          INICIO
+        </a>
+        <a
+          class="font-body text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#474741] hover:text-primary transition-colors py-1"
+          data-path="nosotros"
+          href="/proyectos/jmindustry_1/nosotros.html"
+        >
+          NOSOTROS
+        </a>
+        <a
+          class="font-body text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#474741] hover:text-primary transition-colors py-1"
+          data-path="catalogo"
+          href="/proyectos/jmindustry_1/catalogo.html"
+        >
+          CATÁLOGO
+        </a>
+        <a
+          class="font-body text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#474741] hover:text-primary transition-colors py-1"
+          data-path="servicios"
+          href="/proyectos/jmindustry_1/servicios.html"
+        >
+          SERVICIOS
+        </a>
+        <a
+          class="font-body text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#474741] hover:text-primary transition-colors py-1"
+          data-path="personaliza-tu-prenda"
+          href="/proyectos/jmindustry_1/personalizado.html"
+        >
+          PERSONALIZA TU PRENDA
+        </a>
+        <a
+          class="font-body text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#474741] hover:text-primary transition-colors py-1"
+          data-path="contacto"
+          href="/proyectos/jmindustry_1/contacto.html"
+        >
+          CONTACTO
+        </a>
+      </nav>
+
+      <!-- ACCIONES DERECHA (CTA, USUARIO & BOTÓN HAMBURGUESA RESPONSIVE) -->
+      <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+        
+        <!-- Botón CTA Desktop / Tablet (Oculto en móvil pequeño para optimizar espacio) -->
+        <a
+          class="hidden sm:inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 bg-primary hover:bg-[#b91c1c] active:scale-95 text-white font-headline text-xs tracking-wider uppercase rounded-md transition-all shadow-sm font-bold"
+          data-path="personaliza-tu-prenda"
+          href="/proyectos/jmindustry_1/personalizado.html"
+        >
+          PERSONALIZA TU PRENDA
+        </a>
+
+        <!-- Botón de Perfil de Usuario -->
+        <a
+          href="/proyectos/jmindustry_1/perfil.html"
+          title="Mi Perfil"
+          aria-label="Perfil de usuario"
+          class="w-9 h-9 rounded-full bg-primary hover:bg-[#b91c1c] active:scale-95 flex items-center justify-center transition-all shadow-sm text-white focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        >
+          <span class="material-symbols-outlined text-white text-[19px]">person</span>
+        </a>
+
+        <!-- Botón Hamburguesa para Móvil y Tablets (< 1280px / xl) -->
+        <button
+          id="menuToggleBtn"
+          type="button"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          class="xl:hidden inline-flex items-center justify-center p-2 rounded-lg text-[#1b1c19] hover:bg-[#f0ede6] transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <span id="burgerIcon" class="material-symbols-outlined text-2xl">menu</span>
+          <span id="closeIcon" class="material-symbols-outlined text-2xl hidden">close</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MENÚ MÓVIL DESPLEGABLE / DRAWER RESPONSIVE -->
+    <div
+      id="mobileNavDrawer"
+      class="xl:hidden fixed inset-x-0 top-20 bg-white border-b border-[#e4e1d9] shadow-xl overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out"
+      aria-hidden="true"
+    >
+      <div class="px-5 pt-4 pb-6 space-y-2">
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-bold uppercase tracking-wider text-primary bg-red-50 border-l-4 border-primary transition-colors"
+          data-path="inicio"
+          href="/proyectos/jmindustry_1/index.html"
+        >
+          <span>INICIO</span>
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-[#474741] hover:bg-[#f6f3ec] hover:text-primary transition-colors"
+          data-path="nosotros"
+          href="/proyectos/jmindustry_1/nosotros.html"
+        >
+          <span>NOSOTROS</span>
+          <span class="material-symbols-outlined text-base opacity-40">chevron_right</span>
+        </a>
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-[#474741] hover:bg-[#f6f3ec] hover:text-primary transition-colors"
+          data-path="catalogo"
+          href="/proyectos/jmindustry_1/catalogo.html"
+        >
+          <span>CATÁLOGO</span>
+          <span class="material-symbols-outlined text-base opacity-40">chevron_right</span>
+        </a>
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-[#474741] hover:bg-[#f6f3ec] hover:text-primary transition-colors"
+          data-path="servicios"
+          href="/proyectos/jmindustry_1/servicios.html"
+        >
+          <span>SERVICIOS</span>
+          <span class="material-symbols-outlined text-base opacity-40">chevron_right</span>
+        </a>
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-[#474741] hover:bg-[#f6f3ec] hover:text-primary transition-colors"
+          data-path="personaliza-tu-prenda"
+          href="/proyectos/jmindustry_1/personalizado.html"
+        >
+          <span>PERSONALIZA TU PRENDA</span>
+          <span class="material-symbols-outlined text-base opacity-40">palette</span>
+        </a>
+        <a
+          class="flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider text-[#474741] hover:bg-[#f6f3ec] hover:text-primary transition-colors"
+          data-path="contacto"
+          href="/proyectos/jmindustry_1/contacto.html"
+        >
+          <span>CONTACTO</span>
+          <span class="material-symbols-outlined text-base opacity-40">mail</span>
+        </a>
+
+        <!-- Botón CTA en Móvil (< sm) -->
+        <div class="pt-4 mt-2 border-t border-[#f0ede6] sm:hidden">
           <a
-            aria-current="page"
-            class="uppercase tracking-wider transition-colors text-primary font-semibold"
-            data-path="inicio"
-            href="/proyectos/jmindustry_1/index.html"
-            >INICIO</a
-          ><a
-            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
-            data-path="nosotros"
-            href="/proyectos/jmindustry_1/nosotros.html"
-            >NOSOTROS</a
-          ><a
-            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
-            data-path="catalogo"
-            href="/proyectos/jmindustry_1/catalogo.html"
-            >CATÁLOGO</a
-          ><a
-            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
-            data-path="servicios"
-            href="/proyectos/jmindustry_1/servicios.html"
-            >SERVICIOS</a
-          ><a
-            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
-            data-path="personaliza-tu-prenda"
+            class="flex items-center justify-center gap-2 w-full py-3 bg-primary active:bg-[#b91c1c] text-white font-headline text-xs font-bold uppercase tracking-wider rounded-lg shadow-sm"
             href="/proyectos/jmindustry_1/personalizado.html"
-            >PERSONALIZA TU PRENDA</a
-          ><a
-            class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors"
-            data-path="contacto"
-            href="/proyectos/jmindustry_1/contacto.html"
-            >CONTACTO</a
           >
-        </nav>
-        <div class="flex items-center gap-space-md flex-shrink-0">
-          <a
-            class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded transition-colors shadow-sm"
-            data-path="personaliza-tu-prenda"
-            href="/proyectos/jmindustry_1/personalizado.html"
-            >PERSONALIZA TU PRENDA</a
-          >
-          <div
-            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
-          >
-            <span class="material-symbols-outlined text-on-primary text-[18px]"
-              >person</span
-            >
-          </div>
+            <span class="material-symbols-outlined text-lg">checkroom</span>
+            PERSONALIZA TU PRENDA
+          </a>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
     <main class="w-full pt-20 bg-background min-h-screen">
       <div class="flex flex-col w-full">
         <!-- Top Hero & Intro Context -->
