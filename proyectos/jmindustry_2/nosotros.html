@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="es" style="">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#f9f9ff",
+              "tertiary-fixed-dim": "#68dba9",
+              "on-surface-variant": "#44464e",
+              "primary-fixed-dim": "#b4c6f4",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              tertiary: "#000b05",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1ff",
+              "on-primary-container": "#7687b2",
+              "secondary-fixed-dim": "#ffb77d",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#005137",
+              "surface-container-low": "#f0f3ff",
+              "surface-container": "#e7eeff",
+              "tertiary-container": "#002618",
+              "inverse-surface": "#263143",
+              "inverse-primary": "#b4c6f4",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fe932c",
+              "on-tertiary-fixed": "#002114",
+              "on-surface": "#111c2d",
+              "outline-variant": "#c5c6cf",
+              "on-primary": "#ffffff",
+              "on-background": "#111c2d",
+              "on-primary-fixed": "#041a3f",
+              "tertiary-fixed": "#85f8c4",
+              "on-primary-fixed-variant": "#34466d",
+              primary: "#00081e",
+              "surface-dim": "#cfdaf2",
+              outline: "#75777f",
+              surface: "#f9f9ff",
+              "on-secondary-fixed": "#2f1500",
+              "on-tertiary-container": "#139a6d",
+              "surface-bright": "#f9f9ff",
+              "on-secondary-container": "#663500",
+              "surface-tint": "#4c5e86",
+              "primary-container": "#0a1f44",
+              "surface-container-high": "#dee8ff",
+              secondary: "#904d00",
+              "primary-fixed": "#d9e2ff",
+              "surface-container-highest": "#d8e3fb",
+              error: "#ba1a1a",
+              "secondary-fixed": "#ffdcc3",
+              "surface-variant": "#d8e3fb",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              gutter: "1.5rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              "space-xs": "0.25rem",
+              margin: "3rem",
+              "space-sm": "0.5rem",
+              "margin-mobile": "1.25rem",
+              "gutter-mobile": "1rem",
+              "space-xl": "2.5rem",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Space Grotesk"],
+              display: ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "body-sm": ["Hanken Grotesk"],
+              "title-md": ["Hanken Grotesk"],
+              "display-mobile": ["Space Grotesk"],
+              "label-md": ["JetBrains Mono"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+              "headline-md": ["Space Grotesk"],
+              "label-sm": ["JetBrains Mono"],
+              "body-lg": ["Hanken Grotesk"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "22px",
+                { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "title-md": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-mobile": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": [
+                "15px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header class="w-full bg-surface border-b border-outline-variant relative">
+      <div
+        class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"
+      >
+        <!-- Logo e Identidad -->
+        <a href="inicio.html" class="flex items-center gap-space-sm">
+          <img
+            alt="Logotipo Corporativo VELTRIX"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1U08u9-01PhTFqsZHtuInhEatnCR4Or6L1CLckQayJtgTNXMSqFwumFduQFE5tmBBYThuLzAM9Zk-qJ29mr1ObP1Zg15cRdETlsWFjhTsPCcEmty4WHFGKg--GjnBoaw8-pBGjMBtSGE7-V9DiW0k2u4hQjRli_xNbbPR7qrMwHvht2Uu-yuMBJOooP-1gh2tPcITWss_WKu5qW65R13iBcpeWD3yteG94kCrTvE2ARrBrObdUZmIeV4GIj"
+          />
+          <span
+            class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary"
+            >VELTRIX</span
+          >
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav
+          class="hidden lg:flex items-center gap-space-lg"
+          data-active-classes="text-primary font-title-md bg-surface-container-high rounded-lg"
+        >
+          <a
+            aria-current="page"
+            class="transition-colors py-space-xs px-space-sm text-primary font-title-md bg-surface-container-high rounded-lg"
+            data-path="inicio"
+            href="inicio.html"
+            >Inicio</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="nosotros"
+            href="nosotros.html"
+            >Nosotros</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="catalogo"
+            href="catalogo.html"
+            >Catálogo</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="servicios"
+            href="servicios.html"
+            >Servicios</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="contacto"
+            href="contacto.html"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Acciones e Iconos -->
+        <div class="flex items-center gap-space-md">
+          <!-- Botón Solicitar Cotización -->
+          <a
+            class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
+            data-path="solicitar-cotizacion"
+            href="contacto.html"
+            >Solicitar Cotización</a
+          >
+
+          <!-- Icono Perfil / Usuario -->
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+
+          <!-- Botón Menú Hamburguesa (Solo visible en dispositivos móviles / lg:hidden) -->
+          <button
+            id="mobile-menu-button"
+            aria-label="Abrir menú"
+            class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none flex items-center justify-center"
+          >
+            <span id="menu-icon" class="material-symbols-outlined text-2xl"
+              >menu</span
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú Desplegable Responsive Mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg border-b border-outline-variant z-50 px-margin-mobile py-space-md transition-all duration-300"
+      >
+        <nav class="flex flex-col gap-space-xs">
+          <a
+            aria-current="page"
+            class="transition-colors py-space-sm px-space-md text-primary font-title-md bg-surface-container-high rounded-lg"
+            href="inicio.html"
+            >Inicio</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="nosotros.html"
+            >Nosotros</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="catalogo.html"
+            >Catálogo</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="servicios.html"
+            >Servicios</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="contacto.html"
+            >Contacto</a
+          >
+
+          <!-- Botón de Cotización para móvil (visible solo si la pantalla es menor a sm) -->
+          <div
+            class="mt-space-sm pt-space-sm border-t border-outline-variant sm:hidden"
+          >
+            <a
+              class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
+              href="contacto.html"
+              >Solicitar Cotización</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- Top Micro Navigation & Context Header -->
+        <section class="w-full bg-surface-container-low py-space-lg">
+          <div
+            class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+          >
+            <div
+              class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"
+            >
+              <a class="hover:text-primary transition-colors" href="#"
+                >Inicio</a
+              >
+              <span class="material-symbols-outlined text-[14px]"
+                >chevron_right</span
+              >
+              <span class="text-primary font-semibold">Nosotros</span>
+              <span class="material-symbols-outlined text-[14px]"
+                >chevron_right</span
+              >
+              <span
+                class="text-on-surface-variant font-label-sm uppercase tracking-wider"
+                >Identidad &amp; Metodología</span
+              >
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <div
+                class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-highest rounded-full"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"
+                ></span>
+                <span
+                  class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest"
+                  >RETIE &amp; NTC 2050 • Cobertura Nacional Colombia</span
+                >
+              </div>
+              <div
+                class="hidden sm:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-secondary"
+                  >verified_user</span
+                >
+                <span class="">Certificación de Infraestructura 2025</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Hero Identity Statement -->
+        <section class="relative w-full overflow-hidden bg-surface py-space-xl">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center"
+            >
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <div
+                  class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-secondary"
+                    >shield</span
+                  >
+                  Arquitectura de Seguridad &amp; Soberanía Energética
+                </div>
+                <h1
+                  class="font-display text-display font-bold text-primary tracking-tight"
+                >
+                  Ingeniería de Precisión en Defensa y Energía Solar.
+                </h1>
+                <p class="font-body-lg text-body-lg text-secondary font-medium">
+                  Instalación y Venta de Sistemas de Seguridad Electrónica e
+                  Ingeniería Solar
+                </p>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed"
+                >
+                  Protegemos hogares, comercio, agroindustria, parcelaciones y
+                  complejos productivos en toda Colombia. Integramos
+                  videoanalítica perimetral con Inteligencia Artificial, control
+                  biométrico y soluciones solares fotovoltaicas autónomas de
+                  grado industrial en Antioquia, Cundinamarca, Valle,
+                  Santanderes, Llanos y Costa Caribe.
+                </p>
+                <div
+                  class="pt-space-xs flex flex-wrap items-center gap-space-sm"
+                >
+                  <div
+                    class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-secondary-container/15 text-secondary rounded-lg"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-[20px]"
+                      >payments</span
+                    >
+                    <span class="font-title-md text-title-md font-semibold"
+                      >¡Facilidades de instalación a crédito sin
+                      descapitalización!</span
+                    >
+                  </div>
+                </div>
+                <!-- Quick Metrics Bar -->
+                <div class="grid grid-cols-3 gap-space-sm pt-space-md max-w-lg">
+                  <div
+                    class="flex flex-col bg-surface-container-lowest p-space-sm rounded-lg shadow-sm"
+                  >
+                    <span
+                      class="font-display text-headline-md font-bold text-primary"
+                      >100%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Equipos Homologados</span
+                    >
+                  </div>
+                  <div
+                    class="flex flex-col bg-surface-container-lowest p-space-sm rounded-lg shadow-sm"
+                  >
+                    <span
+                      class="font-display text-headline-md font-bold text-secondary"
+                      >24/7</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Autonomía Energética</span
+                    >
+                  </div>
+                  <div
+                    class="flex flex-col bg-surface-container-lowest p-space-sm rounded-lg shadow-sm"
+                  >
+                    <span
+                      class="font-display text-headline-md font-bold text-tertiary-fixed-dim"
+                      >0%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >Puntos Ciegos</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 relative">
+                <div
+                  class="relative w-full h-[460px] rounded-xl overflow-hidden shadow-xl bg-surface-container"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Modern solar panels and high definition surveillance thermal cameras mounted on a sleek industrial enterprise structure under a clear daylight sky, deep navy metallic hardware accents with subtle golden light reflections, crisp architectural engineering aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOgN3VlrGefOp7Say5Kp9M0NbPx7a0Z4paWOB_Uz98ibiatz_6lA4ixX2-7WPwRGuUZGVRx38bVuFo_9S7W1ogjmlgKXJ31XC8WV8DWySoJlpLs7gCkza6Z_-SWzqm9fNZHBJf0k3iqL8mKDVGsjQmlf2gat2WnWoP44CsJnv4GNzl_SxfiayUEd1od8KaP9iZWs3P0kspBL2mLOUsZXBCBIkqOTB5GZXIzOPb5bPeFRycMuxEauvYMw"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"
+                  ></div>
+                  <div
+                    class="absolute bottom-space-md left-space-md right-space-md p-space-md bg-surface/90 backdrop-blur-md rounded-lg shadow-lg flex items-center justify-between"
+                  >
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                      >
+                        Centro de Ingeniería &amp; Soporte
+                      </p>
+                      <p
+                        class="font-title-md text-title-md font-bold text-primary"
+                      >
+                        Operaciones Colombia • Veltrix
+                      </p>
+                    </div>
+                    <div
+                      class="flex items-center gap-1.5 px-space-xs py-1 rounded bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm font-semibold"
+                    >
+                      <span
+                        class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"
+                      ></span>
+                      ONLINE
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Misión y Visión Section (Bento Contrast Split) -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div
+              class="flex flex-col gap-space-xs mb-space-lg text-center max-w-2xl mx-auto"
+            >
+              <span
+                class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold"
+                >Dirección Estratégica</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-primary"
+              >
+                Propósito y Futuro Operativo
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Los pilares sobre los cuales diseñamos la soberanía y resguardo
+                patrimonial de nuestros clientes.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+              <!-- Card Misión -->
+              <div
+                class="flex flex-col justify-between p-space-lg bg-surface-container-lowest rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                <div class="flex flex-col gap-space-sm">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-[26px]"
+                      >track_changes</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-widest"
+                      >Compromiso Activo</span
+                    >
+                    <span class="h-1 w-8 bg-primary rounded-full"></span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm font-bold text-primary"
+                  >
+                    Nuestra Misión
+                  </h3>
+                  <p
+                    class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                  >
+                    Proveer soluciones integrales de seguridad electrónica e
+                    ingeniería solar en Colombia bajo los más altos estándares
+                    técnicos, garantizando tranquilidad, continuidad operativa y
+                    soberanía energética para predios urbanos, agroindustria,
+                    fincas y zonas rurales.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-xs"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[20px]"
+                    >bolt</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm font-medium text-primary"
+                    >Cero interrupciones de suministro en misiones
+                    críticas.</span
+                  >
+                </div>
+              </div>
+              <!-- Card Visión -->
+              <div
+                class="flex flex-col justify-between p-space-lg bg-primary text-on-primary rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                <div class="flex flex-col gap-space-sm">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface text-primary flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-[26px]"
+                      >visibility</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="font-label-sm text-label-sm uppercase font-bold text-secondary-fixed tracking-widest"
+                      >Alcance Global</span
+                    >
+                    <span
+                      class="h-1 w-8 bg-secondary-container rounded-full"
+                    ></span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface"
+                  >
+                    Nuestra Visión
+                  </h3>
+                  <p
+                    class="font-body-lg text-body-lg text-on-primary-container leading-relaxed"
+                  >
+                    Consolidarnos como el referente de ingeniería líder en
+                    Colombia en convergencia tecnológica de seguridad
+                    perimetral, videovigilancia inteligente y energía solar
+                    autónoma conectada o aislada para proyectos de alta
+                    complejidad nacional.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md bg-inverse-surface rounded-lg p-space-sm flex items-center gap-space-xs"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed text-[20px]"
+                    >verified</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm font-medium text-inverse-on-surface"
+                    >Estandarización y liderazgo en despliegues a gran
+                    escala.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Metodología de Trabajo en Detalle (Timeline de Ingeniería) -->
+        <section class="w-full bg-surface py-space-xl">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl"
+            >
+              <div class="flex flex-col gap-space-xs max-w-xl">
+                <span
+                  class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold"
+                  >Rigor y Calidad Técnica</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg font-bold text-primary"
+                >
+                  Metodología de Trabajo en Detalle
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Nuestro protocolo de 5 fases operativas garantiza que cada
+                  kilovatio y cada lente operen bajo parámetros militares de
+                  durabilidad y confiabilidad.
+                </p>
+              </div>
+              <div
+                class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container rounded-lg"
+              >
+                <span class="material-symbols-outlined text-primary text-[20px]"
+                  >precision_manufacturing</span
+                >
+                <span
+                  class="font-label-sm text-label-sm uppercase font-bold text-primary"
+                  >Flujo Certificado de 5 Pasos</span
+                >
+              </div>
+            </div>
+            <!-- Roadmap Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-space-md">
+              <!-- Paso 1 -->
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative"
+              >
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-label-md text-label-md font-bold text-secondary bg-secondary-fixed/30 px-space-xs py-0.5 rounded"
+                    >FASE 01</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[22px]"
+                    >radar</span
+                  >
+                </div>
+                <h3
+                  class="font-title-md text-title-md font-bold text-primary mb-space-xs"
+                >
+                  Levantamiento en Terreno
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed"
+                >
+                  Inspección técnica in situ de vulnerabilidades perimetrales,
+                  condiciones climáticas colombianas y requerimientos de carga
+                  eléctrica de la propiedad.
+                </p>
+                <div
+                  class="mt-auto pt-space-xs flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Análisis térmico y óptico</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Medición de irradiación solar IDEAM</span
+                  >
+                </div>
+              </div>
+              <!-- Paso 2 -->
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative"
+              >
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-label-md text-label-md font-bold text-secondary bg-secondary-fixed/30 px-space-xs py-0.5 rounded"
+                    >FASE 02</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[22px]"
+                    >architecture</span
+                  >
+                </div>
+                <h3
+                  class="font-title-md text-title-md font-bold text-primary mb-space-xs"
+                >
+                  Diseño NTC 2050 &amp; Cotización
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed"
+                >
+                  Planos de ingeniería, cálculo de autonomía solar y
+                  dimensionamiento según el Código Eléctrico Colombiano NTC 2050
+                  y requerimientos de red.
+                </p>
+                <div
+                  class="mt-auto pt-space-xs flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Planimetría CAD de CCTV</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Homologación Operador (EPM, Enel, Celsia)</span
+                  >
+                </div>
+              </div>
+              <!-- Paso 3 -->
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative"
+              >
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-label-md text-label-md font-bold text-secondary bg-secondary-fixed/30 px-space-xs py-0.5 rounded"
+                    >FASE 03</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[22px]"
+                    >construction</span
+                  >
+                </div>
+                <h3
+                  class="font-title-md text-title-md font-bold text-primary mb-space-xs"
+                >
+                  Instalación Norma RETIE
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed"
+                >
+                  Montaje riguroso bajo Reglamento Técnico de Instalaciones
+                  Eléctricas (RETIE), canalizaciones blindadas EMT, cableado
+                  certificado y sistemas de puesta a tierra.
+                </p>
+                <div
+                  class="mt-auto pt-space-xs flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Dictamen e inspección RETIE</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Protección galvánica y DPS</span
+                  >
+                </div>
+              </div>
+              <!-- Paso 4 -->
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative"
+              >
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-label-md text-label-md font-bold text-secondary bg-secondary-fixed/30 px-space-xs py-0.5 rounded"
+                    >FASE 04</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[22px]"
+                    >school</span
+                  >
+                </div>
+                <h3
+                  class="font-title-md text-title-md font-bold text-primary mb-space-xs"
+                >
+                  Puesta en Marcha &amp; Entrega
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed"
+                >
+                  Configuración en smartphones y centrales de monitoreo,
+                  inducción personalizada a administradores y entrega de
+                  dossiers técnicos con actas de conformidad.
+                </p>
+                <div
+                  class="mt-auto pt-space-xs flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Configuración App móvil / PC</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Entrega de credenciales seguras</span
+                  >
+                </div>
+              </div>
+              <!-- Paso 5 -->
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative"
+              >
+                <div class="flex items-center justify-between mb-space-sm">
+                  <span
+                    class="font-label-md text-label-md font-bold text-secondary bg-secondary-fixed/30 px-space-xs py-0.5 rounded"
+                    >FASE 05</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[22px]"
+                    >support_agent</span
+                  >
+                </div>
+                <h3
+                  class="font-title-md text-title-md font-bold text-primary mb-space-xs"
+                >
+                  Mantenimiento &amp; Respaldo Local
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed"
+                >
+                  Pólizas de mantenimiento preventivo y correctivo con técnicos
+                  propios en Colombia, monitoreo de bancos de baterías e
+                  inventario local de repuestos.
+                </p>
+                <div
+                  class="mt-auto pt-space-xs flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Atención prioritaria 24/7 Colombia</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+                    >Garantía Express sin envíos al exterior</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Live Infrastructure Process Visual Snapshot -->
+            <div
+              class="mt-space-lg grid grid-cols-1 md:grid-cols-2 gap-space-md"
+            >
+              <div
+                class="relative h-64 rounded-xl overflow-hidden shadow-md group"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Telephoto shot of professional certified technician in safety gear precisely terminating high voltage connectors in an outdoor hybrid solar inverter system on a commercial building rooftop in daytime."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeSx2q7DU_XnbExQJd4al3eftFuwmxKwX8m1LtiNAL3LpZ-BRoFx1sDd_gAoniU4lBR35QFTF6hc0PViXTwmwM7k62HAS-qc6kNM8Cil6x8YrZuGgJL5soM3QxcAehTced6Dl_kPpXWDkTdTh2Kx5uR2Cx3ZPiqf2HY2zUFFSFQ8eLBBoGaqBrNxHmKKV2NkjgqSabZQjiALa0-58df0UcfsFv9VaUB2t6ge3i4qHUwjDs-ickmW7Ozw"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 flex items-end p-space-md"
+                >
+                  <div class="text-on-primary">
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed"
+                      >Ingeniería en Campo</span
+                    >
+                    <p class="font-title-md text-title-md font-semibold">
+                      Instalación certificada con instrumental calibrado
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative h-64 rounded-xl overflow-hidden shadow-md group"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Modern security operations room showing multi-monitor displays streaming ultra high definition 4K security feeds with AI object detection boxes and perimeter wire alarms."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCChHRFBwAmmJHom-1dViMOGK3CIMyTIHwFlt7yR1vIjubFaupaWcu6D0JJLnmmnwGf6uLoVWiXCAOPf4h6oOIiHIth9zaTSeYkjeOoi1NeMXAb-8JTyyRG_clFqevarGW2Enk1jwPdVjPQnztHpIqE8IXu60mlU7T5zJNp2qoKB6mmEiU_TUCHLqleMv8Da9SJF4naoD4BMqCjsge3NQDhzg9dvCeLXN562jSQ-3OEVlvdY3_bXKsYQ"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 flex items-end p-space-md"
+                >
+                  <div class="text-on-primary">
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed"
+                      >Sistemas Inteligentes</span
+                    >
+                    <p class="font-title-md text-title-md font-semibold">
+                      Videoanalítica avanzada con detección perimetral
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Valores Agregados Destacados -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div
+              class="flex flex-col gap-space-xs mb-space-lg text-center max-w-xl mx-auto"
+            >
+              <span
+                class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold"
+                >Diferenciales Competitivos</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-primary"
+              >
+                Valores Agregados VELTRIX
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Seguridad jurídica, financiera y operativa en cada proyecto
+                ejecutado.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <!-- Valor 1 -->
+              <div
+                class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-sm hover:translate-y-[-2px] transition-transform"
+              >
+                <div
+                  class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >credit_score</span
+                  >
+                </div>
+                <h3 class="font-title-md text-title-md font-bold text-primary">
+                  Crédito &amp; Facturación DIAN
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                >
+                  Financiamiento ágil para empresas y predios sin
+                  descapitalizarse. Emitimos factura electrónica con IVA bajo
+                  normativa DIAN para deducción tributaria legal.
+                </p>
+              </div>
+              <!-- Valor 2 -->
+              <div
+                class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-sm hover:translate-y-[-2px] transition-transform"
+              >
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >verified</span
+                  >
+                </div>
+                <h3 class="font-title-md text-title-md font-bold text-primary">
+                  Manifiesto de Importación
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                >
+                  Equipos 100% originales de fabricantes Tier-1, ingresados
+                  legalmente al país con sus respectivos manifiestos aduaneros.
+                  Cero contrabando o copias sin respaldo.
+                </p>
+              </div>
+              <!-- Valor 3 -->
+              <div
+                class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-sm hover:translate-y-[-2px] transition-transform hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >sync_saved_locally</span
+                  >
+                </div>
+                <h3 class="font-title-md text-title-md font-bold text-primary">
+                  Garantía Directa en Colombia
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                >
+                  Gestión inmediata de RMA en territorio nacional sin trámites
+                  engorrosos ni tiempos muertos de envío al exterior. Reemplazo
+                  y soporte técnico ágil.
+                </p>
+              </div>
+              <!-- Valor 4 -->
+              <div
+                class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-sm hover:translate-y-[-2px] transition-transform hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >engineering</span
+                  >
+                </div>
+                <h3 class="font-title-md text-title-md font-bold text-primary">
+                  Cuadrillas Propias Certificadas
+                </h3>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                >
+                  Ingenieros y técnicos electricistas con matrícula profesional
+                  Conte / Copnia, certificados en alturas y normatividad RETIE
+                  en cada departamento del país.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA Inferior Destacado -->
+        <section
+          class="w-full bg-primary text-on-primary py-space-xl relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-primary via-primary-container/80 to-primary pointer-events-none"
+          ></div>
+          <div
+            class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin relative z-10"
+          >
+            <div
+              class="flex flex-col lg:flex-row items-center justify-between gap-space-xl p-space-lg md:p-space-xl bg-primary-container/50 rounded-2xl shadow-2xl backdrop-blur-sm"
+            >
+              <div
+                class="flex flex-col gap-space-sm text-center lg:text-left max-w-2xl"
+              >
+                <div
+                  class="inline-flex items-center gap-space-xs self-center lg:self-start px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-md text-label-md uppercase font-bold tracking-wider"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >pin_drop</span
+                  >
+                  Visita Técnica sin Costo en Territorio
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight"
+                >
+                  ¿Tienes un proyecto en mente? Solicita tu levantamiento
+                  técnico sin costo.
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-primary-container leading-relaxed"
+                >
+                  Nuestros ingenieros especialistas se desplazan a tu predio
+                  urbano, finca o planta industrial en Colombia para dimensionar
+                  la solución óptima, sin compromiso y con entrega de informe
+                  técnico preliminar.
+                </p>
+              </div>
+              <div
+                class="flex flex-col sm:flex-row lg:flex-col gap-space-sm w-full lg:w-auto shrink-0"
+              >
+                <!-- WhatsApp 1 -->
+                <a
+                  class="flex items-center justify-between gap-space-md px-space-lg py-space-md rounded-lg bg-surface text-primary hover:bg-surface-container-high transition-all shadow-md group hover:scale-105 active:scale-95"
+                  href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20deseo%20solicitar%20un%20levantamiento%20t%C3%A9cnico%20sin%20costo%20para%20un%20proyecto."
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[26px]"
+                      >chat</span
+                    >
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                        >Atención Inmediata</span
+                      >
+                      <span
+                        class="font-title-md text-title-md font-bold text-primary"
+                        >+57 310 465 9021</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+                <!-- WhatsApp 2 -->
+                <a
+                  class="flex items-center justify-between gap-space-md px-space-lg py-space-md rounded-lg bg-surface text-primary hover:bg-surface-container-high transition-all shadow-md group hover:scale-105 active:scale-95"
+                  href="https://wa.me/573042586636?text=Hola%20VELTRIX,%20deseo%20asesor%C3%ADa%20en%20ingenier%C3%ADa%20solar%20y%20seguridad%20electr%C3%B3nica."
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[26px]"
+                      >solar_power</span
+                    >
+                    <div class="flex flex-col text-left">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                        >Línea Ingeniería &amp; Proyectos</span
+                      >
+                      <span
+                        class="font-title-md text-title-md font-bold text-primary"
+                        >+57 304 258 6636</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(10,31,68,0.03)]"
+    >
+      <div
+        class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl"
+        >
+          <div class="flex flex-col gap-space-sm hover:-translate-y-1">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-sm text-headline-sm uppercase text-primary"
+                >VELTRIX</span
+              >
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Infraestructura de alta precisión que combina seguridad
+              electrónica corporativa con ingeniería solar avanzada para
+              operaciones críticas.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >ISO 9001</span
+              ><span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >RETIE</span
+              ><span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >NVR 4K</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm hover:-translate-y-1">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Líneas Directas</span
+            >
+            <div class="flex flex-col gap-space-xs">
+              <div class="flex items-start gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-on-surface-variant text-[18px] mt-0.5"
+                  >chat</span
+                >
+                <div>
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    WhatsApp Atención Comercial
+                  </p>
+                  <p
+                    class="font-label-md text-label-md text-on-surface font-semibold"
+                  >
+                    +57 310 465 9021
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-on-surface-variant text-[18px] mt-0.5"
+                  >solar_power</span
+                >
+                <div>
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    Línea Proyectos e Ingeniería
+                  </p>
+                  <p
+                    class="font-label-md text-label-md text-on-surface font-semibold"
+                  >
+                    +57 304 258 6636
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Propuesta de Valor</span
+            >
+            <ul
+              class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"
+            >
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Monitoreo Perimetral 24/7
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Generación Solar Fotovoltaica
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Póliza de Mantenimiento Crítico
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Control de Acceso Biométrico
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Ecosistema Conectado</span
+            >
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Canales oficiales de divulgación técnica e informes de
+              disponibilidad.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <a
+                aria-label="Canal de soporte y contacto"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >headset_mic</span
+                ></a
+              ><a
+                aria-label="Red de datos y cobertura"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >hub</span
+                ></a
+              ><a
+                aria-label="Ubicación y cobertura geográfica"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >location_on</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"
+        >
+          <p class="">
+            © 2025 VELTRIX Seguridad Electrónica &amp; Ingeniería Solar. Todos
+            los derechos reservados.
+          </p>
+          <div class="flex items-center gap-space-md">
+            <span class="hover:text-on-surface transition-colors cursor-pointer"
+              >Privacidad de Datos</span
+            ><span
+              class="hover:text-on-surface transition-colors cursor-pointer"
+              >Términos de Servicio Técnico</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+        <script>
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      menuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        menuIcon.textContent = isHidden ? "menu" : "close";
+      });
+    </script>
+  </body>
+</html>

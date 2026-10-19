@@ -1,0 +1,2607 @@
+<!doctype html>
+<html lang="es" style="">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#f9f9ff",
+              "tertiary-fixed-dim": "#68dba9",
+              "on-surface-variant": "#44464e",
+              "primary-fixed-dim": "#b4c6f4",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              tertiary: "#000b05",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1ff",
+              "on-primary-container": "#7687b2",
+              "secondary-fixed-dim": "#ffb77d",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#005137",
+              "surface-container-low": "#f0f3ff",
+              "surface-container": "#e7eeff",
+              "tertiary-container": "#002618",
+              "inverse-surface": "#263143",
+              "inverse-primary": "#b4c6f4",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fe932c",
+              "on-tertiary-fixed": "#002114",
+              "on-surface": "#111c2d",
+              "outline-variant": "#c5c6cf",
+              "on-primary": "#ffffff",
+              "on-background": "#111c2d",
+              "on-primary-fixed": "#041a3f",
+              "tertiary-fixed": "#85f8c4",
+              "on-primary-fixed-variant": "#34466d",
+              primary: "#00081e",
+              "surface-dim": "#cfdaf2",
+              outline: "#75777f",
+              surface: "#f9f9ff",
+              "on-secondary-fixed": "#2f1500",
+              "on-tertiary-container": "#139a6d",
+              "surface-bright": "#f9f9ff",
+              "on-secondary-container": "#663500",
+              "surface-tint": "#4c5e86",
+              "primary-container": "#0a1f44",
+              "surface-container-high": "#dee8ff",
+              secondary: "#904d00",
+              "primary-fixed": "#d9e2ff",
+              "surface-container-highest": "#d8e3fb",
+              error: "#ba1a1a",
+              "secondary-fixed": "#ffdcc3",
+              "surface-variant": "#d8e3fb",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              gutter: "1.5rem",
+              "space-lg": "1.5rem",
+              "space-md": "1rem",
+              "space-xs": "0.25rem",
+              margin: "3rem",
+              "space-sm": "0.5rem",
+              "margin-mobile": "1.25rem",
+              "gutter-mobile": "1rem",
+              "space-xl": "2.5rem",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Space Grotesk"],
+              display: ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "body-sm": ["Hanken Grotesk"],
+              "title-md": ["Hanken Grotesk"],
+              "display-mobile": ["Space Grotesk"],
+              "label-md": ["JetBrains Mono"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+              "headline-md": ["Space Grotesk"],
+              "label-sm": ["JetBrains Mono"],
+              "body-lg": ["Hanken Grotesk"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "22px",
+                { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "title-md": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-mobile": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": [
+                "15px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header class="w-full bg-surface border-b border-outline-variant relative">
+      <div
+        class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"
+      >
+        <!-- Logo e Identidad -->
+        <a href="inicio.html" class="flex items-center gap-space-sm">
+          <img
+            alt="Logotipo Corporativo VELTRIX"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1U08u9-01PhTFqsZHtuInhEatnCR4Or6L1CLckQayJtgTNXMSqFwumFduQFE5tmBBYThuLzAM9Zk-qJ29mr1ObP1Zg15cRdETlsWFjhTsPCcEmty4WHFGKg--GjnBoaw8-pBGjMBtSGE7-V9DiW0k2u4hQjRli_xNbbPR7qrMwHvht2Uu-yuMBJOooP-1gh2tPcITWss_WKu5qW65R13iBcpeWD3yteG94kCrTvE2ARrBrObdUZmIeV4GIj"
+          />
+          <span
+            class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary"
+            >VELTRIX</span
+          >
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav
+          class="hidden lg:flex items-center gap-space-lg"
+          data-active-classes="text-primary font-title-md bg-surface-container-high rounded-lg"
+        >
+          <a
+            aria-current="page"
+            class="transition-colors py-space-xs px-space-sm text-primary font-title-md bg-surface-container-high rounded-lg"
+            data-path="inicio"
+            href="inicio.html"
+            >Inicio</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="nosotros"
+            href="nosotros.html"
+            >Nosotros</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="catalogo"
+            href="catalogo.html"
+            >Catálogo</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="servicios"
+            href="servicios.html"
+            >Servicios</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
+            data-path="contacto"
+            href="contacto.html"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Acciones e Iconos -->
+        <div class="flex items-center gap-space-md">
+          <!-- Botón Solicitar Cotización -->
+          <a
+            class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
+            data-path="solicitar-cotizacion"
+            href="contacto.html"
+            >Solicitar Cotización</a
+          >
+
+          <!-- Icono Perfil / Usuario -->
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+
+          <!-- Botón Menú Hamburguesa (Solo visible en dispositivos móviles / lg:hidden) -->
+          <button
+            id="mobile-menu-button"
+            aria-label="Abrir menú"
+            class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none flex items-center justify-center"
+          >
+            <span id="menu-icon" class="material-symbols-outlined text-2xl"
+              >menu</span
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú Desplegable Responsive Mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg border-b border-outline-variant z-50 px-margin-mobile py-space-md transition-all duration-300"
+      >
+        <nav class="flex flex-col gap-space-xs">
+          <a
+            aria-current="page"
+            class="transition-colors py-space-sm px-space-md text-primary font-title-md bg-surface-container-high rounded-lg"
+            href="inicio.html"
+            >Inicio</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="nosotros.html"
+            >Nosotros</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="catalogo.html"
+            >Catálogo</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="servicios.html"
+            >Servicios</a
+          >
+          <a
+            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            href="contacto.html"
+            >Contacto</a
+          >
+
+          <!-- Botón de Cotización para móvil (visible solo si la pantalla es menor a sm) -->
+          <div
+            class="mt-space-sm pt-space-sm border-t border-outline-variant sm:hidden"
+          >
+            <a
+              class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
+              href="contacto.html"
+              >Solicitar Cotización</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- Top Spec Bar & Header -->
+        <section
+          class="w-full bg-surface-container-low py-space-xl px-margin-mobile md:px-margin"
+        >
+          <div class="max-w-[1360px] mx-auto flex flex-col gap-space-lg">
+            <div
+              class="flex flex-wrap items-center justify-between gap-space-sm"
+            >
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-primary uppercase"
+                >
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"
+                  ></span>
+                  Homologación Oficial 2025
+                </span>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider hidden sm:inline"
+                >
+                  Normativa RETIE · IEC 60335-2-76 · NVR-UHD 4K
+                </span>
+              </div>
+              <div
+                class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim"
+                  >verified</span
+                >
+                <span class="">Respaldo Directo de Fábrica (Tier-1)</span>
+              </div>
+            </div>
+            <div class="max-w-4xl flex flex-col gap-space-sm">
+              <div
+                class="inline-flex items-center gap-2 px-space-sm py-1 bg-surface-container rounded-lg w-max mb-1"
+              >
+                <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span
+                ><span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold"
+                  >Equipos 100% Homologados para Colombia — Certificación RETIE,
+                  NTC y DIAN</span
+                >
+              </div>
+              <h1
+                class="font-headline-lg text-headline-lg text-primary tracking-tight"
+              >
+                Catálogo de Equipamiento Homologado y Cuadro de Garantías
+              </h1>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+              >
+                Equipos 100% Homologados para Colombia con certificación RETIE,
+                normas NTC y seriales verificables ante la DIAN. Respaldamos
+                cada suministro con distribuidores oficiales y soporte de
+                ingeniería en territorio nacional.
+              </p>
+            </div>
+            <!-- Live Search & Interactive Filter Switcher -->
+            <div
+              class="mt-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm"
+            >
+              <div
+                class="flex-1 flex items-center bg-surface-container-low rounded-lg px-space-md py-space-xs gap-space-sm"
+              >
+                <span class="material-symbols-outlined text-outline text-[20px]"
+                  >search</span
+                >
+                <input
+                  class="w-full bg-transparent border-0 outline-none font-body-md text-body-md text-on-surface placeholder:text-outline"
+                  id="catalogSearch"
+                  onkeyup="filterCatalog()"
+                  placeholder="Buscar por marca (ej. Hikvision, Victron), tecnología o componente..."
+                  type="text"
+                />
+                <button
+                  class="p-1 hover:text-primary text-outline"
+                  onclick="clearSearch()"
+                  title="Limpiar búsqueda"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >close</span
+                  >
+                </button>
+              </div>
+              <!-- Filter Buttons (Categorías) -->
+              <div
+                class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0 scrollbar-none"
+                id="filterContainer"
+              >
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-primary-container text-on-primary"
+                  data-cat="all"
+                  onclick="setCategoryFilter('all')"
+                >
+                  Todas las líneas
+                </button>
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface"
+                  data-cat="cctv"
+                  onclick="setCategoryFilter('cctv')"
+                >
+                  Videovigilancia
+                </button>
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface"
+                  data-cat="alarmas"
+                  onclick="setCategoryFilter('alarmas')"
+                >
+                  Detección de Intrusión
+                </button>
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface"
+                  data-cat="acceso"
+                  onclick="setCategoryFilter('acceso')"
+                >
+                  Control de Acceso
+                </button>
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface"
+                  data-cat="cercas"
+                  onclick="setCategoryFilter('cercas')"
+                >
+                  Cercas Eléctricas
+                </button>
+                <button
+                  class="cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface"
+                  data-cat="solar"
+                  onclick="setCategoryFilter('solar')"
+                >
+                  Energía Solar
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Technical Value Summary Banner -->
+        <section
+          class="w-full bg-surface py-space-md px-margin-mobile md:px-margin"
+        >
+          <div
+            class="max-w-[1360px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-space-md"
+          >
+            <div
+              class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-sm"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-primary text-[22px]"
+                  >workspace_premium</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm text-primary leading-tight"
+                >
+                  25 Años
+                </p>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">
+                  Garantía Solar Tier-1
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-sm"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[22px]"
+                  >verified_user</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm text-secondary leading-tight"
+                >
+                  DIAN Legal
+                </p>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">
+                  Seriales Verificables
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-sm"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[22px]"
+                  >speed</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm text-primary leading-tight"
+                >
+                  &lt; 72h RMA
+                </p>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">
+                  Bogotá &amp; Medellín
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-sm"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-primary text-[22px]"
+                  >electric_meter</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm text-primary leading-tight"
+                >
+                  RETIE &amp; NTC
+                </p>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">
+                  Normativa Colombia
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Technical Matrix Section (Categorías y Marcas Homologadas) -->
+        <section
+          class="w-full py-space-xl px-margin-mobile md:px-margin bg-surface"
+        >
+          <div
+            class="max-w-[1360px] mx-auto flex flex-col gap-space-xl"
+            id="cardsWrapper"
+          >
+            <!-- CATEGORIA 1: Videovigilancia & Analítica -->
+            <article
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              data-category="cctv"
+            >
+              <div
+                class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
+                    >videocam</span
+                  >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      >Línea Crítica 01</span
+                    >
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-primary"
+                    >
+                      Videovigilancia &amp; Analítica Perimetral
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary live-badge-glow"
+                  >
+                    Garantía Oficial: 1 a 3 Años
+                  </span>
+                  <span
+                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm"
+                  >
+                    IA Ready
+                  </span>
+                </div>
+              </div>
+              <div
+                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
+              >
+                <!-- Marcas Homologadas Columna -->
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                  <p
+                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+                  >
+                    Fabricantes Homologados
+                  </p>
+                  <div class="grid grid-cols-2 gap-space-xs">
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Hikvision</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >3 Años · NVR &amp; ColorVu</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Dahua</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >3 Años · Full-Color WizSense</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >HiLook</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >1 a 2 Años · PyME Essential</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Bosch</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >3 Años · Industrial DINion</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
+                    >
+                      <div>
+                        <span
+                          class="font-title-md text-title-md text-primary font-bold"
+                          >Hanwha Vision</span
+                        >
+                        <p
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          3 Años · Wisenet AI Coreano
+                        </p>
+                      </div>
+                      <span
+                        class="material-symbols-outlined text-outline text-[20px]"
+                        >military_tech</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[18px]"
+                      >verified</span
+                    >
+                    <p class="font-label-sm text-label-sm text-on-surface">
+                      Distribuidores autorizados en Colombia: Centro RMA
+                      Bogotá/Medellín con respuesta &lt; 72h y firmware
+                      anti-ciberataques.
+                    </p>
+                  </div>
+                </div>
+                <!-- Componentes y Especificaciones Técnicas Clave -->
+                <div
+                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                >
+                  <div>
+                    <p
+                      class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-space-xs"
+                    >
+                      Matriz de Especificaciones Clave
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                      <div
+                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                      >
+                        <div class="flex items-center gap-space-xs mb-1">
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >hdr_auto</span
+                          >
+                          <h3 class="font-title-md text-title-md text-primary">
+                            Cámaras IP 4K ColorVu / Full-Color
+                          </h3>
+                        </div>
+                        <p
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          Captura cromática permanente 24/7 con apertura super
+                          F1.0, sensor BSI de ultra sensibilidad y luz cálida no
+                          invasiva hasta 60m.
+                        </p>
+                        <div
+                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >3840×2160 px</span
+                          >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >0.0005 Lux</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                      >
+                        <div class="flex items-center gap-space-xs mb-1">
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >psychology</span
+                          >
+                          <h3 class="font-title-md text-title-md text-primary">
+                            Analítica IA DeepinView
+                          </h3>
+                        </div>
+                        <p
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          Clasificación precisa de objetivos humanos y
+                          vehiculares, reducción de falsas alarmas del 98%,
+                          lectura LPR de matrículas y mapa de calor.
+                        </p>
+                        <div
+                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >Filtro AcuSense</span
+                          >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >LPR Instantáneo</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                      >
+                        <div class="flex items-center gap-space-xs mb-1">
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >dns</span
+                          >
+                          <h3 class="font-title-md text-title-md text-primary">
+                            NVRs de Grado Empresarial
+                          </h3>
+                        </div>
+                        <p
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          Grabadores con soporte RAID 0/1/5/6/10, hasta 128
+                          canales, ancho de banda de 384 Mbps, doble fuente
+                          redundante y compresión H.265+ Smart.
+                        </p>
+                        <div
+                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >Hot Swap</span
+                          >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >RAID 5/10</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                      >
+                        <div class="flex items-center gap-space-xs mb-1">
+                          <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >radar</span
+                          >
+                          <h3 class="font-title-md text-title-md text-primary">
+                            Domos PTZ Térmicos / Ópticos
+                          </h3>
+                        </div>
+                        <p
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          Zoom óptico motorizado de 32x a 45x con sensor térmico
+                          bi-espectro para detección perimetral a oscuras y
+                          condiciones de niebla densa.
+                        </p>
+                        <div
+                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >45x Optical</span
+                          >
+                          <span
+                            class="px-1.5 py-0.5 bg-surface-container rounded"
+                            >NETD &lt; 35mK</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Accion contextual -->
+                  <div
+                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      ¿Necesitas dimensionar almacenamiento en TB según días de
+                      retención legal?
+                    </span>
+                    <a
+                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
+                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20asesor%C3%ADa%20para%20un%20proyecto%20de%20Videovigilancia%20CCTV"
+                      target="_blank"
+                    >
+                      Cotizar CCTV
+                      <span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- CATEGORIA 2: Detección de Intrusión y Alarmas -->
+            <article
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              data-category="alarmas"
+            >
+              <div
+                class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
+                    >notifications_active</span
+                  >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      >Línea Crítica 02</span
+                    >
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-primary"
+                    >
+                      Detección de Intrusión &amp; Alarmas
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                  >
+                    Garantía Oficial: 1 a 2 Años
+                  </span>
+                  <span
+                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm"
+                  >
+                    Grado 2 y 3
+                  </span>
+                </div>
+              </div>
+              <div
+                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
+              >
+                <!-- Marcas Homologadas Columna -->
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                  <p
+                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+                  >
+                    Fabricantes Homologados
+                  </p>
+                  <div class="grid grid-cols-2 gap-space-xs">
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >DSC Neo</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · PowerSeries Híbrido</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Ajax Systems</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Jeweller Inalámbrico</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Bosch Security</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Grado 3 Industrial</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Honeywell / Resideo</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >1 a 2 Años · Vista Series</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
+                    >
+                      <div>
+                        <span
+                          class="font-title-md text-title-md text-primary font-bold"
+                          >Paradox</span
+                        >
+                        <p
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          1 a 2 Años · Spectra &amp; EVO Multipuntos
+                        </p>
+                      </div>
+                      <span
+                        class="material-symbols-outlined text-outline text-[20px]"
+                        >shield</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[18px]"
+                      >verified</span
+                    >
+                    <p class="font-label-sm text-label-sm text-on-surface">
+                      Canal oficial Colombia: Soporte técnico local, repuestos
+                      inmediatos y homologación ante centrales ARC nacionales.
+                    </p>
+                  </div>
+                </div>
+                <!-- Especificaciones Clave -->
+                <div
+                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                >
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >hub</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Paneles Híbridos e Inalámbricos
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Arquitectura PowerG de largo alcance (hasta 2.000m en
+                        línea de vista) con encriptación AES-128 y gestión
+                        multi-partición independiente.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >AES-128</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Hasta 128 Zonas</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >pets</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Sensores Antimascotas Inmunes
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Detectores doble tecnología (Microondas + PIR) con
+                        discriminación inteligente de mascotas hasta 38 kg y
+                        óptica anti-enmascaramiento activa.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Dual MW + PIR</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Anti-Cloak</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >fence</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Barreras Infrarrojas Exteriores
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Columnas de foto-haz multi-haz de 60m a 200m con
+                        modulación de frecuencia seleccionable, filtros solares
+                        y calefactores integrados anti-escarcha.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Cuádruple Haz</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >IP65 Exterior</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >cell_tower</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Comunicación 4G / IP Redundante
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Transmisión a central receptora de alarmas (ARC) y app
+                        móvil de usuario con supervisión constante de canal
+                        (polling cada 90 segundos).
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >SIA DC-09</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Dual SIM LTE</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Diseños conformes con exigencias de aseguradoras
+                      internacionales y Grado 2/3.
+                    </span>
+                    <a
+                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
+                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20de%20Sistemas%20de%20Alarma%20e%20Intrusi%C3%B3n"
+                      target="_blank"
+                    >
+                      Cotizar Alarmas
+                      <span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- CATEGORIA 3: Control de Acceso y Asistencia -->
+            <article
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              data-category="acceso"
+            >
+              <div
+                class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
+                    >badge</span
+                  >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      >Línea Crítica 03</span
+                    >
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-primary"
+                    >
+                      Control de Acceso &amp; Asistencia
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                  >
+                    Garantía Oficial: 1 a 3 Años
+                  </span>
+                  <span
+                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm"
+                  >
+                    Biometría Facial
+                  </span>
+                </div>
+              </div>
+              <div
+                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
+              >
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                  <p
+                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+                  >
+                    Fabricantes Homologados
+                  </p>
+                  <div class="grid grid-cols-2 gap-space-xs">
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >ZKTeco</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >1 a 2 Años · ProFace &amp; SpeedFace</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Suprema</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >3 Años · FaceStation &amp; BioStar</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >HID Global</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >3 Años · iCLASS SE &amp; Mobile ID</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Hikvision Access</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 a 3 Años · MinMoe Biometría</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
+                    >
+                      <div>
+                        <span
+                          class="font-title-md text-title-md text-primary font-bold"
+                          >Rosslare Security</span
+                        >
+                        <p
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          2 Años · Controladoras AxTraxNG
+                        </p>
+                      </div>
+                      <span
+                        class="material-symbols-outlined text-outline text-[20px]"
+                        >fingerprint</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[18px]"
+                      >verified</span
+                    >
+                    <p class="font-label-sm text-label-sm text-on-surface">
+                      Respaldo oficial ZKTeco/HID Colombia: Laboratorio de RMA
+                      en Bogotá y Medellín con respuesta en &lt; 72h.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                >
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >face</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Terminales Faciales de Alta Velocidad
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Reconocimiento facial en menos de 0.2 segundos a 2
+                        metros de distancia con algoritmo anti-suplantación por
+                        foto, video o máscara 3D.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >&lt; 0.2s</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Liveness Detection</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >lock</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Cerraduras Magnéticas 600 - 1200 lbs
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Electroimanes anodizados de alta sujeción para puertas
+                        de vidrio, madera y metal blindado, con sensor de estado
+                        de puerta integrado (reed switch).
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Fail-Safe</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >600 / 1200 Lbs</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >traffic</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Talanqueras Vehiculares de Alto Tráfico
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Barreras electromecánicas y servo-asistidas con ciclos
+                        continuos 100%, apertura ultrarrápida (1.5 a 3s),
+                        mástiles de 3m a 6m y lazo inductivo.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >100% Heavy Duty</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Loop Detector</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >history_edu</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Molinetes &amp; Software de Reportería
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Torniquetes bidireccionales en acero inoxidable SUS304
+                        integrados a software de nómina, control de turnos y
+                        cumplimiento laboral.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Acero SUS304</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Exportación Excel/SQL</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Soluciones adaptables a oficinas corporativas, plantas
+                      fabriles y conjuntos residenciales.
+                    </span>
+                    <a
+                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
+                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20deseo%20cotizar%20Control%20de%20Acceso%20y%20Biometr%C3%ADa"
+                      target="_blank"
+                    >
+                      Cotizar Acceso
+                      <span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- CATEGORIA 4: Protección Perimetral - Cercas Eléctricas -->
+            <article
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              data-category="cercas"
+            >
+              <div
+                class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
+                    >electric_bolt</span
+                  >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      >Línea Crítica 04</span
+                    >
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-primary"
+                    >
+                      Protección Perimetral - Cercas Eléctricas
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                  >
+                    Garantía Oficial: 1 a 2 Años
+                  </span>
+                  <span
+                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm"
+                  >
+                    Norma RETIE
+                  </span>
+                </div>
+              </div>
+              <div
+                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
+              >
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                  <p
+                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+                  >
+                    Fabricantes Homologados
+                  </p>
+                  <div class="grid grid-cols-2 gap-space-xs">
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Hagroy</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · XPower &amp; iHagroy App</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Yonusa</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Energizadores Inteligentes</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Speedrite</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Grado Agroindustrial NZ</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >JVA Security</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Monitoreo Perimetral Z-Line</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[18px]"
+                      >gavel</span
+                    >
+                    <p class="font-label-sm text-label-sm text-on-surface">
+                      <strong>Obligatorio en Colombia:</strong> RETIE Art. 14 e
+                      IEC 60335-2-76 para blindaje perimetral legal sin riesgo
+                      de sanciones civiles o penales.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                >
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >offline_bolt</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Energizadores Certificados RETIE
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Equipos con salida de 8.000V a 14.000V con energía
+                        disipada menor a 5 Joules por pulso, operando dentro del
+                        rango legalmente admitido y seguro.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >RETIE Validado</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >10.000V - 14.000V</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >wb_sunny</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Aisladores con Protección UV
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Polipropileno virgen de alto impacto tratado contra la
+                        radiación ultravioleta, impidiendo fisuras dieléctricas
+                        o pérdidas por arco a tierra.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Anti-UV 10 Años</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Dieléctrico 15kV</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >straighten</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Postes Galvanizados en Caliente
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Estructuras de perfilería tubular o ángulo galvanizado
+                        por inmersión en caliente, garantizando cero corrosión
+                        en atmósferas salinas o industriales.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Galvanizado ASTM</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Resorte Templador Inox</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >notification_important</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Monitoreo de Corte Instantáneo
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Supervisión bidireccional que dispara sirena de 120dB y
+                        alerta a central en milisegundos en caso de corte,
+                        puesta a tierra o flexión de alambre.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Alerta de Corte &lt;1s</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Alambre triple capa</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      ><strong class="text-primary"
+                        >Dictamen RETIE Certificado:</strong
+                      >
+                      Instalaciones respaldadas por ingeniero electricista con
+                      matrícula profesional COPNIA.</span
+                    ><a
+                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
+                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20para%20Cerca%20El%C3%A9ctrica%20Perimetral%20con%20norma%20RETIE"
+                      target="_blank"
+                      >Cotizar Cerca RETIE<span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                        >arrow_forward</span
+                      ></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- CATEGORIA 5: Energía Solar Fotovoltaica -->
+            <article
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              data-category="solar"
+            >
+              <div
+                class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-secondary-container text-[28px]"
+                    >solar_power</span
+                  >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim"
+                      >Línea de Ingeniería Energética 05</span
+                    >
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-primary"
+                    >
+                      Energía Solar Fotovoltaica &amp; Respaldo
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md"
+                  >
+                    Paneles: Hasta 25 Años
+                  </span>
+                  <span
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-sm text-label-sm text-on-primary"
+                  >
+                    Electrónica: 1 a 3 Años
+                  </span>
+                </div>
+              </div>
+              <div
+                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
+              >
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                  <p
+                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+                  >
+                    Fabricantes Homologados
+                  </p>
+                  <div class="grid grid-cols-2 gap-space-xs">
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Victron Energy</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Hasta 5 Años · Holanda Premium</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >EcoFlow</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >2 Años · Estaciones Delta &amp; River</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >JA Solar</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >25 Años · Módulos Tier-1 Global</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                    >
+                      <span
+                        class="font-title-md text-title-md text-primary font-bold"
+                        >Ritar</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >1 a 2 Años · Ciclo Profundo AGM/Gel</span
+                      >
+                    </div>
+                    <div
+                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
+                    >
+                      <div>
+                        <span
+                          class="font-title-md text-title-md text-primary font-bold"
+                          >Ultracell UK</span
+                        >
+                        <p
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          1 a 3 Años · Baterías Industriales Selladas
+                        </p>
+                      </div>
+                      <span
+                        class="material-symbols-outlined text-secondary text-[20px]"
+                        >bolt</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[18px]"
+                      >verified</span
+                    >
+                    <p class="font-label-sm text-label-sm text-on-surface">
+                      Distribuidores autorizados Victron &amp; JA Solar en
+                      Colombia: Laboratorio solar en Bogotá y Medellín con
+                      respuesta &lt; 72h.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                >
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-secondary text-[18px]"
+                          >solar_power</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Paneles Monocristalinos Tier-1
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Celdas PERC / N-Type de 450Wp a 580Wp con eficiencia
+                        superior al 21.5%, vidrio templado antireflejo y
+                        tolerancia positiva garantizada.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Tier-1 Bloomberg</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >25 Años Eficiencia</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-secondary text-[18px]"
+                          >offline_bolt</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Controladores MPPT Ultra-Rápidos
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Algoritmo de seguimiento del punto de máxima potencia
+                        que incrementa la recolección energética hasta en un 30%
+                        en días nublados.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Eficiencia 99%</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Bluetooth VictronConnect</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-secondary text-[18px]"
+                          >settings_input_composite</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Inversores Cargadores Híbridos
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Onda senoidal pura con tiempo de transferencia cero
+                        (&lt;20ms UPS), aptos para alimentar servidores, cámaras
+                        de seguridad y bombas.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Pure Sine Wave</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Cero Interrupción UPS</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-xs mb-1">
+                        <span
+                          class="material-symbols-outlined text-secondary text-[18px]"
+                          >battery_charging_full</span
+                        >
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Baterías de Gel &amp; Litio LiFePO4
+                        </h3>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Bancos de acumulación de alto ciclado (3.500+ ciclos al
+                        80% DoD para litio / 1.200 ciclos para Gel sellada),
+                        libre de mantenimiento e ignífugas.
+                      </p>
+                      <div
+                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >LiFePO4 Seguro</span
+                        >
+                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
+                          >Ciclo Profundo</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Línea directa con ingenieros solares para cálculo de carga
+                      y dimensionamiento de paneles.
+                    </span>
+                    <a
+                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-secondary hover:underline group"
+                      href="https://wa.me/573042586636?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20y%20c%C3%A1lculo%20solar%20fotovoltaico"
+                      target="_blank"
+                    >
+                      Cotizar Proyecto Solar
+                      <span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- Módulos de Valores Agregados de Compra (3 Pilares) -->
+        <section
+          class="w-full bg-surface-container py-space-xl px-margin-mobile md:px-margin"
+        >
+          <div class="max-w-[1360px] mx-auto flex flex-col gap-space-lg">
+            <div class="text-center max-w-2xl mx-auto">
+              <span
+                class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold"
+                >Garantía Corporativa de Entrega</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1"
+              >
+                Valores Agregados de Compra VELTRIX
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Garantizamos blindaje administrativo, financiero y operativo en
+                cada suministro de hardware.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-3 gap-space-lg pt-space-sm"
+            >
+              <!-- Pilar 1 -->
+              <div
+                class="value-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md"
+              >
+                <div class="flex flex-col gap-space-sm">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >qr_code_scanner</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    100% Originales &amp; Sellados
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Trazabilidad total mediante serial individual verificable en
+                    el portal oficial del fabricante. Cajas selladas de fábrica,
+                    importación legal con pago de aranceles y soporte de
+                    documentación DIAN.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                  Cero remanufacturados ni clones
+                </div>
+              </div>
+              <!-- Pilar 2 -->
+              <div
+                class="value-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md"
+              >
+                <div class="flex flex-col gap-space-sm">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >published_with_changes</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Trámite Directo de Garantía (RMA)
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Sin tramitaciones interminables ante distribuidores
+                    secundarios. Nuestro departamento técnico canaliza el
+                    reemplazo de piezas o equipos con soporte de ingeniería
+                    directa y diagnóstico en menos de 72 horas.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                  Soporte de laboratorio local
+                </div>
+              </div>
+              <!-- Pilar 3 -->
+              <div
+                class="value-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md"
+              >
+                <div class="flex flex-col gap-space-sm">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                  >
+                    <span class="material-symbols-outlined text-[28px]"
+                      >credit_card</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary">
+                    Instalación Certificada &amp; Crédito
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Cuadrillas de técnicos certificados con cumplimiento de
+                    normas SISO y alturas. Ofrecemos líneas de crédito
+                    empresarial y esquemas de pago por hitos de entrega para
+                    proyectos corporativos.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                  Financiamiento flexible a 30/60 días
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Sección Interactiva de Cotización Técnica con WhatsApp Directo -->
+        <section
+          class="w-full bg-primary-container text-on-primary py-space-xl px-margin-mobile md:px-margin"
+        >
+          <div
+            class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
+          >
+            <div class="lg:col-span-7 flex flex-col gap-space-md">
+              <div
+                class="inline-flex items-center gap-2 px-space-sm py-1 bg-surface-container-lowest/10 backdrop-blur-md rounded-full w-max"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-secondary-container"
+                ></span>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed"
+                  >Atención Inmediata de Proyectos</span
+                >
+              </div>
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary leading-tight"
+              >
+                ¿Requiere un presupuesto formal con lista de partes homologadas?
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-primary-fixed-dim leading-relaxed"
+              >
+                Contacte directamente a nuestras mesas de ingeniería técnica.
+                Adjunte sus planos, requerimientos perimetrales o su factura de
+                consumo eléctrico para un cálculo exacto sin compromiso.
+              </p>
+              <!-- Canales Directos -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs"
+              >
+                <!-- WhatsApp 1: Seguridad Electrónica -->
+                <a
+                  class="group p-space-md bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 transition-all rounded-xl flex items-center justify-between"
+                  href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20solicito%20cotización%20técnica%20de%20Seguridad%20Electrónica%20(CCTV,%20Alarmas,%20Acceso,%20Cercas)"
+                  target="_blank"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-tertiary-fixed-dim text-[26px]"
+                        >chat</span
+                      >
+                    </div>
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm uppercase text-primary-fixed-dim"
+                      >
+                        Mesa Seguridad Electrónica
+                      </p>
+                      <p
+                        class="font-title-md text-title-md text-on-primary font-bold"
+                      >
+                        +57 310 465 9021
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed-dim group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+                <!-- WhatsApp 2: Ingeniería Solar -->
+                <a
+                  class="group p-space-md bg-secondary-container/20 hover:bg-secondary-container/30 transition-all rounded-xl flex items-center justify-between"
+                  href="https://wa.me/573042586636?text=Hola%20VELTRIX,%20solicito%20dimensionamiento%20y%20cotización%20de%20Ingeniería%20Solar%20Fotovoltaica"
+                  target="_blank"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-secondary-container/30 flex items-center justify-center shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-secondary-fixed text-[26px]"
+                        >solar_power</span
+                      >
+                    </div>
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm uppercase text-secondary-fixed-dim"
+                      >
+                        Línea Proyectos Solares
+                      </p>
+                      <p
+                        class="font-title-md text-title-md text-on-primary font-bold"
+                      >
+                        +57 304 258 6636
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+            </div>
+            <!-- Quick Inquiry Card -->
+            <div
+              class="lg:col-span-5 bg-surface-container-lowest text-on-surface p-space-lg rounded-xl shadow-xl flex flex-col gap-space-md"
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-headline-sm text-headline-sm text-primary"
+                  >Pre-Cotizador Express</span
+                >
+                <span
+                  class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-mono"
+                  >PASO 1/2</span
+                >
+              </div>
+              <form
+                class="flex flex-col gap-space-sm"
+                id="quickQuoteForm"
+                onsubmit="handleQuoteSubmit(event)"
+              >
+                <div class="">
+                  <label
+                    class="font-label-sm text-label-sm text-on-surface-variant block mb-1"
+                    >Nombre o Razón Social</label
+                  ><input
+                    class="w-full px-space-sm py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface outline-none"
+                    id="quoteName"
+                    placeholder="Ej. Consorcio Logístico Andino S.A.S."
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <div class="">
+                  <label
+                    class="font-label-sm text-label-sm text-on-surface-variant block mb-1"
+                    >Línea de Equipamiento Requerida</label
+                  ><select
+                    class="w-full px-space-sm py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface outline-none"
+                    id="quoteCategory"
+                  >
+                    <option value="Videovigilancia IP 4K &amp; Analítica">
+                      Videovigilancia IP 4K &amp; Analítica (Hikvision/Dahua)
+                    </option>
+                    <option value="Detección de Intrusión y Alarmas Grado 2/3">
+                      Detección de Intrusión &amp; Alarmas (DSC/Ajax)
+                    </option>
+                    <option value="Control de Acceso Biométrico">
+                      Control de Acceso Biométrico (ZKTeco/Suprema)
+                    </option>
+                    <option value="Cercas Eléctricas Certificadas RETIE">
+                      Cercas Eléctricas Certificadas RETIE (Hagroy/Yonusa)
+                    </option>
+                    <option value="Ingeniería Solar Fotovoltaica Tier-1">
+                      Ingeniería Solar Fotovoltaica Tier-1 (Victron/JA Solar)
+                    </option>
+                    <option value="Solución Integral (Seguridad + Solar)">
+                      Solución Integral (Seguridad Electrónica + Solar)
+                    </option>
+                  </select>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+                  <div>
+                    <label
+                      class="font-label-sm text-label-sm text-on-surface-variant block mb-1"
+                      >Ciudad / Departamento (Colombia)</label
+                    ><select
+                      class="w-full px-space-sm py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface outline-none"
+                      id="quoteCity"
+                    >
+                      <option value="Bogotá D.C.">
+                        Bogotá D.C. / Cundinamarca
+                      </option>
+                      <option value="Medellín / Antioquia">
+                        Medellín / Antioquia
+                      </option>
+                      <option value="Cali / Valle del Cauca">
+                        Cali / Valle del Cauca
+                      </option>
+                      <option value="Barranquilla / Atlántico">
+                        Barranquilla / Atlántico
+                      </option>
+                      <option value="Bucaramanga / Santander">
+                        Bucaramanga / Santander
+                      </option>
+                      <option value="Cartagena / Bolívar">
+                        Cartagena / Bolívar
+                      </option>
+                      <option value="Pereira / Eje Cafetero">
+                        Pereira / Eje Cafetero
+                      </option>
+                      <option value="Villavicencio / Meta">
+                        Villavicencio / Llanos
+                      </option>
+                      <option value="Ibagué / Tolima">Ibagué / Tolima</option>
+                      <option value="Otra Ciudad (Cobertura Nacional)">
+                        Otra Ciudad (Colombia)
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      class="font-label-sm text-label-sm text-on-surface-variant block mb-1"
+                      >Modalidad de Pago (COP)</label
+                    ><select
+                      class="w-full px-space-sm py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface outline-none"
+                      id="quotePayment"
+                    >
+                      <option value="Contado COP (Descuento de Suministro)">
+                        Contado COP (Descuento)
+                      </option>
+                      <option value="Crédito Corporativo 30 Días">
+                        Crédito Corporativo 30 Días
+                      </option>
+                      <option value="Crédito Corporativo 60 Días">
+                        Crédito Corporativo 60 Días
+                      </option>
+                      <option value="Financiación por Hitos de Entrega">
+                        Financiación por Hitos de Entrega
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="pt-space-xs">
+                  <button
+                    class="w-full py-space-sm px-space-md bg-secondary-container hover:bg-secondary text-on-primary font-title-md text-title-md rounded-lg flex items-center justify-center gap-space-xs transition-all shadow-sm btn-pulse-glow"
+                    type="submit"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >send</span
+                    >Enviar Requerimiento a WhatsApp (COP)
+                  </button>
+                </div>
+                <p class="font-label-sm text-label-sm text-center text-outline">
+                  Respuesta de un ingeniero asesor en Colombia: menos de 15
+                  minutos hábiles.
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- Interactive JavaScript -->
+        <script>
+          function setCategoryFilter(category) {
+            // Update filter buttons styling
+            const buttons = document.querySelectorAll(
+              "#filterContainer .cat-pill",
+            );
+            buttons.forEach((btn) => {
+              if (btn.getAttribute("data-cat") === category) {
+                btn.className =
+                  "cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-primary-container text-on-primary";
+              } else {
+                btn.className =
+                  "cat-pill px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface";
+              }
+            });
+
+            // Show/Hide category blocks
+            const articles = document.querySelectorAll(
+              "#cardsWrapper .category-block",
+            );
+            articles.forEach((article) => {
+              if (
+                category === "all" ||
+                article.getAttribute("data-category") === category
+              ) {
+                article.classList.remove("hidden");
+              } else {
+                article.classList.add("hidden");
+              }
+            });
+          }
+
+          function filterCatalog() {
+            const query = document
+              .getElementById("catalogSearch")
+              .value.toLowerCase()
+              .trim();
+            const articles = document.querySelectorAll(
+              "#cardsWrapper .category-block",
+            );
+
+            if (query === "") {
+              articles.forEach((art) => art.classList.remove("hidden"));
+              return;
+            }
+
+            articles.forEach((article) => {
+              const textContent = article.innerText.toLowerCase();
+              if (textContent.includes(query)) {
+                article.classList.remove("hidden");
+              } else {
+                article.classList.add("hidden");
+              }
+            });
+          }
+
+          function clearSearch() {
+            document.getElementById("catalogSearch").value = "";
+            filterCatalog();
+          }
+
+          function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById("quoteName").value;
+            const cat = document.getElementById("quoteCategory").value;
+            const city = document.getElementById("quoteCity").value;
+
+            const isSolar = cat.includes("Solar");
+            const targetPhone = isSolar ? "573042586636" : "573104659021";
+
+            const message = `Hola VELTRIX, mi nombre/empresa es *${encodeURIComponent(name)}* en *${encodeURIComponent(city)}*. Solicito cotización y disponibilidad técnica para la línea: *${encodeURIComponent(cat)}*. Quedo atento a su asesoría.`;
+            const url = `https://wa.me/${targetPhone}?text=${message}`;
+
+            window.open(url, "_blank");
+          }
+        </script>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(10,31,68,0.03)]"
+    >
+      <div
+        class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl"
+        >
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-sm text-headline-sm uppercase text-primary"
+                >VELTRIX</span
+              >
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Infraestructura de alta precisión que combina seguridad
+              electrónica corporativa con ingeniería solar avanzada para
+              operaciones críticas.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >ISO 9001</span
+              ><span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >RETIE</span
+              ><span
+                class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-on-surface-variant"
+                >NVR 4K</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Líneas Directas</span
+            >
+            <div class="flex flex-col gap-space-xs">
+              <div class="flex items-start gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-on-surface-variant text-[18px] mt-0.5"
+                  >chat</span
+                >
+                <div>
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    WhatsApp Atención Comercial
+                  </p>
+                  <p
+                    class="font-label-md text-label-md text-on-surface font-semibold"
+                  >
+                    +57 310 465 9021
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-on-surface-variant text-[18px] mt-0.5"
+                  >solar_power</span
+                >
+                <div>
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    Línea Proyectos e Ingeniería
+                  </p>
+                  <p
+                    class="font-label-md text-label-md text-on-surface font-semibold"
+                  >
+                    +57 304 258 6636
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Propuesta de Valor</span
+            >
+            <ul
+              class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"
+            >
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Monitoreo Perimetral 24/7
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Generación Solar Fotovoltaica
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Póliza de Mantenimiento Crítico
+              </li>
+              <li class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                  >verified</span
+                >Control de Acceso Biométrico
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <span
+              class="font-label-md text-label-md uppercase text-primary tracking-wider"
+              >Ecosistema Conectado</span
+            >
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Canales oficiales de divulgación técnica e informes de
+              disponibilidad.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <a
+                aria-label="Canal de soporte y contacto"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >headset_mic</span
+                ></a
+              ><a
+                aria-label="Red de datos y cobertura"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >hub</span
+                ></a
+              ><a
+                aria-label="Ubicación y cobertura geográfica"
+                class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >location_on</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"
+        >
+          <p class="">
+            © 2025 VELTRIX Seguridad Electrónica &amp; Ingeniería Solar. Todos
+            los derechos reservados.
+          </p>
+          <div class="flex items-center gap-space-md">
+            <span class="hover:text-on-surface transition-colors cursor-pointer"
+              >Privacidad de Datos</span
+            ><span
+              class="hover:text-on-surface transition-colors cursor-pointer"
+              >Términos de Servicio Técnico</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+        <script>
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      menuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        menuIcon.textContent = isHidden ? "menu" : "close";
+      });
+    </script>
+  </body>
+</html>
