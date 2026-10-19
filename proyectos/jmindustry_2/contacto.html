@@ -220,137 +220,111 @@
     </script>
   </head>
   <body class="bg-surface font-body-md text-on-surface antialiased">
-    <header class="w-full bg-surface border-b border-outline-variant relative">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(10,31,68,0.04)]"
+    >
       <div
         class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"
       >
-        <!-- Logo e Identidad -->
-        <a href="index.html" class="flex items-center gap-space-sm">
-          <img
+        <a href="index.html" class="flex items-center gap-space-sm"
+          ><img
             alt="Logotipo Corporativo VELTRIX"
             class="h-8 w-auto object-contain"
             src="https://lh3.googleusercontent.com/aida/AEtjO1U08u9-01PhTFqsZHtuInhEatnCR4Or6L1CLckQayJtgTNXMSqFwumFduQFE5tmBBYThuLzAM9Zk-qJ29mr1ObP1Zg15cRdETlsWFjhTsPCcEmty4WHFGKg--GjnBoaw8-pBGjMBtSGE7-V9DiW0k2u4hQjRli_xNbbPR7qrMwHvht2Uu-yuMBJOooP-1gh2tPcITWss_WKu5qW65R13iBcpeWD3yteG94kCrTvE2ARrBrObdUZmIeV4GIj"
-          />
-          <span
+          /><span
             class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary"
             >VELTRIX</span
-          >
-        </a>
-
-        <!-- Navegación Desktop -->
-        <nav
-          class="hidden lg:flex items-center gap-space-lg"
-          data-active-classes="text-primary font-title-md bg-surface-container-high rounded-lg"
+          ></a
         >
+        <nav class="hidden md:flex items-center gap-space-sm lg:gap-space-md">
           <a
-            aria-current="page"
-            class="transition-colors py-space-xs px-space-sm text-primary font-title-md bg-surface-container-high rounded-lg"
-            data-path="inicio"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="index.html"
             >Inicio</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="nosotros"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="nosotros.html"
             >Nosotros</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="catalogo"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="catalogo.html"
             >Catálogo</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="servicios"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="servicios.html"
             >Servicios</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="contacto"
+          ><a
+            class="font-title-md text-body-md text-primary font-bold bg-surface-container-high py-space-xs px-space-sm rounded-lg shadow-sm"
             href="contacto.html"
             >Contacto</a
           >
         </nav>
-
-        <!-- Acciones e Iconos -->
-        <div class="flex items-center gap-space-md">
-          <!-- Botón Solicitar Cotización -->
+        <div class="flex items-center gap-space-sm">
           <a
-            class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
-            data-path="solicitar-cotizacion"
-            href="contacto.html"
+            class="hidden md:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
+            href="#veltrixQuoteForm"
             >Solicitar Cotización</a
           >
-
-          <!-- Icono Perfil / Usuario -->
           <div
-            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 cursor-pointer"
+            class="hidden md:flex w-8 h-8 rounded-full bg-primary items-center justify-center shrink-0"
           >
             <span class="material-symbols-outlined text-on-primary text-[18px]"
               >person</span
             >
           </div>
-
-          <!-- Botón Menú Hamburguesa (Solo visible en dispositivos móviles / lg:hidden) -->
           <button
-            id="mobile-menu-button"
+            id="mobileMenuBtn"
+            type="button"
+            onclick="
+              document
+                .getElementById('mobileNavDrawer')
+                .classList.toggle('hidden')
+            "
+            class="md:hidden flex items-center justify-center p-2 rounded-lg bg-surface-container text-primary hover:bg-surface-container-high transition-colors focus:outline-none"
             aria-label="Abrir menú"
-            class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none flex items-center justify-center"
           >
-            <span id="menu-icon" class="material-symbols-outlined text-2xl"
-              >menu</span
-            >
+            <span class="material-symbols-outlined text-[24px]">menu</span>
           </button>
         </div>
       </div>
-
-      <!-- Menú Desplegable Responsive Mobile -->
       <div
-        id="mobile-menu"
-        class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg border-b border-outline-variant z-50 px-margin-mobile py-space-md transition-all duration-300"
+        id="mobileNavDrawer"
+        class="hidden md:hidden bg-surface-container-lowest/95 backdrop-blur-xl border-b border-surface-container px-margin-mobile py-space-md shadow-xl"
       >
-        <nav class="flex flex-col gap-space-xs">
+        <div class="flex flex-col gap-space-xs">
           <a
-            aria-current="page"
-            class="transition-colors py-space-sm px-space-md text-primary font-title-md bg-surface-container-high rounded-lg"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container py-2 px-space-sm rounded-lg transition-colors"
             href="index.html"
             >Inicio</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container py-2 px-space-sm rounded-lg transition-colors"
             href="nosotros.html"
             >Nosotros</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container py-2 px-space-sm rounded-lg transition-colors"
             href="catalogo.html"
             >Catálogo</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container py-2 px-space-sm rounded-lg transition-colors"
             href="servicios.html"
             >Servicios</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-title-md text-body-md text-primary font-bold bg-surface-container-high py-2 px-space-sm rounded-lg"
             href="contacto.html"
             >Contacto</a
           >
-
-          <!-- Botón de Cotización para móvil (visible solo si la pantalla es menor a sm) -->
           <div
-            class="mt-space-sm pt-space-sm border-t border-outline-variant sm:hidden"
+            class="pt-space-sm border-t border-surface-container flex flex-col gap-space-xs"
           >
             <a
-              class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
-              href="contacto.html"
+              class="w-full flex items-center justify-center gap-2 bg-primary-container text-on-primary font-title-md text-body-sm py-2.5 px-space-md rounded-lg shadow-sm hover:bg-primary transition-all"
+              href="#veltrixQuoteForm"
+              ><span class="material-symbols-outlined text-[18px]"
+                >calculate</span
               >Solicitar Cotización</a
             >
           </div>
-        </nav>
+        </div>
       </div>
     </header>
     <main class="w-full pt-20 bg-surface">
@@ -366,28 +340,25 @@
               <div class="flex items-center gap-space-xs mb-space-sm">
                 <span
                   class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-lowest shadow-sm text-tertiary-fixed-dim font-label-sm text-label-sm uppercase tracking-wider"
-                >
-                  <span
+                  ><span
                     class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
-                  ></span>
-                  Líneas Operativas Disponibles
-                </span>
-                <span
+                  ></span
+                  >Líneas Operativas Disponibles</span
+                ><span
                   class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                  >• Despacho Técnico Nacional</span
+                  >• Despacho Nacional</span
                 >
               </div>
               <h1
                 class="font-headline-lg text-headline-lg text-primary tracking-tight"
               >
-                Contacto Directo &amp; Solicitud de Cotizaciones
+                Contacto &amp; Cotización Inmediata
               </h1>
               <p
                 class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs"
               >
-                Nuestros ingenieros y especialistas comerciales están listos
-                para asesorar tu proyecto residencial, empresarial, agropecuario
-                o industrial.
+                Asesoría técnica y cotizaciones para proyectos residenciales,
+                empresariales y solares en Colombia.
               </p>
             </div>
             <!-- Quick Metrics Bar -->
@@ -400,14 +371,12 @@
                 <span
                   class="font-label-sm text-label-sm uppercase text-on-surface-variant"
                   >Tiempo de Respuesta</span
-                >
-                <span
+                ><span
                   class="font-headline-sm text-headline-sm text-primary mt-0.5"
                   >&lt; 15 min</span
-                >
-                <span
+                ><span
                   class="font-body-sm text-body-sm text-tertiary-fixed-dim font-medium"
-                  >Asignación de Ingeniero</span
+                  >Ingeniero en línea</span
                 >
               </div>
               <div
@@ -416,13 +385,11 @@
                 <span
                   class="font-label-sm text-label-sm uppercase text-on-surface-variant"
                   >Levantamiento Físico</span
-                >
-                <span
+                ><span
                   class="font-headline-sm text-headline-sm text-primary mt-0.5"
                   >Sin Costo</span
-                >
-                <span class="font-body-sm text-body-sm text-on-surface-variant"
-                  >Urbano y perimetral</span
+                ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Visita técnica</span
                 >
               </div>
               <div
@@ -430,15 +397,13 @@
               >
                 <span
                   class="font-label-sm text-label-sm uppercase text-on-surface-variant"
-                  >Estándar Técnico</span
-                >
-                <span
+                  >Normativa Técnica</span
+                ><span
                   class="font-headline-sm text-headline-sm text-primary mt-0.5"
                   >RETIE / IEC</span
-                >
-                <span
+                ><span
                   class="font-body-sm text-body-sm text-secondary font-medium"
-                  >Cumplimiento Estricto</span
+                  >Certificado</span
                 >
               </div>
               <div
@@ -447,13 +412,11 @@
                 <span
                   class="font-label-sm text-label-sm uppercase text-on-surface-variant"
                   >Aprobación Financiera</span
-                >
-                <span
+                ><span
                   class="font-headline-sm text-headline-sm text-primary mt-0.5"
                   >24 Horas</span
-                >
-                <span class="font-body-sm text-body-sm text-on-surface-variant"
-                  >Crédito directo y bancario</span
+                ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Crédito directo</span
                 >
               </div>
             </div>
@@ -467,7 +430,7 @@
             >
               <!-- Left Column: Direct Channels & Telemetry (5 cols) -->
               <div class="lg:col-span-5 flex flex-col gap-space-lg">
-                <div>
+                <div class="">
                   <span
                     class="font-label-md text-label-md text-secondary uppercase tracking-widest"
                     >Atención Inmediata</span
@@ -475,59 +438,49 @@
                   <h2
                     class="font-headline-md text-headline-md text-primary mt-1"
                   >
-                    Canales Directos con Especialistas
+                    Canales Directos
                   </h2>
                   <p
                     class="font-body-md text-body-md text-on-surface-variant mt-1"
                   >
-                    Elige la unidad especializada según la naturaleza y escala
-                    de tu requerimiento.
+                    Elige la unidad técnica según tu requerimiento.
                   </p>
                 </div>
-                <!-- Card 1: Commercial & Credit -->
                 <div
-                  class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg relative overflow-hidden group"
+                  class="bg-surface-container-lowest p-space-md rounded-xl shadow-md relative overflow-hidden group"
                 >
                   <div
                     class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"
                   ></div>
-                  <div class="flex items-start justify-between">
+                  <div class="flex items-center justify-between">
                     <div class="flex items-center gap-space-sm">
                       <div
-                        class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container"
+                        class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container"
                       >
-                        <span class="material-symbols-outlined text-[28px]"
+                        <span class="material-symbols-outlined text-[24px]"
                           >chat</span
                         >
                       </div>
                       <div>
                         <span
                           class="font-label-sm text-label-sm text-on-surface-variant uppercase"
-                          >Canal Residencial &amp; Comercial</span
+                          >Residencial &amp; Comercial</span
                         >
                         <h3 class="font-title-md text-title-md text-primary">
-                          Línea Principal &amp; WhatsApp Colombia
+                          Línea &amp; WhatsApp
                         </h3>
                       </div>
                     </div>
                     <span
-                      class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] mt-1.5"
+                      class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
                     ></span>
                   </div>
-                  <p
-                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm"
-                  >
-                    Atención inmediata para residencias, parcelas y comercios en
-                    Colombia. Cotizaciones de CCTV, sistemas de intrusión
-                    perimetral y asesoría en crédito ágil sin trámites bancarios
-                    complejos.
-                  </p>
                   <div
-                    class="mt-space-md p-space-sm bg-surface-container rounded-lg flex items-center justify-between"
+                    class="mt-space-sm p-space-xs px-space-sm bg-surface-container rounded-lg flex items-center justify-between"
                   >
                     <div class="flex items-center gap-2">
                       <span
-                        class="material-symbols-outlined text-primary text-[20px]"
+                        class="material-symbols-outlined text-primary text-[18px]"
                         >call</span
                       ><span
                         class="font-label-md text-label-md text-primary font-bold"
@@ -536,62 +489,54 @@
                     </div>
                     <span
                       class="font-label-sm text-label-sm text-on-surface-variant"
-                      >Lun a Sáb: 7:00 - 18:00 (COT / UTC-5)</span
+                      >Lun-Sáb: 7:00-18:00</span
                     >
                   </div>
                   <a
-                    class="mt-space-md w-full inline-flex items-center justify-center gap-space-xs py-space-sm px-space-md bg-primary-container text-on-primary font-title-md text-body-md rounded-lg shadow-sm hover:bg-primary transition-all"
+                    class="mt-space-sm w-full inline-flex items-center justify-center gap-space-xs py-2 px-space-md bg-primary-container text-on-primary font-title-md text-body-sm rounded-lg shadow-sm hover:bg-primary transition-all"
                     href="https://wa.me/573104659021?text=Hola%20VELTRIX%20Colombia,%20solicito%20asesoria%20comercial%20y%20cotizacion%20inmediata."
                     rel="noopener noreferrer"
                     target="_blank"
-                    ><span class="material-symbols-outlined text-[20px]"
+                    ><span class="material-symbols-outlined text-[18px]"
                       >near_me</span
-                    >Iniciar Chat por WhatsApp Colombia</a
+                    >Chatear por WhatsApp</a
                   >
                 </div>
-                <!-- Card 2: Industrial & Solar Engineering -->
                 <div
-                  class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg relative overflow-hidden group"
+                  class="bg-surface-container-lowest p-space-md rounded-xl shadow-md relative overflow-hidden group"
                 >
                   <div
                     class="absolute top-0 left-0 w-1.5 h-full bg-secondary-container"
                   ></div>
-                  <div class="flex items-start justify-between">
+                  <div class="flex items-center justify-between">
                     <div class="flex items-center gap-space-sm">
                       <div
-                        class="w-12 h-12 rounded-lg bg-secondary-container/15 flex items-center justify-center text-secondary"
+                        class="w-10 h-10 rounded-lg bg-secondary-container/15 flex items-center justify-center text-secondary"
                       >
-                        <span class="material-symbols-outlined text-[28px]"
+                        <span class="material-symbols-outlined text-[24px]"
                           >solar_power</span
                         >
                       </div>
                       <div>
                         <span
                           class="font-label-sm text-label-sm text-secondary uppercase"
-                          >Ingeniería &amp; Alta Capacidad</span
+                          >Ingeniería &amp; Proyectos</span
                         >
                         <h3 class="font-title-md text-title-md text-primary">
-                          Línea Proyectos e Infraestructura
+                          Infraestructura Solar &amp; Redes
                         </h3>
                       </div>
                     </div>
                     <span
-                      class="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)] mt-1.5"
+                      class="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"
                     ></span>
                   </div>
-                  <p
-                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm"
-                  >
-                    Sistemas solares fotovoltaicos autónomos e interconectados
-                    (Off-Grid / On-Grid), electrificación de fincas,
-                    agroindustria y cercas de alta tensión bajo norma RETIE.
-                  </p>
                   <div
-                    class="mt-space-md p-space-sm bg-surface-container rounded-lg flex items-center justify-between"
+                    class="mt-space-sm p-space-xs px-space-sm bg-surface-container rounded-lg flex items-center justify-between"
                   >
                     <div class="flex items-center gap-2">
                       <span
-                        class="material-symbols-outlined text-secondary text-[20px]"
+                        class="material-symbols-outlined text-secondary text-[18px]"
                         >engineering</span
                       ><span
                         class="font-label-md text-label-md text-primary font-bold"
@@ -600,71 +545,60 @@
                     </div>
                     <span
                       class="font-label-sm text-label-sm text-on-surface-variant"
-                      >Despacho Nacional (COT / UTC-5)</span
+                      >Nacional COT</span
                     >
                   </div>
                   <a
-                    class="mt-space-md w-full inline-flex items-center justify-center gap-space-xs py-space-sm px-space-md bg-secondary text-on-secondary font-title-md text-body-md rounded-lg shadow-sm hover:bg-secondary/90 transition-all"
-                    href="https://wa.me/573042586636?text=Hola%20Ingenieria%20VELTRIX%20Colombia,%20requiero%20evaluacion%20tecnica%20de%20proyecto."
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    ><span class="material-symbols-outlined text-[20px]"
-                      >bolt</span
-                    >Contactar Dirección de Ingeniería Colombia</a
+                    class="mt-space-sm w-full inline-flex items-center justify-center gap-space-xs py-2 px-space-md bg-secondary text-on-secondary font-title-md text-body-sm rounded-lg shadow-sm hover:bg-secondary/90 transition-all"
+                    href="tel:+573042586636"
+                    ><span class="material-symbols-outlined text-[18px]"
+                      >call</span
+                    >Llamar a Ingeniería</a
                   >
                 </div>
-                <!-- Card 3: Support, RMA & Guarantees -->
                 <div
-                  class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg relative overflow-hidden cursor-pointer"
+                  class="bg-surface-container-lowest p-space-md rounded-xl shadow-md relative overflow-hidden"
                 >
-                  <div class="flex items-start gap-space-sm">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0"
-                    >
-                      <span class="material-symbols-outlined text-[22px]"
-                        >verified_user</span
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-space-sm">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0"
                       >
-                    </div>
-                    <div class="flex flex-col">
-                      <h3 class="font-title-md text-title-md text-primary">
-                        Soporte Técnico y Garantías (RMA)
-                      </h3>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant mt-1"
-                      >
-                        Atención directa para radicación de tickets de
-                        mantenimiento preventivo, trazabilidad de garantías de
-                        fábrica en inversores, baterías y cámaras NVR.
-                      </p>
-                      <div class="mt-space-sm flex flex-wrap gap-space-xs">
-                        <span
-                          class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface"
-                          >soporte@veltrix.co</span
+                        <span class="material-symbols-outlined text-[22px]"
+                          >verified_user</span
                         >
-                        <span
-                          class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface"
-                          >Pólizas 24/7 SLA Activo</span
-                        >
+                      </div>
+                      <div class="flex flex-col">
+                        <h3 class="font-title-md text-title-md text-primary">
+                          Soporte Técnico (RMA)
+                        </h3>
+                        <div class="flex items-center gap-2 mt-0.5">
+                          <span
+                            class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium"
+                            >soporte@veltrix.co</span
+                          ><span
+                            class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold"
+                            >Pólizas SLA 24/7</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Interactive Coverage / Node Snapshot Map Card -->
                 <div
                   class="bg-surface-container-lowest p-space-md rounded-xl shadow-md"
                 >
                   <div class="flex items-center justify-between pb-space-xs">
                     <span
                       class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
-                      >Cobertura y Cuadrillas Técnicas</span
-                    >
-                    <span
+                      >Cobertura Nacional</span
+                    ><span
                       class="font-label-sm text-label-sm text-tertiary-fixed-dim font-semibold"
-                      >100% Territorio Nacional</span
+                      >100% Territorio Colombia</span
                     >
                   </div>
                   <div
-                    class="w-full h-44 bg-cover bg-center rounded-lg relative overflow-hidden shadow-inner flex items-end p-space-sm"
+                    class="w-full h-28 bg-cover bg-center rounded-lg relative overflow-hidden shadow-inner flex items-end p-space-sm"
                     data-location="Bogotá, Colombia"
                     style="
                       background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDxMz2CjGdjzjeKZo9sgzznfF5KDEdfdji7KOcDtFh5aAHGZ-3KGBAFWmpMdsSU1NZXJ8qtYfJkNFf0oku-0GENT9Kte1q_2kSzhbVeJskYRPgGfL6CSuuLoN6B8DyhoPAb6UPfj_yt0R6OFu5O3Gk1jEm-PR5YDNFU85xLuPdjVmqGRRmWHTaWC-yb1X3-kKZCGOf9MzQCRB26CQSi3PUNiwbf9STWt5mwE_TuyTnseYTyK8w13ORRyg&quot;);
@@ -677,12 +611,10 @@
                       <p
                         class="font-title-md text-title-md text-on-primary leading-tight"
                       >
-                        Centro de Operaciones y Logística Colombia
+                        Centro Logístico Nacional
                       </p>
                       <p class="font-body-sm text-body-sm text-on-primary/80">
-                        Despacho e instalaciones técnicas en Bogotá, Medellín,
-                        Cali, Eje Cafetero, Costa Caribe, Santanderes y zonas
-                        campestres de todo el país
+                        Despacho y cuadrillas técnicas a nivel nacional.
                       </p>
                     </div>
                   </div>
@@ -691,363 +623,538 @@
               <!-- Right Column: Engineering Form & Spec Sheet (7 cols) -->
               <div class="lg:col-span-7">
                 <div
-                  class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-2xl shadow-xl relative"
+                  class="bg-primary text-white p-space-lg md:p-space-xl rounded-2xl shadow-2xl relative overflow-hidden ring-2 ring-secondary-container/20 border-2 border-primary-container/60"
                 >
-                  <div class="flex flex-col mb-space-lg">
-                    <div class="flex items-center justify-between">
+                  <div
+                    class="absolute -right-20 -top-20 w-72 h-72 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"
+                  ></div>
+                  <div
+                    class="absolute -left-20 -bottom-20 w-72 h-72 bg-tertiary-fixed-dim/10 rounded-full blur-3xl pointer-events-none"
+                  ></div>
+                  <div
+                    class="relative z-10 flex flex-wrap items-center justify-between gap-space-xs mb-space-md pb-space-sm border-b border-surface-container-high/20"
+                  >
+                    <div class="flex items-center gap-space-xs">
                       <span
-                        class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold"
-                        >Levantamiento en Línea</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm px-space-xs py-0.5 bg-surface-container rounded text-on-surface-variant"
-                        >Formato REV-2025.4</span
+                        class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"
+                      ></span
+                      ><span
+                        class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed font-bold"
+                        >Cotizador Digital en Vivo</span
+                      ><span
+                        class="font-label-sm text-label-sm px-space-xs py-0.5 bg-secondary-container/20 text-secondary-fixed font-bold rounded ring-1 ring-secondary-container/40"
+                        >v4.2 PRO</span
                       >
                     </div>
-                    <h2
-                      class="font-headline-md text-headline-md text-primary mt-1"
+                    <div
+                      class="flex items-center gap-1.5 font-label-sm text-label-sm text-tertiary-fixed-dim bg-tertiary-container/80 px-space-sm py-1 rounded-full font-semibold border border-tertiary-fixed-dim/30"
                     >
-                      Formulario de Cotización y Análisis Técnico
-                    </h2>
-                    <p
-                      class="font-body-md text-body-md text-on-surface-variant mt-1"
-                    >
-                      Completa los parámetros de tu instalación para emitir un
-                      estimado preliminar y programar la visita de un perito
-                      técnico.
+                      <span
+                        class="material-symbols-outlined text-[16px] text-emerald-500"
+                        >verified</span
+                      >RETIE &amp; IEC Certificado
+                    </div>
+                  </div>
+                  <div class="relative z-10 mb-space-lg">
+                    <div class="flex items-center justify-between mb-1">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary-fixed shrink-0"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >tune</span
+                          >
+                        </div>
+                        <h2
+                          class="font-headline-md text-headline-md text-white font-bold tracking-tight"
+                        >
+                          Cotizador Rápido
+                        </h2>
+                      </div>
+                      <span
+                        class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-emerald-500/20 text-tertiary-fixed-dim font-bold border border-emerald-500/30"
+                        >Respuesta &lt; 15 min</span
+                      >
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-primary/75">
+                      Estimación y arquitectura técnica de tu proyecto sin
+                      costo.
                     </p>
                   </div>
                   <form
-                    class="flex flex-col gap-space-md"
+                    class="relative z-10 flex flex-col gap-space-lg"
                     id="veltrixQuoteForm"
                     onsubmit="handleFormSubmit(event)"
                   >
-                    <!-- Fila 1: Nombre y Cédula / NIT -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                      <div class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-space-sm">
+                      <div class="flex items-center justify-between">
                         <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          for="fullName"
-                          >Nombre Completo o Razón Social *</label
+                          class="font-title-md text-title-md text-white font-bold flex items-center gap-1.5"
+                          ><span
+                            class="material-symbols-outlined text-secondary-fixed text-[20px]"
+                            >layers</span
+                          >Paso 1: Tipo de Proyecto</label
+                        ><span
+                          class="font-label-sm text-label-sm text-secondary-fixed font-bold uppercase tracking-wider"
+                          >Obligatorio *</span
                         >
-                        <input
-                          class="w-full px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
-                          id="fullName"
-                          placeholder="Ej. Juan Carlos Ospina / Constructora Andina S.A.S."
-                          required=""
-                          type="text"
-                        />
                       </div>
-                      <div class="flex flex-col gap-1">
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
                         <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          for="docId"
-                          >Cédula de Ciudadanía (CC) o NIT / RUT *</label
-                        >
-                        <input
-                          class="w-full px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
-                          id="docId"
-                          placeholder="Ej. CC 1.020.345.678 o NIT 901.234.567-8"
-                          required=""
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                    <!-- Fila 2: Teléfono Colombia y Correo Electrónico -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                      <div class="flex flex-col gap-1">
-                        <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          for="contactPhone"
-                          >Teléfono / WhatsApp de Contacto (+57) *</label
-                        >
-                        <input
-                          class="w-full px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
-                          id="contactPhone"
-                          placeholder="Ej. +57 310 123 4567"
-                          required=""
-                          type="tel"
-                        />
-                      </div>
-                      <div class="flex flex-col gap-1">
-                        <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          for="contactEmail"
-                          >Correo Electrónico Corporativo / Personal *</label
-                        >
-                        <input
-                          class="w-full px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
-                          id="contactEmail"
-                          placeholder="contacto@empresa.com.co"
-                          required=""
-                          type="email"
-                        />
-                      </div>
-                    </div>
-                    <!-- Fila 3: Ubicación Colombia -->
-                    <div class="flex flex-col gap-1">
-                      <label
-                        class="font-label-md text-label-md text-on-surface font-medium"
-                        for="targetLocation"
-                        >Departamento y Municipio / Ciudad en Colombia *</label
-                      >
-                      <input
-                        class="w-full px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
-                        id="targetLocation"
-                        placeholder="Ej. Antioquia - Rionegro / Cundinamarca - Chía / Bogotá D.C. / Valle del Cauca - Cali"
-                        required=""
-                        type="text"
-                      />
-                    </div>
-                    <!-- Fila 4: Tipo de Predio Adaptado a Colombia -->
-                    <div class="flex flex-col gap-1">
-                      <label
-                        class="font-label-md text-label-md text-on-surface font-medium"
-                        >Tipo de Predio o Instalación en Colombia *</label
-                      >
-                      <div
-                        class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs mt-1"
-                      >
-                        <label
-                          class="relative flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface text-center cursor-pointer hover:bg-surface-container transition-all"
-                        >
-                          <input
+                          class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest/5 border-2 border-white/10 hover:border-secondary-container hover:bg-surface-container-lowest/10 cursor-pointer transition-all shadow-sm group"
+                          ><input
                             checked=""
                             class="peer sr-only"
                             name="propertyType"
                             type="radio"
-                            value="Finca / Parcela Campestre"
-                          />
-                          <span
-                            class="material-symbols-outlined text-primary mb-1 text-[22px]"
-                            >landscape</span
-                          >
-                          <span
-                            class="font-label-sm text-label-sm text-on-surface"
-                            >Finca / Parcela Campestre</span
-                          >
-                          <div
-                            class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary bg-primary/5 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                          ></div>
-                        </label>
-                        <label
-                          class="relative flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface text-center cursor-pointer hover:bg-surface-container transition-all"
-                        >
-                          <input
-                            class="peer sr-only"
-                            name="propertyType"
-                            type="radio"
-                            value="Residencial / Conjunto Cerrado"
-                          />
-                          <span
-                            class="material-symbols-outlined text-primary mb-1 text-[22px]"
-                            >home</span
-                          >
-                          <span
-                            class="font-label-sm text-label-sm text-on-surface"
-                            >Residencial / Conjunto Cerrado</span
-                          >
-                          <div
-                            class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary bg-primary/5 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                          ></div>
-                        </label>
-                        <label
-                          class="relative flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface text-center cursor-pointer hover:bg-surface-container transition-all"
-                        >
-                          <input
-                            class="peer sr-only"
-                            name="propertyType"
-                            type="radio"
-                            value="Comercio / Bodega Industrial"
-                          />
-                          <span
-                            class="material-symbols-outlined text-primary mb-1 text-[22px]"
-                            >store</span
-                          >
-                          <span
-                            class="font-label-sm text-label-sm text-on-surface"
-                            >Comercio / Bodega Industrial</span
-                          >
-                          <div
-                            class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary bg-primary/5 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                          ></div>
-                        </label>
-                        <label
-                          class="relative flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface text-center cursor-pointer hover:bg-surface-container transition-all"
-                        >
-                          <input
-                            class="peer sr-only"
-                            name="propertyType"
-                            type="radio"
-                            value="Proyecto Agroindustrial / Vial"
-                          />
-                          <span
-                            class="material-symbols-outlined text-primary mb-1 text-[22px]"
-                            >factory</span
-                          >
-                          <span
-                            class="font-label-sm text-label-sm text-on-surface"
-                            >Proyecto Agroindustrial / Vial</span
-                          >
-                          <div
-                            class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary bg-primary/5 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                          ></div>
-                        </label>
-                      </div>
-                    </div>
-                    <!-- Fila 5: Solución y Modalidad de Pago Colombia -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                      <div class="flex flex-col gap-1">
-                        <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          for="solutionCategory"
-                          >Línea de Interés Primaria *</label
-                        >
-                        <div class="relative">
-                          <select
-                            class="w-full appearance-none px-space-md py-space-sm rounded-lg bg-surface text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm pr-10"
-                            id="solutionCategory"
-                            required=""
-                          >
-                            <option value="Energía Solar Autónoma">
-                              Energía Solar Autónoma (Off-Grid / Baterías Litio)
-                            </option>
-                            <option value="CCTV &amp; Videoanalítica">
-                              CCTV &amp; Videoanalítica IA (4K / Térmico)
-                            </option>
-                            <option value="Cercas Eléctricas">
-                              Cercas Eléctricas &amp; Perimetría RETIE
-                            </option>
-                            <option value="Alarmas &amp; Intrusión">
-                              Alarmas &amp; Detección de Intrusión Grado 2/3
-                            </option>
-                            <option value="Control de Acceso">
-                              Control de Acceso Biométrico / Vehicular
-                            </option>
-                            <option value="Solución Integral Multilínea">
-                              Solución Integral Multilínea (Seguridad + Solar)
-                            </option>
-                          </select>
-                          <span
-                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant"
-                            >expand_more</span
-                          >
-                        </div>
-                      </div>
-                      <div class="flex flex-col gap-1">
-                        <label
-                          class="font-label-md text-label-md text-on-surface font-medium"
-                          >Modalidad de Pago / Financiación *</label
-                        >
-                        <div class="grid grid-cols-1 gap-space-xs mt-1">
-                          <label
-                            class="relative flex items-center p-space-sm rounded-lg bg-surface cursor-pointer hover:bg-surface-container transition-all"
-                          >
-                            <input
-                              checked=""
-                              class="peer sr-only"
-                              name="financingInterest"
-                              type="radio"
-                              value="Contado PSE / Bancolombia / Nequi / Daviplata"
-                            />
-                            <span
-                              class="font-body-sm text-body-sm text-primary font-medium peer-checked:font-bold"
-                              >De Contado (Transferencia Bancolombia / PSE /
-                              Nequi / Daviplata)</span
-                            >
+                            value="Finca / Parcela Campestre" />
+                          <div class="flex items-start justify-between mb-1">
                             <div
-                              class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-secondary-container bg-secondary-container/10 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                            ></div>
-                          </label>
-                          <label
-                            class="relative flex items-center p-space-sm rounded-lg bg-surface cursor-pointer hover:bg-surface-container transition-all"
-                          >
-                            <input
-                              class="peer sr-only"
-                              name="financingInterest"
-                              type="radio"
-                              value="Financiación a Crédito en COP (12 a 48 meses)"
-                            />
-                            <span
-                              class="font-body-sm text-body-sm text-on-surface peer-checked:font-bold"
-                              >Financiación a Crédito en COP (12 a 48
-                              meses)</span
+                              class="w-9 h-9 rounded-lg bg-emerald-500/20 text-tertiary-fixed-dim flex items-center justify-center"
                             >
+                              <span
+                                class="material-symbols-outlined text-[22px]"
+                                >agriculture</span
+                              >
+                            </div>
+                            <span
+                              class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed font-bold uppercase tracking-wider"
+                              >Solar + Perimetral</span
+                            >
+                          </div>
+                          <span
+                            class="font-title-md text-title-md text-white font-bold"
+                            >Finca / Campestre</span
+                          >
+                          <p
+                            class="font-body-sm text-body-sm text-on-primary/75 mt-0.5"
+                          >
+                            Energía solar autónoma Off-Grid y cercas RETIE.
+                          </p>
+                          <div
+                            class="absolute inset-0 rounded-xl ring-2 ring-transparent peer-checked:ring-secondary-container peer-checked:bg-secondary-container/10 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                          ></div></label
+                        ><label
+                          class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest/5 border-2 border-white/10 hover:border-primary-fixed hover:bg-surface-container-lowest/10 cursor-pointer transition-all shadow-sm group"
+                          ><input
+                            class="peer sr-only"
+                            name="propertyType"
+                            type="radio"
+                            value="Residencial / Condominio" />
+                          <div class="flex items-start justify-between mb-1">
                             <div
-                              class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary bg-primary/10 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
-                            ></div>
-                          </label>
-                        </div>
+                              class="w-9 h-9 rounded-lg bg-primary-fixed/20 text-primary-fixed-dim flex items-center justify-center"
+                            >
+                              <span
+                                class="material-symbols-outlined text-[22px]"
+                                >villa</span
+                              >
+                            </div>
+                            <span
+                              class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-primary-fixed/20 text-primary-fixed font-bold uppercase tracking-wider"
+                              >CCTV 4K + Biometría</span
+                            >
+                          </div>
+                          <span
+                            class="font-title-md text-title-md text-white font-bold"
+                            >Residencial / Urbano</span
+                          >
+                          <p
+                            class="font-body-sm text-body-sm text-on-primary/75 mt-0.5"
+                          >
+                            Control de acceso, citofonía IP y cámaras de alta
+                            resolución.
+                          </p>
+                          <div
+                            class="absolute inset-0 rounded-xl ring-2 ring-transparent peer-checked:ring-primary-fixed peer-checked:bg-primary-container/40 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                          ></div></label
+                        ><label
+                          class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest/5 border-2 border-white/10 hover:border-amber-400 hover:bg-surface-container-lowest/10 cursor-pointer transition-all shadow-sm group"
+                          ><input
+                            class="peer sr-only"
+                            name="propertyType"
+                            type="radio"
+                            value="Comercio / Bodega Industrial" />
+                          <div class="flex items-start justify-between mb-1">
+                            <div
+                              class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center"
+                            >
+                              <span
+                                class="material-symbols-outlined text-[22px]"
+                                >warehouse</span
+                              >
+                            </div>
+                            <span
+                              class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-white font-bold uppercase tracking-wider"
+                              >Alarma Grado 3</span
+                            >
+                          </div>
+                          <span
+                            class="font-title-md text-title-md text-white font-bold"
+                            >Comercio / Bodega</span
+                          >
+                          <p
+                            class="font-body-sm text-body-sm text-on-primary/75 mt-0.5"
+                          >
+                            Detección perimetral, analítica térmica y monitoreo
+                            24/7.
+                          </p>
+                          <div
+                            class="absolute inset-0 rounded-xl ring-2 ring-transparent peer-checked:ring-amber-500 peer-checked:bg-amber-500/10 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                          ></div></label
+                        ><label
+                          class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest/5 border-2 border-white/10 hover:border-tertiary-fixed-dim hover:bg-surface-container-lowest/10 cursor-pointer transition-all shadow-sm group"
+                          ><input
+                            class="peer sr-only"
+                            name="propertyType"
+                            type="radio"
+                            value="Granja Solar / Proyecto Especial" />
+                          <div class="flex items-start justify-between mb-1">
+                            <div
+                              class="w-9 h-9 rounded-lg bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim flex items-center justify-center"
+                            >
+                              <span
+                                class="material-symbols-outlined text-[22px]"
+                                >wb_sunny</span
+                              >
+                            </div>
+                            <span
+                              class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-tertiary-fixed-dim font-bold uppercase tracking-wider"
+                              >Fotovoltaica + Litio</span
+                            >
+                          </div>
+                          <span
+                            class="font-title-md text-title-md text-white font-bold"
+                            >Solar Industrial</span
+                          >
+                          <p
+                            class="font-body-sm text-body-sm text-on-primary/75 mt-0.5"
+                          >
+                            Sistemas On-Grid, híbridos y bancos de batería de
+                            gran escala.
+                          </p>
+                          <div
+                            class="absolute inset-0 rounded-xl ring-2 ring-transparent peer-checked:ring-emerald-500 peer-checked:bg-emerald-500/10 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                          ></div
+                        ></label>
                       </div>
                     </div>
-                    <!-- Fila 6: Detalles -->
-                    <div class="flex flex-col gap-1">
-                      <label
-                        class="font-label-md text-label-md text-on-surface font-medium"
-                        for="projectDetails"
-                        >Detalles del Predio, Metraje o Carga Eléctrica
-                        Estimada</label
-                      >
-                      <textarea
-                        class="w-full p-space-md rounded-lg bg-surface text-on-surface font-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none"
-                        id="projectDetails"
-                        placeholder="Indica metros perimetrales aproximados, cantidad de cámaras estimadas, consumo mensual aproximado (kWh o valor en factura de energía) y vías de acceso al predio..."
-                        rows="3"
-                      ></textarea>
-                    </div>
-                    <!-- Cláusula Habeas Data Ley 1581 de 2012 -->
                     <div
-                      class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low"
+                      class="flex flex-col gap-space-sm p-space-md bg-surface-container-lowest/5 rounded-xl border border-white/10"
+                    >
+                      <div
+                        class="flex flex-wrap items-center justify-between gap-1"
+                      >
+                        <label
+                          class="font-title-md text-title-md text-white font-bold flex items-center gap-1.5"
+                          ><span
+                            class="material-symbols-outlined text-secondary-fixed text-[20px]"
+                            >straighten</span
+                          >Paso 2: Dimensionamiento Estimado</label
+                        ><span
+                          class="font-label-sm text-label-sm text-tertiary-fixed-dim font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-full"
+                          >Cálculo Inmediato</span
+                        >
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                        <div class="flex flex-col gap-1.5">
+                          <span
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            >Perímetro o Área del Terreno:</span
+                          >
+                          <div class="grid grid-cols-4 gap-1">
+                            <label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                checked=""
+                                class="peer sr-only"
+                                name="perimeterScale"
+                                type="radio"
+                                value="&lt; 100m" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >&lt; 100m</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-secondary-container bg-secondary-container/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="perimeterScale"
+                                type="radio"
+                                value="100 - 500m" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >100-500m</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-secondary-container bg-secondary-container/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="perimeterScale"
+                                type="radio"
+                                value="500m - 2km" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >500m-2km</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-secondary-container bg-secondary-container/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="perimeterScale"
+                                type="radio"
+                                value="+2km" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >+2km</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-secondary-container bg-secondary-container/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div
+                            ></label>
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                          <span
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            >Puntos / Cámaras / Capacidad:</span
+                          >
+                          <div class="grid grid-cols-4 gap-1">
+                            <label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                checked=""
+                                class="peer sr-only"
+                                name="cameraScale"
+                                type="radio"
+                                value="2 a 4" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >2-4 Pts</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary-fixed bg-primary-fixed/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="cameraScale"
+                                type="radio"
+                                value="5 a 8" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >5-8 Pts</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary-fixed bg-primary-fixed/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="cameraScale"
+                                type="radio"
+                                value="9 a 16" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >9-16 Pts</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary-fixed bg-primary-fixed/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div></label
+                            ><label
+                              class="relative flex items-center justify-center py-2 px-1 rounded-lg bg-surface-container-lowest/10 text-center cursor-pointer hover:bg-surface-container-lowest/20 transition-all"
+                              ><input
+                                class="peer sr-only"
+                                name="cameraScale"
+                                type="radio"
+                                value="+16" /><span
+                                class="font-label-sm text-label-sm text-white peer-checked:font-bold"
+                                >+16 Pts</span
+                              >
+                              <div
+                                class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary-fixed bg-primary-fixed/20 -z-10 peer-checked:opacity-100 opacity-0 transition-opacity"
+                              ></div
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-space-sm">
+                      <label
+                        class="font-title-md text-title-md text-white font-bold flex items-center gap-1.5"
+                        ><span
+                          class="material-symbols-outlined text-secondary-fixed text-[20px]"
+                          >contact_page</span
+                        >Paso 3: Datos de Contacto</label
+                      >
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                        <div class="flex flex-col gap-1">
+                          <label
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            for="fullName"
+                            >Nombre o Razón Social *</label
+                          >
+                          <div class="relative flex items-center">
+                            <span
+                              class="material-symbols-outlined absolute left-3 text-on-primary/60 text-[20px]"
+                              >person</span
+                            ><input
+                              class="w-full pl-10 pr-space-md py-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/20 text-white font-body-md placeholder:text-on-primary/40 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-sm"
+                              id="fullName"
+                              placeholder="Ej. Juan Carlos Ospina"
+                              required=""
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                          <label
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            for="docId"
+                            >Cédula o NIT *</label
+                          >
+                          <div class="relative flex items-center">
+                            <span
+                              class="material-symbols-outlined absolute left-3 text-on-primary/60 text-[20px]"
+                              >badge</span
+                            ><input
+                              class="w-full pl-10 pr-space-md py-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/20 text-white font-body-md placeholder:text-on-primary/40 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-sm"
+                              id="docId"
+                              placeholder="CC o NIT"
+                              required=""
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                          <label
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            for="contactPhone"
+                            >WhatsApp (+57) *</label
+                          >
+                          <div class="relative flex items-center">
+                            <span class="absolute left-3 text-[16px]">🇨🇴</span
+                            ><input
+                              class="w-full pl-10 pr-space-md py-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/20 text-white font-body-md placeholder:text-on-primary/40 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-sm"
+                              id="contactPhone"
+                              placeholder="+57 310 123 4567"
+                              required=""
+                              type="tel"
+                            />
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                          <label
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            for="contactEmail"
+                            >Correo Electrónico *</label
+                          >
+                          <div class="relative flex items-center">
+                            <span
+                              class="material-symbols-outlined absolute left-3 text-on-primary/60 text-[20px]"
+                              >mail</span
+                            ><input
+                              class="w-full pl-10 pr-space-md py-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/20 text-white font-body-md placeholder:text-on-primary/40 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-sm"
+                              id="contactEmail"
+                              placeholder="correo@ejemplo.com"
+                              required=""
+                              type="email"
+                            />
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-1 md:col-span-2">
+                          <label
+                            class="font-label-md text-label-md text-on-primary/90 font-medium"
+                            for="targetLocation"
+                            >Municipio y Departamento *</label
+                          >
+                          <div class="relative flex items-center">
+                            <span
+                              class="material-symbols-outlined absolute left-3 text-on-primary/60 text-[20px]"
+                              >location_on</span
+                            ><input
+                              class="w-full pl-10 pr-space-md py-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/20 text-white font-body-md placeholder:text-on-primary/40 focus:outline-none focus:ring-2 focus:ring-secondary-container shadow-sm"
+                              id="targetLocation"
+                              placeholder="Ej. Cundinamarca - Chía / Antioquia - Rionegro"
+                              required=""
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/10 border border-white/10"
                     >
                       <input
-                        class="mt-1 rounded bg-surface border-none accent-primary-container h-4 w-4 shrink-0"
+                        class="mt-1 rounded bg-surface border-none accent-secondary-container h-4 w-4 shrink-0"
                         id="dataConsent"
                         required=""
                         type="checkbox"
-                      />
-                      <label
-                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      /><label
+                        class="font-body-sm text-body-sm text-on-primary/80"
                         for="dataConsent"
+                        >Acepto el tratamiento de datos personales bajo la
+                        <strong class="text-white">Ley 1581 de 2012</strong>
+                        para cotización y asesoría técnica.</label
                       >
-                        Autorizo el tratamiento de mis datos personales conforme
-                        a la <strong>Ley 1581 de 2012</strong> (Habeas Data
-                        Colombia) y la política de privacidad de VELTRIX, con la
-                        finalidad exclusiva de emitir la propuesta
-                        técnico-económica y gestionar la visita pericial.
-                      </label>
                     </div>
-                    <!-- Envío y Alerta -->
-                    <div class="pt-space-xs flex flex-col gap-space-sm">
+                    <div class="flex flex-col gap-space-xs">
                       <button
-                        class="w-full flex items-center justify-center gap-space-sm py-space-md px-space-xl bg-primary-container text-on-primary font-title-md text-body-lg rounded-lg shadow-md hover:bg-primary transition-all active:scale-[0.99] hover:shadow-lg"
+                        class="w-full flex items-center justify-center gap-space-sm py-space-md px-space-xl bg-gradient-to-r from-secondary to-secondary-container text-on-primary font-title-md text-body-lg rounded-xl shadow-2xl hover:shadow-secondary/50 transition-all hover:scale-[1.01] active:scale-[0.99] group border border-secondary-fixed/40"
                         id="submitBtn"
                         type="submit"
                       >
-                        <span class="material-symbols-outlined text-[22px]"
-                          >send</span
-                        >
-                        <span class=""
-                          >Radicar Solicitud Técnica en Colombia</span
+                        <span
+                          class="material-symbols-outlined text-white text-[22px] group-hover:scale-110 transition-transform"
+                          >bolt</span
+                        ><span class="font-bold tracking-tight text-white"
+                          >Solicitar Cotización Inmediata</span
                         >
                       </button>
                       <div
-                        class="hidden p-space-md rounded-lg bg-emerald-50 text-emerald-900 shadow-sm flex items-center gap-space-sm transition-all"
+                        class="flex flex-wrap items-center justify-center gap-x-space-md gap-y-1 text-center font-label-sm text-label-sm text-on-primary/70"
+                      >
+                        <span class="flex items-center gap-1"
+                          ><span
+                            class="material-symbols-outlined text-emerald-400 text-[16px]"
+                            >schedule</span
+                          >Respuesta en &lt; 15 min</span
+                        ><span class="">•</span
+                        ><span class="flex items-center gap-1"
+                          ><span
+                            class="material-symbols-outlined text-secondary-fixed text-[16px]"
+                            >task_alt</span
+                          >Sin compromiso</span
+                        ><span class="">•</span
+                        ><span class="flex items-center gap-1"
+                          ><span
+                            class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]"
+                            >verified</span
+                          >Norma RETIE &amp; IEC</span
+                        >
+                      </div>
+                      <div
+                        class="hidden p-space-md rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 shadow-sm flex items-center gap-space-sm transition-all"
                         id="formSuccessAlert"
                       >
                         <span
-                          class="material-symbols-outlined text-emerald-600 text-[24px]"
+                          class="material-symbols-outlined text-emerald-400 text-[24px]"
                           >task_alt</span
                         >
                         <div class="flex flex-col">
                           <p
-                            class="font-title-md text-body-md font-semibold text-emerald-950"
+                            class="font-title-md text-body-md font-semibold text-white"
                           >
-                            ¡Solicitud Radicada con Éxito!
+                            ¡Cotización Radicada Exitosamente!
                           </p>
-                          <p class="font-body-sm text-body-sm text-emerald-800">
-                            Un ingeniero asignado te contactará en menos de 15
-                            minutos vía telefónica o WhatsApp (+57) en horario
-                            de Colombia.
+                          <p class="font-body-sm text-body-sm text-emerald-300">
+                            Un especialista técnico de VELTRIX te contactará de
+                            inmediato vía WhatsApp o llamada.
                           </p>
                         </div>
                       </div>
@@ -1078,124 +1185,110 @@
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
             >
-              <!-- Feature 1 -->
               <div
-                class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
               >
                 <div
-                  class="w-12 h-12 rounded-lg bg-primary-container/10 text-primary-container flex items-center justify-center mb-space-sm"
+                  class="w-10 h-10 rounded-lg bg-primary-container/10 text-primary-container flex items-center justify-center mb-space-xs"
                 >
-                  <span class="material-symbols-outlined text-[28px]"
+                  <span class="material-symbols-outlined text-[24px]"
                     >radar</span
                   >
                 </div>
                 <h3 class="font-title-md text-title-md text-primary">
-                  Levantamiento Físico &amp; Vulnerabilidades
+                  Levantamiento en Sitio
                 </h3>
                 <p
-                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs flex-grow"
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex-grow"
                 >
-                  Inspección perimetral minuciosa, mapeo de puntos ciegos
-                  mediante modelos satelitales y diseño fotométrico de
-                  coberturas.
+                  Inspección perimetral y diseño fotométrico de coberturas sin
+                  costo.
                 </p>
                 <div
-                  class="mt-space-md pt-space-xs flex items-center gap-1 text-primary font-label-sm text-label-sm"
+                  class="mt-space-sm pt-space-xs flex items-center gap-1 text-primary font-label-sm text-label-sm"
                 >
                   <span class="material-symbols-outlined text-[16px]"
                     >check_circle</span
-                  >
-                  <span class="">Informe pericial preliminar</span>
+                  ><span class="">Informe preliminar</span>
                 </div>
               </div>
-              <!-- Feature 2 -->
               <div
-                class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
               >
                 <div
-                  class="w-12 h-12 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center mb-space-sm"
+                  class="w-10 h-10 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center mb-space-xs"
                 >
-                  <span class="material-symbols-outlined text-[28px]"
+                  <span class="material-symbols-outlined text-[24px]"
                     >wb_sunny</span
                   >
                 </div>
                 <h3 class="font-title-md text-title-md text-primary">
-                  Cálculo de Autonomía Real 100%
+                  Autonomía Real 100%
                 </h3>
                 <p
-                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs flex-grow"
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex-grow"
                 >
-                  Dimensionamiento riguroso de bancos de baterías de litio
-                  (LiFePO4) e irradiación solar local (HSP) para garantizar 0%
-                  caídas de energía.
+                  Cálculo de bancos LiFePO4 e irradiación solar local para cero
+                  interrupciones.
                 </p>
                 <div
-                  class="mt-space-md pt-space-xs flex items-center gap-1 text-secondary font-label-sm text-label-sm"
+                  class="mt-space-sm pt-space-xs flex items-center gap-1 text-secondary font-label-sm text-label-sm"
                 >
                   <span class="material-symbols-outlined text-[16px]"
                     >check_circle</span
-                  >
-                  <span class="">Autonomía para días nublados</span>
+                  ><span class="">Respaldo continuo</span>
                 </div>
               </div>
-              <!-- Feature 3 -->
               <div
-                class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
               >
                 <div
-                  class="w-12 h-12 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-space-sm"
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-space-xs"
                 >
-                  <span class="material-symbols-outlined text-[28px]"
+                  <span class="material-symbols-outlined text-[24px]"
                     >payments</span
                   >
                 </div>
                 <h3 class="font-title-md text-title-md text-primary">
-                  Facilidades de Crédito Ágil
+                  Crédito Ágil
                 </h3>
                 <p
-                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs flex-grow"
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex-grow"
                 >
-                  Acceso a planes de pago flexibles sin descapitalizar tu hogar
-                  o empresa. Proceso de estudio express con aprobación en menos
-                  de 24 horas.
+                  Planes flexibles y aprobación directa en menos de 24 horas.
                 </p>
                 <div
-                  class="mt-space-md pt-space-xs flex items-center gap-1 text-primary font-label-sm text-label-sm"
+                  class="mt-space-sm pt-space-xs flex items-center gap-1 text-primary font-label-sm text-label-sm"
                 >
                   <span class="material-symbols-outlined text-[16px]"
                     >check_circle</span
-                  >
-                  <span class="">Plazos de 6 a 48 meses</span>
+                  ><span class="">Hasta 48 meses</span>
                 </div>
               </div>
-              <!-- Feature 4 -->
               <div
-                class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
               >
                 <div
-                  class="w-12 h-12 rounded-lg bg-tertiary-fixed-dim/20 text-emerald-800 flex items-center justify-center mb-space-sm"
+                  class="w-10 h-10 rounded-lg bg-tertiary-fixed-dim/20 text-emerald-800 flex items-center justify-center mb-space-xs"
                 >
-                  <span class="material-symbols-outlined text-[28px]"
+                  <span class="material-symbols-outlined text-[24px]"
                     >shield_with_heart</span
                   >
                 </div>
                 <h3 class="font-title-md text-title-md text-primary">
-                  Originalidad RETIE &amp; IEC
+                  Garantía RETIE &amp; IEC
                 </h3>
                 <p
-                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs flex-grow"
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex-grow"
                 >
-                  Integración de marcas Tier-1 mundiales con certificados de
-                  conformidad vigentes, soporte directo de fabricante y seriales
-                  auditables.
+                  Marcas Tier-1 con certificación legal y respaldo de fábrica.
                 </p>
                 <div
-                  class="mt-space-md pt-space-xs flex items-center gap-1 text-emerald-800 font-label-sm text-label-sm"
+                  class="mt-space-sm pt-space-xs flex items-center gap-1 text-emerald-800 font-label-sm text-label-sm"
                 >
                   <span class="material-symbols-outlined text-[16px]"
                     >check_circle</span
-                  >
-                  <span class="">Garantías de 2 a 12 años</span>
+                  ><span class="">Garantía 2 a 12 años</span>
                 </div>
               </div>
             </div>
@@ -1213,21 +1306,18 @@
                 <div class="lg:col-span-8">
                   <span
                     class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold uppercase"
-                    >Despliegue Técnico Inmediato</span
+                    >Despliegue Inmediato</span
                   >
                   <h3
-                    class="font-headline-md text-headline-md text-on-primary mt-space-sm"
+                    class="font-headline-md text-headline-md text-on-primary mt-space-xs"
                   >
-                    ¿Requieres un pliego de condiciones o visita urgente a
-                    terreno?
+                    ¿Requiere visita pericial urgente a terreno?
                   </h3>
                   <p
                     class="font-body-md text-body-md text-on-primary/80 mt-1 max-w-2xl"
                   >
-                    Nuestras unidades móviles de diagnóstico cuentan con
-                    analizadores de redes eléctricas, drones térmicos para
-                    inspección de paneles y software de cálculo fotométrico en
-                    tiempo real.
+                    Unidades móviles disponibles con drones térmicos y
+                    analizadores fotométricos en toda Colombia.
                   </p>
                 </div>
                 <div
@@ -1497,15 +1587,5 @@
         </div>
       </div>
     </footer>
-        <script>
-      const menuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-
-      menuButton.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.toggle("hidden");
-        menuIcon.textContent = isHidden ? "menu" : "close";
-      });
-    </script>
   </body>
 </html>

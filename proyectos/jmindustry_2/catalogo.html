@@ -220,137 +220,104 @@
     </script>
   </head>
   <body class="bg-surface font-body-md text-on-surface antialiased">
-    <header class="w-full bg-surface border-b border-outline-variant relative">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(10,31,68,0.04)]"
+    >
       <div
         class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"
       >
-        <!-- Logo e Identidad -->
-        <a href="index.html" class="flex items-center gap-space-sm">
-          <img
+        <a href="index.html" class="flex items-center gap-space-sm"
+          ><img
             alt="Logotipo Corporativo VELTRIX"
             class="h-8 w-auto object-contain"
             src="https://lh3.googleusercontent.com/aida/AEtjO1U08u9-01PhTFqsZHtuInhEatnCR4Or6L1CLckQayJtgTNXMSqFwumFduQFE5tmBBYThuLzAM9Zk-qJ29mr1ObP1Zg15cRdETlsWFjhTsPCcEmty4WHFGKg--GjnBoaw8-pBGjMBtSGE7-V9DiW0k2u4hQjRli_xNbbPR7qrMwHvht2Uu-yuMBJOooP-1gh2tPcITWss_WKu5qW65R13iBcpeWD3yteG94kCrTvE2ARrBrObdUZmIeV4GIj"
-          />
-          <span
+          /><span
             class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary"
             >VELTRIX</span
-          >
-        </a>
-
-        <!-- Navegación Desktop -->
-        <nav
-          class="hidden lg:flex items-center gap-space-lg"
-          data-active-classes="text-primary font-title-md bg-surface-container-high rounded-lg"
+          ></a
         >
+        <nav class="hidden md:flex items-center gap-space-md lg:gap-space-lg">
           <a
-            aria-current="page"
-            class="transition-colors py-space-xs px-space-sm text-primary font-title-md bg-surface-container-high rounded-lg"
-            data-path="inicio"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
             href="index.html"
             >Inicio</a
-          >
-          <a
+          ><a
             class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="nosotros"
             href="nosotros.html"
             >Nosotros</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="catalogo"
+          ><a
+            class="font-title-md text-body-md text-primary font-bold bg-surface-container-high rounded-lg py-space-xs px-space-sm shadow-sm"
             href="catalogo.html"
             >Catálogo</a
-          >
-          <a
+          ><a
             class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="servicios"
             href="servicios.html"
             >Servicios</a
-          >
-          <a
+          ><a
             class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="contacto"
             href="contacto.html"
             >Contacto</a
           >
         </nav>
-
-        <!-- Acciones e Iconos -->
-        <div class="flex items-center gap-space-md">
-          <!-- Botón Solicitar Cotización -->
+        <div class="flex items-center gap-space-sm sm:gap-space-md">
           <a
             class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
-            data-path="solicitar-cotizacion"
             href="contacto.html"
             >Solicitar Cotización</a
           >
-
-          <!-- Icono Perfil / Usuario -->
           <div
-            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 cursor-pointer"
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"
           >
             <span class="material-symbols-outlined text-on-primary text-[18px]"
               >person</span
             >
           </div>
-
-          <!-- Botón Menú Hamburguesa (Solo visible en dispositivos móviles / lg:hidden) -->
           <button
-            id="mobile-menu-button"
+            id="mobileMenuBtn"
+            class="md:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
+            onclick="
+              document
+                .getElementById('mobileNavDrawer')
+                .classList.toggle('hidden')
+            "
             aria-label="Abrir menú"
-            class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none flex items-center justify-center"
           >
-            <span id="menu-icon" class="material-symbols-outlined text-2xl"
-              >menu</span
-            >
+            <span class="material-symbols-outlined text-[24px]">menu</span>
           </button>
         </div>
       </div>
-
-      <!-- Menú Desplegable Responsive Mobile -->
       <div
-        id="mobile-menu"
-        class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg border-b border-outline-variant z-50 px-margin-mobile py-space-md transition-all duration-300"
+        id="mobileNavDrawer"
+        class="hidden md:hidden bg-surface-container-lowest/95 backdrop-blur-xl border-b px-margin-mobile py-space-md shadow-xl flex flex-col gap-space-xs"
       >
-        <nav class="flex flex-col gap-space-xs">
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-space-sm rounded-lg hover:bg-surface-container"
+          href="index.html"
+          >Inicio</a
+        ><a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-space-sm rounded-lg hover:bg-surface-container"
+          href="nosotros.html"
+          >Nosotros</a
+        ><a
+          class="font-title-md text-body-md text-primary font-bold bg-surface-container-high rounded-lg py-2 px-space-sm shadow-sm"
+          href="catalogo.html"
+          >Catálogo</a
+        ><a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-space-sm rounded-lg hover:bg-surface-container"
+          href="servicios.html"
+          >Servicios</a
+        ><a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-space-sm rounded-lg hover:bg-surface-container"
+          href="contacto.html"
+          >Contacto</a
+        >
+        <div class="pt-2 border-t mt-1">
           <a
-            aria-current="page"
-            class="transition-colors py-space-sm px-space-md text-primary font-title-md bg-surface-container-high rounded-lg"
-            href="index.html"
-            >Inicio</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
-            href="nosotros.html"
-            >Nosotros</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
-            href="catalogo.html"
-            >Catálogo</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
-            href="servicios.html"
-            >Servicios</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+            class="w-full flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-2 rounded-lg hover:bg-primary transition-all"
             href="contacto.html"
-            >Contacto</a
+            >Solicitar Cotización</a
           >
-
-          <!-- Botón de Cotización para móvil (visible solo si la pantalla es menor a sm) -->
-          <div
-            class="mt-space-sm pt-space-sm border-t border-outline-variant sm:hidden"
-          >
-            <a
-              class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
-              href="contacto.html"
-              >Solicitar Cotización</a
-            >
-          </div>
-        </nav>
+        </div>
       </div>
     </header>
     <main class="w-full pt-20 bg-surface">
@@ -395,22 +362,19 @@
                 <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span
                 ><span
                   class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold"
-                  >Equipos 100% Homologados para Colombia — Certificación RETIE,
-                  NTC y DIAN</span
+                  >Equipos Homologados Colombia</span
                 >
               </div>
               <h1
                 class="font-headline-lg text-headline-lg text-primary tracking-tight"
               >
-                Catálogo de Equipamiento Homologado y Cuadro de Garantías
+                Catálogo &amp; Garantías Homologadas
               </h1>
               <p
                 class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
               >
-                Equipos 100% Homologados para Colombia con certificación RETIE,
-                normas NTC y seriales verificables ante la DIAN. Respaldamos
-                cada suministro con distribuidores oficiales y soporte de
-                ingeniería en territorio nacional.
+                Equipos certificados RETIE, NTC y DIAN con respaldo directo de
+                fábrica en Colombia.
               </p>
             </div>
             <!-- Live Search & Interactive Filter Switcher -->
@@ -594,1396 +558,2082 @@
             class="max-w-[1360px] mx-auto flex flex-col gap-space-xl"
             id="cardsWrapper"
           >
-            <!-- CATEGORIA 1: Videovigilancia & Analítica -->
+            <!-- CATEGORÍA 1: Videovigilancia & Analítica -->
             <article
-              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm border-0 overflow-hidden flex flex-col"
               data-category="cctv"
             >
+              <div
+                class="w-full h-48 sm:h-56 relative overflow-hidden bg-primary-container"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1U5hYWeT99K4RMKhgZIZ20waXnx0jYh9vmfcjkE017v-0RpuNXgg1mnAx7VwpUOa2E_-B_fTsKptPAXO_in8Hz5erwL18R4ZzGImYiOsyM9X0lC1-nUTlRq7Et694w59AwyTQNCSgS02bDeqIXL7_2eIraMvdx29_B3o_S_QEK-bPT9RPaNUSpY4kh0Mkg-lXZfh5-4XvHyfmpiVSf8hCzbE6NZ3OQ_bkW77OAGoMNEI5m8N4YYwzmMFGdq"
+                  alt="Centro de Control Videovigilancia IP y Analítica IA"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex flex-col justify-end p-space-md"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20 backdrop-blur-md text-tertiary-fixed-dim w-max mb-1 font-semibold"
+                    >Centro de Control &amp; Analítica VMS 24/7</span
+                  >
+                  <p class="font-headline-sm text-headline-sm text-on-primary">
+                    Monitoreo Inteligente &amp; Detección Prematura
+                  </p>
+                </div>
+              </div>
               <div
                 class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
               >
                 <div class="flex items-center gap-space-sm">
-                  <span
-                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
-                    >videocam</span
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center shrink-0"
                   >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[24px]"
+                      >videocam</span
+                    >
+                  </div>
                   <div>
                     <span
-                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim block"
                       >Línea Crítica 01</span
                     >
                     <h2
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Videovigilancia &amp; Analítica Perimetral
+                      Videovigilancia IP &amp; Analítica Perimetral
                     </h2>
                   </div>
                 </div>
                 <div class="flex items-center gap-space-xs">
                   <span
-                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary live-badge-glow"
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg font-label-md text-label-md text-on-primary"
+                    >Garantía Oficial: 1 a 3 Años</span
                   >
-                    Garantía Oficial: 1 a 3 Años
-                  </span>
                   <span
-                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm"
+                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm font-semibold"
+                    >Tier-1 DIAN</span
                   >
-                    IA Ready
-                  </span>
                 </div>
               </div>
-              <div
-                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
-              >
-                <!-- Marcas Homologadas Columna -->
-                <div class="lg:col-span-4 flex flex-col gap-space-md">
-                  <p
-                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+
+              <div class="p-space-lg flex flex-col gap-space-md">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm border-b pb-2"
+                >
+                  <span class=""
+                    >Marcas Líderes Homologadas:
+                    <strong class="text-primary"
+                      >Hikvision, Dahua, HiLook, Bosch, Hanwha</strong
+                    ></span
                   >
-                    Fabricantes Homologados
-                  </p>
-                  <div class="grid grid-cols-2 gap-space-xs">
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Hikvision</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >3 Años · NVR &amp; ColorVu</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Dahua</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >3 Años · Full-Color WizSense</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >HiLook</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >1 a 2 Años · PyME Essential</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Bosch</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >3 Años · Industrial DINion</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
-                    >
-                      <div>
-                        <span
-                          class="font-title-md text-title-md text-primary font-bold"
-                          >Hanwha Vision</span
-                        >
-                        <p
-                          class="font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          3 Años · Wisenet AI Coreano
-                        </p>
-                      </div>
-                      <span
-                        class="material-symbols-outlined text-outline text-[20px]"
-                        >military_tech</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
-                  >
-                    <span
-                      class="material-symbols-outlined text-primary text-[18px]"
+                  <span
+                    class="text-tertiary-fixed-variant font-semibold flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[16px]"
                       >verified</span
                     >
-                    <p class="font-label-sm text-label-sm text-on-surface">
-                      Distribuidores autorizados en Colombia: Centro RMA
-                      Bogotá/Medellín con respuesta &lt; 72h y firmware
-                      anti-ciberataques.
-                    </p>
-                  </div>
+                    Centro RMA Bogotá &amp; Medellín (&lt;72h)</span
+                  >
                 </div>
-                <!-- Componentes y Especificaciones Técnicas Clave -->
+
+                <!-- Tarjetas de Productos Limpias -->
                 <div
-                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs"
                 >
-                  <div>
-                    <p
-                      class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-space-xs"
-                    >
-                      Matriz de Especificaciones Clave
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                      <div
-                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                      >
-                        <div class="flex items-center gap-space-xs mb-1">
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >hdr_auto</span
-                          >
-                          <h3 class="font-title-md text-title-md text-primary">
-                            Cámaras IP 4K ColorVu / Full-Color
-                          </h3>
-                        </div>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant"
+                  <!-- Item 1 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Hikvision</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >3 Años</span
                         >
-                          Captura cromática permanente 24/7 con apertura super
-                          F1.0, sensor BSI de ultra sensibilidad y luz cálida no
-                          invasiva hasta 60m.
-                        </p>
-                        <div
-                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >3840×2160 px</span
-                          >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >0.0005 Lux</span
-                          >
-                        </div>
                       </div>
-                      <div
-                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
                       >
-                        <div class="flex items-center gap-space-xs mb-1">
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >psychology</span
-                          >
-                          <h3 class="font-title-md text-title-md text-primary">
-                            Analítica IA DeepinView
-                          </h3>
-                        </div>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                        >
-                          Clasificación precisa de objetivos humanos y
-                          vehiculares, reducción de falsas alarmas del 98%,
-                          lectura LPR de matrículas y mapa de calor.
-                        </p>
-                        <div
-                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >Filtro AcuSense</span
-                          >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >LPR Instantáneo</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                        Domo IP 4K ColorVu
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
                       >
-                        <div class="flex items-center gap-space-xs mb-1">
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >dns</span
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
                           >
-                          <h3 class="font-title-md text-title-md text-primary">
-                            NVRs de Grado Empresarial
-                          </h3>
-                        </div>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                        >
-                          Grabadores con soporte RAID 0/1/5/6/10, hasta 128
-                          canales, ancho de banda de 384 Mbps, doble fuente
-                          redundante y compresión H.265+ Smart.
-                        </p>
-                        <div
-                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >Hot Swap</span
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path
+                              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                            ></path></svg
+                          ><span class="">Color 24/7 F1.0 AcuSense</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
                           >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >RAID 5/10</span
+                            <path
+                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                            ></path></svg
+                          ><span class="">Filtro IA humanos y vehículos</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
                           >
-                        </div>
-                      </div>
-                      <div
-                        class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >3840×2160 (8MP)</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >IP67 Exterior</span
                       >
-                        <div class="flex items-center gap-space-xs mb-1">
-                          <span
-                            class="material-symbols-outlined text-primary text-[18px]"
-                            >radar</span
-                          >
-                          <h3 class="font-title-md text-title-md text-primary">
-                            Domos PTZ Térmicos / Ópticos
-                          </h3>
-                        </div>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                        >
-                          Zoom óptico motorizado de 32x a 45x con sensor térmico
-                          bi-espectro para detección perimetral a oscuras y
-                          condiciones de niebla densa.
-                        </p>
-                        <div
-                          class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >45x Optical</span
-                          >
-                          <span
-                            class="px-1.5 py-0.5 bg-surface-container rounded"
-                            >NETD &lt; 35mK</span
-                          >
-                        </div>
-                      </div>
                     </div>
                   </div>
-                  <!-- Accion contextual -->
+                  <!-- Item 2 -->
                   <div
-                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
                   >
-                    <span
-                      class="font-body-sm text-body-sm text-on-surface-variant"
-                    >
-                      ¿Necesitas dimensionar almacenamiento en TB según días de
-                      retención legal?
-                    </span>
-                    <a
-                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
-                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20asesor%C3%ADa%20para%20un%20proyecto%20de%20Videovigilancia%20CCTV"
-                      target="_blank"
-                    >
-                      Cotizar CCTV
-                      <span
-                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
-                        >arrow_forward</span
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Dahua</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >3 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
                       >
-                    </a>
+                        Bala IP TiOC 5MP
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+                          ><span class="">Disuasión estrobo + sirena</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                            ></path></svg
+                          ><span class="">Audio bidireccional integrado</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Smart Dual Light</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >WizSense AI</span
+                      >
+                    </div>
                   </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Hikvision</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >3 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        NVR 32CH 4K Pro
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <rect
+                              x="2"
+                              y="2"
+                              width="20"
+                              height="8"
+                              rx="2"
+                            ></rect>
+                            <rect
+                              x="2"
+                              y="14"
+                              width="20"
+                              height="8"
+                              rx="2"
+                            ></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line></svg
+                          ><span class="">Doble Gigabit / 4 SATA 16TB</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path></svg
+                          ><span class="">Analítica VMS incorporada</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >256 Mbps</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >H.265+ Smart</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Hanwha Vision</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >3 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Domo PTZ 32x Wisenet
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            ></path></svg
+                          ><span class="">Auto-tracking motorizado IA</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M23 12a11.05 11.05 0 00-22 0zm-5 0a6 6 0 00-12 0"
+                            ></path></svg
+                          ><span class="">Cobertura IR hasta 200m</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Auto-Tracking AI</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >IR 200m / IP66</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Barra de llamada a la acción contextual -->
+                <div
+                  class="flex flex-col sm:flex-row items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg gap-space-xs mt-1"
+                >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Soporte de almacenamiento con discos Western Digital Purple
+                    / Seagate SkyHawk homologados.</span
+                  >
+                  <a
+                    class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group shrink-0"
+                    href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20requiero%20cotizar%20equipamiento%20de%20Videovigilancia%20CCTV"
+                    target="_blank"
+                  >
+                    Cotizar CCTV Homologado
+                    <span
+                      class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </a>
                 </div>
               </div>
             </article>
-            <!-- CATEGORIA 2: Detección de Intrusión y Alarmas -->
+
+            <!-- CATEGORÍA 2: Detección de Intrusión & Alarmas -->
             <article
-              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm border-0 overflow-hidden flex flex-col"
               data-category="alarmas"
             >
+              <div
+                class="w-full h-48 sm:h-56 relative overflow-hidden bg-primary-container"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1U5hYWeT99K4RMKhgZIZ20waXnx0jYh9vmfcjkE017v-0RpuNXgg1mnAx7VwpUOa2E_-B_fTsKptPAXO_in8Hz5erwL18R4ZzGImYiOsyM9X0lC1-nUTlRq7Et694w59AwyTQNCSgS02bDeqIXL7_2eIraMvdx29_B3o_S_QEK-bPT9RPaNUSpY4kh0Mkg-lXZfh5-4XvHyfmpiVSf8hCzbE6NZ3OQ_bkW77OAGoMNEI5m8N4YYwzmMFGdq"
+                  alt="Sensores y Monitoreo de Intrusión Grado 2 y 3"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex flex-col justify-end p-space-md"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20 backdrop-blur-md text-secondary-fixed w-max mb-1 font-semibold"
+                    >Normativa EN50131 Grado 2 y 3 · Conexión ARC Central</span
+                  >
+                  <p class="font-headline-sm text-headline-sm text-on-primary">
+                    Detección Inmediata &amp; Protección Anti-Sabotaje
+                  </p>
+                </div>
+              </div>
               <div
                 class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
               >
                 <div class="flex items-center gap-space-sm">
-                  <span
-                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
-                    >notifications_active</span
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center shrink-0"
                   >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[24px]"
+                      >notifications_active</span
+                    >
+                  </div>
                   <div>
                     <span
-                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim block"
                       >Línea Crítica 02</span
                     >
                     <h2
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Detección de Intrusión &amp; Alarmas
+                      Detección de Intrusión &amp; Alarmas Perimetrales
                     </h2>
                   </div>
                 </div>
                 <div class="flex items-center gap-space-xs">
                   <span
-                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg font-label-md text-label-md text-on-primary"
+                    >Garantía Oficial: 1 a 2 Años</span
                   >
-                    Garantía Oficial: 1 a 2 Años
-                  </span>
                   <span
-                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm"
+                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm font-semibold"
+                    >Grado 2 y 3 EN50131</span
                   >
-                    Grado 2 y 3
-                  </span>
                 </div>
               </div>
-              <div
-                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
-              >
-                <!-- Marcas Homologadas Columna -->
-                <div class="lg:col-span-4 flex flex-col gap-space-md">
-                  <p
-                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+
+              <div class="p-space-lg flex flex-col gap-space-md">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm border-b pb-2"
+                >
+                  <span class=""
+                    >Marcas Líderes Homologadas:
+                    <strong class="text-primary"
+                      >DSC Neo, Ajax Systems, Bosch, Honeywell / Resideo,
+                      Paradox</strong
+                    ></span
                   >
-                    Fabricantes Homologados
-                  </p>
-                  <div class="grid grid-cols-2 gap-space-xs">
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >DSC Neo</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · PowerSeries Híbrido</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Ajax Systems</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Jeweller Inalámbrico</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Bosch Security</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Grado 3 Industrial</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Honeywell / Resideo</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >1 a 2 Años · Vista Series</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
-                    >
-                      <div>
-                        <span
-                          class="font-title-md text-title-md text-primary font-bold"
-                          >Paradox</span
-                        >
-                        <p
-                          class="font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          1 a 2 Años · Spectra &amp; EVO Multipuntos
-                        </p>
-                      </div>
-                      <span
-                        class="material-symbols-outlined text-outline text-[20px]"
-                        >shield</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
-                  >
-                    <span
-                      class="material-symbols-outlined text-primary text-[18px]"
+                  <span
+                    class="text-tertiary-fixed-variant font-semibold flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[16px]"
                       >verified</span
                     >
-                    <p class="font-label-sm text-label-sm text-on-surface">
-                      Canal oficial Colombia: Soporte técnico local, repuestos
-                      inmediatos y homologación ante centrales ARC nacionales.
-                    </p>
+                    Compatibilidad con Centrales de Monitoreo ARC</span
+                  >
+                </div>
+
+                <!-- Tarjetas de Productos Limpias -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs"
+                >
+                  <!-- Item 1 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >DSC Neo</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Panel HS2064 PowerG
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <rect
+                              x="3"
+                              y="11"
+                              width="18"
+                              height="11"
+                              rx="2"
+                              ry="2"
+                            ></rect>
+                            <path d="M7 11V7a5 5 0 0110 0v4"></path></svg
+                          ><span class="">64 zonas cifrado AES-128</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"
+                            ></path></svg
+                          ><span class="">Conexión ARC y app móvil</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Alcance 2.000m</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >8 Particiones</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Ajax Systems</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Hub 2 Plus Jeweller
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+                            ></path>
+                            <circle cx="12" cy="13" r="4"></circle></svg
+                          ><span class="">Foto-verificación &lt;9 seg</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path
+                              d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"
+                            ></path></svg
+                          ><span class="">4 vías (LTE/Wi-Fi/Ethernet)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Jeweller 2.000m</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Batería 16h</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Bosch</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Sensor TriTech MW+PIR
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <polygon
+                              points="12 2 2 7 12 12 22 7 12 2"
+                            ></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline></svg
+                          ><span class="">Doble tecnología anti-falsas</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path></svg
+                          ><span class="">Inmunidad mascotas 45kg</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Anti-Mascotas</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Grado 2 EN50131</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Honeywell</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Barrera Quad 100m
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line></svg
+                          ><span class="">Cuádruple haz anti-niebla</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"
+                            ></path></svg
+                          ><span class="">Carcasa estanca exterior</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >IP65 Estanco</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >50.000 Lux</span
+                      >
+                    </div>
                   </div>
                 </div>
-                <!-- Especificaciones Clave -->
+
+                <!-- Barra de llamada a la acción contextual -->
                 <div
-                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                  class="flex flex-col sm:flex-row items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg gap-space-xs mt-1"
                 >
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >hub</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Paneles Híbridos e Inalámbricos
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Arquitectura PowerG de largo alcance (hasta 2.000m en
-                        línea de vista) con encriptación AES-128 y gestión
-                        multi-partición independiente.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >AES-128</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Hasta 128 Zonas</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >pets</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Sensores Antimascotas Inmunes
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Detectores doble tecnología (Microondas + PIR) con
-                        discriminación inteligente de mascotas hasta 38 kg y
-                        óptica anti-enmascaramiento activa.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Dual MW + PIR</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Anti-Cloak</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >fence</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Barreras Infrarrojas Exteriores
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Columnas de foto-haz multi-haz de 60m a 200m con
-                        modulación de frecuencia seleccionable, filtros solares
-                        y calefactores integrados anti-escarcha.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Cuádruple Haz</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >IP65 Exterior</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >cell_tower</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Comunicación 4G / IP Redundante
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Transmisión a central receptora de alarmas (ARC) y app
-                        móvil de usuario con supervisión constante de canal
-                        (polling cada 90 segundos).
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >SIA DC-09</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Dual SIM LTE</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Sistemas homologados para enlace directo con central de
+                    policía y pólizas de seguro de riesgo.</span
                   >
+                  <a
+                    class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group shrink-0"
+                    href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20requiero%20cotizaci%C3%B3n%20de%20Alarmas%20e%20Intrusi%C3%B3n"
+                    target="_blank"
+                  >
+                    Cotizar Sistema de Alarma
                     <span
-                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
                     >
-                      Diseños conformes con exigencias de aseguradoras
-                      internacionales y Grado 2/3.
-                    </span>
-                    <a
-                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
-                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20de%20Sistemas%20de%20Alarma%20e%20Intrusi%C3%B3n"
-                      target="_blank"
-                    >
-                      Cotizar Alarmas
-                      <span
-                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
-                        >arrow_forward</span
-                      >
-                    </a>
-                  </div>
+                  </a>
                 </div>
               </div>
             </article>
-            <!-- CATEGORIA 3: Control de Acceso y Asistencia -->
+
+            <!-- CATEGORÍA 3: Control de Acceso & Asistencia -->
             <article
-              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm border-0 overflow-hidden flex flex-col"
               data-category="acceso"
             >
+              <div
+                class="w-full h-48 sm:h-56 relative overflow-hidden bg-primary-container"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1X1dz9wShv-Nv565-amaSnTpYDVZxvh8DW0Rn2rGcLHOM523Rh5i2xMuaEEZ1BoAG_bzoCfGtWmGvA4fmFHgXTbIlQpzNEKspVkXhlqZoRQ8YkDpL1UFL8RKsWiFdyZVNIoSX0zOP1yOoRjgB9J9wpI5HVmIdGIUdIACo6A_LomTV_NXz132JT0CbmusqgXLqr4l7FgvR5lTSIGN2Hxu4f7e2czmzRhVzhgCyg1okBhu7fZ07lldGMBo_H6"
+                  alt="Torniquetes y Control de Acceso Biométrico Corporativo"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex flex-col justify-end p-space-md"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20 backdrop-blur-md text-tertiary-fixed-dim w-max mb-1 font-semibold"
+                    >Habeas Data Ley 1581 · Biometría Sin Contacto</span
+                  >
+                  <p class="font-headline-sm text-headline-sm text-on-primary">
+                    Control Peatonal &amp; Gestión de Flujos de Alta Densidad
+                  </p>
+                </div>
+              </div>
               <div
                 class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
               >
                 <div class="flex items-center gap-space-sm">
-                  <span
-                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
-                    >badge</span
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center shrink-0"
                   >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[24px]"
+                      >badge</span
+                    >
+                  </div>
                   <div>
                     <span
-                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim block"
                       >Línea Crítica 03</span
                     >
                     <h2
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Control de Acceso &amp; Asistencia
+                      Control de Acceso, Biometría &amp; Torniquetes
                     </h2>
                   </div>
                 </div>
                 <div class="flex items-center gap-space-xs">
                   <span
-                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg font-label-md text-label-md text-on-primary"
+                    >Garantía Oficial: 1 a 3 Años</span
                   >
-                    Garantía Oficial: 1 a 3 Años
-                  </span>
                   <span
-                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm"
+                    class="px-space-sm py-1 bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm font-semibold"
+                    >Anti-Spoofing 3D</span
                   >
-                    Biometría Facial
-                  </span>
                 </div>
               </div>
-              <div
-                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
-              >
-                <div class="lg:col-span-4 flex flex-col gap-space-md">
-                  <p
-                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+
+              <div class="p-space-lg flex flex-col gap-space-md">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm border-b pb-2"
+                >
+                  <span class=""
+                    >Marcas Líderes Homologadas:
+                    <strong class="text-primary"
+                      >ZKTeco, Suprema, HID Global, Hikvision Access,
+                      Rosslare</strong
+                    ></span
                   >
-                    Fabricantes Homologados
-                  </p>
-                  <div class="grid grid-cols-2 gap-space-xs">
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >ZKTeco</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >1 a 2 Años · ProFace &amp; SpeedFace</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Suprema</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >3 Años · FaceStation &amp; BioStar</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >HID Global</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >3 Años · iCLASS SE &amp; Mobile ID</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Hikvision Access</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 a 3 Años · MinMoe Biometría</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
-                    >
-                      <div>
-                        <span
-                          class="font-title-md text-title-md text-primary font-bold"
-                          >Rosslare Security</span
-                        >
-                        <p
-                          class="font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          2 Años · Controladoras AxTraxNG
-                        </p>
-                      </div>
-                      <span
-                        class="material-symbols-outlined text-outline text-[20px]"
-                        >fingerprint</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
-                  >
-                    <span
-                      class="material-symbols-outlined text-primary text-[18px]"
+                  <span
+                    class="text-tertiary-fixed-variant font-semibold flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[16px]"
                       >verified</span
                     >
-                    <p class="font-label-sm text-label-sm text-on-surface">
-                      Respaldo oficial ZKTeco/HID Colombia: Laboratorio de RMA
-                      en Bogotá y Medellín con respuesta en &lt; 72h.
-                    </p>
+                    Cumplimiento Habeas Data Ley 1581 Colombia</span
+                  >
+                </div>
+
+                <!-- Tarjetas de Productos Limpias -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs"
+                >
+                  <!-- Item 1 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >ZKTeco</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        SpeedFace-V5L Facial
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
+                            ></path>
+                            <circle cx="12" cy="7" r="4"></circle></svg
+                          ><span class="">Rostro, palma y credencial</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path>
+                            <path d="M9 12l2 2 4-4"></path></svg
+                          ><span class="">Anti-suplantación fotográfica</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >&lt; 0.3s Lectura</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >6.000 Rostros</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >HID Global</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >3 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Lector Signo 40 BLE
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <rect
+                            x="5"
+                            y="2"
+                            width="14"
+                            height="20"
+                            rx="2"
+                            ry="2"
+                          ></rect>
+                          <line x1="12" y1="18" x2="12.01" y2="18"></line></svg
+                        ><span class="">Acceso móvil por smartphone</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M8 12a4 4 0 018 0"></path></svg
+                        ><span class="">Compatibilidad Seos / NFC</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Mobile BLE</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >OSDP V2</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >Suprema</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >3 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      BioStation A2 Huella
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 018 4"></path>
+                          <path
+                            d="M5 19.5C5.5 18 6 15 6 12c0-.7.1-1.4.3-2"
+                          ></path>
+                          <path d="M12 7a5 5 0 015 5c0 3 0 6 1 8"></path>
+                          <path d="M9 12a3 3 0 016 0c0 4 0 7 1 9"></path></svg
+                        ><span class="">Sensor óptico OP5 en vivo</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <polygon
+                            points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                          ></polygon></svg
+                        ><span class="">Algoritmo ultra rápido</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >150k Huellas/s</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Quad-Core</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >ZKTeco</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >2 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Torniquete TS1000 Pro
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <rect
+                            x="2"
+                            y="3"
+                            width="20"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
+                          <line x1="8" y1="21" x2="16" y2="21"></line>
+                          <line x1="12" y1="17" x2="12" y2="21"></line></svg
+                        ><span class="">Acero inoxidable SUS304</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="15" y1="9" x2="9" y2="15"></line>
+                          <line x1="9" y1="9" x2="15" y2="15"></line></svg
+                        ><span class="">Brazo abatible anti-pánico</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >30 Pasos/min</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Acero SUS304</span
+                      >
+                    </div>
                   </div>
                 </div>
+
+                <!-- Barra de llamada a la acción contextual -->
                 <div
-                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                  class="flex flex-col sm:flex-row items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg gap-space-xs mt-1"
                 >
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >face</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Terminales Faciales de Alta Velocidad
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Reconocimiento facial en menos de 0.2 segundos a 2
-                        metros de distancia con algoritmo anti-suplantación por
-                        foto, video o máscara 3D.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >&lt; 0.2s</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Liveness Detection</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >lock</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Cerraduras Magnéticas 600 - 1200 lbs
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Electroimanes anodizados de alta sujeción para puertas
-                        de vidrio, madera y metal blindado, con sensor de estado
-                        de puerta integrado (reed switch).
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Fail-Safe</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >600 / 1200 Lbs</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >traffic</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Talanqueras Vehiculares de Alto Tráfico
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Barreras electromecánicas y servo-asistidas con ciclos
-                        continuos 100%, apertura ultrarrápida (1.5 a 3s),
-                        mástiles de 3m a 6m y lazo inductivo.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >100% Heavy Duty</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Loop Detector</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >history_edu</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Molinetes &amp; Software de Reportería
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Torniquetes bidireccionales en acero inoxidable SUS304
-                        integrados a software de nómina, control de turnos y
-                        cumplimiento laboral.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Acero SUS304</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Exportación Excel/SQL</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Integración con software de control horario y nómina (ZKBio
+                    CVAccess, BioStar 2).</span
                   >
+                  <a
+                    class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group shrink-0"
+                    href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20deseo%20cotizar%20Control%20de%20Acceso%20y%20Biometr%C3%ADa"
+                    target="_blank"
+                  >
+                    Cotizar Solución de Acceso
                     <span
-                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
                     >
-                      Soluciones adaptables a oficinas corporativas, plantas
-                      fabriles y conjuntos residenciales.
-                    </span>
-                    <a
-                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
-                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20deseo%20cotizar%20Control%20de%20Acceso%20y%20Biometr%C3%ADa"
-                      target="_blank"
-                    >
-                      Cotizar Acceso
-                      <span
-                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
-                        >arrow_forward</span
-                      >
-                    </a>
-                  </div>
+                  </a>
                 </div>
               </div>
             </article>
-            <!-- CATEGORIA 4: Protección Perimetral - Cercas Eléctricas -->
+
+            <!-- CATEGORÍA 4: Protección Perimetral - Cercas Eléctricas -->
             <article
-              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm border-0 overflow-hidden flex flex-col"
               data-category="cercas"
             >
+              <div
+                class="w-full h-48 sm:h-56 relative overflow-hidden bg-primary-container"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1X6-uxQgKjpWDKt4cltZlgosB9nfGtZZ5YWFKwQ9EQEHmoTXe_omgGWLMcr2lid9KjzaUUPh0sJgKFBGYD0GEbxnxU4BtHEx6gJl6Td_LE0-AqRbuiOm4jw4qvpEqZv01kiteLD-CHVann0kN6YHrr0mLNRGMyWa7AZCftu4f5X-HA2dJj8wY1OLjejosS1_Tw_4JsZQMY7VHFstFxejkRVlIFZUy6AnpDbPGXf0A6f4eAWuaeGmrju_NqK"
+                  alt="Cercado Eléctrico Industrial Certificado RETIE"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex flex-col justify-end p-space-md"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20 backdrop-blur-md text-secondary-fixed w-max mb-1 font-semibold"
+                    >Certificación RETIE · IEC 60335-2-76 Obligatoria</span
+                  >
+                  <p class="font-headline-sm text-headline-sm text-on-primary">
+                    Protección Física Activa &amp; Detección de Corte de Línea
+                  </p>
+                </div>
+              </div>
               <div
                 class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
               >
                 <div class="flex items-center gap-space-sm">
-                  <span
-                    class="material-symbols-outlined text-tertiary-fixed-dim text-[28px]"
-                    >electric_bolt</span
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center shrink-0"
                   >
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed-dim text-[24px]"
+                      >electric_bolt</span
+                    >
+                  </div>
                   <div>
                     <span
-                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim"
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim block"
                       >Línea Crítica 04</span
                     >
                     <h2
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Protección Perimetral - Cercas Eléctricas
+                      Protección Perimetral - Cercas Eléctricas Homologadas
                     </h2>
                   </div>
                 </div>
                 <div class="flex items-center gap-space-xs">
                   <span
-                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-md text-label-md text-on-primary"
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg font-label-md text-label-md text-on-primary"
+                    >Garantía Oficial: 1 a 2 Años</span
                   >
-                    Garantía Oficial: 1 a 2 Años
-                  </span>
                   <span
-                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm"
+                    class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm font-semibold"
+                    >Norma RETIE COPNIA</span
                   >
-                    Norma RETIE
-                  </span>
                 </div>
               </div>
-              <div
-                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
-              >
-                <div class="lg:col-span-4 flex flex-col gap-space-md">
-                  <p
-                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+
+              <div class="p-space-lg flex flex-col gap-space-md">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm border-b pb-2"
+                >
+                  <span class=""
+                    >Marcas Líderes Homologadas:
+                    <strong class="text-primary"
+                      >Hagroy Electronic, Yonusa, Speedrite, JVA
+                      Security</strong
+                    ></span
                   >
-                    Fabricantes Homologados
-                  </p>
-                  <div class="grid grid-cols-2 gap-space-xs">
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
+                  <span
+                    class="text-tertiary-fixed-variant font-semibold flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[16px]"
+                      >verified</span
                     >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Hagroy</span
+                    Certificación Obligatoria IEC 60335-2-76</span
+                  >
+                </div>
+
+                <!-- Tarjetas de Productos Limpias -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs"
+                >
+                  <!-- Item 1 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >Hagroy</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >2 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
                       >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · XPower &amp; iHagroy App</span
+                        XPower Wi-Fi RETIE
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
                       >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <rect
+                              x="5"
+                              y="2"
+                              width="14"
+                              height="20"
+                              rx="2"
+                              ry="2"
+                            ></rect>
+                            <line
+                              x1="12"
+                              y1="18"
+                              x2="12.01"
+                              y2="18"
+                            ></line></svg
+                          ><span class="">Reporte y control móvil</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                            ></path></svg
+                          ><span class="">Monitoreo de retorno y corte</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
                     </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
+                    <div class="flex flex-wrap gap-1 pt-1">
                       <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Yonusa</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Energizadores Inteligentes</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Speedrite</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Grado Agroindustrial NZ</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >JVA Security</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Monitoreo Perimetral Z-Line</span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >14.000V / 2.5J</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >RETIE Legal</span
                       >
                     </div>
                   </div>
+                  <!-- Item 2 -->
                   <div
-                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
                   >
-                    <span
-                      class="material-symbols-outlined text-primary text-[18px]"
-                      >gavel</span
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >Yonusa</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >2 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
                     >
-                    <p class="font-label-sm text-label-sm text-on-surface">
-                      <strong>Obligatorio en Colombia:</strong> RETIE Art. 14 e
-                      IEC 60335-2-76 para blindaje perimetral legal sin riesgo
-                      de sanciones civiles o penales.
-                    </p>
+                      Energizador EY-10000
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path
+                            d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"
+                          ></path></svg
+                        ><span class="">Cobertura 5.000m lineales</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <line x1="12" y1="2" x2="12" y2="14"></line>
+                          <line x1="4" y1="14" x2="20" y2="14"></line>
+                          <line x1="7" y1="18" x2="17" y2="18"></line>
+                          <line x1="10" y1="22" x2="14" y2="22"></line></svg
+                        ><span class="">Supervisión de tierra activa</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >12.500V Salida</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >NEMA Intemperie</span
+                    >
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >VELTRIX Hardware</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >10 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Poste Galvanizado + UV
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                          ></path></svg
+                        ><span class="">Inmersión caliente ASTM A123</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <circle cx="12" cy="12" r="4"></circle>
+                          <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                          ></path></svg
+                        ><span class="">Aisladores anti-cristalización</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >Galvanizado ASTM</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >Aislador 15kV</span
+                    >
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >JVA Security</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >2 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Monitor Multizona Z-14
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                          <rect
+                            x="2"
+                            y="14"
+                            width="20"
+                            height="8"
+                            rx="2"
+                          ></rect>
+                          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                          <line x1="6" y1="18" x2="6.01" y2="18"></line></svg
+                        ><span class="">Enlace TCP/IP con VMS CCTV</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          ></path></svg
+                        ><span class="">Discriminación por falso contacto</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >Doble Lazo</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >VMS/SCADA</span
+                    >
                   </div>
                 </div>
+
+                <!-- Barra de llamada a la acción contextual -->
                 <div
-                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                  class="flex flex-col sm:flex-row items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg gap-space-xs mt-1"
                 >
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >offline_bolt</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Energizadores Certificados RETIE
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Equipos con salida de 8.000V a 14.000V con energía
-                        disipada menor a 5 Joules por pulso, operando dentro del
-                        rango legalmente admitido y seguro.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >RETIE Validado</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >10.000V - 14.000V</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >wb_sunny</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Aisladores con Protección UV
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Polipropileno virgen de alto impacto tratado contra la
-                        radiación ultravioleta, impidiendo fisuras dieléctricas
-                        o pérdidas por arco a tierra.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Anti-UV 10 Años</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Dieléctrico 15kV</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >straighten</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Postes Galvanizados en Caliente
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Estructuras de perfilería tubular o ángulo galvanizado
-                        por inmersión en caliente, garantizando cero corrosión
-                        en atmósferas salinas o industriales.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Galvanizado ASTM</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Resorte Templador Inox</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-primary text-[18px]"
-                          >notification_important</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Monitoreo de Corte Instantáneo
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Supervisión bidireccional que dispara sirena de 120dB y
-                        alerta a central en milisegundos en caso de corte,
-                        puesta a tierra o flexión de alambre.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Alerta de Corte &lt;1s</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Alambre triple capa</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Incluye dictamen de inspección técnica RETIE emitido por
+                    Ingeniero Electricista colegiado.</span
                   >
+                  <a
+                    class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group shrink-0"
+                    href="https://wa.me/573104659021?text=Hola%20VELTRIX,%20requiero%20cotizar%20Cerca%20El%C3%A9ctrica%20con%20norma%20RETIE"
+                    target="_blank"
+                  >
+                    Cotizar Cerca RETIE
                     <span
-                      class="font-body-sm text-body-sm text-on-surface-variant"
-                      ><strong class="text-primary"
-                        >Dictamen RETIE Certificado:</strong
-                      >
-                      Instalaciones respaldadas por ingeniero electricista con
-                      matrícula profesional COPNIA.</span
-                    ><a
-                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-primary hover:underline group"
-                      href="https://wa.me/573104659021?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20para%20Cerca%20El%C3%A9ctrica%20Perimetral%20con%20norma%20RETIE"
-                      target="_blank"
-                      >Cotizar Cerca RETIE<span
-                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
-                        >arrow_forward</span
-                      ></a
+                      class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
                     >
-                  </div>
+                  </a>
                 </div>
               </div>
             </article>
-            <!-- CATEGORIA 5: Energía Solar Fotovoltaica -->
+
+            <!-- CATEGORÍA 5: Energía Solar Fotovoltaica & Respaldo -->
             <article
-              class="category-block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col"
+              class="category-block bg-surface-container-lowest rounded-xl shadow-sm border-0 overflow-hidden flex flex-col"
               data-category="solar"
             >
+              <div
+                class="w-full h-48 sm:h-56 relative overflow-hidden bg-primary-container"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1WC-f4WWw3H7i3qryjQvjFDNGOSWzZDJJEJknt5khVdQXbngPa4XYSj9QNUf8iVilD2pfgUxiuGQnxKMCYTncdtRrfl0VJIuS4yrXr24hYad6lhL847dha7OM1zDU8iAvpTvdmTqxppefxHw-trX0-chargAOEpw1iU4xBZCR1blGpoy0lLUtlfhQocpJGNX_FRQKzVj64wY8o0ZZGyICkGMY1VycAXmcQMuKWIIegSrilPFQLVOipFrHQm"
+                  alt="Sistemas Solares Fotovoltaicos y Almacenamiento Crítico"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex flex-col justify-end p-space-md"
+                >
+                  <span
+                    class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-surface-container-lowest/20 backdrop-blur-md text-secondary-container w-max mb-1 font-semibold"
+                    >Ley 1715 UPME · Paneles Solares Tier-1 Bloomberg</span
+                  >
+                  <p class="font-headline-sm text-headline-sm text-on-primary">
+                    Autonomía Energética &amp; Respaldo Crítico
+                    Cero-Transferencia
+                  </p>
+                </div>
+              </div>
               <div
                 class="bg-primary-container px-space-lg py-space-md text-on-primary flex flex-wrap items-center justify-between gap-space-sm"
               >
                 <div class="flex items-center gap-space-sm">
-                  <span
-                    class="material-symbols-outlined text-secondary-container text-[28px]"
-                    >solar_power</span
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center shrink-0"
                   >
+                    <span
+                      class="material-symbols-outlined text-secondary-container text-[24px]"
+                      >solar_power</span
+                    >
+                  </div>
                   <div>
                     <span
-                      class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim"
+                      class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim block"
                       >Línea de Ingeniería Energética 05</span
                     >
                     <h2
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Energía Solar Fotovoltaica &amp; Respaldo
+                      Energía Solar Fotovoltaica, Baterías &amp; UPS
                     </h2>
                   </div>
                 </div>
                 <div class="flex items-center gap-space-xs">
                   <span
                     class="px-space-sm py-1 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md"
+                    >Paneles: Hasta 25 Años</span
                   >
-                    Paneles: Hasta 25 Años
-                  </span>
                   <span
-                    class="px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-sm rounded-lg font-label-sm text-label-sm text-on-primary"
+                    class="px-space-sm py-1 bg-surface-container-lowest/15 rounded-lg font-label-sm text-label-sm text-on-primary font-semibold"
+                    >Tier-1 Bloomberg</span
                   >
-                    Electrónica: 1 a 3 Años
-                  </span>
                 </div>
               </div>
-              <div
-                class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg"
-              >
-                <div class="lg:col-span-4 flex flex-col gap-space-md">
-                  <p
-                    class="font-label-md text-label-md uppercase text-on-surface-variant tracking-wider"
+
+              <div class="p-space-lg flex flex-col gap-space-md">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm border-b pb-2"
+                >
+                  <span class=""
+                    >Marcas Líderes Homologadas:
+                    <strong class="text-primary"
+                      >Victron Energy, JA Solar, EcoFlow, Ritar, Ultracell
+                      UK</strong
+                    ></span
                   >
-                    Fabricantes Homologados
-                  </p>
-                  <div class="grid grid-cols-2 gap-space-xs">
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Victron Energy</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >Hasta 5 Años · Holanda Premium</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >EcoFlow</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >2 Años · Estaciones Delta &amp; River</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >JA Solar</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >25 Años · Módulos Tier-1 Global</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between cursor-pointer"
-                    >
-                      <span
-                        class="font-title-md text-title-md text-primary font-bold"
-                        >Ritar</span
-                      >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >1 a 2 Años · Ciclo Profundo AGM/Gel</span
-                      >
-                    </div>
-                    <div
-                      class="brand-badge p-space-sm rounded-lg bg-surface-container-low col-span-2 flex items-center justify-between cursor-pointer"
-                    >
-                      <div>
-                        <span
-                          class="font-title-md text-title-md text-primary font-bold"
-                          >Ultracell UK</span
-                        >
-                        <p
-                          class="font-label-sm text-label-sm text-on-surface-variant"
-                        >
-                          1 a 3 Años · Baterías Industriales Selladas
-                        </p>
-                      </div>
-                      <span
-                        class="material-symbols-outlined text-secondary text-[20px]"
-                        >bolt</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="p-space-sm rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs"
-                  >
-                    <span
-                      class="material-symbols-outlined text-primary text-[18px]"
+                  <span
+                    class="text-secondary-fixed-dim font-semibold flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[16px]"
                       >verified</span
                     >
-                    <p class="font-label-sm text-label-sm text-on-surface">
-                      Distribuidores autorizados Victron &amp; JA Solar en
-                      Colombia: Laboratorio solar en Bogotá y Medellín con
-                      respuesta &lt; 72h.
-                    </p>
+                    Beneficios Tributarios Ley 1715 / UPME Colombia</span
+                  >
+                </div>
+
+                <!-- Tarjetas de Productos Limpias -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs"
+                >
+                  <!-- Item 1 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                          >JA Solar</span
+                        ><span
+                          class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                          >25 Años</span
+                        >
+                      </div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-semibold"
+                      >
+                        Panel Mono 550Wp PERC
+                      </h3>
+                      <ul
+                        class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                      >
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line
+                              x1="4.22"
+                              y1="4.22"
+                              x2="5.64"
+                              y2="5.64"
+                            ></line>
+                            <line
+                              x1="18.36"
+                              y1="18.36"
+                              x2="19.78"
+                              y2="19.78"
+                            ></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line></svg
+                          ><span class="">Celdas PERC 11BB alta captación</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                            ></path></svg
+                          ><span class="">Tolerancia de potencia positiva</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <svg
+                            class="w-4 h-4 text-secondary shrink-0"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                          >
+                            <path
+                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                            ></path></svg
+                          ><span class="">Stock entrega inmediata</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 pt-1">
+                      <span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Eficiencia &gt; 21.3%</span
+                      ><span
+                        class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                        >Tier-1 Global</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >Victron Energy</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >5 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Inversor MultiPlus-II 5kVA
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <polyline
+                            points="22 12 18 12 15 21 9 3 6 12 2 12"
+                          ></polyline></svg
+                        ><span class="">Onda senoidal pura UPS &lt;20ms</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                          ></path>
+                          <path d="M9 12l2 2 4-4"></path></svg
+                        ><span class="">Cero interrupción en cargas</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >Transferencia Cero</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >PowerControl 48V</span
+                    >
+                  </div>
+                  <!-- Item 3 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >Victron Energy</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >5 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      SmartSolar MPPT 150/85
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg
+                        ><span class="">Seguimiento ultra rápido de carga</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M6.5 6.5l11 11L12 23V1l5.5 5.5-11 11"
+                          ></path></svg
+                        ><span class="">Conectividad Bluetooth app</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >99% Eficiencia</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >Bluetooth App</span
+                    >
+                  </div>
+                  <!-- Item 4 -->
+                  <div
+                    class="spec-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-sm hover:bg-surface-container transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider"
+                        >Ritar / Ultracell</span
+                      ><span
+                        class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-1.5 py-0.5 rounded font-semibold"
+                        >3 Años</span
+                      >
+                    </div>
+                    <h3
+                      class="font-title-md text-title-md text-primary font-semibold"
+                    >
+                      Batería LiFePO4 4.8kWh
+                    </h3>
+                    <ul
+                      class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1.5 pt-1"
+                    >
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <rect
+                            x="1"
+                            y="6"
+                            width="18"
+                            height="12"
+                            rx="2"
+                          ></rect>
+                          <line x1="23" y1="11" x2="23" y2="13"></line>
+                          <line x1="6" y1="10" x2="6" y2="14"></line>
+                          <line x1="10" y1="10" x2="10" y2="14"></line></svg
+                        ><span class="">Litio fosfato ferroso con BMS</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path d="M23 4v6h-6"></path>
+                          <path d="M1 20v-6h6"></path>
+                          <path
+                            d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"
+                          ></path></svg
+                        ><span class=""
+                          >Larga vida útil libre mantenimiento</span
+                        >
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <svg
+                          class="w-4 h-4 text-secondary shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                        >
+                          <path
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          ></path></svg
+                        ><span class="">Stock entrega inmediata</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    <span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >3.500+ Ciclos DoD</span
+                    ><span
+                      class="px-2 py-0.5 bg-surface-container-lowest rounded font-label-sm text-label-sm text-on-surface font-mono"
+                      >BMS Inteligente</span
+                    >
                   </div>
                 </div>
+
+                <!-- Barra de llamada a la acción contextual -->
                 <div
-                  class="lg:col-span-8 flex flex-col justify-between gap-space-md"
+                  class="flex flex-col sm:flex-row items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg gap-space-xs mt-1"
                 >
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-secondary text-[18px]"
-                          >solar_power</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Paneles Monocristalinos Tier-1
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Celdas PERC / N-Type de 450Wp a 580Wp con eficiencia
-                        superior al 21.5%, vidrio templado antireflejo y
-                        tolerancia positiva garantizada.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Tier-1 Bloomberg</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >25 Años Eficiencia</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-secondary text-[18px]"
-                          >offline_bolt</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Controladores MPPT Ultra-Rápidos
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Algoritmo de seguimiento del punto de máxima potencia
-                        que incrementa la recolección energética hasta en un 30%
-                        en días nublados.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Eficiencia 99%</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Bluetooth VictronConnect</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-secondary text-[18px]"
-                          >settings_input_composite</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Inversores Cargadores Híbridos
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Onda senoidal pura con tiempo de transferencia cero
-                        (&lt;20ms UPS), aptos para alimentar servidores, cámaras
-                        de seguridad y bombas.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Pure Sine Wave</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Cero Interrupción UPS</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="spec-card p-space-md rounded-lg bg-surface-container-low cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-xs mb-1">
-                        <span
-                          class="material-symbols-outlined text-secondary text-[18px]"
-                          >battery_charging_full</span
-                        >
-                        <h3 class="font-title-md text-title-md text-primary">
-                          Baterías de Gel &amp; Litio LiFePO4
-                        </h3>
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Bancos de acumulación de alto ciclado (3.500+ ciclos al
-                        80% DoD para litio / 1.200 ciclos para Gel sellada),
-                        libre de mantenimiento e ignífugas.
-                      </p>
-                      <div
-                        class="mt-space-xs flex gap-1 font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >LiFePO4 Seguro</span
-                        >
-                        <span class="px-1.5 py-0.5 bg-surface-container rounded"
-                          >Ciclo Profundo</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between pt-space-xs bg-surface-container-high/40 p-space-sm rounded-lg"
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Dimensionamiento de curvas de consumo y retorno de
+                    inversión elaborado por ingenieros solares.</span
                   >
+                  <a
+                    class="inline-flex items-center gap-1 font-title-md text-body-sm text-secondary hover:underline group shrink-0"
+                    href="https://wa.me/573042586636?text=Hola%20VELTRIX,%20requiero%20cotizaci%C3%B3n%20y%20dimensionamiento%20solar"
+                    target="_blank"
+                  >
+                    Cotizar Proyecto Solar
                     <span
-                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
                     >
-                      Línea directa con ingenieros solares para cálculo de carga
-                      y dimensionamiento de paneles.
-                    </span>
-                    <a
-                      class="inline-flex items-center gap-1 font-title-md text-body-sm text-secondary hover:underline group"
-                      href="https://wa.me/573042586636?text=Hola%20Veltrix,%20requiero%20cotizaci%C3%B3n%20y%20c%C3%A1lculo%20solar%20fotovoltaico"
-                      target="_blank"
-                    >
-                      Cotizar Proyecto Solar
-                      <span
-                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform"
-                        >arrow_forward</span
-                      >
-                    </a>
-                  </div>
+                  </a>
                 </div>
               </div>
             </article>
@@ -2018,7 +2668,7 @@
               >
                 <div class="flex flex-col gap-space-sm">
                   <div
-                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
                   >
                     <span class="material-symbols-outlined text-[28px]"
                       >qr_code_scanner</span
@@ -2027,12 +2677,36 @@
                   <h3 class="font-headline-sm text-headline-sm text-primary">
                     100% Originales &amp; Sellados
                   </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Trazabilidad total mediante serial individual verificable en
-                    el portal oficial del fabricante. Cajas selladas de fábrica,
-                    importación legal con pago de aranceles y soporte de
-                    documentación DIAN.
-                  </p>
+                  <ul
+                    class="font-body-md text-body-md text-on-surface-variant flex flex-col gap-2 pt-1"
+                  >
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path></svg
+                      ><span class="">Trazabilidad por serial oficial</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path></svg
+                      ><span class="">Facturación legal DIAN</span>
+                    </li>
+                  </ul>
                 </div>
                 <div
                   class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
@@ -2049,7 +2723,7 @@
               >
                 <div class="flex flex-col gap-space-sm">
                   <div
-                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
                   >
                     <span class="material-symbols-outlined text-[28px]"
                       >published_with_changes</span
@@ -2058,12 +2732,39 @@
                   <h3 class="font-headline-sm text-headline-sm text-primary">
                     Trámite Directo de Garantía (RMA)
                   </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Sin tramitaciones interminables ante distribuidores
-                    secundarios. Nuestro departamento técnico canaliza el
-                    reemplazo de piezas o equipos con soporte de ingeniería
-                    directa y diagnóstico en menos de 72 horas.
-                  </p>
+                  <ul
+                    class="font-body-md text-body-md text-on-surface-variant flex flex-col gap-2 pt-1"
+                  >
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path></svg
+                      ><span class="">Diagnóstico y reemplazo &lt; 72h</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg
+                      ><span class=""
+                        >Soporte técnico de laboratorio local</span
+                      >
+                    </li>
+                  </ul>
                 </div>
                 <div
                   class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
@@ -2080,7 +2781,7 @@
               >
                 <div class="flex flex-col gap-space-sm">
                   <div
-                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform"
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
                   >
                     <span class="material-symbols-outlined text-[28px]"
                       >credit_card</span
@@ -2089,12 +2790,38 @@
                   <h3 class="font-headline-sm text-headline-sm text-primary">
                     Instalación Certificada &amp; Crédito
                   </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Cuadrillas de técnicos certificados con cumplimiento de
-                    normas SISO y alturas. Ofrecemos líneas de crédito
-                    empresarial y esquemas de pago por hitos de entrega para
-                    proyectos corporativos.
-                  </p>
+                  <ul
+                    class="font-body-md text-body-md text-on-surface-variant flex flex-col gap-2 pt-1"
+                  >
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        ></path>
+                        <path d="M9 12l2 2 4-4"></path></svg
+                      ><span class=""
+                        >Cuadrillas certificadas SISO/alturas</span
+                      >
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="w-4 h-4 text-tertiary-fixed-variant shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line></svg
+                      ><span class="">Financiación flexible 30/60 días</span>
+                    </li>
+                  </ul>
                 </div>
                 <div
                   class="pt-space-sm font-label-sm text-label-sm text-tertiary-fixed-variant flex items-center gap-1 font-semibold"
@@ -2135,9 +2862,8 @@
               <p
                 class="font-body-lg text-body-lg text-primary-fixed-dim leading-relaxed"
               >
-                Contacte directamente a nuestras mesas de ingeniería técnica.
-                Adjunte sus planos, requerimientos perimetrales o su factura de
-                consumo eléctrico para un cálculo exacto sin compromiso.
+                Consulte disponibilidad y precios corporativos inmediatos con
+                ingenieros especialistas.
               </p>
               <!-- Canales Directos -->
               <div
@@ -2593,15 +3319,5 @@
         </div>
       </div>
     </footer>
-        <script>
-      const menuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-
-      menuButton.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.toggle("hidden");
-        menuIcon.textContent = isHidden ? "menu" : "close";
-      });
-    </script>
   </body>
 </html>

@@ -220,133 +220,104 @@
     </script>
   </head>
   <body class="bg-surface font-body-md text-on-surface antialiased">
-    <header class="w-full bg-surface border-b border-outline-variant relative">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(10,31,68,0.04)]"
+    >
       <div
         class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"
       >
-        <!-- Logo e Identidad -->
-        <a href="index.html" class="flex items-center gap-space-sm">
-          <img
+        <a href="index.html" class="flex items-center gap-space-sm"
+          ><img
             alt="Logotipo Corporativo VELTRIX"
             class="h-8 w-auto object-contain"
             src="https://lh3.googleusercontent.com/aida/AEtjO1U08u9-01PhTFqsZHtuInhEatnCR4Or6L1CLckQayJtgTNXMSqFwumFduQFE5tmBBYThuLzAM9Zk-qJ29mr1ObP1Zg15cRdETlsWFjhTsPCcEmty4WHFGKg--GjnBoaw8-pBGjMBtSGE7-V9DiW0k2u4hQjRli_xNbbPR7qrMwHvht2Uu-yuMBJOooP-1gh2tPcITWss_WKu5qW65R13iBcpeWD3yteG94kCrTvE2ARrBrObdUZmIeV4GIj"
-          />
-          <span
+          /><span
             class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary"
             >VELTRIX</span
-          >
-        </a>
-
-        <!-- Navegación Desktop -->
-        <nav
-          class="hidden lg:flex items-center gap-space-lg"
-          data-active-classes="text-primary font-title-md bg-surface-container-high rounded-lg"
+          ></a
         >
+        <nav class="hidden md:flex items-center gap-space-md lg:gap-space-lg">
           <a
-            aria-current="page"
-            class="transition-colors py-space-xs px-space-sm text-primary font-title-md bg-surface-container-high rounded-lg"
-            data-path="inicio"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="index.html"
             >Inicio</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="nosotros"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="nosotros.html"
             >Nosotros</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="catalogo"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="catalogo.html"
             >Catálogo</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="servicios"
+          ><a
+            class="font-title-md text-body-md text-primary font-bold bg-surface-container-high py-space-xs px-space-sm rounded-lg transition-colors shadow-sm"
             href="servicios.html"
             >Servicios</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm"
-            data-path="contacto"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded-lg"
             href="contacto.html"
             >Contacto</a
           >
         </nav>
-
-        <!-- Acciones e Iconos -->
-        <div class="flex items-center gap-space-md">
-          <!-- Botón Solicitar Cotización -->
+        <div class="flex items-center gap-space-sm md:gap-space-md">
           <a
             class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all shadow-[0_1px_3px_rgba(10,31,68,0.04)]"
-            data-path="solicitar-cotizacion"
-            href="contacto.html"
+            href="#contacto-agendamiento"
             >Solicitar Cotización</a
           >
-
-          <!-- Icono Perfil / Usuario -->
           <div
-            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 cursor-pointer"
+            class="hidden sm:flex w-8 h-8 rounded-full bg-primary items-center justify-center shrink-0"
           >
             <span class="material-symbols-outlined text-on-primary text-[18px]"
               >person</span
             >
           </div>
-
-          <!-- Botón Menú Hamburguesa (Solo visible en dispositivos móviles / lg:hidden) -->
           <button
-            id="mobile-menu-button"
-            aria-label="Abrir menú"
-            class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none flex items-center justify-center"
+            id="mobile-menu-btn"
+            aria-label="Abrir menú de navegación"
+            onclick="
+              document
+                .getElementById('mobile-drawer')
+                .classList.toggle('hidden')
+            "
+            class="md:hidden w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors"
           >
-            <span id="menu-icon" class="material-symbols-outlined text-2xl"
-              >menu</span
-            >
+            <span class="material-symbols-outlined text-[24px]">menu</span>
           </button>
         </div>
       </div>
-
-      <!-- Menú Desplegable Responsive Mobile -->
       <div
-        id="mobile-menu"
-        class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg border-b border-outline-variant z-50 px-margin-mobile py-space-md transition-all duration-300"
+        id="mobile-drawer"
+        class="hidden md:hidden border-t border-surface-container bg-surface-container-lowest px-margin-mobile py-space-md shadow-md"
       >
         <nav class="flex flex-col gap-space-xs">
           <a
-            aria-current="page"
-            class="transition-colors py-space-sm px-space-md text-primary font-title-md bg-surface-container-high rounded-lg"
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-space-sm rounded-lg transition-colors"
             href="index.html"
             >Inicio</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-space-sm rounded-lg transition-colors"
             href="nosotros.html"
             >Nosotros</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-space-sm rounded-lg transition-colors"
             href="catalogo.html"
             >Catálogo</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-title-md text-body-md text-primary font-bold bg-surface-container-high px-space-md py-space-sm rounded-lg transition-colors shadow-sm"
             href="servicios.html"
             >Servicios</a
-          >
-          <a
-            class="font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors py-space-sm px-space-md rounded-lg"
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-space-sm rounded-lg transition-colors"
             href="contacto.html"
             >Contacto</a
           >
-
-          <!-- Botón de Cotización para móvil (visible solo si la pantalla es menor a sm) -->
           <div
-            class="mt-space-sm pt-space-sm border-t border-outline-variant sm:hidden"
+            class="pt-space-xs mt-space-xs border-t border-surface-container flex flex-col gap-space-xs"
           >
             <a
-              class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
-              href="contacto.html"
+              class="w-full flex items-center justify-center bg-primary-container text-on-primary font-title-md text-body-sm px-space-lg py-space-sm rounded-lg hover:bg-primary transition-all text-center"
+              href="#contacto-agendamiento"
               >Solicitar Cotización</a
             >
           </div>
@@ -500,10 +471,13 @@
           </div>
         </div>
         <div
-          class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin w-full flex flex-col gap-space-xl py-space-xl"
+          class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin w-full flex flex-col gap-space-xl py-space-xl divide-y divide-surface-container"
         >
           <!-- LÍNEA 1: CCTV & VIDEOANALÍTICA INTELIGENTE -->
-          <section class="flex flex-col gap-space-lg scroll-mt-32" id="cctv">
+          <section
+            class="flex flex-col gap-space-lg scroll-mt-32 pt-space-xl pb-space-xl"
+            id="cctv"
+          >
             <div class="flex items-center justify-between pb-space-xs">
               <div class="flex items-center gap-space-sm">
                 <span
@@ -519,10 +493,142 @@
                 >Ultra HD 4K • AI Powered</span
               >
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
-              <!-- Visual Presentation Left -->
+
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
+            >
+              <!-- Columna Izquierda: Fichas Técnicas Modulares y Escaneables -->
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <!-- Ficha 1 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >videocam</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Cámaras ColorVu y Visión Cero Lux
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Definición cromática 24/7 a color real sin transición a
+                        blanco y negro infrarrojo.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Apertura F1.0</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Códec H.265+</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Resolución 4K Ultra HD</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 2 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >psychology</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Motor Neuronal Edge AI
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Filtro selectivo perimetral con reducción certificada
+                        del 98% en falsas alarmas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Reconocimiento Facial</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Lectura LPR/ANPR</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Cruce Perimetral</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 3 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >cloud_sync</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Gestión Cloud y Tolerancia RAID
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Grabación continua cifrada con protección anti-sabotaje
+                        y acceso remoto VMS.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Arreglo RAID 1/5/10</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Cifrado TLS 1.3</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >ONVIF Perfil S/G/T</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna Derecha: Visual con Métricas Claras -->
               <div
-                class="lg:col-span-5 flex flex-col justify-between bg-surface-container-lowest rounded-lg p-space-md shadow-sm relative overflow-hidden hover-card-lift"
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container"
               >
                 <div
                   class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm group"
@@ -537,8 +643,8 @@
                   >
                     <span
                       class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"
-                    ></span
-                    ><span class="font-semibold"
+                    ></span>
+                    <span class="font-semibold"
                       >IA ACTIVA • EDGE ANALYTICS</span
                     >
                   </div>
@@ -548,213 +654,37 @@
                     4K 3840 × 2160 px
                   </div>
                 </div>
-                <div class="flex flex-col gap-space-xs pt-space-md">
-                  <span
-                    class="font-label-sm text-label-sm text-secondary uppercase font-semibold"
-                    >Topología Óptica Especializada</span
-                  >
-                  <h3 class="font-title-md text-title-md text-primary">
-                    Visibilidad Ininterrumpida en Cero Lux
-                  </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Cámaras análogas y sistemas IP 4K ColorVu / Fullcolor de
-                    última generación. Garantizamos definición cromática a todo
-                    color las 24 horas del día sin necesidad de infrarrojos
-                    convencionales en blanco y negro.
-                  </p>
-                </div>
-                <!-- Mini Feature Matrix -->
-                <div class="grid grid-cols-2 gap-space-sm pt-space-sm">
+                <div class="grid grid-cols-2 gap-space-sm text-center">
                   <div class="p-space-sm bg-surface-container-low rounded-lg">
                     <span
-                      class="font-label-sm text-label-sm text-on-surface-variant block"
-                      >Apertura Fócal</span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Latencia de Alerta</span
                     >
                     <span
-                      class="font-title-md text-title-md text-primary font-bold"
-                      >F1.0 Super Aperture</span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >&lt; 1.2s</span
                     >
                   </div>
                   <div class="p-space-sm bg-surface-container-low rounded-lg">
                     <span
-                      class="font-label-sm text-label-sm text-on-surface-variant block"
-                      >Compresión de Video</span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Disponibilidad Uptime</span
                     >
                     <span
-                      class="font-title-md text-title-md text-primary font-bold"
-                      >H.265+ Smart Codec</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Technical Modules Right -->
-              <div class="lg:col-span-7 flex flex-col gap-space-md">
-                <!-- Card AI Engine -->
-                <div
-                  class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-space-sm hover-card-lift"
-                >
-                  <div class="flex items-center gap-space-sm">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"
-                    >
-                      <span class="material-symbols-outlined text-[24px]"
-                        >psychology</span
-                      >
-                    </div>
-                    <div>
-                      <h4 class="font-title-md text-title-md text-primary">
-                        Algoritmos de Inteligencia Artificial Perimetral
-                      </h4>
-                      <p
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        Deep Learning aplicado a la mitigación del 98% de falsas
-                        alarmas
-                      </p>
-                    </div>
-                  </div>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Procesamiento neuronal embebido en el borde (Edge AI).
-                    Identificación quirúrgica entre agentes críticos y
-                    perturbaciones ambientales (lluvia, follaje o roedores):
-                  </p>
-                  <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-space-xs"
-                  >
-                    <div
-                      class="flex items-start gap-space-xs p-space-sm bg-surface-container-low rounded-lg"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[20px] mt-0.5"
-                        >face</span
-                      >
-                      <div>
-                        <span
-                          class="font-title-md text-body-md text-primary font-bold block"
-                          >Reconocimiento Facial</span
-                        >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                          >Cotejo en tiempo real de listas blancas, VIP y
-                          alertas de restricción.</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-space-xs p-space-sm bg-surface-container-low rounded-lg"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[20px] mt-0.5"
-                        >directions_car</span
-                      >
-                      <div>
-                        <span
-                          class="font-title-md text-body-md text-primary font-bold block"
-                          >Lectura de Placas (LPR/ANPR)</span
-                        >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                          >Control automatizado de accesos vehiculares a
-                          velocidades de hasta 60 km/h.</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-space-xs p-space-sm bg-surface-container-low rounded-lg"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[20px] mt-0.5"
-                        >shield</span
-                      >
-                      <div>
-                        <span
-                          class="font-title-md text-body-md text-primary font-bold block"
-                          >Detección Humano/Vehículo</span
-                        >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                          >Cruce de línea virtual y zona de intrusión
-                          parametrizable.</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-space-xs p-space-sm bg-surface-container-low rounded-lg"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[20px] mt-0.5"
-                        >groups</span
-                      >
-                      <div>
-                        <span
-                          class="font-title-md text-body-md text-primary font-bold block"
-                          >Aforo &amp; Mapas de Calor</span
-                        >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                          >Analítica de ocupación comercial, densidad y flujo
-                          peatonal continuo.</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Centralized Telemetry -->
-                <div
-                  class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-space-sm hover-card-lift"
-                >
-                  <div class="flex items-center gap-space-sm">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"
-                    >
-                      <span class="material-symbols-outlined text-[24px]"
-                        >cloud_sync</span
-                      >
-                    </div>
-                    <div>
-                      <h4 class="font-title-md text-title-md text-primary">
-                        Gestión Remota, Almacenamiento &amp; Redundancia
-                      </h4>
-                      <p
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                      >
-                        Arquitectura híbrida local y en la nube
-                      </p>
-                    </div>
-                  </div>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Monitoreo remoto centralizado desde smartphone, tablet y
-                    software cliente VMS en estaciones PC corporativas.
-                    Almacenamiento redundante mediante NVRs de grado empresarial
-                    con tolerancia RAID y sincronización automática hacia vaults
-                    en la nube para protección contra sabotaje de grabaciones.
-                  </p>
-                  <div
-                    class="flex flex-wrap items-center gap-space-xs pt-space-xs"
-                  >
-                    <span
-                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-1 rounded-lg text-primary font-medium"
-                      >RAID 1/5/10 Support</span
-                    >
-                    <span
-                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-1 rounded-lg text-primary font-medium"
-                      >Encriptación TLS 1.3</span
-                    >
-                    <span
-                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-1 rounded-lg text-primary font-medium"
-                      >Push Instantáneo Móvil</span
-                    >
-                    <span
-                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-1 rounded-lg text-primary font-medium"
-                      >Integración ONVIF Perfil S/G/T</span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >99.9%</span
                     >
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
           <!-- LÍNEA 2: DETECCIÓN DE INTRUSIÓN Y ALARMAS -->
-          <section class="flex flex-col gap-space-lg scroll-mt-32" id="alarmas">
+          <section
+            class="flex flex-col gap-space-lg scroll-mt-32 pt-space-xl pb-space-xl"
+            id="alarmas"
+          >
             <div class="flex items-center justify-between pb-space-xs">
               <div class="flex items-center gap-space-sm">
                 <span
@@ -770,159 +700,149 @@
                 >Respuesta Crítica • Enlace Inalámbrico Encriptado</span
               >
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
-              <!-- Content Cards Left -->
+
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
+            >
+              <!-- Columna Izquierda: Fichas Técnicas Livianas -->
               <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <!-- Ficha 1 -->
                 <div
-                  class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-space-md hover-card-lift"
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
                 >
-                  <div>
-                    <h3 class="font-title-md text-title-md text-primary">
-                      Paneles de Ultra Rápida Respuesta
-                    </h3>
-                    <p
-                      class="font-body-md text-body-md text-on-surface-variant pt-space-xs"
-                    >
-                      Implementamos centrales cableadas de máxima inmunidad
-                      electromagnética, soluciones híbridas y sistemas
-                      inalámbricos bidireccionales con protocolo de encriptación
-                      AES-128 con salto de frecuencia anti-inhibidores
-                      (Jamming).
-                    </p>
-                  </div>
-                  <!-- Sensor Arsenal Bento -->
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                  <div class="flex items-center gap-space-sm">
                     <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container hover:shadow-sm cursor-pointer group"
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
                     >
-                      <div class="flex items-center gap-1.5 text-primary">
-                        <div
-                          class="w-8 h-8 rounded-lg bg-surface-container-highest group-hover:bg-primary group-hover:text-on-primary flex items-center justify-center transition-all duration-300"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >pets</span
-                          >
-                        </div>
-                        <span
-                          class="font-title-md text-body-md font-bold group-hover:text-primary transition-colors"
-                          >Volumétricos Antimascotas</span
-                        >
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      <span class="material-symbols-outlined text-[22px]"
+                        >shield</span
                       >
-                        Infrarrojos pasivos con lógica Quad PIR inmunes a
-                        mascotas de hasta 25 kg.
-                      </p>
                     </div>
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container hover:shadow-sm cursor-pointer group"
-                    >
-                      <div class="flex items-center gap-1.5 text-primary">
-                        <div
-                          class="w-8 h-8 rounded-lg bg-surface-container-highest group-hover:bg-primary group-hover:text-on-primary flex items-center justify-center transition-all duration-300"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >sensor_door</span
-                          >
-                        </div>
-                        <span
-                          class="font-title-md text-body-md font-bold group-hover:text-primary transition-colors"
-                          >Magnéticos Blindados</span
-                        >
-                      </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Centrales Híbridas Grado 2 y 3
+                      </h3>
                       <p
                         class="font-body-sm text-body-sm text-on-surface-variant"
                       >
-                        Contactos de alta tolerancia mecánica para puertas
-                        acorazadas y cortinas de bodega.
-                      </p>
-                    </div>
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container hover:shadow-sm cursor-pointer group"
-                    >
-                      <div class="flex items-center gap-1.5 text-primary">
-                        <div
-                          class="w-8 h-8 rounded-lg bg-surface-container-highest group-hover:bg-primary group-hover:text-on-primary flex items-center justify-center transition-all duration-300"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >broken_image</span
-                          >
-                        </div>
-                        <span
-                          class="font-title-md text-body-md font-bold group-hover:text-primary transition-colors"
-                          >Rotura de Cristal</span
-                        >
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Micrófonos acústicos de doble frecuencia para análisis
-                        de fractura vítrea estructural.
-                      </p>
-                    </div>
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container hover:shadow-sm cursor-pointer group"
-                    >
-                      <div class="flex items-center gap-1.5 text-primary">
-                        <div
-                          class="w-8 h-8 rounded-lg bg-surface-container-highest group-hover:bg-primary group-hover:text-on-primary flex items-center justify-center transition-all duration-300"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >linear_scale</span
-                          >
-                        </div>
-                        <span
-                          class="font-title-md text-body-md font-bold group-hover:text-primary transition-colors"
-                          >Barreras Fotoeléctricas</span
-                        >
-                      </div>
-                      <p
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                      >
-                        Haces infrarrojos multi-haz de hasta 100m para
-                        perímetros descubiertos.
+                        Paneles de respuesta inmediata con cifrado bidireccional
+                        y blindaje contra inhibidores.
                       </p>
                     </div>
                   </div>
-                  <!-- Connectivity Bar -->
-                  <div
-                    class="p-space-md bg-surface-container rounded-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"
-                  >
-                    <div class="flex items-center gap-space-sm">
-                      <span
-                        class="material-symbols-outlined text-primary text-[28px]"
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Cifrado AES-128</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Anti-Jamming</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Certificación Grado 2/3</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 2 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >sensors</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Sensores Perimetrales e Interiores
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Detección focalizada inmune a fauna silvestre y
+                        contactos magnéticos reforzados.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >PIR Quad Antimascotas</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Rotura Acústica Cristal</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Barreras Fotoeléctricas 100m</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 3 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
                         >signal_cellular_alt</span
                       >
-                      <div>
-                        <span
-                          class="font-title-md text-body-md text-primary font-bold block"
-                          >Canal 4G/LTE + IP Redundante</span
-                        >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                          >Notificaciones en &lt; 800ms con conexión directa a
-                          CRA 24/7.</span
-                        >
-                      </div>
                     </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Telemetría y Notificación 4G/IP
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Canales multi-vía simultáneos con enlace ultra-rápido a
+                        Central Receptora de Alarmas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
                     <span
-                      class="font-label-sm text-label-sm uppercase px-space-sm py-1 rounded-lg bg-surface-container-lowest text-primary font-bold"
-                      >GRADO 2 / GRADO 3</span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Push Instantáneo &lt; 800ms</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Doble SIM 4G/LTE</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Botón Pánico Geolocalizado</span
                     >
                   </div>
                 </div>
               </div>
-              <!-- Visual Presentation Right -->
+
+              <!-- Columna Derecha: Panel y Métricas -->
               <div
-                class="lg:col-span-5 flex flex-col justify-between bg-surface-container-lowest rounded-lg p-space-md shadow-sm hover-card-lift"
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container"
               >
                 <div
-                  class="relative w-full h-80 rounded-lg overflow-hidden shadow-sm"
+                  class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm"
                 >
                   <img
                     class="w-full h-full object-cover"
-                    data-alt="Technical setup of modern high-security alarm panel and anti-tamper sensors mounted on a concrete architectural wall with neatly arranged conduit cables, technical diagnostic LED indicators blinking green, modern minimalist industrial aesthetic"
+                    data-alt="Technical setup of modern high-security alarm panel and anti-tamper sensors"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx1bl2WYlMrcSBnc7ApE1NKsEZ0FBtnUL7H5l8Ii2mRaTaikgKIvBR9nvHeGpKuJh-MiZPJoyjBZdHoryzO8-mz7YoXKNdJyHizWyC89Li1B1ytt_PG_E7lLtlx_IT9RfZTO7oUondrCwBQwFoNOGRXuK1iYnWdX1_fCoHjF6Qs7OGpMYScdjYAiWpRHXaFmD6-73efCqhcF53CPQw4jqI8Y7Hjf3nsRFPYxM0CkG2-KsgYX1lhTIHoA"
                   />
                   <div
@@ -931,31 +851,40 @@
                     <p
                       class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider"
                     >
-                      Monitoreo Constante
+                      Transmisión Redundante
                     </p>
                     <p class="font-title-md text-body-md font-bold">
-                      Transmisión Multi-Vía Sin Caídas
+                      Enlace Multi-Vía Anti-Sabotaje
                     </p>
                   </div>
                 </div>
-                <div class="pt-space-md">
-                  <h4 class="font-title-md text-title-md text-primary">
-                    Control Total en Tiempo Real
-                  </h4>
-                  <p
-                    class="font-body-md text-body-md text-on-surface-variant pt-space-xs"
+                <div
+                  class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between"
+                >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Protocolo de Transmisión</span
+                    >
+                    <span
+                      class="font-title-md text-body-md text-primary font-bold"
+                      >Contact ID • SIA-IP • MQTT</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded-lg text-primary font-bold"
+                    >CRA 24/7 Ready</span
                   >
-                    Armado inteligente particionado, asignación de usuarios
-                    temporales para personal de aseo o vigilancia, y botón de
-                    pánico georreferenciado integrado al ecosistema móvil
-                    corporativo.
-                  </p>
                 </div>
               </div>
             </div>
           </section>
+
           <!-- LÍNEA 3: CONTROL DE ACCESO PEATONAL, VEHICULAR Y ASISTENCIA -->
-          <section class="flex flex-col gap-space-lg scroll-mt-32" id="accesos">
+          <section
+            class="flex flex-col gap-space-lg scroll-mt-32 pt-space-xl pb-space-xl"
+            id="accesos"
+          >
             <div class="flex items-center justify-between pb-space-xs">
               <div class="flex items-center gap-space-sm">
                 <span
@@ -971,160 +900,163 @@
                 >Biometría Dinámica • Barreras Físicas</span
               >
             </div>
-            <!-- 3 Columns Architecture -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-              <!-- Module 1: Biometría -->
-              <div
-                class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary"
-                  >
-                    <span class="material-symbols-outlined text-[28px]"
-                      >contactless</span
-                    >
-                  </div>
-                  <h3 class="font-title-md text-title-md text-primary">
-                    Biometría sin Contacto
-                  </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Reconocimiento facial dinámico ultraveloz (&lt; 0.2s) con
-                    detección de prueba de vida (anti-suplantación fotográfica).
-                    Lectores de huella dactilar silkID, RFID (Mifare Desfire /
-                    EM 125kHz) y generación de códigos QR temporales
-                    autogestionados para visitantes.
-                  </p>
-                </div>
-                <div class="pt-space-md flex flex-wrap gap-1.5">
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >QR Dinámico</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Anti-Spoofing</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >NFC/BLE</span
-                  >
-                </div>
-              </div>
-              <!-- Module 2: Contención Física -->
-              <div
-                class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary"
-                  >
-                    <span class="material-symbols-outlined text-[28px]"
-                      >scan</span
-                    >
-                  </div>
-                  <h3 class="font-title-md text-title-md text-primary">
-                    Dispositivos de Contención
-                  </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Cerraduras electromagnéticas de alto poder de retención (600
-                    - 1200 lbs), cantoneras eléctricas de alto ciclo,
-                    torniquetes y molinetes bidireccionales en acero inoxidable
-                    304, así como talanqueras vehiculares automatizadas de
-                    apertura ultrarrápida (1.5 seg) para condominios y centros
-                    logísticos.
-                  </p>
-                </div>
-                <div class="pt-space-md flex flex-wrap gap-1.5">
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Acero AISI 304</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >1200 lbs Hold</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Apertura 1.5s</span
-                  >
-                </div>
-              </div>
-              <!-- Module 3: Software & Nómina -->
-              <div
-                class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary"
-                  >
-                    <span class="material-symbols-outlined text-[28px]"
-                      >badge</span
-                    >
-                  </div>
-                  <h3 class="font-title-md text-title-md text-primary">
-                    Software de Gestión &amp; Asistencia
-                  </h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Plataforma corporativa centralizada con trazabilidad y
-                    auditoría de eventos en tiempo real. Gestión integral de
-                    visitantes, programación de turnos rotativos y exportación
-                    directa de marcaciones para software de nómina.
-                  </p>
-                </div>
-                <div class="pt-space-md flex flex-wrap gap-1.5">
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Nómina Ready</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Auditoría Live</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-on-surface-variant"
-                    >Anti-Passback</span
-                  >
-                </div>
-              </div>
-            </div>
-            <!-- Engineering Access Hardware Showcase -->
+
             <div
-              class="bg-surface-container-low rounded-lg p-space-md grid grid-cols-1 md:grid-cols-2 gap-space-md items-center"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
             >
-              <div
-                class="relative w-full h-56 rounded-xl overflow-hidden shadow-sm group"
-              >
-                <img
-                  class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAItZN_ywzgm9YVFpkRc32UMVsvLLDIXHWgwWDJk5f2YMG41uJUA_WFzlWFMU-OW4QBP5d6pm4d30twNTg99xZ6mDZTsdMythO52nvz741VG_zWpzmXW96qJwSsZzuTVi0RG37wXZhOMcQr-tuScgwTg6tXVVAd-HUkzcszAe3NzPZXRJKW7AnehrvyCdqw0l6SpnPGiHPsel76icGNSAlvYF0f40XgRY9IJpw7fKF41mYRuqwl2BcCNg"
-                  alt="Torniquetes de control de acceso y terminal biométrico facial corporativo"
-                />
+              <!-- Columna Izquierda: Fichas Modulares -->
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <!-- Ficha 1 -->
                 <div
-                  class="absolute top-space-sm left-space-sm bg-primary/90 text-on-primary px-space-xs py-1 rounded-lg backdrop-blur-md flex items-center gap-1 text-label-sm font-label-sm"
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
                 >
-                  <span
-                    class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim"
-                    >verified</span
-                  ><span class="">BIOMETRÍA FACIAL &lt;0.2s</span>
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >contactless</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Terminales Biométricos sin Contacto
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Autenticación instantánea con algoritmos avanzados de
+                        prueba de vida anti-suplantación.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Reconocimiento &lt; 0.2s</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >QR Dinámico</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >RFID Mifare Desfire</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 2 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >fence</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Dispositivos y Barreras de Contención
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Torniquetes en acero inoxidable, electroimanes de alto
+                        poder y talanqueras rápidas.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Acero AISI 304</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Retención 1200 lbs</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Apertura 1.5 Segundos</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 3 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >badge</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Gestión Horaria y Liquidación de Nómina
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Auditoría de asistencia con turnos rotativos y
+                        exportación directa a ERPs corporativos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Integración NFPA 101</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Anti-Passback</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Soporte Nómina</span
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-space-xs">
-                <span
-                  class="font-label-sm text-label-sm text-secondary font-bold uppercase"
-                  >Módulos de Integración</span
-                >
-                <h4 class="font-title-md text-title-md text-primary">
-                  Operación Homologada e Integración con Redes de Incendio
-                </h4>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">
-                  Nuestros despliegues de control de acceso se integran de forma
-                  nativa a los sistemas de alarma contra incendios (protocolo de
-                  despresurización de electroimanes para evacuación segura ante
-                  emergencias según código NFPA 101).
-                </p>
+
+              <!-- Columna Derecha: Imágen y Protocolos -->
+              <div
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container"
+              >
                 <div
-                  class="pt-space-xs flex items-center gap-space-sm text-on-surface font-label-sm text-label-sm"
+                  class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm group"
+                >
+                  <img
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAItZN_ywzgm9YVFpkRc32UMVsvLLDIXHWgwWDJk5f2YMG41uJUA_WFzlWFMU-OW4QBP5d6pm4d30twNTg99xZ6mDZTsdMythO52nvz741VG_zWpzmXW96qJwSsZzuTVi0RG37wXZhOMcQr-tuScgwTg6tXVVAd-HUkzcszAe3NzPZXRJKW7AnehrvyCdqw0l6SpnPGiHPsel76icGNSAlvYF0f40XgRY9IJpw7fKF41mYRuqwl2BcCNg"
+                    alt="Torniquetes de control de acceso y terminal biométrico facial corporativo"
+                  />
+                  <div
+                    class="absolute top-space-sm left-space-sm bg-primary/90 text-on-primary px-space-xs py-1 rounded-lg backdrop-blur-md flex items-center gap-1 text-label-sm font-label-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim"
+                      >verified</span
+                    >
+                    <span class="">BIOMETRÍA ULTRA RÁPIDA</span>
+                  </div>
+                </div>
+                <div
+                  class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between text-on-surface font-label-sm text-label-sm"
                 >
                   <span class="flex items-center gap-1"
                     ><span
@@ -1140,13 +1072,21 @@
                     >
                     Respaldo UPS 12V</span
                   >
+                  <span class="flex items-center gap-1"
+                    ><span
+                      class="material-symbols-outlined text-tertiary-container text-[16px]"
+                      >check_circle</span
+                    >
+                    Conexión Incendio</span
+                  >
                 </div>
               </div>
             </div>
           </section>
+
           <!-- LÍNEA 4: PROTECCIÓN PERIMETRAL: CERCAS ELÉCTRICAS CERTIFICADAS -->
           <section
-            class="flex flex-col gap-space-lg scroll-mt-32"
+            class="flex flex-col gap-space-lg scroll-mt-32 pt-space-xl pb-space-xl"
             id="perimetral"
           >
             <div class="flex items-center justify-between pb-space-xs">
@@ -1164,10 +1104,142 @@
                 >Cumplimiento RETIE • IEC 60335-2-76</span
               >
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
-              <!-- Visual Presentation Left -->
+
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
+            >
+              <!-- Columna Izquierda: Fichas Modulares -->
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <!-- Ficha 1 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >bolt</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Energizadores Regulados IEC
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Pulsos no letales de alto voltaje calibrados para máxima
+                        disuasión física y legal.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >10.000V Regulados</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >≤ 5.0 Joules Máx.</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Norma IEC 60335-2-76</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 2 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >notifications_active</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Detección Activa de Corte y Sabotaje
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Supervisión continua por flexión, caída a tierra o
+                        intento de corte con activación de alarma.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Sirenas 120dB</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Tierra &lt; 10 Ω (NTC 2050)</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Monitoreo de Línea 24/7</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 3 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >verified_user</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Homologación RETIE y Materiales Grado Marino
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Postes galvanizados en caliente, aisladores anti-UV y
+                        acta firmada por ingeniero.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Dictamen RETIE Art. 14</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Placas Reflectivas c/10m</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Matrícula CONTE / COPNIA</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna Derecha: Imagen e Indicadores -->
               <div
-                class="lg:col-span-5 flex flex-col justify-between bg-surface-container-lowest rounded-lg p-space-md shadow-sm hover-card-lift"
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container"
               >
                 <div
                   class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm group"
@@ -1175,15 +1247,15 @@
                   <img
                     class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCYaBLyknlP14wBXobxeswDEGfymMBnRZFCxAXOoIqKkkujtyBa-BDhR46M1zN9wALIBDIUkKLP2jL_MPEIhrQQww2ppIGHhSgQ66me_awIYinMAkDoyOSIsGxbb5Q64XBJ4I5jgrFaBzmtEd7oQZ-KGrmRRnmq6Z3_gNz5cPRyD3zebAl1xHrAQMpJKeX-VUWUeKyyVMxDusUcRE4cFk6-TQvOYYl1ZfoIc3NbOeNtmWS-QRkO1i7dQ"
-                    alt="Cerca eléctrica perimetral industrial certificada RETIE con tensores y baliza"
+                    alt="Cerca eléctrica perimetral industrial certificada RETIE"
                   />
                   <div
                     class="absolute top-space-sm left-space-sm bg-primary/90 text-on-primary px-space-xs py-1 rounded-lg backdrop-blur-md flex items-center gap-1.5 font-label-sm text-label-sm"
                   >
                     <span
                       class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"
-                    ></span
-                    ><span class="font-bold">RETIE • IEC 60335-2-76</span>
+                    ></span>
+                    <span class="font-bold">RETIE • IEC 60335-2-76</span>
                   </div>
                   <div
                     class="absolute bottom-space-sm left-space-sm bg-primary/90 text-on-primary px-space-sm py-space-xs rounded-lg backdrop-blur-md flex items-center gap-2"
@@ -1196,204 +1268,44 @@
                       <span
                         class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider block"
                         >Disuasión No Letal</span
-                      ><span class="font-title-md text-body-md font-bold"
+                      >
+                      <span class="font-title-md text-body-md font-bold"
                         >Descarga Pulsada 10.000V</span
                       >
                     </div>
                   </div>
                 </div>
-                <div
-                  class="p-space-sm bg-surface-container-low rounded-lg mt-space-md"
-                >
-                  <div
-                    class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-semibold"
-                  >
+                <div class="grid grid-cols-2 gap-space-sm text-center">
+                  <div class="p-space-sm bg-surface-container-low rounded-lg">
                     <span
-                      class="material-symbols-outlined text-secondary text-[20px]"
-                      >verified_user</span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Resistencia Puesta a Tierra</span
                     >
-                    100% Homologado en Colombia
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >&lt; 10 Ω</span
+                    >
                   </div>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant pt-1"
-                  >
-                    Todos nuestros montajes perimetrales cumplen estrictamente
-                    con los lineamientos del Reglamento Técnico de Instalaciones
-                    Eléctricas (RETIE) y la norma internacional IEC 60335-2-76.
-                    Entregamos acta de conformidad firmada por ingeniero
-                    matriculado y facilitamos el trámite de dictamen de
-                    inspección donde la norma lo requiera.
-                  </p>
-                </div>
-              </div>
-              <!-- Technical Breakdown Right -->
-              <div class="lg:col-span-7 flex flex-col gap-space-md">
-                <div
-                  class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-space-md hover-card-lift"
-                >
-                  <div>
-                    <h3 class="font-title-md text-title-md text-primary">
-                      Ingeniería de Componentes y Detección Activa
-                    </h3>
-                    <p
-                      class="font-body-md text-body-md text-on-surface-variant pt-space-xs"
+                  <div class="p-space-sm bg-surface-container-low rounded-lg">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Energía Máx. de Pulso</span
                     >
-                      Nuestras cercas no solo operan como barrera disuasiva
-                      electro-pulsada, sino como un sistema de detección activo
-                      que identifica sabotajes antes de la penetración
-                      perimetral.
-                    </p>
-                  </div>
-                  <!-- Spec Grid -->
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1"
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >5.0 J</span
                     >
-                      <span
-                        class="material-symbols-outlined text-primary text-[22px]"
-                        >flash_on</span
-                      >
-                      <span
-                        class="font-title-md text-body-md text-primary font-bold"
-                        >Energizadores IEC</span
-                      >
-                      <span
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                        >Generación de pulsos de alto voltaje y corta duración
-                        (1 ms), no letales pero altamente disuasivos.</span
-                      >
-                    </div>
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[22px]"
-                        >notifications_active</span
-                      >
-                      <span
-                        class="font-title-md text-body-md text-primary font-bold"
-                        >Detección de Corte</span
-                      >
-                      <span
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                        >Monitoreo continuo de flexión, aterrizaje a tierra,
-                        corte de hilo y sabotaje por salto con activación de
-                        sirenas 120dB.</span
-                      >
-                    </div>
-                    <div
-                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1"
-                    >
-                      <span
-                        class="material-symbols-outlined text-primary text-[22px]"
-                        >build</span
-                      >
-                      <span
-                        class="font-title-md text-body-md text-primary font-bold"
-                        >Materiales Grado Marino</span
-                      >
-                      <span
-                        class="font-body-sm text-body-sm text-on-surface-variant"
-                        >Postes de hierro galvanizado en caliente, aisladores
-                        anti-UV y alambre de aluminio de conductividad
-                        pura.</span
-                      >
-                    </div>
-                  </div>
-                  <!-- Engineering Specs Table -->
-                  <div class="overflow-x-auto">
-                    <table class="w-full text-left font-body-sm text-body-sm">
-                      <thead>
-                        <tr
-                          class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase"
-                        >
-                          <th class="py-space-xs px-space-sm">
-                            Parámetro Técnico
-                          </th>
-                          <th class="py-space-xs px-space-sm">
-                            Estándar VELTRIX
-                          </th>
-                          <th class="py-space-xs px-space-sm">Normativa</th>
-                        </tr>
-                      </thead>
-                      <tbody class="divide-y divide-surface-container">
-                        <tr>
-                          <td
-                            class="py-space-xs px-space-sm font-semibold text-primary"
-                          >
-                            Voltaje de Pulso
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm font-label-md text-label-md"
-                          >
-                            8.000V - 10.000V Regulado
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm text-on-surface-variant"
-                          >
-                            IEC 60335-2-76
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            class="py-space-xs px-space-sm font-semibold text-primary"
-                          >
-                            Energía de Salida
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm font-label-md text-label-md"
-                          >
-                            ≤ 5.0 Joules Máx.
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm text-on-surface-variant"
-                          >
-                            RETIE Artículo 14
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            class="py-space-xs px-space-sm font-semibold text-primary"
-                          >
-                            Sistema de Puesta a Tierra
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm font-label-md text-label-md"
-                          >
-                            &lt; 10 Ohmios (Varilla Copperweld)
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm text-on-surface-variant"
-                          >
-                            NTC 2050
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            class="py-space-xs px-space-sm font-semibold text-primary"
-                          >
-                            Señalización de Advertencia
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm font-label-md text-label-md"
-                          >
-                            Placas retroreflectivas cada 10m
-                          </td>
-                          <td
-                            class="py-space-xs px-space-sm text-on-surface-variant"
-                          >
-                            Obligatorio RETIE
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
           <!-- LÍNEA 5: SISTEMAS SOLARES AUTÓNOMOS ☀️ -->
-          <section class="flex flex-col gap-space-lg scroll-mt-32" id="solar">
+          <section
+            class="flex flex-col gap-space-lg scroll-mt-32 pt-space-xl pb-space-xl"
+            id="solar"
+          >
             <div class="flex items-center justify-between pb-space-xs">
               <div class="flex items-center gap-space-sm">
                 <span
@@ -1409,180 +1321,205 @@
                 >Generación Fotovoltaica Off-Grid</span
               >
             </div>
-            <!-- Solar Hero Banner Component -->
+
             <div
-              class="relative w-full rounded-xl overflow-hidden bg-primary text-on-primary p-space-lg md:p-space-xl"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"
             >
-              <!-- Living Background Visual with Image Scrim -->
-              <div class="absolute inset-0 z-0">
-                <img
-                  class="w-full h-full object-cover opacity-30 transition-transform duration-700 hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLHX79osrPk80hlT4yzRTDSBzG-6_lWfZZWwSUW6igb7SR1FdKgPBlIUOsj3rp4asUugwp5c2JzPkKV50S0f3IibZ8e0Gw-CvqJJcD-aUMVWhJf7j0eUByoWr1uK0XH3nyxsKsLoDaYoF5r60VEtFToUnD84F_Uc2lHgVnK8XcJTmCptKtBzTvo-2-F1GBAuCsHi_iIyrkEldBBcO3V_SVi0gqwU8Ph9TAIenZS-fH_XXll9OzZZIig"
-                  alt="Granja solar fotovoltaica con inversores híbridos y almacenamiento litio en Colombia"
-                />
+              <!-- Columna Izquierda: Fichas Modulares -->
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <!-- Ficha 1 -->
                 <div
-                  class="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent"
-                ></div>
-              </div>
-              <div class="relative z-10 max-w-2xl flex flex-col gap-space-md">
-                <div
-                  class="flex items-center gap-space-xs text-secondary-fixed"
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
                 >
-                  <span class="material-symbols-outlined text-[20px]"
-                    >wb_sunny</span
-                  >
-                  <span
-                    class="font-label-md text-label-md uppercase font-bold tracking-wider"
-                    >Energía Ininterrumpida en Zonas No Interconectadas
-                    (ZNI)</span
-                  >
-                </div>
-                <h3
-                  class="font-headline-lg text-headline-lg font-bold leading-tight"
-                >
-                  Soluciones Off-Grid de Alta Autonomía
-                </h3>
-                <p class="font-body-lg text-body-lg text-primary-fixed">
-                  Diseñamos e instalamos matrices fotovoltaicas calculadas según
-                  las Horas Sol Pico (HSP) e irradiación de cada región de
-                  Colombia. Especialistas en fincas de recreo, Zonas No
-                  Interconectadas (ZNI), peajes y agroindustria, estructurados
-                  bajo el marco de la Ley 1715 de 2014 con asesoría en
-                  incentivos tributarios UPME y DIAN.
-                </p>
-                <div
-                  class="flex flex-wrap items-center gap-space-sm pt-space-xs"
-                >
-                  <a
-                    class="bg-secondary-container hover:bg-secondary text-on-secondary font-title-md text-body-md px-space-lg py-space-sm rounded-lg transition-colors flex items-center gap-2"
-                    href="#contacto-agendamiento"
-                  >
-                    <span class="material-symbols-outlined text-[20px]"
-                      >solar_power</span
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0"
                     >
-                    Dimensionar Proyecto Solar
-                  </a>
-                  <span
-                    class="font-label-md text-label-md text-secondary-fixed flex items-center gap-1"
+                      <span class="material-symbols-outlined text-[22px]"
+                        >wb_sunny</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Generación Monocristalina Tier-1
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Celdas partidas Half-Cell de hasta 580Wp con
+                        optimización inteligente para días nublados.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Eficiencia 21.8%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Controlador MPPT 99%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Cálculo HSP Colombia</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 2 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >battery_charging_full</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Bancos de Baterías Litio LiFePO4
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Almacenamiento de ciclo profundo con inversor senoidal
+                        puro y gestión BMS inteligente.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >+6.000 Ciclos Óptimos</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Hasta 90% DoD</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Inversor Senoidal Pura</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Ficha 3 -->
+                <div
+                  class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm border border-surface-container flex flex-col gap-space-xs hover-card-lift transition-all"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-[22px]"
+                        >cell_tower</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-title-md text-title-md text-primary font-bold"
+                      >
+                        Postes Solares y Radioenlaces PtP
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Sistemas de transmisión ininterrumpida sin cables para
+                        fincas, peajes e industrias rurales.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Radioenlaces 5.8 GHz PtP</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Alcance hasta 15 km</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container px-space-xs py-0.5 rounded-lg text-primary font-medium"
+                      >Ley 1715 UPME / DIAN</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna Derecha: Visual Solar y Botón -->
+              <div
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container"
+              >
+                <div
+                  class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm group"
+                >
+                  <img
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLHX79osrPk80hlT4yzRTDSBzG-6_lWfZZWwSUW6igb7SR1FdKgPBlIUOsj3rp4asUugwp5c2JzPkKV50S0f3IibZ8e0Gw-CvqJJcD-aUMVWhJf7j0eUByoWr1uK0XH3nyxsKsLoDaYoF5r60VEtFToUnD84F_Uc2lHgVnK8XcJTmCptKtBzTvo-2-F1GBAuCsHi_iIyrkEldBBcO3V_SVi0gqwU8Ph9TAIenZS-fH_XXll9OzZZIig"
+                    alt="Granja solar fotovoltaica con inversores híbridos y almacenamiento litio en Colombia"
+                  />
+                  <div
+                    class="absolute top-space-sm left-space-sm bg-primary/90 text-on-primary px-space-xs py-1 rounded-lg backdrop-blur-md flex items-center gap-1.5 font-label-sm text-label-sm"
                   >
                     <span
                       class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim"
                       >verified</span
                     >
-                    Baterías Litio LiFePO4
-                  </span>
-                </div>
-              </div>
-            </div>
-            <!-- Technical Architecture Breakdown -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-              <!-- Hardware 1 -->
-              <div
-                class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
+                    <span class="">OFF-GRID &amp; ZNI CERTIFICADO</span>
+                  </div>
                   <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary"
+                    class="absolute bottom-space-sm left-space-sm bg-primary/90 text-on-primary px-space-sm py-space-xs rounded-lg backdrop-blur-md flex items-center gap-2"
                   >
-                    <span class="material-symbols-outlined text-[28px]"
+                    <span
+                      class="material-symbols-outlined text-[20px] text-secondary"
                       >wb_sunny</span
                     >
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider block"
+                        >Autonomía Garantizada</span
+                      >
+                      <span class="font-title-md text-body-md font-bold"
+                        >Cero Dependencia de Red</span
+                      >
+                    </div>
                   </div>
-                  <h4 class="font-title-md text-title-md text-primary">
-                    Generación &amp; Conversión
-                  </h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Paneles solares monocristalinos Tier-1 con celdas partidas
-                    (Half-Cell) de hasta 580Wp y controladores solares
-                    inteligentes MPPT que extraen el 99% del rendimiento pico
-                    incluso bajo condiciones de nubosidad parcial.
-                  </p>
                 </div>
                 <div
-                  class="pt-space-md border-t border-surface-container flex flex-col gap-1"
+                  class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between"
                 >
-                  <span
-                    class="font-label-sm text-label-sm text-on-surface-variant"
-                    >Eficiencia de Celda</span
-                  >
-                  <span
-                    class="font-label-md text-label-md text-primary font-bold"
-                    >21.8% • Rendimiento óptimo en HSP Colombia</span
-                  >
-                </div>
-              </div>
-              <!-- Hardware 2 -->
-              <div
-                class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary"
-                  >
-                    <span class="material-symbols-outlined text-[28px]"
-                      >battery_charging_full</span
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant block uppercase"
+                      >Incentivos Tributarios</span
+                    >
+                    <span
+                      class="font-title-md text-body-md text-primary font-bold"
+                      >Ley 1715 • Exención IVA / Arancel</span
                     >
                   </div>
-                  <h4 class="font-title-md text-title-md text-primary">
-                    Inversores &amp; Almacenamiento
-                  </h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Inversores de onda senoidal pura de baja y alta frecuencia
-                    (12V/24V/48V) acoplados a bancos de baterías de litio
-                    ferrofosfato (LiFePO4) o ciclo profundo GEL/AGM con vida
-                    útil de más de 6.000 ciclos y cero mantenimiento.
-                  </p>
-                </div>
-                <div
-                  class="pt-space-md border-t border-surface-container flex flex-col gap-1"
-                >
-                  <span
-                    class="font-label-sm text-label-sm text-on-surface-variant"
-                    >Ciclo de Descarga (DoD)</span
+                  <a
+                    class="bg-secondary-container hover:bg-secondary text-on-secondary font-title-md text-body-sm px-space-md py-space-xs rounded-lg transition-colors flex items-center gap-1.5 shrink-0"
+                    href="#contacto-agendamiento"
                   >
-                  <span
-                    class="font-label-md text-label-md text-primary font-bold"
-                    >Hasta 90% LiFePO4 • BMS Integrado</span
-                  >
-                </div>
-              </div>
-              <!-- Hardware 3 -->
-              <div
-                class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col justify-between hover-card-lift"
-              >
-                <div class="flex flex-col gap-space-sm">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary"
-                  >
-                    <span class="material-symbols-outlined text-[28px]"
-                      >cell_tower</span
+                    <span class="material-symbols-outlined text-[16px]"
+                      >solar_power</span
                     >
-                  </div>
-                  <h4 class="font-title-md text-title-md text-primary">
-                    CCTV &amp; Enlaces Autónomos
-                  </h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Postes solares autónomos integrados con cámaras de seguridad
-                    conectadas vía módem 4G/LTE de grado industrial o
-                    radioenlaces inalámbricos punto a punto (PtP) de larga
-                    distancia (hasta 15 km) para monitoreo sin cables.
-                  </p>
-                </div>
-                <div
-                  class="pt-space-md border-t border-surface-container flex flex-col gap-1"
-                >
-                  <span
-                    class="font-label-sm text-label-sm text-on-surface-variant"
-                    >Radioenlace</span
-                  >
-                  <span
-                    class="font-label-md text-label-md text-primary font-bold"
-                    >5.8 GHz • Antenas MIMO 30dBi</span
-                  >
+                    Dimensionar
+                  </a>
                 </div>
               </div>
             </div>
           </section>
+
           <!-- BANNER DE SOLUCIÓN A CRÉDITO Y FINANCIACIÓN -->
           <section
             class="w-full bg-surface-container rounded-xl p-space-lg md:p-space-xl flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-sm"
@@ -1639,6 +1576,7 @@
               </div>
             </div>
           </section>
+
           <!-- CTA & AGENDAMIENTO DE LEVANTAMIENTO TÉCNICO -->
           <section
             class="w-full bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-md flex flex-col gap-space-xl"
@@ -1757,7 +1695,7 @@
                   <p class="font-body-md text-body-md text-on-surface-variant">
                     Análisis de radiación solar regional (HSP Colombia), cálculo
                     para fincas campestres, veredas y zonas no interconectadas
-                    (ZNI) con baterías LiFePO4 de larga vida útil.
+                    (ZNI) con baterías LiFePO4 de larga vida ótil.
                   </p>
                 </div>
                 <div
@@ -1765,7 +1703,7 @@
                 >
                   <a
                     class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary-container hover:bg-secondary text-on-secondary font-title-md text-body-md px-space-lg py-space-sm rounded-lg transition-all hover-btn-bounce"
-                    href="https://wa.me/573042586636?text=Hola%20VELTRIX,%20deseo%20asesor%C3%ADa%20y%20levantamiento%20t%C3%A9cnico%20para%20un%20Sistema%20Solar%20Aut%C3%B3nomo"
+                    href="https://wa.me/573042586636?text=Hola%20VELTRIX,%20deseo%20asesoría%20y%20levantamiento%20técnico%20para%20un%20Sistema%20Solar%20Autónomo"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -1955,15 +1893,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      const menuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-
-      menuButton.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.toggle("hidden");
-        menuIcon.textContent = isHidden ? "menu" : "close";
-      });
-    </script>
   </body>
 </html>
